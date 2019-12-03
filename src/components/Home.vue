@@ -1,7 +1,8 @@
 <template>
-  <p class="homeText">
+  <h1>
     Home Page
-  </p>
+  </h1>
+  
 </template>
 <script>
 

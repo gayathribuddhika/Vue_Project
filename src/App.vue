@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/sabra.jpg" class="logo"><br><br>
-    
+    <img src="./assets/sabra.jpg" class="logo"><br><br><br><br>
+    <router-link to = "Home">Home</router-link>
+    <router-link to = "Contact">Contact</router-link>
     <router-view/>
   </div>
 </template>
