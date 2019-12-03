@@ -1,6 +1,6 @@
 <template>
   <h1>
-    Home Page
+    Welcome to the Home Page
   </h1>
   
 </template>
