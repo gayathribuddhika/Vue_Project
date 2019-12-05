@@ -1,4 +1,4 @@
-# test vue project
+# test vue project Mini Project
 
 > A Vue.js project
 
