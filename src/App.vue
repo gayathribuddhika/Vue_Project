@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/sabra.jpg" class="logo"><br><br><br><br>
-    <router-link to = "Home">Home</router-link>
+    
+    <router-link to = "Login">Login</router-link>
     <router-link to = "Contact">Contact</router-link>
     <router-view/>
   </div>
-</template>
+</template>1
+
+
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  
 }
 </script>
 
