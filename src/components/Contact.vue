@@ -1,23 +1,21 @@
 <template>
-  <div class = "about">
-    <h1>Welcome to the Contact</h1>
+  <div class = "contact">
+    <h1>{{text}}</h1>
   </div>
   
 </template>
 <script>
 
 export default {
-  name: 'about'
+  name: 'Contact',
+  data () {
+    return {
+      text: 'This is the contact page'
+    }
+  }
 };
 
 </script>
-<style scoped>
-.homeText{
-    font-size: 35px;
-    color: red;
-    text-align: center;
-    position: relative;
-    top:30px;
-    text-shadow: 2px 2px 2px gray;
-}
+<style>
+
 </style>

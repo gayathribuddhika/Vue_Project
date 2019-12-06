@@ -16,6 +16,11 @@ export default new Router({
       path: '/',
       name: 'contact',
       component: Contact
+    },
+    {
+      path: '/',
+      name: 'about',
+      component: Contact
     }
   ]
 })

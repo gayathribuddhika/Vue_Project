@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    
     <router-link to = "Login">Login</router-link>
     <router-link to = "Contact">Contact</router-link>
+    <router-link to = "About">About</router-link>
     <router-view/>
   </div>
 </template>1
@@ -24,12 +24,7 @@ export default {
     text-align: center;
     color: #2c3e50;
     margin-top: 10px;
-    width: 99%;
-    height: 255px;
-    background-color: #faf0e6;
-    position: fixed;
-    box-shadow: 0.1px 0.1px 15px 0.1px #273c75;
-    border-radius:10px;
+    
 }
 
 

@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img src="./assets/sabra.jpg" class="logo"><br><br><br><br>
     <h1>{{ msg }}</h1>
     <h1>Faculty of Applied Sciences</h1>
     <h2>Inventory Management System</h2>
@@ -18,7 +17,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 h1, h2 {
   font-weight: normal;
