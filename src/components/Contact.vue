@@ -1,5 +1,5 @@
 <template>
-  <div class = "contact">
+  <div id  = "contact">
     <h1>{{text}}</h1>
   </div>
   

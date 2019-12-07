@@ -2,7 +2,7 @@
   <div class="home">
     <h1>{{ msg }}</h1>
     <h1>Faculty of Applied Sciences</h1>
-    <h2>Inventory Management System</h2>
+    <h2>Sabaragamuwa University of sri Lanka</h2>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: 'home',
   data () {
     return {
-      msg: 'Sabaragamuwa University of Sri Lanka'
+      msg: 'Inventory Management System'
     }
   }
 }
