@@ -1,18 +1,15 @@
 <template>
-  <div class="home">
-    <h1>{{ msg }}</h1>
-    <h1>Faculty of Applied Sciences</h1>
-    <h2>Sabaragamuwa University of sri Lanka</h2>
-  </div>
+  
 </template>
 
 <script>
 export default {
   name: 'home',
-  data () {
-    return {
-      msg: 'Inventory Management System'
+  data(){
+    return{
+       msg: "Inventory Management System"
     }
+   
   }
 }
 </script>
@@ -22,9 +19,9 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.home {
+  margin-left: 280px;
+  margin-top: 0px;
 }
 
 
