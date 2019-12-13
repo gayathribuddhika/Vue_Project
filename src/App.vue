@@ -13,7 +13,7 @@
           <h3>Sabaragamuwa University of sri Lanka</h3>
         </div>
         <div class="col-sm-2" style="padding-top:65px">
-          <button type="button" class="btn btn-info" style="display: block; text-align:right; margin:auto;">Login</button> 
+          <button type="button" class="btn btn-info" style="display: block; text-align:right; margin:auto;" v-on-click= "login">Login</button> 
         </div>
       
       </div>
@@ -31,12 +31,9 @@ export default {
   data(){
     return{
       msg:'Inventory Management System',
-      button:"Login"
-            
-
+      button:"Login",
+      login:"./components/Login.vue"
     }
-    
-
   }
   
 }
