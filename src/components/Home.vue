@@ -1,28 +1,28 @@
 <template>
-  
+<div class = "homepage">
+  <div class="container pt-5 pb-5" v-if="true">
+    <form id="homepage">
+      <section>
+        <lable>username</lable>
+          <input type="text" placeholder="Enter your username here">
+        </section>
+        <section>
+          <lable>Password</lable>
+          <input type="password" placeholder="Enter your password here">
+        </section>
+    </form>
+  </div>
+</div>
 </template>
 
 <script>
 export default {
-  name: 'home',
-  data(){
-    return{
-       msg: "Inventory Management System"
-    }
-   
-  }
+  name: 'Home'
+  
 }
 </script>
 
 
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-.home {
-  margin-left: 280px;
-  margin-top: 0px;
-}
-
 
 </style>

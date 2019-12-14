@@ -1,8 +1,8 @@
 {
-  "name": "test1",
+  "name": "ims-app",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "gayathribuddhika <wg.gaythri@gmail.com>",
+  "author": "gayathribuddhika <wg.gayathri@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
