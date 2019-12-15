@@ -2,6 +2,7 @@
   <div id = 'app'>
     <Navbar/>
     <Home/>
+    <Footer/>
   </div> 
 
 </template>
@@ -15,6 +16,8 @@ export default {
   components:{
     Navbar,
     Home
+    
+    
   }
   
   
