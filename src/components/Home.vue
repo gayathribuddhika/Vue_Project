@@ -1,5 +1,5 @@
 <template>
-<div class= "form">
+<div id= "form">
   <b-jumbotron bg-variant="light" text-variant="dark" border-variant="dark">
     <b-row>
     <b-col md="6">
@@ -76,7 +76,7 @@
               placeholder="Enter your password"
             ></b-form-input>
             </b-form-group>
-            <b-button type="submit" variant="primary">Login</b-button>
+            <b-button type="submit" variant="primary" href="#">Login</b-button>
           </b-card>
           
         </div>
@@ -102,11 +102,12 @@
     }
   }
 }
+
 </script>
 
 
 <style scoped>
-.form{
-  margin-top: 50px;
+#form{
+  margin-top: 20px;
 }
 </style>

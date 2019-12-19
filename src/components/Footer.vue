@@ -1,6 +1,6 @@
 <template>
   
-  <b-footer color="stylish-color-dark" class="font-small pt-4 mt-4">
+  <b-footer type="dark" variant="info">
     <b-container class="text-center text-md-left">
       <b-row>
         <b-col md="4">
@@ -14,11 +14,11 @@
         <hr class="w-100 clearfix d-md-none" />
         <b-col md="4">
           <h6 class="text-uppercase mb-4 font-weight-bold">About Us</h6>
-          <p><a href="#!">Depatment of Computing and Information Systems</a></p>
-          <p><a href="#!">Depatment of Food Sciences and Technology</a></p>
-          <p><a href="#!">Depatment of Physical Sciences and Technology</a></p>
-          <p><a href="#!">Depatment of Natural Resources</a></p>
-          <p><a href="#!">Depatment of Sport Management & Physical Education</a></p>
+          <p><a href="#!">Department of Computing and Information Systems</a></p>
+          <p><a href="#!">Department of Food Sciences and Technology</a></p>
+          <p><a href="#!">Department of Physical Sciences and Technology</a></p>
+          <p><a href="#!">Department of Natural Resources</a></p>
+          <p><a href="#!">Department of Sport Management & Physical Education</a></p>
         </b-col>
         
         <hr class="w-100 clearfix d-md-none" />
