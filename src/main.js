@@ -12,5 +12,7 @@ Vue.use(LayoutPlugin)
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el:'#app',
+  template:'<App/>',
+  components: { App }
+})

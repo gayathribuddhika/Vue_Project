@@ -42,7 +42,7 @@
 
             ></b-form-input>
             </b-form-group>
-            <b-button type="submit" variant="primary">Login</b-button>
+            <b-button v-on:click= "admin" type="submit" variant="primary">Login</b-button>
           </b-card>
           
         </div>
@@ -76,7 +76,7 @@
               placeholder="Enter your password"
             ></b-form-input>
             </b-form-group>
-            <b-button type="submit" variant="primary" href="#">Login</b-button>
+            <b-button type="submit" variant="primary">Login</b-button>
           </b-card>
           
         </div>
@@ -89,6 +89,7 @@
 
 <script>
   export default{
+    name: "Home",
     data(){
       return{
         form1:{
@@ -100,7 +101,8 @@
           password:""
       }
     }
-  }
+  },
+  
 }
 
 </script>
