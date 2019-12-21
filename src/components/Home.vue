@@ -42,7 +42,7 @@
 
             ></b-form-input>
             </b-form-group>
-            <b-button v-on:click= "admin" type="submit" variant="primary">Login</b-button>
+            <b-button v-on:click= "admin" type="submit" variant="primary" router-link to = "Admin.vue">Login</b-button>
           </b-card>
           
         </div>
