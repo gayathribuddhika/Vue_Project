@@ -1,10 +1,10 @@
 <template>
+  
   <div id = 'app'>
     <Navbar/>
     <Nav/>
     <Home/>
     <Footer/>
-    
     
   </div> 
 
@@ -16,6 +16,7 @@ import Home from './components/Home.vue'
 import Footer from './components/Footer.vue'
 import Nav from './components/Nav.vue'
 
+
 export default {
   name: 'App',
   components:{
@@ -23,6 +24,7 @@ export default {
     Nav,
     Home,
     Footer
+    
    
   }
   
