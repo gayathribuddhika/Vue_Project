@@ -1,20 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
+import VueRouter from 'vue-router'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/Admin',
-      name: 'Admin',
-      component: Admin
-    }
-  ]
+const router = new VueRouter({
+  
 })

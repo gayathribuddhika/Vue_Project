@@ -1,11 +1,12 @@
 <template>
     <div>
         <b-nav tabs>
-            <b-nav-item >Home</b-nav-item>
-            <b-nav-item >Contact</b-nav-item>
-            <b-nav-item>About Us</b-nav-item>
+            <b-nav-item ><router-link to = '/'>Home</router-link></b-nav-item>
+            <b-nav-item ><router-link to = '/contacts'>Contacts</router-link></b-nav-item>
+            <b-nav-item><router-link to = '/aboutus'>About Us</router-link></b-nav-item>
             
         </b-nav>
+        <router-view class="view"></router-view>
     </div>
 </template>
 
