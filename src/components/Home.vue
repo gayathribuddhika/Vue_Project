@@ -3,7 +3,7 @@
   <b-jumbotron bg-variant="light" text-variant="dark" border-variant="dark">
     <b-row>
     <b-col md="6">
-      <h2> &nbsp; Admin Login</h2>
+      <h2>&nbsp; Admin Login</h2>
     </b-col>
     <b-col md="6">
       <h2>Staff Login</h2>
