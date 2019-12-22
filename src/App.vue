@@ -2,6 +2,7 @@
   <div id = 'app'>
     <Navbar/>
     <Nav/>
+    
     <Home/>
     <Footer/>
     
@@ -20,6 +21,7 @@ export default {
   name: 'App',
   components:{
     Navbar,
+    Nav,
     Home,
     Footer
    

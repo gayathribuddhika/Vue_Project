@@ -12,7 +12,10 @@ import App from './App'
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(LayoutPlugin)
+
 Vue.config.productionTip = false
+
+
 
 new Vue({
   el:'#app',
