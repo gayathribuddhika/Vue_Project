@@ -1,5 +1,5 @@
 <template>
-<div id = "admn">
+<div>
     <h1>Hello</h1>
 </div>
     
@@ -7,6 +7,6 @@
 
 <script>
 export default {
-    name: "Admin"
+    
 }
 </script>
