@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import LayoutPlugin from 'bootstrap-vue'
 
@@ -13,27 +14,13 @@ Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(LayoutPlugin)
 
+Vue.config.productionTip = false
 
-const router = new VueRouter({
-  mode: 'history',
-  base: __dirname,
-  routes: [
-    { 
-      path: '/', 
-      component: App 
-    }
-    
-  ]
-});
 
 new Vue({
+  el:'#app',
   router,
-  template:`
-  <div>
-    
-    <router-view class="view"></router-view>
-  </div>
-`
+  template: <App/>,
+  components: { App }  
   
-  
-}).$mount('#app')
+})

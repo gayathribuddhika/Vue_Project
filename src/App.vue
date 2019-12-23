@@ -1,11 +1,11 @@
 <template>
   
-  <div id = 'app'>
+  <div id ="app">
     <Navbar/>
     <Nav/>
     <Form/>
     <Footer/>
-    
+    <router-view/>
   </div> 
 
 </template>
@@ -16,19 +16,17 @@ import Form from './components/Form.vue'
 import Footer from './components/Footer.vue'
 import Nav from './components/Nav.vue'
 
+
 export default {
-  name: 'App',
+  name: 'app',
   components:{
     Navbar,
     Nav,
     Form,
     Footer
-    
   }
-  
   
 }
 </script>
 
-<style>
-</style>
+
