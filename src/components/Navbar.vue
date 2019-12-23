@@ -24,3 +24,9 @@ export default {
     name:"Navbar"
 }
 </script>
+
+<style scoped>
+h1{
+    padding-top: 10px;
+}
+</style>
