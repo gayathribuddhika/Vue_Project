@@ -6,7 +6,7 @@
             <b-nav-item><router-link to = '/aboutus'>About Us</router-link></b-nav-item>
             
         </b-nav>
-        <router-view class="view"></router-view>
+        
     </div>
 </template>
 

@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
+
+import Nav from '@/components/Nav.vue'
+import Navbar from '@/components/Navbar.vue'
 import Form from './components/Form.vue'
 import Footer from './components/Footer.vue'
-import Nav from './components/Nav.vue'
-
 
 export default {
   name: 'app',

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-navbar toggleable="lg" type="dark" variant="info">
+        <b-navbar toggleable="md" type="dark" variant="info">
         <b-navbar-brand>
             <b-container>
                 <b-row>
@@ -26,7 +26,5 @@ export default {
 </script>
 
 <style scoped>
-h1{
-    padding-top: 10px;
-}
+
 </style>
