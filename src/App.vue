@@ -3,9 +3,10 @@
   <div id ="app">
     <Navbar/>
     <Nav/>
+    <router-view/>
     <Form/>
     <Footer/>
-    <router-view/>
+    
   </div> 
 
 </template>
