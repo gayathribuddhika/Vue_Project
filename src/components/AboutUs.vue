@@ -1,6 +1,6 @@
 <template>
     <div id="aboutus">
-
+        <h1>About Us</h1>
     </div>
 </template>
 
@@ -11,5 +11,8 @@ export default {
 </script>
 
 <style>
-
+#aboutus{
+    padding-top: 30px;
+    padding-bottom: 300px;
+}
 </style>

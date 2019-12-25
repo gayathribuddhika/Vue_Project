@@ -1,9 +1,11 @@
 <template>
-    <h1>Contacts</h1>
+    <div class= "title">
+        <h1>Contacts Us</h1>
+    </div>
 </template>
-
-<script>
-export default {
-    name:'contacts'
+<style>
+.title{
+    padding-top: 30px;
+    padding-bottom:300px;
 }
-</script>
+</style>

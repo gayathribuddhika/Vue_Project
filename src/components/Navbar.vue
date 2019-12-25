@@ -26,5 +26,7 @@ export default {
 </script>
 
 <style scoped>
-
+h1{
+    padding-top: 12px
+}
 </style>

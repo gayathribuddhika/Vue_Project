@@ -1,4 +1,4 @@
-# ims-app
+# imsapp
 
 > A Vue.js project
 
