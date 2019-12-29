@@ -1,6 +1,6 @@
 <template>
 <div id= "form">
-  <b-jumbotron bg-variant="light" text-variant="dark" border-variant="dark">
+  <b-jumbotron bg-variant="dark" text-variant="white" border-variant="dark">
     <b-row>
     <b-col md="6">
       <h2>&nbsp; Admin Login</h2>
@@ -9,12 +9,12 @@
       <h2>Staff Login</h2>
     </b-col>
     </b-row>
-  <b-container fluid>
+  <b-container>
     <b-row>
       <b-col md="6">
         
         <div>
-          <b-card bg-variant="dark" text-variant="white">
+          <b-card body-bg-variant="primary" text-variant="white">
             <b-form-group
               label="Username:"
               label-for="input-1"
@@ -109,7 +109,5 @@
 
 
 <style scoped>
-#form{
-  margin-top: 20px;
-}
+
 </style>

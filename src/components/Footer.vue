@@ -1,6 +1,6 @@
 <template>
   
-  <b-footer type="dark" variant="info">
+  <b-card-footer footer-bg-variant="dark" footer-border-variant="dark" footer-text-variant="light">
     <b-container class="text-center text-md-left">
       <b-row>
         <b-col md="4">
@@ -38,12 +38,9 @@
         
       </b-row>
     </b-container>
-  </b-footer>
+  </b-card-footer>
   
 </template>
-
-<script>
-export default {
-    name:"Footer"
-}
-</script>
+<style>
+ 
+ </style>
