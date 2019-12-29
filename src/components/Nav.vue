@@ -22,7 +22,6 @@ export default {
 
 <style>
 .bttn{
-    
     padding-bottom: 5px;
     
 }
