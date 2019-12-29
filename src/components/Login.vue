@@ -1,6 +1,7 @@
 <template>
 <div id= "form">
   <b-jumbotron bg-variant="light" text-variant="dark" border-variant="dark">
+    
     <b-row>
     <b-col md="6">
       <h2><center>Admin Login</center></h2>
@@ -42,7 +43,9 @@
 
             ></b-form-input>
             </b-form-group>
-            <b-button type="submit" variant="primary">Login</b-button>
+              <router-link to="/#">
+                <b-button type="button" variant="primary">Login</b-button>
+              </router-link>
           </b-card>
           
         </div>
@@ -76,7 +79,9 @@
               placeholder="Enter your password"
             ></b-form-input>
             </b-form-group>
-            <b-button type="submit" variant="primary">Login</b-button>
+              <router-link to="/#">
+                <b-button type="button" variant="primary">Login</b-button>
+              </router-link>
           </b-card>
           
         </div>

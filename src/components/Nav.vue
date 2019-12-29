@@ -22,7 +22,7 @@ export default {
 
 <style>
 .bttn{
-    margin-left: 1150px;
+    
     padding-bottom: 5px;
     
 }
