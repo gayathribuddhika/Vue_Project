@@ -15,7 +15,7 @@
       <b-col md="6">
         
         <div>
-          <b-card bg-variant="dark" text-variant="white">
+          <b-card bg-variant="secondary" text-variant="white">
             <b-form-group
               label="Username:"
               label-for="input-1"
@@ -53,7 +53,7 @@
       
       <b-col md="6">   
         <div>
-          <b-card bg-variant="dark" text-variant="white">
+          <b-card bg-variant="secondary" text-variant="white">
             <b-form-group 
               label="Username:"
               label-for="input-3"
