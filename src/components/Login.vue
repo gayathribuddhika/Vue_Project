@@ -43,7 +43,7 @@
 
             ></b-form-input>
             </b-form-group>
-              <router-link to="/#">
+              <router-link to="/adminpanel">
                 <b-button type="button" variant="primary">Login</b-button>
               </router-link>
           </b-card>
@@ -79,7 +79,7 @@
               placeholder="Enter your password"
             ></b-form-input>
             </b-form-group>
-              <router-link to="/#">
+              <router-link to="/staffpanel">
                 <b-button type="button" variant="primary">Login</b-button>
               </router-link>
           </b-card>

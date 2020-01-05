@@ -5,6 +5,8 @@ import Contacts from '@/components/Contacts'
 import AboutUs from '@/components/AboutUs'
 import Login from '@/components/Login'
 import Home from '@/components/Home'
+import AdminPanel from '@/components/AdminPanel'
+import StaffPanel from '@/components/StaffPanel'
 
 Vue.use(Router)
 
@@ -30,6 +32,16 @@ export default new Router({
       path:'/',
       name:"Home",
       component: Home
+    },
+    {
+      path:'/adminpanel',
+      name:"AdminPanel",
+      component: AdminPanel
+    },
+    {
+      path:'/staffpanel',
+      name:"StaffPanel",
+      component: StaffPanel
     }
   ]
 })
