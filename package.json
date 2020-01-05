@@ -10,10 +10,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@syncfusion/ej2-vue-navigations": "^17.4.39",
+    "b-sidebar": "^1.2.1",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.1.0",
     "vue": "^2.6.11",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-sidebar-menu": "^4.4.5"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
