@@ -88,22 +88,19 @@
 </template>
 
 <script>
+var MongoClient = require('mongodb').MongoClient;
+
+// Connect to the db
+MongoClient.connect("mongodb://localhost:27017/Inventory_FAS", function (err, db) {
+   
+     if(err) throw err;
+
+     //Write databse Insert/Update/Query code here..
+                
+});
   export default{
-    name: "Home",
-    data(){
-      return{
-        form1:{
-          username:"",
-          password:""
-        },
-        form2:{
-          username:"",
-          password:""
-      }
-    }
-  },
-  
-}
+    
+  }
 
 </script>
 
