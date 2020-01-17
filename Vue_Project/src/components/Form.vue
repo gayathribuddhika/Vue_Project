@@ -1,0 +1,110 @@
+<template>
+<div id= "form">
+  <b-jumbotron bg-variant="dark" text-variant="white" border-variant="dark">
+    <b-row>
+    <b-col md="6">
+      <h2>&nbsp; Admin Login</h2>
+    </b-col>
+    <b-col md="6">
+      <h2>Staff Login</h2>
+    </b-col>
+    </b-row>
+  <b-container>
+    <b-row>
+      <b-col md="6">
+        
+        <div>
+          <b-card body-bg-variant="primary" text-variant="white">
+            <b-form-group
+              label="Username:"
+              label-for="input-1"
+              
+            >
+            <b-form-input
+              id="input-1"
+              v-model="form1.username"
+              required
+              placeholder="Enter your username"
+            ></b-form-input>
+            </b-form-group>
+            
+            <b-form-group
+              label="Password:"
+              label-for="input-2"
+              description ="Forgot your password?"
+            >
+            <b-form-input
+              id="input-2"
+              type="password"
+              v-model="form1.password"
+              required
+              placeholder="Enter your password"
+
+            ></b-form-input>
+            </b-form-group>
+            <b-button type="submit" variant="primary">Login</b-button>
+          </b-card>
+          
+        </div>
+      </b-col> 
+      
+      <b-col md="6">   
+        <div>
+          <b-card bg-variant="dark" text-variant="white">
+            <b-form-group 
+              label="Username:"
+              label-for="input-3"
+            >
+            <b-form-input
+              id="input-3"
+              v-model="form2.username"
+              required
+              placeholder="Enter your username"
+            ></b-form-input>
+            </b-form-group>
+            
+            <b-form-group 
+              label="Password:"
+              label-for="input-4"
+              description ="Forgot your password?"
+            >
+            <b-form-input
+              id="input-4"
+              type="password"
+              v-model="form2.password"
+              required
+              placeholder="Enter your password"
+            ></b-form-input>
+            </b-form-group>
+            <b-button type="submit" variant="primary">Login</b-button>
+          </b-card>
+          
+        </div>
+      </b-col>
+    </b-row>
+  </b-container>
+  </b-jumbotron>
+</div>
+</template>
+
+<script>
+var MongoClient = require('mongodb').MongoClient;
+
+// Connect to the db
+MongoClient.connect("mongodb://localhost:27017/Inventory_FAS", function (err, db) {
+   
+     if(err) throw err;
+
+     //Write databse Insert/Update/Query code here..
+                
+});
+  export default{
+    
+  }
+
+</script>
+
+
+<style scoped>
+
+</style>
