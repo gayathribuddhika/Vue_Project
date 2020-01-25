@@ -1,12 +1,13 @@
 <template>
 <div>
-  
+  <b-col md="3">
   <b-card
     style="max-width: 20rem;"
     img-alt="Image"
     img-top
     body-bg-variant="dark"
     body-text-variant="white"
+    
   >
   <center><b-img :src="require('../assets/sabra.png')"></b-img></center>
     <b-card-body>
@@ -23,5 +24,8 @@
       <b-list-group-item variant="dark" href="home.vue">Logout</b-list-group-item>
     </b-list-group>
     </b-card>
+  </b-col>
+  <b-col md="9">
+  </b-col>
 </div>
 </template>
