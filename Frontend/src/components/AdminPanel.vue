@@ -2,7 +2,7 @@
 <div>
   
   <b-card
-    style="max-width: 20rem;"
+    style="max-width: 15rem;"
     img-alt="Image"
     img-top
     body-bg-variant="dark"
