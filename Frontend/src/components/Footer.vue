@@ -4,7 +4,7 @@
     <b-container class="text-center text-md-left">
       <b-row>
         <b-col md="4">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Contact Us</h6>
+          <h6 class="text-uppercase mb-4 font-weight-bold"><u>Contact Us</u></h6>
           <p>Faculty of Applied Sciences<br>Sabaragamuwa University of Sri Lanka<br>PO Box 02<br>
           Pambahinna, Sri Lanka<br>70140</p>
           <p>Tel - 045 3454519<br>
@@ -13,7 +13,7 @@
         </b-col>
         <hr class="w-100 clearfix d-md-none" />
         <b-col md="4">
-          <h6 class="text-uppercase mb-4 font-weight-bold">About Us</h6>
+          <h6 class="text-uppercase mb-4 font-weight-bold"><u>About Us</u></h6>
           <p><a href="#!">Department of Computing and Information Systems</a></p>
           <p><a href="#!">Department of Food Sciences and Technology</a></p>
           <p><a href="#!">Department of Physical Sciences and Technology</a></p>
@@ -23,7 +23,7 @@
         
         <hr class="w-100 clearfix d-md-none" />
         <b-col md="4">
-          <h6 class="text-uppercase mb-4 font-weight-bold">&nbsp;&nbsp;&nbsp;Quick Links</h6>
+          <h6 class="text-uppercase mb-4 font-weight-bold">&nbsp;&nbsp;&nbsp;<u>Quick Links</u></h6>
           <p><i class="fas fa-home mr-3"></i> </p>
           <p><i class="fas fa-envelope mr-3"></i> </p>
           <p><i class="fas fa-phone mr-3"></i> </p>
