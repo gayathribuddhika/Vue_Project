@@ -9,12 +9,12 @@ router.get('/', async (req, res) => {
     res.send(await posts.find({}).toArray());
 });
 
-add posts
+//add posts
 router.post('/', async (req, res) => {
     const posts = await loadPostsCollection();
     await posts.insertOne({
-        text: req.body.text,
-        createAt: new Date()
+        Address: req.body.Address
+        
     });
     res.status(201).send();
 });
@@ -31,7 +31,7 @@ async function loadPostsCollection() {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
-    return client.db('Inventory_FAS').collection('Customer_Information');
+    return client.db('Inventory_FAS').collection('Contact_Information');
 }
 
 module.exports = router;
