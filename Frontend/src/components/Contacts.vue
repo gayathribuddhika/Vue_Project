@@ -35,7 +35,7 @@
             v-bind:item="post"
             v-bind:key="post._id"
             >
-                <p class="text">{{ post.Location }}</p>
+                <p class="text">{{ post.number }}</p>
             </div>
             
         </div>

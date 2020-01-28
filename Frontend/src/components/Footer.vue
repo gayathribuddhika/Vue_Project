@@ -14,11 +14,11 @@
         <hr class="w-100 clearfix d-md-none" />
         <b-col md="4">
           <h6 class="text-uppercase mb-4 font-weight-bold"><u>About Us</u></h6>
-          <p><a href="#!">Department of Computing and Information Systems</a></p>
+          <!--<p><a href="#!">Department of Computing and Information Systems</a></p>
           <p><a href="#!">Department of Food Sciences and Technology</a></p>
           <p><a href="#!">Department of Physical Sciences and Technology</a></p>
           <p><a href="#!">Department of Natural Resources</a></p>
-          <p><a href="#!">Department of Sport Management & Physical Education</a></p>
+          <p><a href="#!">Department of Sport Management & Physical Education</a></p> -->
         </b-col>
         
         <hr class="w-100 clearfix d-md-none" />
