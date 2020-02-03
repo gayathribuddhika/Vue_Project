@@ -1,6 +1,6 @@
 <template>
 <div>
-  <b-card-group deck>
+  <b-card-group>
   <b-card
     style="max-width: 15rem;"
     img-alt="Image"
@@ -22,9 +22,10 @@
       <b-list-group-item variant="dark" href="#">Edit Profile</b-list-group-item>
       <b-list-group-item variant="dark" href="home.vue">Logout</b-list-group-item>
     </b-list-group>
-    </b-card>
+  </b-card>
+  </b-card>
     <b-card title="Current Status">
-      
+    </b-card>    
     </b-card>
   </b-card-group>
 </div>
