@@ -77,7 +77,7 @@ export default {
       await PostService.deletePost(id);
       this.posts = await  PostService.getPosts();
     }
-  },  
+  }
 }
 </script>
 
