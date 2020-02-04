@@ -27,11 +27,12 @@ router.delete('/:id', async (req, res) => {
 
 async function loadPostsCollection() {
     const client = await mongodb.MongoClient.connect
-    ('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false', {
+    ('mongodb://localhost:27017/Inventory_FAS', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
-    return client.db('Inventory_FAS').collection('Contact_Information');
+    return client.db('Inventory_FAS').collection('Contact_Information', 'Admin_Login');
+    
 }
 
 module.exports = router;
