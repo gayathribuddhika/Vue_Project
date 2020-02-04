@@ -11,8 +11,8 @@ class PostService {
                 const data = res.data;
                 resolve(
                     data.map(post => ({
-                        ...post,
-                        createAt: new Date(post.createAt)
+                        ...post
+                        
                     }))
                 );
             } catch(err) {
