@@ -23,7 +23,7 @@
             >
             <b-form-input
               id="input-1"
-              v-model="form1.username"
+              
               required
               placeholder="Enter your username"
             ></b-form-input>
@@ -37,7 +37,7 @@
             <b-form-input
               id="input-2"
               type="password"
-              v-model="form1.password"
+              
               required
               placeholder="Enter your password"
 
@@ -61,7 +61,7 @@
             >
             <b-form-input
               id="input-3"
-              v-model="form2.username"
+              
               required
               placeholder="Enter your username"
             ></b-form-input>
@@ -75,7 +75,7 @@
             <b-form-input
               id="input-4"
               type="password"
-              v-model="form2.password"
+              
               required
               placeholder="Enter your password"
             ></b-form-input><br>
@@ -99,16 +99,9 @@
     name: "Home",
     data(){
       return{
-        form1:{
-          username:"",
-          password:""
-        },
-        form2:{
-          username:"",
-          password:""
-      }
+        
     }
-  },
+  }
   
 }
 
