@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:8082/api/posts';
+const url = 'http://localhost:8082/routes/posts';
 
 class PostService {
     //get posts
