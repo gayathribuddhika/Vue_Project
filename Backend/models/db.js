@@ -17,9 +17,5 @@ MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
         console.log(result.Address);
         db.close();
     });
-    /*var cursor = db.collection('Contact_Information').find();
-    cursor.each(function(err, doc) {
-        console.log(doc);
-
-    });*/
+    
 });

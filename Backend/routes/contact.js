@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const contact = require('../models/contact_details');
-const url = 'mongodb://localhost:27017/'
+const mongodb = require('mongodb');
+const url = 'mongodb://localhost:27017/Inventory_FAS';
 
-/*//get posts
-router.get('/', (req, res) => {
+//get posts
+/*router.get('/', (req, res) => {
     res.send("Hello Contacts");
 });
 
@@ -18,15 +18,24 @@ router.get('/', function (req, res, next) {
         })
     })
 })
-*/
+
 router.get('/', async (req, res) => {
     try {
-        const contact = await contact.find()
+        const contact = await Contact.find()
         res.json(contact)
     } catch (err) {
         res.status(500).json({ message: err.message })
     }
   });
+*/
+router.get('/', async(req, res) => {
+    const contacts = await loadContactscollection();
+    res.send(await contacts.find({}).toArray());
+});
 
+async function loadContactscollection() {
+    const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
+    return client.db('Inventory_FAS').collection("Contact_Information")
+}
 
 module.exports = router;
