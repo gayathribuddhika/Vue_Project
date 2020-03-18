@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var contactSchema = new mongoose.Schema({
+const contactSchema = new mongoose.Schema({
     Address: {
         type: String
     },
@@ -15,4 +15,4 @@ var contactSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model("contact", contactSchema);
+module.exports = mongoose.model("contact", contactSchema);

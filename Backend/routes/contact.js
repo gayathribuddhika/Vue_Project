@@ -1,11 +1,9 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-Parser');
 const router = express.Router();
-const assert = require('assert');
+const contact = require('../models/contact_details');
 const url = 'mongodb://localhost:27017/'
 
-//get posts
+/*//get posts
 router.get('/', (req, res) => {
     res.send("Hello Contacts");
 });
@@ -21,5 +19,14 @@ router.get('/', function (req, res, next) {
     })
 })
 */
+router.get('/', async (req, res) => {
+    try {
+        const contact = await contact.find()
+        res.json(contact)
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+  });
+
 
 module.exports = router;
