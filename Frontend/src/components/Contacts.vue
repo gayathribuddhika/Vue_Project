@@ -61,22 +61,17 @@ export default {
   data() {
     return {
       posts: [],
-      Address: ''
+      
     }
   },
   async created() {
+    try{
       this.posts = await PostService.getPosts();
-  },
-  
-  methods: {
-    async createPost() {
-      await PostService.insertPost(this.text);
-      this.posts = await  PostService.getPosts();
-    },
-    async deletePost(id) {
-      await PostService.deletePost(id);
-      this.posts = await  PostService.getPosts();
     }
+    catch(err){
+      this.error = err.message;
+    }
+      
   }
 }
 </script>
