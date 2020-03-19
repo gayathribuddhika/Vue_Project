@@ -6,24 +6,26 @@
           
             <h4>Address</h4>
             <hr>
-            <div class="post" 
-            v-for="post in posts" 
-            v-bind:item="post"
-            v-bind:key="post._id"
+            <p class= 'error' v-if="error">{{ error }}</p>
+            <div class="contact" 
+            v-for="Contact in contacts" 
+            v-bind:item="Contacts"
+            v-bind:index="index"
+            v-bind:key="Contact._id"
             >
-              <p class="text">{{ post.Address }}</p>
+              <p class="text">{{ contact.Address }}</p>
             </div>
         </div>
         <br>
         <div>
             <h4>Location</h4>
             <hr>
-            <div class="post" 
-            v-for="post in posts" 
-            v-bind:item="post"
-            v-bind:key="post._id"
+            <div class="contact" 
+            v-for="contact in contacts" 
+            v-bind:item="contact"
+            v-bind:key="contact._id"
             >
-              <p class="text">{{ post.Location }}</p>
+              <p class="text">{{ contact.Location }}</p>
             </div>
             
         </div>
@@ -60,13 +62,15 @@ export default {
   name: 'Contacts',
   data() {
     return {
-      posts: [],
+      contact: [],
+      error: '',
+      Address: ''
       
     }
   },
   async created() {
     try{
-      this.posts = await PostService.getPosts();
+      this.contact = await PostService.getContacts();
     }
     catch(err){
       this.error = err.message;

@@ -4,21 +4,21 @@ const url = 'http://localhost:8085/routes/contact';
 
 class PostService {
     //get posts
-    static getPosts() {
+    static getContacts() {
         return new Promise(async (resolve, reject) => {
             try{
                 const res = await axios.get(url);
                 const data = res.data;
                 resolve(
-                    data.map(post => ({
-                        ...post
+                    data.map(contact => ({
+                        ...contact
                         
                     }))
                 );
             } catch(err) {
                 reject(err);
             }
-        });
+        }); 
     }
 
     
