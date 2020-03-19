@@ -6,7 +6,6 @@
           
             <h4>Address</h4>
             <hr>
-            <p class= 'error' v-if="error">{{ error }}</p>
             <div class="contact" 
             v-for="Contact in contacts" 
             v-bind:item="Contacts"
@@ -62,9 +61,8 @@ export default {
   name: 'Contacts',
   data() {
     return {
-      contact: [],
-      error: '',
-      Address: ''
+      contacts: []
+      
       
     }
   },
@@ -82,7 +80,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div.post {
+div.contact {
   margin-left: 100px;
 }
 
