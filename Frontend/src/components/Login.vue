@@ -25,7 +25,11 @@
             <b-form-input
               id="username1"
               placeholder="Enter your username"
-            ></b-form-input>
+              v-model.trim="$v.password1.$model"
+              :error-messages = "usernameError1"
+            />
+            
+            
             </b-form-group>
             
             <b-form-group
@@ -38,10 +42,10 @@
               type="password"
               placeholder="Enter your password"
 
-            ></b-form-input><br>
+            /><br>
             <a href="#">Forgot your password?</a>
             </b-form-group>
-            <b-button type="button" variant="primary">Login</b-button>
+            <b-button type="submit" variant="primary" :disabled ="loginStatus === 'Error'">Login</b-button>
             </b-form>
           </b-card>
           
@@ -111,9 +115,17 @@ import { required } from 'vuelidate/lib/validators'
     }
   },
 
+  computed:{
+    usernameError1 () {
+      const error = [];
+      if (!this.$v.username1.$dirty) return error;
+      !this.$v.Username1.required && error.push("Username is required");
+    }
+  },
+
   methods: {
     submit() {
-      console.log('submit!')
+      console.log('login!')
       this.$v.$touch()
       if (this.$v.$invalid) {
         this.loginStatus = "Error"
