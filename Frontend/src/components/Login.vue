@@ -25,8 +25,9 @@
             <b-form-input
               id="username1"
               placeholder="Enter your username"
-              v-model.trim="$v.password1.$model"
-              :error-messages = "usernameError1"
+              required
+              :class="{ 'hasError': $v.form.username1.$error }"
+              v-model= "form.username1"
             />
             
             
@@ -41,11 +42,14 @@
               id="password1"
               type="password"
               placeholder="Enter your password"
+              required
+              :class="{ 'hasError': $v.form.password1.$error }"
+              v-model= "form.password1"
 
             /><br>
             <a href="#">Forgot your password?</a>
             </b-form-group>
-            <b-button type="submit" variant="primary" :disabled ="loginStatus === 'Error'">Login</b-button>
+            <b-button type="submit" variant="primary">Login</b-button>
             </b-form>
           </b-card>
           
@@ -100,40 +104,28 @@ import { required } from 'vuelidate/lib/validators'
     name: "Home",
     data(){
       return{
+        form: {
         username1: '',
-        password1: '',
-        loginStatus: null
+        password1: ''
+        }
+        
     }
   },
 
   validations: {
-    username1: {
-      required
-    },
-    password1: {
-      required
-    }
-  },
-
-  computed:{
-    usernameError1 () {
-      const error = [];
-      if (!this.$v.username1.$dirty) return error;
-      !this.$v.Username1.required && error.push("Username is required");
+    form:{
+      username1: {required},
+      password1: {required}
     }
   },
 
   methods: {
     submit() {
-      console.log('login!')
-      this.$v.$touch()
-      if (this.$v.$invalid) {
-        this.loginStatus = "Error"
-      } else {
-          this.loginStatus = "OK"
-      }
+      this.$v.form.$touch();
+      if(this.$v.form.$error) return
+      alert("Successfully logdin")
     }
-  },
+  }
   
 }
 
