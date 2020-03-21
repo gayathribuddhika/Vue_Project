@@ -20,24 +20,20 @@
             <b-form-group
               label="Username:"
               label-for="username1"
-              
             >
             <b-form-input
               id="username1"
               placeholder="Enter your username"
-              required
+              required:true
               :class="{ 'hasError': $v.form.username1.$error }"
               v-model= "form.username1"
             />
-            
-            
             </b-form-group>
             
             <b-form-group
               label="Password:"
               label-for="password1"
             >
-            
             <b-form-input
               id="password1"
               type="password"
@@ -45,15 +41,14 @@
               required
               :class="{ 'hasError': $v.form.password1.$error }"
               v-model= "form.password1"
-
-            /><br>
+            /> <br>
             <a href="#">Forgot your password?</a>
             </b-form-group>
             <b-button type="submit" variant="primary">Login</b-button>
             </b-form>
           </b-card>
-          
         </div>
+      
       </b-col> 
       
       <!-- <b-col md="6">   
