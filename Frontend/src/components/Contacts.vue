@@ -21,7 +21,6 @@
             <hr>
             <div class="contact" 
             v-for="contact in contacts" 
-            v-bind:item="contact"
             v-bind:key="contact._id"
             >
               <p class="text">{{ contact.Location }}</p>
@@ -34,7 +33,6 @@
             <hr>
             <div class="contact" 
             v-for="contact in contacts" 
-            v-bind:item="contact"
             v-bind:key="contact._id"
             >
             <b-row>

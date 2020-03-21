@@ -25,8 +25,31 @@
     </b-card>
     
     <b-card title="Dashboard">
-      <br>
-      <b-table responsive :items="items"></b-table>
+    <br>
+      <table style="width:100%">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Main Category</th>
+            <th>Asset Code</th>
+            <th>Qty</th>
+            <th>Make</th>
+            <th>Condition</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for = "item in items" v-bind:key="item._id">
+            <td>{{item.Id}}</td>
+            <td>{{item.Main_Category}}</td>
+            <td>{{item.Asset_Code}}</td>
+            <td>{{item.Qty}}</td>
+            <td>{{item.Make}}</td>
+            <td>{{item.Condition}}</td>
+            <td>{{item.Comments}}</td>
+          </tr>
+        </tbody>
+      </table>
     </b-card>    
     
   </b-card-group>
@@ -34,16 +57,27 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        items: [
-          { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-          { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-          { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-          { age: 38, first_name: 'Jami', last_name: 'Carney' }
-        ]
-      }
+import axios from 'axios';
+
+export default {
+  name: 'AdminPanel',
+  data() {
+    return {
+      items: []
+      
+      
     }
+  },
+  mounted () {
+    axios.get('http://localhost:8085/items')
+    .then((response) => {
+      console.log(response.data);
+      this.items = response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
   }
+}
 </script>

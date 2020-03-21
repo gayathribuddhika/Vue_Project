@@ -16,6 +16,9 @@ app.use('/contact', contactRouter);
 const loginRouter = require('./routes/adsf_login');
 app.use('/login', loginRouter);
 
+const itemRouter = require('./routes/items');
+app.use('/items', itemRouter);
+
 const port = 8085;
 app.listen(port, () => {
     console.log('server started on port ' + port);
