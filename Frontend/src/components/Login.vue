@@ -16,7 +16,7 @@
         
         <div>
           <b-card bg-variant="" text-variant="dark" border-variant="dark">
-            <b-form @submit.prevent="submit">
+            <b-form @submit.prevent="submit1">
             <b-form-group
               label="Username:"
               label-for="username1"
@@ -24,9 +24,9 @@
             <b-form-input
               id="username1"
               placeholder="Enter your username"
-              required:true
-              :class="{ 'hasError': $v.form.username1.$error }"
-              v-model= "form.username1"
+              required
+              :class="{ 'hasError': $v.form1.username1.$error }"
+              v-model= "form1.username1"
             />
             </b-form-group>
             
@@ -39,8 +39,8 @@
               type="password"
               placeholder="Enter your password"
               required
-              :class="{ 'hasError': $v.form.password1.$error }"
-              v-model= "form.password1"
+              :class="{ 'hasError': $v.form1.password1.$error }"
+              v-model= "form1.password1"
             /> <br>
             <a href="#">Forgot your password?</a>
             </b-form-group>
@@ -51,42 +51,42 @@
       
       </b-col> 
       
-      <!-- <b-col md="6">   
+      <b-col md="6">   
         <div>
           <b-card bg-variant="" text-variant="dark" border-variant="dark">
-            <b-form-group 
+            <b-form @submit.prevent="submit2">
+            <b-form-group
               label="Username:"
-              label-for="input-3"
+              label-for="username2"
             >
             <b-form-input
-              id="input-3"
-              
-              required
+              id="username2"
               placeholder="Enter your username"
-            ></b-form-input>
+              required
+              :class="{ 'hasError': $v.form2.username2.$error }"
+              v-model= "form2.username2"
+            />
             </b-form-group>
             
-            <b-form-group 
+            <b-form-group
               label="Password:"
-              label-for="input-4"
+              label-for="password2"
             >
-            
             <b-form-input
-              id="input-4"
+              id="password2"
               type="password"
-              
-              required
               placeholder="Enter your password"
-            ></b-form-input><br>
+              required
+              :class="{ 'hasError': $v.form2.password2.$error }"
+              v-model= "form2.password2"
+            /> <br>
             <a href="#">Forgot your password?</a>
             </b-form-group>
-              <router-link to="/staffpanel">
-                <b-button type="button" variant="primary">Login</b-button>
-              </router-link>
+            <b-button type="submit" variant="primary">Login</b-button>
+            </b-form>
           </b-card>
-          
         </div>
-      </b-col> -->
+      </b-col> 
     </b-row>
   </b-container>
   </b-jumbotron>
@@ -95,30 +95,44 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+  
   export default{
     name: "Home",
     data(){
       return{
-        form: {
+        form1: {
         username1: '',
         password1: ''
+        },
+
+        form2: {
+        username2: '',
+        password2: ''
         }
-        
-    }
+     }
   },
 
   validations: {
-    form:{
+    form1:{
       username1: {required},
       password1: {required}
+    },
+    form2:{
+      username2: {required},
+      password2: {required}
     }
   },
 
   methods: {
-    submit() {
-      this.$v.form.$touch();
-      if(this.$v.form.$error) return
-      alert("Successfully logdin")
+    submit1() {
+      this.$v.form1.$touch();
+      if(this.$v.form1.$error) return 
+      alert("Successfully logedin");
+    },
+    submit2() {
+      this.$v.form2.$touch();
+      if(this.$v.form2.$error) return 
+      alert("Successfully logedin");
     }
   }
   
