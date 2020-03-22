@@ -1,8 +1,9 @@
 <template>
-    <b-container>
+    <b-container width="100%">
         <b-row>
             <b-col>ID</b-col>
             <b-col>Main Category</b-col>
+            <b-col>Asset Description</b-col>
             <b-col>Asset Code</b-col>
             <b-col>Qty</b-col>
             <b-col>Make</b-col>
@@ -13,6 +14,7 @@
         <b-row v-for = "item in items" v-bind:key="item._id">
             <b-col>{{item.Id}}</b-col>
             <b-col>{{item.Main_Category}}</b-col>
+            <b-col>{{item.Asset_Description}}</b-col>
             <b-col>{{item.Asset_Code}}</b-col>
             <b-col>{{item.Qty}}</b-col>
             <b-col>{{item.Make}}</b-col>

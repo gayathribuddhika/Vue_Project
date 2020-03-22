@@ -4,18 +4,18 @@ const url = 'mongodb://localhost:27017/'
 
 MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
     if(err){
-        return console.log("error present");
+        return console.log("Error in DB Connection");
     }
     else{
         console.log("Mongodb Connected");
     }
     
-    if (err) throw err;
+    /*if (err) throw err;
     var dbo = db.db('Inventory_FAS');
     dbo.collection("Contact_Information").findOne({}, function(err, result) {
         if (err) throw err;
         console.log(result.Address);
         db.close();
-    });
+    });*/
     
 });

@@ -15,7 +15,7 @@
 
     <b-list-group variant="dark">
       <b-list-group-item variant="dark" href="#">Dashboard</b-list-group-item>
-      <b-list-group-item variant="dark" href="currentstatus">Current Status</b-list-group-item>
+      <b-list-group-item variant="dark" href="/currentstatus">Current Status</b-list-group-item>
       <b-list-group-item variant="dark" href="#">Add New Record</b-list-group-item>
       <b-list-group-item variant="dark" href="#">Delete a Record</b-list-group-item>
       <b-list-group-item variant="dark" href="#">Create a Report</b-list-group-item>
@@ -26,10 +26,18 @@
     
     <b-card title="Dashboard">
     <br>
-      
+    
     </b-card>    
     
   </b-card-group>
 </div>
 </template>
 
+
+<script>
+import current_status from '@/components/Current_Status';
+
+export default {
+  
+}
+</script>>
