@@ -97,7 +97,7 @@
 import { required } from 'vuelidate/lib/validators'
   
   export default{
-    name: "Home",
+    name: "Login",
     data(){
       return{
         form1: {

@@ -1,5 +1,5 @@
 <template>
-<div id="aboutus">
+<div id="homepage">
     
         <h1><center>Welcome !!!</center></h1>
         <h1><center>Faculty of Applied Sciences</center></h1>
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style>
-#aboutus{
+#homepage{
     padding-top: 30px;
     padding-bottom: 10px;
     
