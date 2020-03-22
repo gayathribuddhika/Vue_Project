@@ -7,7 +7,7 @@ import Login from '@/components/Login'
 import Home from '@/components/Home'
 import AdminPanel from '@/components/AdminPanel'
 import StaffPanel from '@/components/StaffPanel'
-
+import current_Status from '@/components/Current_Status'
 
 Vue.use(Router)
 
@@ -43,6 +43,11 @@ export default new Router({
       path:'/staffpanel',
       name:"StaffPanel",
       component: StaffPanel
+    },
+    {
+      path:'/currentstatus',
+      name:"Current_Status",
+      component: current_Status
     }
   ]
 })
