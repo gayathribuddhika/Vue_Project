@@ -1,12 +1,13 @@
 <template>
   <div>
-    <b-card bg-variant="light">  
-        <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+    <b-card bg-variant="light" body-class="text-center">  
+        <b-form action= "/currentstatus" method = "POST" @submit="onSubmit" @reset="onReset" v-if="show">
             <b-form-group
                 label-cols-lg="3"
-                label="Shipping Address"
+                label="Add a New Record"
                 label-size="lg"
                 label-class="font-weight-bold pt-0"
+                
                 class="mb-0"
             >
                 <b-form-group
@@ -18,7 +19,7 @@
                     <b-form-input
                         id="record_id"
                         v-model="form._id"
-                        type="text"
+                        type="number"
                         required
                     >
                     </b-form-input>
@@ -37,32 +38,94 @@
                     >
                     </b-form-select>
                 </b-form-group>
-
-      
-
-      <b-form-group id="input-group-3" label="Food:" label-for="input-3">
-        <b-form-select
-          id="input-3"
-          v-model="form.food"
-          :options="foods"
-          required
-        ></b-form-select>
-      </b-form-group>
-
-      <b-form-group id="input-group-4">
-        <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
-          <b-form-checkbox value="me">Check me out</b-form-checkbox>
-          <b-form-checkbox value="that">Check that out</b-form-checkbox>
-        </b-form-checkbox-group>
-      </b-form-group>
-
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
-        </b-form-group>
-    </b-form>
-    </b-card>
-    <b-card class="mt-3" header="Form Data Result">
-      <pre class="m-0">{{ form }}</pre>
+                <b-form-group
+                    label-cols-sm="3"
+                    label="Asset Description"
+                    label-for="record_description"
+                    label-align-sm="right"
+                >
+                    <b-form-select
+                        id="record_description"
+                        v-model="form.description"
+                        required
+                        :options="descriptions"
+                    >
+                    </b-form-select>
+                </b-form-group>
+                <b-form-group
+                    label-cols-sm="3"
+                    label="Asset Code"
+                    label-for="record_code"
+                    label-align-sm="right"
+                >
+                    <b-form-input
+                        id="record_code"
+                        v-model="form.code"
+                        type="number"
+                        required
+                    >
+                    </b-form-input>
+                </b-form-group>
+                <b-form-group
+                    label-cols-sm="3"
+                    label="Qty"
+                    label-for="record_qty"
+                    label-align-sm="right"
+                >
+                    <b-form-input
+                        id="record_qty"
+                        v-model="form.qty"
+                        type="number"
+                        required
+                    >
+                    </b-form-input>
+                </b-form-group>
+                <b-form-group
+                    label-cols-sm="3"
+                    label="Make"
+                    label-for="record_make"
+                    label-align-sm="right"
+                >
+                    <b-form-input
+                        id="record_make"
+                        v-model="form.make"
+                        type="text"
+                        required
+                    >
+                    </b-form-input>
+                </b-form-group>
+                <b-form-group
+                    label-cols-sm="3"
+                    label="Conditions"
+                    label-for="record_condition"
+                    label-align-sm="right"
+                >
+                    <b-form-input
+                        id="record_condition"
+                        v-model="form.condition"
+                        type="text"
+                        required
+                    >
+                    </b-form-input>
+                </b-form-group>
+                <b-form-group
+                    label-cols-sm="3"
+                    label="Comments"
+                    label-for="record_comment"
+                    label-align-sm="right"
+                >
+                    <b-textarea
+                        id="record_comment"
+                        v-model="form.comment"
+                        type="text"
+                    >
+                    </b-textarea>
+                </b-form-group>
+                
+            <b-button type="submit" variant="primary">Submit</b-button>
+            <b-button type="reset" variant="danger">Reset</b-button>
+            </b-form-group>
+        </b-form>
     </b-card>
   </div>
 </template>
@@ -73,27 +136,47 @@
     data() {
       return {
         form: {
-          email: '',
-          name: '',
+          id: '',
           category: null,
-          checked: []
+          description: null,
+          code: '',
+          qty: '',
+          make: '',
+          condition: '',
+          comment: ''
         },
-        categories: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
+
+        
+        categories: [{ text: 'Select One', value: null }, 'Computer', 'Accessories', 'Office Equipments', 'Communication Equipments', 'Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System)', 'Furniture', 'Other'],
+        show: true,
+
+        descriptions: [{ text: 'Select One', value: null }, 'Fans', 'ACs', 'Whiteboard', 'Projector', 'Projector Screen', 'Sound System', 'Printer', 'Monitor', 'System Unit', 'UPS', 'Mouse', 'Keyboard', 'Computer Table', 'Computer Chair', 'Normal Chair', 'Computrt Table', 'Telephone', 'Laminationg Machine', 'Photocopy Machine'],
         show: true
       }
     },
     methods: {
-      onSubmit(evt) {
-        evt.preventDefault()
-        alert(JSON.stringify(this.form))
+      onSubmit() {
+        this.form.id = ''
+        this.form.category = null
+        this.form.description = null
+        this.form.code = ''
+        this.form.qty = ''
+        this.form.make = ''
+        this.form.condition = ''
+        this.form.comment = ''
       },
       onReset(evt) {
         evt.preventDefault()
         // Reset our form values
-        this.form.email = ''
-        this.form.name = ''
-        this.form.food = null
-        this.form.checked = []
+        this.form.id = ''
+        this.form.category = null
+        this.form.description = null
+        this.form.code = ''
+        this.form.qty = ''
+        this.form.make = ''
+        this.form.condition = ''
+        this.form.comment = ''
+        
         // Trick to reset/clear native browser form validation state
         this.show = false
         this.$nextTick(() => {
