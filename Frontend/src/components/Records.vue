@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-card bg-variant="light" body-class="text-center">  
-        <b-form action= "/currentstatus" method = "POST" @submit="onSubmit" @reset="onReset" v-if="show">
+        <b-form @reset="onReset" v-if="show">
             <b-form-group
                 label-cols-lg="3"
                 label="Add a New Record"
@@ -18,7 +18,7 @@
                 >
                     <b-form-input
                         id="record_id"
-                        v-model="form._id"
+                        v-model="form.id"
                         type="number"
                         required
                     >
@@ -122,7 +122,7 @@
                     </b-textarea>
                 </b-form-group>
                 
-            <b-button type="submit" variant="primary">Submit</b-button>
+            <b-button type="submit" variant="primary" @click= "addToRecords">Submit</b-button>
             <b-button type="reset" variant="danger">Reset</b-button>
             </b-form-group>
         </b-form>
@@ -131,6 +131,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
   export default {
       name: 'Records',
     data() {
@@ -155,16 +157,37 @@
       }
     },
     methods: {
-      onSubmit() {
-        this.form.id = ''
-        this.form.category = null
-        this.form.description = null
-        this.form.code = ''
-        this.form.qty = ''
-        this.form.make = ''
-        this.form.condition = ''
-        this.form.comment = ''
-      },
+        addToRecords() {
+            let newRecord = {
+                id: this.form.id,
+                Main_Category: this.form.category,
+                Asset_Description: this.form.description,
+                Asset_Code: this.form.code,
+                Qty: this.form.qty,
+                Make: this.form.make,
+                condition: this.form.condition,
+                Comments: this.form.comment
+            }
+            console.log(newRecord);
+            axios.post("http://localhost:8085/items")
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+
+     /* Submit() {
+        this.errors = {};
+        axios.post('http://localhost:8080/#/adminpanel/currentstatus', this.form).then(response => {
+            alert("Message sent!");
+        }).catch (error => {
+            if (error.response.status === 422) {
+                this.errors = error.response.data.errors || {};
+            }
+        });
+      },*/
       onReset(evt) {
         evt.preventDefault()
         // Reset our form values

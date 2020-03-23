@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+//const Schema = mongoose.Schema;
 
 const itemSchema = new mongoose.Schema({
     Id: {
@@ -7,8 +8,11 @@ const itemSchema = new mongoose.Schema({
     Main_Category: {
         type: String
     },
-    Asset_Code: {
+    Asset_Description: {
         type: String
+    },
+    Asset_Code: {
+        type: Number
     },
     Make: {
         type: String
@@ -21,4 +25,4 @@ const itemSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("item", itemSchema);
+module.exports = mongoose.model("items", itemSchema);
