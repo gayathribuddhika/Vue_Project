@@ -51,9 +51,9 @@ router.post('/', function(req,res){
 db.collection('CIS/LAB/01').insertOne(data,function(err, collection){ 
         if (err) throw err; 
         console.log("Record inserted Successfully"); 
-              
-    }); 
           
+    }); 
+         
     return res.redirect('./adminpanel/currentstatus'); 
 }) 
 
