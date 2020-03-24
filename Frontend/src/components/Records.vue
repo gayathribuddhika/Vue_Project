@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <b-card bg-variant="light" body-class="text-center">  
         <b-form @reset="onReset" v-if="show">
             <b-form-group
@@ -61,7 +62,7 @@
                     <b-form-input
                         id="record_code"
                         v-model="form.code"
-                        type="number"
+                        type="string"
                         required
                     >
                     </b-form-input>
@@ -90,7 +91,7 @@
                         id="record_make"
                         v-model="form.make"
                         type="text"
-                        required
+                        
                     >
                     </b-form-input>
                 </b-form-group>
@@ -104,7 +105,7 @@
                         id="record_condition"
                         v-model="form.condition"
                         type="text"
-                        required
+                        
                     >
                     </b-form-input>
                 </b-form-group>

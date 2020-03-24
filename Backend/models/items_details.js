@@ -14,7 +14,7 @@ const itemSchema = new mongoose.Schema({
         type: String
     },
     Asset_Code: {
-        type: Number
+        type: String
     },
     Make: {
         type: String
