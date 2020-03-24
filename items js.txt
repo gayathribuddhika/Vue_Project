@@ -1,3 +1,5 @@
+items.js
+
 const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
@@ -9,7 +11,7 @@ router.get('/', async(req, res) => {
     res.send(await records.find({}).toArray());
 });
 
-/*router.post('/', async (req, res) => {
+router.post('/', async (req, res) => {
     const records = await loadRecordscollection();
     await records.insertOne({
         Id: req.body.id,

@@ -4,9 +4,6 @@ const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
 
 //get posts
-/*router.get('/', (req, res) => {
-    res.send("Hello Contacts");
-});
 
 /*
 router.get('/', function (req, res, next) {
