@@ -9,17 +9,17 @@ router.get('/', async(req, res) => {
     res.send(await records.find({}).toArray());
 });
 
-/*router.post('/', async (req, res) => {
+router.post('/', async (req, res) => {
     const records = await loadRecordscollection();
     await records.insertOne({
         Id: req.body.id,
-        Main_Category: req.body.category,
-        Asset_Description: req.body.description,
-        Asset_Code: req.body.code,
-        Qty: req.body.qty,
-        Make: req.body.make,
-        Condition: req.body.condition,
-        Comments: req.body.comment
+        Main_Category: req.body.Main_Category,
+        Asset_Description: req.body.Asset_Description,
+        Asset_Code: req.body.Asset_Code,
+        Qty: req.body.Qty,
+        Make: req.body.Make,
+        Condition: req.body.Condition,
+        Comments: req.body.Comments
     });
     
     res.status(201).send();

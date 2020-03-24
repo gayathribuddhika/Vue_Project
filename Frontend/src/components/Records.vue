@@ -122,7 +122,7 @@
                     </b-textarea>
                 </b-form-group>
                 
-            <b-button type="submit" variant="primary" @click= "addToRecords">Submit</b-button>
+            <b-button type="submit" variant="primary" @click= "addToRecords" v-if="show">Submit</b-button>
             <b-button type="reset" variant="danger">Reset</b-button>
             </b-form-group>
         </b-form>
@@ -157,6 +157,7 @@ import axios from 'axios';
       }
     },
     methods: {
+         
         addToRecords() {
             let newRecord = {
                 id: this.form.id,
@@ -169,9 +170,11 @@ import axios from 'axios';
                 Comments: this.form.comment
             }
             console.log(newRecord);
-            axios.post("http://localhost:8085/items")
+            axios.post("http://localhost:8085/items", newRecord)
                 .then((response) => {
                     console.log(response);
+                    //alert("Successfully Added to Database")
+                    
                 })
                 .catch((error) => {
                     console.log(error);

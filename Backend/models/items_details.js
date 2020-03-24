@@ -1,37 +1,30 @@
-"use strict"
-
 const mongoose = require('mongoose');
 //const Schema = mongoose.Schema;
 
 const itemSchema = new mongoose.Schema({
     Id: {
-        type: Number,
-        required:"Please Enter"
+        type: Number
+        
     },
     Main_Category: {
-        type: String,
-        required:"Please Enter"
+        type: String
+        
     },
     Asset_Description: {
-        type: String,
-        required:"Please Enter"
+        type: String
     },
     Asset_Code: {
-        type: Number,
-        required:"Please Enter"
+        type: Number
     },
     Make: {
-        type: String,
-        required:"Please Enter"
+        type: String
     },
     Condition: {
-        type: String,
-        required:"Please Enter"
+        type: String
     },
     Comments: {
-        type: String,
-        required:"Please Enter"
+        type: String
     }
 });
 
-module.exports = mongoose.model("items", itemSchema);
+module.exports = mongoose.model("item", itemSchema);
