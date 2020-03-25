@@ -1,8 +1,10 @@
 <template>
 <div>
+  
+  <h6><router-link to="adminpanel">Back to Dashboard</router-link></h6>
   <center><h2>Current Details of Items</h2></center>
   <br>
-  <table id="firstTable">
+  <table>
   <thead>
     <tr>
       <th>ID</th>
@@ -13,6 +15,7 @@
       <th>Make</th>
       <th>Condition</th>
       <th>Comments</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +28,7 @@
       <td>{{item.Make}}</td>
       <td>{{item.Condition}}</td>
       <td>{{item.Comments}}</td>
+      <td><button>Edit</button><button>Delete</button></td>
     </tr>
   </tbody>
 </table>
@@ -58,13 +62,15 @@ export default {
 </script>
 
 <style>
+
 table {
   font-family: 'Open Sans', sans-serif;
-  width: 99%;
+  width: 98.7%;
   border-collapse: collapse;
   border: 3px solid #44475C;
   margin: 10px 10px 10px 10px;
 }
+
 table th {
   text-transform: uppercase;
   text-align: left;
@@ -79,10 +85,18 @@ table td {
   padding: 8px;
   border-right: 2px solid #7D82A8;
 }
+
 table td:last-child {
   border-right: none;
 }
+
 table tbody tr:nth-child(2n) td {
   background: #D4D8F9;
 }
+
+h6 {
+margin-top: 10px;
+margin-left: 10px;
+}
+
 </style>
