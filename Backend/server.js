@@ -18,8 +18,11 @@ app.use('/', indexRouter);
 const contactRouter = require('./routes/contact');
 app.use('/contact', contactRouter);
 
-const loginRouter = require('./routes/adsf_login');
-app.use('/login', loginRouter);
+const staffloginRouter = require('./routes/stafflogin');
+app.use('/stafflogin', staffloginRouter);
+
+const adminloginRouter = require('./routes/adminlogin');
+app.use('/adminlogin', adminloginRouter);
 
 const itemRouter = require('./routes/items');
 app.use('/items', itemRouter);
