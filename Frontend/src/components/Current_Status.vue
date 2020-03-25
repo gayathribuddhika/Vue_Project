@@ -56,8 +56,10 @@ export default {
     .catch((error) => {
       console.log(error);
     });
-
+  //delete records
   }
+
+  
 }
 </script>
 
