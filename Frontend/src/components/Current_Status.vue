@@ -28,7 +28,8 @@
       <td>{{item.Make}}</td>
       <td>{{item.Condition}}</td>
       <td>{{item.Comments}}</td>
-      <td><button>Edit</button><button>Delete</button></td>
+      <td><button>Edit</button>
+      <button @click.stop="deleteitem(item._id)">Delete</button></td>
     </tr>
   </tbody>
 </table>
@@ -47,6 +48,20 @@ export default {
       
     }
   },
+  methods: {
+    deleteitem (itemid) {
+      axios.delete('http://localhost:8085/items' + itemid)
+      .then((result) => {
+        this.$router.push({
+          name: 'Current_Status'
+        })
+      })
+      .catch(e => {
+        this.errors.push(e)
+      })
+    }
+  },
+
   mounted () {
     axios.get('http://localhost:8085/items')
     .then((response) => {
