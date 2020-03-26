@@ -30,13 +30,11 @@ export default {
     padding-top: 30px;
     padding-bottom: 10px;
     background-color:lightblue;
-    
+
 }
 #home {
   text-align: center;
   padding-top: 10%;
-  
-  
 }
 
 </style>
