@@ -2,14 +2,16 @@
 <div id="homepage">
     <b-container width="100%">
       <b-row>
-        <b-col md="5">
+        <b-col md="8">  
+          <div id="home"> 
+            <h1>Welcome!!!</h1>
+            <h2>Faculty of Applied Sciences</h2>
+            <h2>Sabaragamuwa University of Sri Lanka</h2>
+          </div>
+        </b-col>
+        <b-col md="4">
           <b-img :src="require('../assets/lab2.jpg')"></b-img>
         </b-col> 
-        <b-col md="5">   
-          <h1>Welcome!!!</h1>
-          <h2>Faculty of Applied Sciences</h2>
-          <h2>Sabaragamuwa University of Sri Lanka</h2>
-        </b-col>
       </b-row>
     </b-container>
         
@@ -29,4 +31,10 @@ export default {
     padding-bottom: 10px;
     
 }
+#home {
+  text-align: center;
+  padding-top: 10%;
+  
+}
+
 </style>
