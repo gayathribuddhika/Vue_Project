@@ -14,15 +14,19 @@
     </b-card-body>
 
     <b-list-group variant="dark">
+      <div>
       <b-list-group-item variant="dark" href="#">Dashboard</b-list-group-item>
       <b-list-group-item variant="dark"><router-link to = "currentstatus">Current Status</router-link></b-list-group-item>
       <b-list-group-item variant="dark" href="#">Add New Record</b-list-group-item>
       <b-list-group-item variant="dark" href="#">Delete a Record</b-list-group-item>
       <b-list-group-item variant="dark" href="#">Create a Report</b-list-group-item>
       <b-list-group-item variant="dark" href="#">Edit Profile</b-list-group-item>
-      <b-list-group-item variant="dark"><router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link></b-list-group-item>
+      <b-list-group-item variant="dark">Logout</b-list-group-item>
+      </div>
+      
     </b-list-group>
-    <router-view @authenticated="setAuthenticated" />
+    
+    
     </b-card>
     
     <b-card title="Dashboard">
@@ -36,32 +40,16 @@
 
 
 <script>
-//import current_status from '@/components/Current_Status';
+import current_status from '@/components/Current_Status';
 
 export default {
   name: 'AdminPanel',
   data() {
     return {
-      authenticated: false,
-        mockAccount: {
-          username: "admin",
-          password: "admin123"
-                }
-            }
+      
     
-  },
-  mounted() {
-            if(!this.authenticated) {
-                this.$router.replace({ name: "Login" });
-            }
-        },
-        methods: {
-            setAuthenticated(status) {
-                this.authenticated = status;
-            },
-            logout() {
-                this.authenticated = false;
-            }
-        }
+  }
+  
+}
 }
 </script>>
