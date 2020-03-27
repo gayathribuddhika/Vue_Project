@@ -16,7 +16,7 @@
         
         <div>
           <b-card bg-variant="" text-variant="dark" border-variant="dark">
-            <b-form @submit.prevent="submit1">
+            <b-form @submit.prevent="login1">
             <b-form-group
               label="Username:"
               label-for="username1"
@@ -25,7 +25,6 @@
               id="username1"
               placeholder="Enter your username"
               required
-              :class="{ 'hasError': $v.form1.username1.$error }"
               v-model= "form1.username1"
             />
             </b-form-group>
@@ -39,7 +38,6 @@
               type="password"
               placeholder="Enter your password"
               required
-              :class="{ 'hasError': $v.form1.password1.$error }"
               v-model= "form1.password1"
             /> <br>
             <a href="#">Forgot your password?</a>
@@ -54,7 +52,7 @@
       <b-col md="6">   
         <div>
           <b-card bg-variant="" text-variant="dark" border-variant="dark">
-            <b-form @submit.prevent="submit2">
+            <b-form @submit.prevent="login2">
             <b-form-group
               label="Username:"
               label-for="username2"
@@ -63,7 +61,6 @@
               id="username2"
               placeholder="Enter your username"
               required
-              :class="{ 'hasError': $v.form2.username2.$error }"
               v-model= "form2.username2"
             />
             </b-form-group>
@@ -77,7 +74,6 @@
               type="password"
               placeholder="Enter your password"
               required
-              :class="{ 'hasError': $v.form2.password2.$error }"
               v-model= "form2.password2"
             /> <br>
             <a href="#">Forgot your password?</a>
@@ -95,6 +91,7 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+import axios from 'axios';
   
   export default{
     name: "Login",
@@ -124,10 +121,17 @@ import { required } from 'vuelidate/lib/validators'
   },
 
   methods: {
-    submit1() {
-      this.$v.form1.$touch();
-      if(this.$v.form1.$error) return 
-      alert("Successfully logedin");
+    login1() {
+      const username = axios.get('http://localhost:8085/adminlogin');
+      const password = axios.get('http://localhost:8085/adminlogin');
+
+      if(this.form1.username1 !== this.username && this.form1.password1 !== this.password){
+        this.$router.replace({name: "AdminPanel"});
+      } else {
+        console.log("The username and / or password is incorrect");
+      }
+    }
+  },
      /* if(this.form1.username1 != "" && this.input.password1 != "") {
         if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
           this.$emit("authenticated", true);
@@ -138,16 +142,29 @@ import { required } from 'vuelidate/lib/validators'
       } else {
         console.log("A username and password must be present");
       }
-    }*/
+    }
     },
     submit2() {
       this.$v.form2.$touch();
       if(this.$v.form2.$error) return 
       alert("Successfully logedin");
     }
+  },*/
+
+  mounted () {
+    axios.get('http://localhost:8085/adminlogin')
+    .then((response) => {
+      console.log(response.data);
+      this.contacts = response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
   }
   
 }
+
 
 </script>
 
