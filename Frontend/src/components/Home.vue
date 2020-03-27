@@ -7,6 +7,11 @@
             <h1>Welcome!!!</h1>
             <h2>Faculty of Applied Sciences</h2>
             <h2>Sabaragamuwa University of Sri Lanka</h2>
+            <div class = "bttn">
+                <router-link to="/login">
+                    <b-button type="button" variant="primary">Login</b-button>
+                </router-link>
+            </div>
           </div>
         </b-col>
         <b-col md="4">

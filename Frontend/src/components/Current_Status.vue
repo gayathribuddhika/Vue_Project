@@ -1,8 +1,8 @@
 <template>
 <div>
   
-  <b-card no-body>
-    <b-tabs pills card>
+  <b-card no-body >
+    <b-tabs pills card width="100%" content-class="mt-3" justified >
       <b-tab title="CIS/LAB/01" active>
         <b-card-text>
           <center><h2>Current Details of Items - CIS/LAB/01</h2></center>
@@ -38,7 +38,41 @@
           </table>
         </b-card-text>
       </b-tab>
-      <b-tab title="CIS/LAB/02"><b-card-text><center><h2>Current Details of Items - CIS/LAB/02</h2></center></b-card-text></b-tab>
+      <b-tab title="CIS/LAB/02">
+        <b-card-text>
+          <center><h2>Current Details of Items - CIS/LAB/02</h2></center>
+          <br>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Main Category</th>
+                <th>Asset Description</th>
+                <th>Asset Code</th>
+                <th>Qty</th>
+                <th>Make</th>
+                <th>Condition</th>
+                <th>Comments</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in items" v-bind:key="item._id">
+                <td>{{item.Id}}</td>
+                <td>{{item.Main_Category}}</td>
+                <td>{{item.Asset_Description}}</td>
+                <td>{{item.Asset_Code}}</td>
+                <td>{{item.Qty}}</td>
+                <td>{{item.Make}}</td>
+                <td>{{item.Condition}}</td>
+                <td>{{item.Comments}}</td>
+                <td><button>Edit</button>
+                <button @click.stop="deleteitem(item._id)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </b-card-text>
+      </b-tab>
       <b-tab title="CIS/LAB/03"><b-card-text></b-card-text></b-tab>
       <b-tab title="CIS/LAB/04"><b-card-text></b-card-text></b-tab>
       <b-tab title="CIS/LAB/05"><b-card-text></b-card-text></b-tab>
@@ -61,7 +95,7 @@ export default {
   },
   methods: {
     //delete records
-    deleteitem (itemid) {
+    /*deleteitem (itemid) {
       axios.delete('http://localhost:8085/items' + itemid)
       .then((result) => {
         this.$router.push({
@@ -71,11 +105,11 @@ export default {
       .catch(e => {
         this.errors.push(e)
       })
-    }
+    }*/
   },
 
   mounted () {
-    axios.get('http://localhost:8085/items')
+    axios.get('http://localhost:8085/lab/lab1')
     .then((response) => {
       console.log(response.data);
       this.items = response.data;
@@ -94,7 +128,7 @@ export default {
 
 table {
   font-family: 'Open Sans', sans-serif;
-  width: 98.7%;
+  width: 100%;
   border-collapse: collapse;
   border: 3px solid #44475C;
   margin: 10px 10px 10px 10px;

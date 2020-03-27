@@ -4,14 +4,24 @@ const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
 
 
-router.get('/', async(req, res) => {
-    const records = await loadRecordscollection();
-    res.send(await records.find({}).toArray());
+router.get('/lab1', async(req, res) => {
+    const lab1 = await loadLab1collection();
+    res.send(await lab1.find({}).toArray());
+});
+
+router.get('/lab2', async(req, res) => {
+    const lab2 = await loadLab2collection();
+    res.send(await lab2.find({}).toArray());
+});
+
+router.get('/lab3', async(req, res) => {
+    const lab3 = await loadLab2collection();
+    res.send(await lab2.find({}).toArray());
 });
 
 router.post('/', async (req, res) => {
-    const records = await loadRecordscollection();
-    await records.insertOne({
+    const lab3 = await loadLab3collection();
+    await lab3.insertOne({
         Id: req.body.id,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
@@ -39,9 +49,17 @@ router.delete('/:id', function(req, res, next) {
   });
 
 
-async function loadRecordscollection() {
+async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('Inventory_FAS').collection("CIS/LAB/01")
+}
+async function loadLab2collection() {
+    const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
+    return client.db('Inventory_FAS').collection("CIS/LAB/02")
+}
+async function loadLab3collection() {
+    const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
+    return client.db('Inventory_FAS').collection("CIS/LAB/03")
 }
 
 
