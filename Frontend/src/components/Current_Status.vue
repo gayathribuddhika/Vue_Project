@@ -1,39 +1,50 @@
 <template>
 <div>
   
-  <h6><router-link to="adminpanel">Back to Dashboard</router-link></h6>
-  <center><h2>Current Details of Items</h2></center>
-  <br>
-  <table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Main Category</th>
-      <th>Asset Description</th>
-      <th>Asset Code</th>
-      <th>Qty</th>
-      <th>Make</th>
-      <th>Condition</th>
-      <th>Comments</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="item in items" v-bind:key="item._id">
-      <td>{{item.Id}}</td>
-      <td>{{item.Main_Category}}</td>
-      <td>{{item.Asset_Description}}</td>
-      <td>{{item.Asset_Code}}</td>
-      <td>{{item.Qty}}</td>
-      <td>{{item.Make}}</td>
-      <td>{{item.Condition}}</td>
-      <td>{{item.Comments}}</td>
-      <td><button>Edit</button>
-      <button @click.stop="deleteitem(item._id)">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
-</div>   
+  <b-card no-body>
+    <b-tabs pills card>
+      <b-tab title="CIS/LAB/01" active>
+        <b-card-text>
+          <center><h2>Current Details of Items - CIS/LAB/01</h2></center>
+          <br>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Main Category</th>
+                <th>Asset Description</th>
+                <th>Asset Code</th>
+                <th>Qty</th>
+                <th>Make</th>
+                <th>Condition</th>
+                <th>Comments</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in items" v-bind:key="item._id">
+                <td>{{item.Id}}</td>
+                <td>{{item.Main_Category}}</td>
+                <td>{{item.Asset_Description}}</td>
+                <td>{{item.Asset_Code}}</td>
+                <td>{{item.Qty}}</td>
+                <td>{{item.Make}}</td>
+                <td>{{item.Condition}}</td>
+                <td>{{item.Comments}}</td>
+                <td><button>Edit</button>
+                <button @click.stop="deleteitem(item._id)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </b-card-text>
+      </b-tab>
+      <b-tab title="CIS/LAB/02"><b-card-text><center><h2>Current Details of Items - CIS/LAB/02</h2></center></b-card-text></b-tab>
+      <b-tab title="CIS/LAB/03"><b-card-text></b-card-text></b-tab>
+      <b-tab title="CIS/LAB/04"><b-card-text></b-card-text></b-tab>
+      <b-tab title="CIS/LAB/05"><b-card-text></b-card-text></b-tab>
+      </b-tabs>
+  </b-card>
+</div>
 </template>
 
 <script>

@@ -13,6 +13,20 @@
             >
                 <b-form-group
                     label-cols-sm="3"
+                    label="Select LAB"
+                    label-for="select_lab"
+                    label-align-sm="right"
+                >
+                    <b-form-select
+                        id="select_lab"
+                        v-model="form.select_lab"
+                        required
+                        :options="select_labs"
+                    >
+                    </b-form-select>
+                </b-form-group>
+                <b-form-group
+                    label-cols-sm="3"
                     label="ID"
                     label-for="record_id"
                     label-align-sm="right"
@@ -149,6 +163,8 @@ import axios from 'axios';
           comment: ''
         },
 
+        select_labs: [{ text: 'Select One', value: null }, 'CIS/LAB/01', 'CIS/LAB/02', 'CIS/LAB/03', 'CIS/LAB/04', 'CIS/LAB/05'],
+        show: true,
         
         categories: [{ text: 'Select One', value: null }, 'Computer', 'Accessories', 'Office Equipments', 'Communication Equipments', 'Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System)', 'Furniture', 'Other'],
         show: true,
