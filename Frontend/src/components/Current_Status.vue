@@ -60,6 +60,7 @@ export default {
     }
   },
   methods: {
+    //delete records
     deleteitem (itemid) {
       axios.delete('http://localhost:8085/items' + itemid)
       .then((result) => {
@@ -82,7 +83,7 @@ export default {
     .catch((error) => {
       console.log(error);
     });
-  //delete records
+  
   }
 
   
