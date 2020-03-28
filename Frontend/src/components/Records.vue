@@ -2,7 +2,7 @@
   <div>
     
     <b-card bg-variant="light" body-class="text-center">  
-        <b-form @reset="onReset" v-if="show">
+        <b-form @reset="onReset" v-if="show" >
             <b-form-group
                 label-cols-lg="3"
                 label="Add a New Record"
@@ -37,6 +37,7 @@
                         v-model="form.id"
                         type="number"
                         required
+                        :class="{ 'hasError': $v.form.id.$error } "
                     >
                     </b-form-input>
                 </b-form-group>
@@ -51,6 +52,7 @@
                         v-model="form.category"
                         required
                         :options="categories"
+                        :class="{ 'hasError': $v.form.category.$error } "
                     >
                     </b-form-select>
                 </b-form-group>
@@ -65,6 +67,7 @@
                         v-model="form.description"
                         required
                         :options="descriptions"
+                        :class="{ 'hasError': $v.form.description.$error } "
                     >
                     </b-form-select>
                 </b-form-group>
@@ -79,6 +82,7 @@
                         v-model="form.code"
                         type="string"
                         required
+                        :class="{ 'hasError': $v.form.code.$error } "
                     >
                     </b-form-input>
                 </b-form-group>
@@ -93,6 +97,7 @@
                         v-model="form.qty"
                         type="number"
                         required
+                        :class="{ 'hasError': $v.form.qty.$error } "
                     >
                     </b-form-input>
                 </b-form-group>
@@ -138,7 +143,7 @@
                     </b-textarea>
                 </b-form-group>
                 
-            <b-button type="submit" variant="primary" @click= "addToRecords">Submit</b-button>
+            <b-button type="submit" variant="primary" @click="addToRecords">Submit</b-button>
             <b-button type="reset" variant="danger">Reset</b-button>
             </b-form-group>
         </b-form>
@@ -148,6 +153,7 @@
 
 <script>
 import axios from 'axios';
+import { required } from "vuelidate/lib/validators";
 
   export default {
       name: 'Records',
@@ -164,16 +170,31 @@ import axios from 'axios';
           comment: ''
         },
 
-        select_labs: [{ text: 'Select One', value: null }, 'CIS/LAB/01', 'CIS/LAB/02', 'CIS/LAB/03', 'CIS/LAB/04', 'CIS/LAB/05'],
-        show: true,
+        /*select_labs: [{ text: 'Select One', value: null }, 'CIS/LAB/01', 'CIS/LAB/02', 'CIS/LAB/03', 'CIS/LAB/04', 'CIS/LAB/05'],
+        show: true,*/
         
         categories: [{ text: 'Select One', value: null }, 'Computer', 'Accessories', 'Office Equipments', 'Communication Equipments', 'Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System)', 'Furniture', 'Other'],
         show: true,
 
         descriptions: [{ text: 'Select One', value: null }, 'Fans', 'ACs', 'Whiteboard', 'Projector', 'Projector Screen', 'Sound System', 'Printer', 'Monitor', 'System Unit', 'UPS', 'Mouse', 'Keyboard', 'Computer Table', 'Computer Chair', 'Normal Chair', 'Computrt Table', 'Telephone', 'Laminationg Machine', 'Photocopy Machine'],
-        show: true
-      }
+        show: true,
+
+        submitted: false
+      };
+     
     },
+
+    validations: {
+          form: {
+              id: { required },
+              category: { required },
+              description: { required },
+              code: { required },
+              qty: { required }
+          }
+          
+    },
+
     methods: {
          
         addToRecords() {
@@ -187,6 +208,11 @@ import axios from 'axios';
                 condition: this.form.condition,
                 Comments: this.form.comment
             }
+            this.submitted = true;
+            this.$v.$touch();
+                if (this.$v.form.$error) {
+                    return;
+                } else
             console.log(newRecord);
             axios.post("http://localhost:8085/lab/lab1", newRecord)
                 .then((response) => {
@@ -199,6 +225,18 @@ import axios from 'axios';
                 });
         },
 
+        /*handleSubmit(e) {
+                this.submitted = true;
+
+                // stop here if form is invalid
+                this.$v.$touch();
+                if (this.$v.$invalid) {
+                    return;
+                }
+
+                alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
+            },
+*/
      
       onReset(evt) {
         evt.preventDefault()
