@@ -94,18 +94,7 @@ export default {
     }
   },
   methods: {
-    //delete records
-    /*deleteitem (itemid) {
-      axios.delete('http://localhost:8085/items' + itemid)
-      .then((result) => {
-        this.$router.push({
-          name: 'Current_Status'
-        })
-      })
-      .catch(e => {
-        this.errors.push(e)
-      })
-    }*/
+    
   },
 
   mounted () {

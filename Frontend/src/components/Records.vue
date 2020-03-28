@@ -11,7 +11,7 @@
                 
                 class="mb-0"
             >
-                <b-form-group
+                <!-- <b-form-group
                     label-cols-sm="3"
                     label="Select LAB"
                     label-for="select_lab"
@@ -24,12 +24,13 @@
                         :options="select_labs"
                     >
                     </b-form-select>
-                </b-form-group>
+                </b-form-group> -->
                 <b-form-group
                     label-cols-sm="3"
                     label="ID"
                     label-for="record_id"
                     label-align-sm="right"
+                    
                 >
                     <b-form-input
                         id="record_id"
@@ -137,7 +138,7 @@
                     </b-textarea>
                 </b-form-group>
                 
-            <b-button type="submit" variant="primary" @click= "addToRecords" v-if="show">Submit</b-button>
+            <b-button type="submit" variant="primary" @click= "addToRecords">Submit</b-button>
             <b-button type="reset" variant="danger">Reset</b-button>
             </b-form-group>
         </b-form>
@@ -187,7 +188,7 @@ import axios from 'axios';
                 Comments: this.form.comment
             }
             console.log(newRecord);
-            axios.post("http://localhost:8085/items", newRecord)
+            axios.post("http://localhost:8085/lab/lab1", newRecord)
                 .then((response) => {
                     console.log(response);
                     //alert("Successfully Added to Database")
@@ -198,16 +199,7 @@ import axios from 'axios';
                 });
         },
 
-     /* Submit() {
-        this.errors = {};
-        axios.post('http://localhost:8080/#/adminpanel/currentstatus', this.form).then(response => {
-            alert("Message sent!");
-        }).catch (error => {
-            if (error.response.status === 422) {
-                this.errors = error.response.data.errors || {};
-            }
-        });
-      },*/
+     
       onReset(evt) {
         evt.preventDefault()
         // Reset our form values
