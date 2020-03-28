@@ -11,7 +11,7 @@
                 
                 class="mb-0"
             >
-                <!-- <b-form-group
+                <b-form-group
                     label-cols-sm="3"
                     label="Select LAB"
                     label-for="select_lab"
@@ -24,7 +24,7 @@
                         :options="select_labs"
                     >
                     </b-form-select>
-                </b-form-group> -->
+                </b-form-group> 
                 <b-form-group
                     label-cols-sm="3"
                     label="ID"
@@ -80,9 +80,9 @@
                     <b-form-input
                         id="record_code"
                         v-model="form.code"
-                        type="string"
+                        type="text"
                         required
-                        :class="{ 'hasError': $v.form.code.$error } "
+                        :class="{ 'hasError': $v.form.code.$error }"
                     >
                     </b-form-input>
                 </b-form-group>
@@ -97,7 +97,7 @@
                         v-model="form.qty"
                         type="number"
                         required
-                        :class="{ 'hasError': $v.form.qty.$error } "
+                        :class="{ 'hasError': $v.form.qty.$error }"
                     >
                     </b-form-input>
                 </b-form-group>
@@ -160,6 +160,7 @@ import { required } from "vuelidate/lib/validators";
     data() {
       return {
         form: {
+          select_labs: null,
           id: '',
           category: null,
           description: null,
@@ -170,8 +171,8 @@ import { required } from "vuelidate/lib/validators";
           comment: ''
         },
 
-        /*select_labs: [{ text: 'Select One', value: null }, 'CIS/LAB/01', 'CIS/LAB/02', 'CIS/LAB/03', 'CIS/LAB/04', 'CIS/LAB/05'],
-        show: true,*/
+        select_labs: [{ text: 'Select One', value: null }, 'CIS/LAB/01', 'CIS/LAB/02', 'CIS/LAB/03', 'CIS/LAB/04', 'CIS/LAB/05'],
+        show: true,
         
         categories: [{ text: 'Select One', value: null }, 'Computer', 'Accessories', 'Office Equipments', 'Communication Equipments', 'Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System)', 'Furniture', 'Other'],
         show: true,
@@ -186,6 +187,7 @@ import { required } from "vuelidate/lib/validators";
 
     validations: {
           form: {
+              select_labs: { required },
               id: { required },
               category: { required },
               description: { required },
@@ -223,39 +225,31 @@ import { required } from "vuelidate/lib/validators";
                 .catch((error) => {
                     console.log(error);
                 });
-        },
+                if (this.form.select_labs == "CIS/LAB/01"){
 
-        /*handleSubmit(e) {
-                this.submitted = true;
-
-                // stop here if form is invalid
-                this.$v.$touch();
-                if (this.$v.$invalid) {
-                    return;
                 }
 
-                alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
-            },
-*/
-     
-      onReset(evt) {
-        evt.preventDefault()
-        // Reset our form values
-        this.form.id = ''
-        this.form.category = null
-        this.form.description = null
-        this.form.code = ''
-        this.form.qty = ''
-        this.form.make = ''
-        this.form.condition = ''
-        this.form.comment = ''
-        
-        // Trick to reset/clear native browser form validation state
-        this.show = false
-        this.$nextTick(() => {
-          this.show = true
-        })
-      }
+                
+        },
+             
+        onReset(evt) {
+            evt.preventDefault()
+            // Reset our form values
+            this.form.id = ''
+            this.form.category = null
+            this.form.description = null
+            this.form.code = ''
+            this.form.qty = ''
+            this.form.make = ''
+            this.form.condition = ''
+            this.form.comment = ''
+            
+            // Trick to reset/clear native browser form validation state
+            this.show = false
+            this.$nextTick(() => {
+            this.show = true
+            })
+        }
     }
   }
 </script>
