@@ -16,12 +16,12 @@
     <b-list-group variant="dark">
       <div>
       <b-list-group-item variant="dark" href="#">Dashboard</b-list-group-item>
-      <b-list-group-item variant="dark"><router-link to = "currentstatus">Current Status</router-link></b-list-group-item>
-      <b-list-group-item variant="dark" href="#">Add New Record</b-list-group-item>
+      <b-list-group-item variant="dark"><router-link to = "adminpanel/currentstatus">Current Status</router-link></b-list-group-item>
+      <b-list-group-item variant="dark"><router-link to = "records">Add a Record</router-link></b-list-group-item>
       <b-list-group-item variant="dark" href="#">Delete a Record</b-list-group-item>
       <b-list-group-item variant="dark" href="#">Create a Report</b-list-group-item>
       <b-list-group-item variant="dark" href="#">Edit Profile</b-list-group-item>
-      <b-list-group-item variant="dark">Logout</b-list-group-item>
+      <b-list-group-item variant="dark"><router-link to = "login">Logout</router-link></b-list-group-item>
       </div>
       
     </b-list-group>
@@ -31,6 +31,7 @@
     
     <b-card title="Dashboard">
     <br>
+    <Current_Status/>
     
     </b-card>    
     
@@ -44,12 +45,9 @@ import current_status from '@/components/Current_Status';
 
 export default {
   name: 'AdminPanel',
-  data() {
-    return {
-      
-    
+  components:{
+    current_status
   }
   
-}
 }
 </script>>

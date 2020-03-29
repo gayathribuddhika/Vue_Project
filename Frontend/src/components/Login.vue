@@ -16,7 +16,7 @@
         
         <div>
           <b-card bg-variant="" text-variant="dark" border-variant="dark">
-            <b-form @submit.prevent="login1">
+            <b-form @submit.prevent="login1()">
             <b-form-group
               label="Username:"
               label-for="username1"
@@ -122,10 +122,10 @@ import axios from 'axios';
 
   methods: {
     login1() {
-      const username = axios.get('http://localhost:8085/adminlogin');
-      const password = axios.get('http://localhost:8085/adminlogin');
+      const username = axios.get('http://localhost:8085/adminlogin' , username );
+      //const Password = axios.get('http://localhost:8085/adminlogin' , Password )
 
-      if(this.form1.username1 !== this.username && this.form1.password1 !== this.password){
+      if(this.form1.username1 == this.username && this.form1.password1 == this.username){
         this.$router.replace({name: "AdminPanel"});
       } else {
         console.log("The username and / or password is incorrect");

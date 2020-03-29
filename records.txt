@@ -1,3 +1,5 @@
+records.vue
+
 <template>
   <div>
     
@@ -11,7 +13,7 @@
                 
                 class="mb-0"
             >
-                <!--<b-form-group
+                <b-form-group
                     label-cols-sm="3"
                     label="Select LAB"
                     label-for="select_lab"
@@ -24,7 +26,7 @@
                         :options="select_labs"
                     >
                     </b-form-select>
-                </b-form-group> -->
+                </b-form-group> 
                 <b-form-group
                     label-cols-sm="3"
                     label="ID"
@@ -160,7 +162,7 @@ import { required } from "vuelidate/lib/validators";
     data() {
       return {
         form: {
-          
+          select_labs: null,
           id: '',
           category: null,
           description: null,
@@ -171,8 +173,8 @@ import { required } from "vuelidate/lib/validators";
           comment: ''
         },
 
-        /*select_labs: [{ text: 'Select One', value: null }, 'CIS/LAB/01', 'CIS/LAB/02', 'CIS/LAB/03', 'CIS/LAB/04', 'CIS/LAB/05'],
-        show: true,*/
+        select_labs: [{ text: 'Select One', value: null }, 'CIS/LAB/01', 'CIS/LAB/02', 'CIS/LAB/03', 'CIS/LAB/04', 'CIS/LAB/05'],
+        show: true,
         
         categories: [{ text: 'Select One', value: null }, 'Computer', 'Accessories', 'Office Equipments', 'Communication Equipments', 'Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System)', 'Furniture', 'Other'],
         show: true,
@@ -187,7 +189,7 @@ import { required } from "vuelidate/lib/validators";
 
     validations: {
           form: {
-              
+              select_labs: { required },
               id: { required },
               category: { required },
               description: { required },
@@ -214,7 +216,7 @@ import { required } from "vuelidate/lib/validators";
             this.$v.$touch();
                 if (this.$v.form.$error) {
                     return;
-                } else
+                } else if (this.form.select_labs === "CIS/LAB/01") {
                     console.log(newRecord);
                     axios.post("http://localhost:8085/lab/lab1", newRecord)
                     .then((response) => {
@@ -224,8 +226,54 @@ import { required } from "vuelidate/lib/validators";
                 })
                 .catch((error) => {
                     console.log(error);
-                });
-                
+                })
+                } else if (this.form.select_labs == "CIS/LAB/02") {
+                    console.log(newRecord);
+                    axios.post("http://localhost:8085/lab/lab2", newRecord)
+                    .then((response) => {
+                    console.log(response);
+                    //alert("Successfully Added to Database")
+                    
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+            
+                } else if (this.form.select_labs == "CIS/LAB/03") {
+                    console.log(newRecord);
+                    axios.post("http://localhost:8085/lab/lab2", newRecord)
+                    .then((response) => {
+                    console.log(response);
+                    //alert("Successfully Added to Database")
+                    
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+            
+                } else if (this.form.select_labs == "CIS/LAB/04") {
+                    console.log(newRecord);
+                    axios.post("http://localhost:8085/lab/lab4", newRecord)
+                    .then((response) => {
+                    console.log(response);
+                    //alert("Successfully Added to Database")
+                    
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+            
+                } else
+                     onsole.log(newRecord);
+                    axios.post("http://localhost:8085/lab/lab4", newRecord)
+                    .then((response) => {
+                    console.log(response);
+                    //alert("Successfully Added to Database")
+                    
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
                     
                 
 

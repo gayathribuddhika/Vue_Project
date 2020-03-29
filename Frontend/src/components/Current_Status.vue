@@ -5,6 +5,7 @@
     <b-tabs pills card width="100%" content-class="mt-3" justified >
       <b-tab title="CIS/LAB/01" active>
         <b-card-text>
+          <h5><router-link to="/adminpanel">Back</router-link></h5>
           <center><h2>Current Details of Items - CIS/LAB/01</h2></center>
           <br>
           <table>
@@ -40,6 +41,7 @@
       </b-tab>
       <b-tab title="CIS/LAB/02">
         <b-card-text>
+          <h5><router-link to="adminpanel">Back</router-link></h5>
           <center><h2>Current Details of Items - CIS/LAB/02</h2></center>
           <br>
           <table>
@@ -67,7 +69,7 @@
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
                 <td><button>Edit</button>
-                <button @click.stop="deleteitem(item._id)">Delete</button></td>
+                <button @click="deletedata(item._id)">Delete</button></td>
               </tr>
             </tbody>
           </table>
@@ -93,10 +95,15 @@ export default {
       
     }
   },
-  methods: {
-    
-  },
 
+  methods: {
+    deletedata: (items, id) => {
+      axios.delete("http://localhost:8085/lab/lab1" + id)
+      .then((response => this.items.splice(id, 1)),
+      window.location(reload))
+      }
+  },
+  
   mounted () {
     axios.get('http://localhost:8085/lab/lab1')
     .then((response) => {

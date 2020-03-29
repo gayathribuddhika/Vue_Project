@@ -9,7 +9,7 @@ import AdminPanel from '@/components/AdminPanel'
 import StaffPanel from '@/components/StaffPanel'
 import current_status from '@/components/Current_Status'
 import Records from '@/components/Records'
-import Current2 from '@/components/Current2'
+
 
 Vue.use(Router)
 
@@ -47,7 +47,7 @@ export default new Router({
       component: StaffPanel
     },
     {
-      path:'/currentstatus',
+      path:'/adminpanel/currentstatus',
       name:"Current_Status",
       component: current_status
     },
@@ -55,11 +55,6 @@ export default new Router({
       path:'/records',
       name:"Records",
       component: Records
-    },
-    {
-      path:'/currentstatus/current2',
-      name:"Current2",
-      component: Current2
     }
   ]
 })

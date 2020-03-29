@@ -33,6 +33,9 @@ app.use('/lab', lab2Router);
 const lab3Router = require('./routes/labitems');
 app.use('/lab', lab3Router);
 
+const labRouter = require('./routes/labitems');
+app.use('/lab', labRouter);
+
 const port = 8085;
 app.listen(port, () => {
     console.log('server started on port ' + port);

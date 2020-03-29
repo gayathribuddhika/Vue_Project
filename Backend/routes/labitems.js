@@ -71,7 +71,7 @@ router.post('/lab3', async (req, res) => {
     res.status(200).send();
 });
 */
-router.delete('/:id', function(req, res, next) {
+router.delete('/id', function(req, res, next) {
     records.delete(req.params.id, req.body, function (err, post) {
       if (err) return next(err);
       res.json(post);
