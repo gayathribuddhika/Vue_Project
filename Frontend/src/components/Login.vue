@@ -91,7 +91,9 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import axios from 'axios';
+import axios from 'axios'
+import AdminPanel from '@/components/AdminPanel'
+
   
   export default{
     name: "Login",
@@ -121,7 +123,15 @@ import axios from 'axios';
   },
 
   methods: {
-    login1() {
+    login1(){
+      if(this.form1.username1 == "admin" && this.form1.password1 == "admin123" ){
+        this.$router.replace({ name: "AdminPanel"})
+      }else {
+        console.log("The username and / or password is incorrect");
+      }
+    },
+    
+    /*login1() {
       const username = axios.get('http://localhost:8085/adminlogin' , username );
       //const Password = axios.get('http://localhost:8085/adminlogin' , Password )
 
@@ -132,7 +142,17 @@ import axios from 'axios';
       }
     }
   },
-     /* if(this.form1.username1 != "" && this.input.password1 != "") {
+     login1(){
+       
+        if(this.form1.username1 == this.$parent.adminAccount.username && this.form1.password1 == this.$parent.adminAccount.password) {
+          this.$emit("authenticated", true);
+            this.$router.replace({ name: "AdminPanel" });
+        } else {
+          console.log("The username and / or password is incorrect");
+        }
+      
+     },
+     /*if(this.form1.username1 != "" && this.input.password1 != "") {
         if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
           this.$emit("authenticated", true);
             this.$router.replace({ name: "secure" });
@@ -143,14 +163,14 @@ import axios from 'axios';
         console.log("A username and password must be present");
       }
     }
-    },
-    submit2() {
+    },*/
+    /*submit2() {
       this.$v.form2.$touch();
       if(this.$v.form2.$error) return 
       alert("Successfully logedin");
     }
   },*/
-
+/*
   mounted () {
     axios.get('http://localhost:8085/adminlogin')
     .then((response) => {
@@ -161,11 +181,11 @@ import axios from 'axios';
       console.log(error);
     });
 
-  }
+  }*/
   
 }
 
-
+  }
 </script>
 
 

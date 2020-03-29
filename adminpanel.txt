@@ -1,3 +1,6 @@
+AdminPanel.vue
+
+
 <template>
 <div>
   <b-card-group>
@@ -31,7 +34,7 @@
     
     <b-card title="Dashboard">
     <br>
-    
+    <Current_Status/>
     
     </b-card>    
     
@@ -41,35 +44,18 @@
 
 
 <script>
-//import current_status from '@/components/Current_Status';
+import current_status from '@/components/Current_Status';
 
 export default {
   name: 'AdminPanel',
-  /*components:{
+  components:{
     current_status
-  },*/
-  /*data() {
-    return {
-      authenticated: false,
-      adminAccount:{
-        username:"adminims",
-        password: "admin123ims"
-      }
-    }
-  },
-  mounted() {
-    if(!this.authenticated) {
-                this.$router.replace({ name: "Login" });
-            }
-  },
-  methods: {
-    setAuthenticated(status) {
-                this.authenticated = status;
-            },
-            logout() {
-                this.authenticated = false;
-            }
-  },*/
+  }
   
 }
 </script>>
+
+
+
+<div><b-list-group-item variant="dark"><router-link v-if="authenticated" to = "login" v-on:click.native="logout()" replace>Logout</router-link></b-list-group-item></div>
+      <router-view @authenticated="setAuthenticated" />
