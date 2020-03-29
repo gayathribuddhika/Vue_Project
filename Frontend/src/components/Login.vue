@@ -20,6 +20,7 @@
             <b-form-group
               label="Username:"
               label-for="username1"
+              :class="{ 'hasError': $v.form1.username1.$error } "
             >
             <b-form-input
               id="username1"
@@ -32,6 +33,7 @@
             <b-form-group
               label="Password:"
               label-for="password1"
+              :class="{ 'hasError': $v.form1.password1.$error } "
             >
             <b-form-input
               id="password1"
@@ -107,7 +109,9 @@ import AdminPanel from '@/components/AdminPanel'
         form2: {
         username2: '',
         password2: ''
-        }
+        },
+
+        submitted:false
      }
   },
 
@@ -124,7 +128,11 @@ import AdminPanel from '@/components/AdminPanel'
 
   methods: {
     login1(){
-      if(this.form1.username1 == "admin" && this.form1.password1 == "admin123" ){
+      this.submitted = true;
+        this.$v.$touch();
+        if(this.$v.form1.$error){
+          return;
+        } else if(this.form1.username1 == "admin" && this.form1.password1 == "admin123" ){
         this.$router.replace({ name: "AdminPanel"})
       }else {
         console.log("The username and / or password is incorrect");
