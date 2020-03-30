@@ -21,6 +21,7 @@
               label="Username:"
               label-for="username1"
               :class="{ 'hasError': $v.form1.username1.$error } "
+              
             >
             <b-form-input
               id="username1"
@@ -34,6 +35,7 @@
               label="Password:"
               label-for="password1"
               :class="{ 'hasError': $v.form1.password1.$error } "
+              
             >
             <b-form-input
               id="password1"
@@ -77,7 +79,8 @@
               placeholder="Enter your password"
               required
               v-model= "form2.password2"
-            /> <br>
+            /> 
+            <br>
             <a href="#">Forgot your password?</a>
             </b-form-group>
             <b-button type="submit" variant="primary">Login</b-button>
@@ -111,7 +114,7 @@ import AdminPanel from '@/components/AdminPanel'
         password2: ''
         },
 
-        submitted:false
+        
      }
   },
 
@@ -128,16 +131,23 @@ import AdminPanel from '@/components/AdminPanel'
 
   methods: {
     login1(){
-      this.submitted = true;
-        this.$v.$touch();
-        if(this.$v.form1.$error){
-          return;
-        } else if(this.form1.username1 == "admin" && this.form1.password1 == "admin123" ){
+       if (this.form1.username1 == "admin" && this.form1.password1 == "admin123" ){
         this.$router.replace({ name: "AdminPanel"})
-      }else {
-        console.log("The username and / or password is incorrect");
-      }
+        console.log("Login Successfull");
+        
+      } else {
+        console.log("The username and/or password is incorrect");
+        //alert("The username and/or password is incorrect")
+      } 
     },
+
+    /*invalidFeedback() {
+        if (this.form1.username1 !== "admin") {
+          return 'Username is Invalid'
+        } else if (this.form1.password1 !== "admin123") {
+          return 'Password in invalid'
+        }
+      },
     
     /*login1() {
       const username = axios.get('http://localhost:8085/adminlogin' , username );
@@ -178,9 +188,9 @@ import AdminPanel from '@/components/AdminPanel'
       alert("Successfully logedin");
     }
   },*/
-/*
+
   mounted () {
-    axios.get('http://localhost:8085/adminlogin')
+    const Username = axios.get('http://localhost:8085/adminlogin')
     .then((response) => {
       console.log(response.data);
       this.contacts = response.data;
@@ -189,7 +199,7 @@ import AdminPanel from '@/components/AdminPanel'
       console.log(error);
     });
 
-  }*/
+  }
   
 }
 
