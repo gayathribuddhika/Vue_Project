@@ -113,9 +113,10 @@ import AdminPanel from '@/components/AdminPanel'
         username2: '',
         password2: ''
         },
-
+        admin:[]
         
      }
+     
   },
 
   validations: {
@@ -131,9 +132,10 @@ import AdminPanel from '@/components/AdminPanel'
 
   methods: {
     login1(){
-       if (this.form1.username1 == "admin" && this.form1.password1 == "admin123" ){
+       if (this.form1.username1 == axios.get("http://localhost:8085/adminlogin", (req, res) => {res.admin.Username}) && this.form1.password1 == "admin123" ){
         this.$router.replace({ name: "AdminPanel"})
         console.log("Login Successfull");
+        
         
       } else {
         console.log("The username and/or password is incorrect");
@@ -141,11 +143,7 @@ import AdminPanel from '@/components/AdminPanel'
       } 
     },
 
-    getusername (){
-      axios.get("http://localhost:8085/adminlogin").then((res) => {
-        this.username = res.data.Username
-      })
-    },
+    
 
     /*invalidFeedback() {
         if (this.form1.username1 !== "admin") {
