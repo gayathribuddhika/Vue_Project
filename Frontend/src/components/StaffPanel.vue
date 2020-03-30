@@ -3,13 +3,13 @@
   <b-card-group>
   <b-card
     
-    style="max-width: 20rem;"
+    style="max-width: 15rem;"
     img-alt="Image"
     img-top
     body-bg-variant="dark"
     body-text-variant="white"
   >
-  <center><b-img :src="require('../assets/sabra.png')"></b-img></center>
+  <center><b-img :src="require('../assets/proimage.png')"></b-img></center>
     <b-card-body>
       <b-card-title><center>Staff Name</center></b-card-title>
     </b-card-body>

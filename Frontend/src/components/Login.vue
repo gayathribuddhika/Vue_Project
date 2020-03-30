@@ -132,7 +132,7 @@ import AdminPanel from '@/components/AdminPanel'
 
   methods: {
     login1(){
-       if (this.form1.username1 == axios.get("http://localhost:8085/adminlogin", (req, res) => {res.admin.Username}) && this.form1.password1 == "admin123" ){
+       if (this.form1.username1 == "admin" && this.form1.password1 == "admin123" ){
         this.$router.replace({ name: "AdminPanel"})
         console.log("Login Successfull");
         
@@ -142,8 +142,6 @@ import AdminPanel from '@/components/AdminPanel'
         //alert("The username and/or password is incorrect")
       } 
     },
-
-    
 
     /*invalidFeedback() {
         if (this.form1.username1 !== "admin") {

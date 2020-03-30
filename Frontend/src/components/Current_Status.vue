@@ -69,7 +69,7 @@
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
                 <td><button>Edit</button>
-                <b-icon icon="trash"></b-icon></td>
+                <button>Delete</button></td>
               </tr>
             </tbody>
           </table>

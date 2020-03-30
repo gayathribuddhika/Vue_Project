@@ -8,7 +8,7 @@
     body-bg-variant="dark"
     body-text-variant="white"
   >
-  <center><b-img :src="require('../assets/sabra.png')"></b-img></center>
+  <center><b-img :src="require('../assets/proimage.png')"></b-img></center>
     <b-card-body>
       <b-card-title><center>Admin Name</center></b-card-title>
     </b-card-body>
