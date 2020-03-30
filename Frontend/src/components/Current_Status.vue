@@ -96,13 +96,13 @@ export default {
     }
   },
 
-  methods: {
+  /*methods: {
     deletedata: (items, id) => {
       axios.delete("http://localhost:8085/lab/lab1" + id)
       .then((response => this.items.splice(id, 1)),
       window.location(reload))
       }
-  },
+  },*/
   
   mounted () {
     axios.get('http://localhost:8085/lab/lab1')

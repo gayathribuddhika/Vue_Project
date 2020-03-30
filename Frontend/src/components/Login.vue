@@ -20,7 +20,6 @@
             <b-form-group
               label="Username:"
               label-for="username1"
-              :class="{ 'hasError': $v.form1.username1.$error } "
               
             >
             <b-form-input
@@ -34,7 +33,7 @@
             <b-form-group
               label="Password:"
               label-for="password1"
-              :class="{ 'hasError': $v.form1.password1.$error } "
+              
               
             >
             <b-form-input
@@ -104,6 +103,7 @@ import AdminPanel from '@/components/AdminPanel'
     name: "Login",
     data(){
       return{
+        
         form1: {
         username1: '',
         password1: ''
@@ -139,6 +139,12 @@ import AdminPanel from '@/components/AdminPanel'
         console.log("The username and/or password is incorrect");
         //alert("The username and/or password is incorrect")
       } 
+    },
+
+    getusername (){
+      axios.get("http://localhost:8085/adminlogin").then((res) => {
+        this.username = res.data.Username
+      })
     },
 
     /*invalidFeedback() {
@@ -190,10 +196,10 @@ import AdminPanel from '@/components/AdminPanel'
   },*/
 
   mounted () {
-    const Username = axios.get('http://localhost:8085/adminlogin')
+    axios.get('http://localhost:8085/adminlogin')
     .then((response) => {
       console.log(response.data);
-      this.contacts = response.data;
+      this.form1 = response.data;
     })
     .catch((error) => {
       console.log(error);
