@@ -17,7 +17,7 @@
       <div>
       <b-list-group-item variant="dark" href="#">Dashboard</b-list-group-item>
       <b-list-group-item variant="dark"><router-link to = "adminpanel/currentstatus">Current Status</router-link></b-list-group-item>
-      <b-list-group-item variant="dark"><router-link to = "records">Add a Record</router-link></b-list-group-item>
+      <b-list-group-item variant="dark"><router-link to = "adminpanel/records">Add new record</router-link></b-list-group-item>
       <b-list-group-item variant="dark" href="#">Delete a Record</b-list-group-item>
       <b-list-group-item variant="dark" href="#">Create a Report</b-list-group-item>
       <b-list-group-item variant="dark" href="#">Edit Profile</b-list-group-item>
@@ -28,6 +28,7 @@
     
     
     </b-card>
+    
     
     <b-card title="Dashboard">
     <br>

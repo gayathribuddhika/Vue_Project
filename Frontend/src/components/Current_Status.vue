@@ -32,8 +32,7 @@
                 <td>{{item.Make}}</td>
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
-                <td><button>Edit</button>
-                <button @click.stop="deleteitem(item._id)">Delete</button></td>
+                <td><button>Edit</button><button>Delete</button></td>
               </tr>
             </tbody>
           </table>
@@ -68,8 +67,7 @@
                 <td>{{item.Make}}</td>
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
-                <td><button>Edit</button>
-                <button>Delete</button></td>
+                <td><button>Edit</button><button>Delete</button></td>
               </tr>
             </tbody>
           </table>
@@ -88,6 +86,7 @@ import axios from 'axios';
 
 export default {
   name: 'Current_Status',
+  
   data() {
     return {
       items: []

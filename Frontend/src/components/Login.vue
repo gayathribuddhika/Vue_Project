@@ -27,6 +27,7 @@
               placeholder="Enter your username"
               required
               v-model= "form1.username1"
+              
             />
             </b-form-group>
             

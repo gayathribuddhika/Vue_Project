@@ -52,7 +52,7 @@ export default new Router({
       component: current_status
     },
     {
-      path:'/records',
+      path:'/adminpanel/records',
       name:"Records",
       component: Records
     }
