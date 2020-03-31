@@ -2,7 +2,7 @@
   <div>
     
     <b-card bg-variant="light" body-class="text-center">  
-        <b-form @reset="onReset" v-if="show" >
+        <b-form @submit.prevent="addToRecords" @reset="onReset" v-if="show" >
             <b-form-group
                 label-cols-lg="3"
                 label="Add a New Record"
@@ -143,8 +143,11 @@
                     </b-textarea>
                 </b-form-group>
                 
-            <b-button type="submit" variant="primary" @click="addToRecords">Submit</b-button>
+            <b-button type="submit" variant="primary" :disabled="submitted === 'pending'" >Submit</b-button>
             <b-button type="reset" variant="danger">Reset</b-button>
+            <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
+            <p v-if="submitted === 'pending'">Sending...</p>
+            <p v-if="submitted === 'error'">Please fill all the required fields</p>
             </b-form-group>
         </b-form>
     </b-card>
@@ -180,9 +183,9 @@ import { required } from "vuelidate/lib/validators";
         descriptions: [{ text: 'Select One', value: null }, 'Fans', 'ACs', 'Whiteboard', 'Projector', 'Projector Screen', 'Sound System', 'Printer', 'Monitor', 'System Unit', 'UPS', 'Mouse', 'Keyboard', 'Computer Table', 'Computer Chair', 'Normal Chair', 'Computrt Table', 'Telephone', 'Laminationg Machine', 'Photocopy Machine'],
         show: true,
 
-        submitted: false
+        submitted: null
       };
-     
+        
     },
 
     validations: {
@@ -210,15 +213,20 @@ import { required } from "vuelidate/lib/validators";
                 condition: this.form.condition,
                 Comments: this.form.comment
             }
-            this.submitted = true;
+            console.log('submit')
+            
             this.$v.$touch();
-                if (this.$v.form.$error) {
-                    return;
+                if (this.$v.form.error) {
+                    this.submitted = "error";
                 } else
                     console.log(newRecord);
                     axios.post("http://localhost:8085/lab/lab1", newRecord)
                     .then((response) => {
                     console.log(response);
+                    this.submitted = "pending";
+                    setTimeout(() => {
+                       this.submitted = "ok" 
+                    }, 500)
                     //alert("Successfully Added to Database")
                     
                 })
