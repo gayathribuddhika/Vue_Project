@@ -227,7 +227,7 @@ import { required } from "vuelidate/lib/validators";
                     setTimeout(() => {
                        this.submitted = "ok" 
                     }, 500)
-                    //alert("Successfully Added to Database")
+                    
                     
                 })
                 .catch((error) => {
