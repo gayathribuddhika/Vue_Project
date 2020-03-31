@@ -8,8 +8,7 @@
             <hr>
             <div class="contact" 
             v-for="contact in contacts" 
-            v-bind:item="Contacts"
-            v-bind:index="index"
+            v-bind:item="contacts"
             v-bind:key="contact._id"
             >
               <p class="text">{{ contact.Address }}</p>

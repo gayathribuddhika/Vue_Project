@@ -43,6 +43,7 @@
               placeholder="Enter your password"
               required
               v-model= "form1.password1"
+              
             /> <br>
             <a href="#">Forgot your password?</a>
             </b-form-group>

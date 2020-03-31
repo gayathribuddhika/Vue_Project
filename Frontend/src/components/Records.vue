@@ -228,6 +228,7 @@ import { required } from "vuelidate/lib/validators";
                        this.submitted = "ok" 
                     }, 500)
                     
+                    //alert("Successfully Added to Database")
                     
                 })
                 .catch((error) => {
