@@ -71,7 +71,7 @@ router.post('/lab3', async (req, res) => {
       res.json(post);
     });
   });*/
-  router.get('/delete', function(req, res, next) {
+  /*router.get('/delete', function(req, res, next) {
  
     var id = req.query.id;
    
@@ -92,7 +92,7 @@ router.post('/lab3', async (req, res) => {
       });
     });
   });
-
+*/
 
 
 async function loadLab1collection() {
