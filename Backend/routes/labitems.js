@@ -77,8 +77,8 @@ router.post('/lab3', async (req, res) => {
    
     MongoClient.connect(url, function(err, db) {
       if(err) { throw err;  }
-      db.collection('cis', function(err,  cis) {
-        cis.deleteOne({_id: new mongodb.ObjectID(id)});
+      db.collection('CIS/LAB/01', function(err,  db) {
+        CIS/LAB/01.deleteOne({_id: new mongodb.ObjectID(id)});
         if (err){
     
          throw err;
