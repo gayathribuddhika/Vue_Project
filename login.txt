@@ -1,219 +1,149 @@
-<template>
-<div id= "form">
-  <b-jumbotron bg-variant="light" text-variant="dark" border-variant="dark">
-    
-    <b-row>
-    <b-col md="6">
-      <h2><center>Admin Login</center></h2>
-    </b-col>
-    <b-col md="6">
-      <h2><center>Staff Login</center></h2>
-    </b-col>
-    </b-row>
-  <b-container fluid>
-    <b-row>
-      <b-col md="6">
-        
-        <div>
-          <b-card bg-variant="" text-variant="dark" border-variant="dark">
-            <b-form @submit.prevent="login1()">
-            <b-form-group
-              label="Username:"
-              label-for="username1"
-              
-            >
-            <b-form-input
-              id="username1"
-              placeholder="Enter your username"
-              required
-              v-model= "form1.username1"
-              
-            />
-            </b-form-group>
-            
-            <b-form-group
-              label="Password:"
-              label-for="password1"
-              
-              
-            >
-            <b-form-input
-              id="password1"
-              type="password"
-              placeholder="Enter your password"
-              required
-              v-model= "form1.password1"
-              
-            /> <br>
-            <a href="#">Forgot your password?</a>
-            </b-form-group>
-            <b-button type="submit" variant="primary">Login</b-button>
-            </b-form>
-          </b-card>
-        </div>
-      
-      </b-col> 
-      
-      <b-col md="6">   
-        <div>
-          <b-card bg-variant="" text-variant="dark" border-variant="dark">
-            <b-form @submit.prevent="login2">
-            <b-form-group
-              label="Username:"
-              label-for="username2"
-            >
-            <b-form-input
-              id="username2"
-              placeholder="Enter your username"
-              required
-              v-model= "form2.username2"
-            />
-            </b-form-group>
-            
-            <b-form-group
-              label="Password:"
-              label-for="password2"
-            >
-            <b-form-input
-              id="password2"
-              type="password"
-              placeholder="Enter your password"
-              required
-              v-model= "form2.password2"
-            /> 
-            <br>
-            <a href="#">Forgot your password?</a>
-            </b-form-group>
-            <b-button type="submit" variant="primary">Login</b-button>
-            </b-form>
-          </b-card>
-        </div>
-      </b-col> 
-    </b-row>
-  </b-container>
-  </b-jumbotron>
-</div>
-</template>
+server js
 
-<script>
-import { required } from 'vuelidate/lib/validators'
-import axios from 'axios'
-import AdminPanel from '@/components/AdminPanel'
+const express = require('express');
+const app = express ();
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
-  
-  export default{
-    name: "Login",
-    data(){
-      return{
-        
-        form1: {
-        username1: '',
-        password1: ''
-        },
+app.use(express.json());
+app.use(cors());
+app.use(bodyParser.urlencoded({
+    extended:true
+}));
+app.use(bodyParser.json());
 
-        form2: {
-        username2: '',
-        password2: ''
-        },
-        admin:[]
-        
-     }
-     
-  },
+require('./models/db');
 
-  validations: {
-    form1:{
-      username1: {required},
-      password1: {required}
-    },
-    form2:{
-      username2: {required},
-      password2: {required}
-    }
-  },
+const indexRouter = require('./routes/index');
+app.use('/', indexRouter);
 
-  methods: {
-    login1(){
-       if (this.form1.username1 == "admin" && this.form1.password1 == "admin123" ){
-        this.$router.replace({ name: "AdminPanel"})
-        console.log("Login Successfull");
-        
-        
-      } else {
-        console.log("The username and/or password is incorrect");
-        //alert("The username and/or password is incorrect")
-      } 
-    },
+const contactRouter = require('./routes/contact');
+app.use('/contact', contactRouter);
 
-    /*invalidFeedback() {
-        if (this.form1.username1 !== "admin") {
-          return 'Username is Invalid'
-        } else if (this.form1.password1 !== "admin123") {
-          return 'Password in invalid'
-        }
-      },
-    
-    /*login1() {
-      const username = axios.get('http://localhost:8085/adminlogin' , username );
-      //const Password = axios.get('http://localhost:8085/adminlogin' , Password )
+const staffloginRouter = require('./routes/stafflogin');
+app.use('/stafflogin', staffloginRouter);
 
-      if(this.form1.username1 == this.username && this.form1.password1 == this.username){
-        this.$router.replace({name: "AdminPanel"});
-      } else {
-        console.log("The username and / or password is incorrect");
-      }
-    }
-  },
-     login1(){
-       
-        if(this.form1.username1 == this.$parent.adminAccount.username && this.form1.password1 == this.$parent.adminAccount.password) {
-          this.$emit("authenticated", true);
-            this.$router.replace({ name: "AdminPanel" });
-        } else {
-          console.log("The username and / or password is incorrect");
-        }
-      
-     },
-     /*if(this.form1.username1 != "" && this.input.password1 != "") {
-        if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
-          this.$emit("authenticated", true);
-            this.$router.replace({ name: "secure" });
-        } else {
-          console.log("The username and / or password is incorrect");
-        }
-      } else {
-        console.log("A username and password must be present");
-      }
-    }
-    },*/
-    /*submit2() {
-      this.$v.form2.$touch();
-      if(this.$v.form2.$error) return 
-      alert("Successfully logedin");
-    }
-  },*/
+const adminloginRouter = require('./routes/adminlogin');
+app.use('/adminlogin', adminloginRouter);
 
-  mounted () {
-    axios.get('http://localhost:8085/adminlogin')
-    .then((response) => {
-      console.log(response.data);
-      this.form1 = response.data;
-    })
-    .catch((error) => {
-      console.log(error);
+const lab1Router = require('./routes/labitems');
+app.use('/lab', lab1Router);
+
+const lab2Router = require('./routes/labitems');
+app.use('/lab', lab2Router);
+
+const lab3Router = require('./routes/labitems');
+app.use('/lab', lab3Router);
+
+const labRouter = require('./routes/labitems');
+app.use('/lab', labRouter);
+
+const deleteRouter = require('./routes/labitems');
+app.use('/delete', deleteRouter);
+
+const port = 8085;
+app.listen(port, () => {
+    console.log('server started on port ' + port);
+});
+
+
+
+
+
+labitems js
+
+const express = require('express');
+const router = express.Router();
+const mongodb = require('mongodb');
+const url = 'mongodb://localhost:27017/Inventory_FAS';
+
+
+router.get('/lab1', async(req, res) => {
+    const lab1 = await loadLab1collection();
+    res.send(await lab1.find({}).toArray());
+});
+
+router.get('/lab2', async(req, res) => {
+    const lab2 = await loadLab2collection();
+    res.send(await lab2.find({}).toArray());
+});
+
+router.get('/lab3', async(req, res) => {
+    const lab3 = await loadLab3collection();
+    res.send(await lab3.find({}).toArray());
+});
+
+router.post('/lab1', async (req, res) => {
+    const lab1 = await loadLab1collection();
+    await lab1.insertOne({
+        Id: req.body.id,
+        Main_Category: req.body.Main_Category,
+        Asset_Description: req.body.Asset_Description,
+        Asset_Code: req.body.Asset_Code,
+        Qty: req.body.Qty,
+        Make: req.body.Make,
+        Condition: req.body.Condition,
+        Comments: req.body.Comments
     });
+    
+    res.status(201).send();
+});
+router.post('/lab2', async (req, res) => {
+    const lab2 = await loadLab2collection();
+    await lab2.insertOne({
+        Id: req.body.id,
+        Main_Category: req.body.Main_Category,
+        Asset_Description: req.body.Asset_Description,
+        Asset_Code: req.body.Asset_Code,
+        Qty: req.body.Qty,
+        Make: req.body.Make,
+        Condition: req.body.Condition,
+        Comments: req.body.Comments
+    });
+    
+    res.status(201).send();
+});
+router.post('/lab3', async (req, res) => {
+    const lab3 = await loadLab3collection();
+    await lab3.insertOne({
+        Id: req.body.id,
+        Main_Category: req.body.Main_Category,
+        Asset_Description: req.body.Asset_Description,
+        Asset_Code: req.body.Asset_Code,
+        Qty: req.body.Qty,
+        Make: req.body.Make,
+        Condition: req.body.Condition,
+        Comments: req.body.Comments
+    });
+    
+    res.status(201).send();
+});
 
-  }
-  
+/*router.delete('/id', function(req, res, next) {
+    records.delete(req.params.id, req.body, function (err, post) {
+      if (err) return next(err);
+      res.json(post);
+    });
+  });*/
+
+
+
+
+async function loadLab1collection() {
+    const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
+    return client.db('Inventory_FAS').collection("CIS/LAB/01")
+}
+async function loadLab2collection() {
+    const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
+    return client.db('Inventory_FAS').collection("CIS/LAB/02")
+}
+async function loadLab3collection() {
+    const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
+    return client.db('Inventory_FAS').collection("CIS/LAB/03")
 }
 
-  }
-</script>
 
 
-<style>
-#form{
-  margin-top: 20px;
-  
-}
-</style>
+
+
+module.exports = router;

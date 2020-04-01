@@ -29,14 +29,11 @@
               v-model= "form1.username1"
               
             />
-            <div v-if="!$v.form1.username1.$invalid">Username is invalid</div>
             </b-form-group>
             
             <b-form-group
               label="Password:"
               label-for="password1"
-              
-              
             >
             <b-form-input
               id="password1"
@@ -45,7 +42,7 @@
               required
               v-model= "form1.password1"
             /> 
-            <div v-if="!$v.form1.username1.$invalid">Username is invalid</div>
+            
             <br>
             <a href="#">Forgot your password?</a>
             </b-form-group>
@@ -138,7 +135,7 @@ import AdminPanel from '@/components/AdminPanel'
 
   methods: {
     login1(){
-       if (this.form1.username1 == "admin" && this.form1.password1 == "admin123" ){
+       if (this.form1.username1 == "admin" && this.form1.password1 == "admin123"){
         this.$router.replace({ name: "AdminPanel"})
         console.log("Login Successfull");
         
