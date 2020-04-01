@@ -29,7 +29,6 @@
               v-model= "form1.username1"
               
             />
-            <div v-if="!$v.form1.username1.$invalid">Username is invalid</div>
             </b-form-group>
             
             <b-form-group
@@ -44,13 +43,11 @@
               placeholder="Enter your password"
               required
               v-model= "form1.password1"
-            /> 
-            <div v-if="!$v.form1.username1.$invalid">Username is invalid</div>
-            <br>
+              
+            /> <br>
             <a href="#">Forgot your password?</a>
             </b-form-group>
             <b-button type="submit" variant="primary">Login</b-button>
-            <p class="help is-danger" v-show="status" v-text="status"></p>
             </b-form>
           </b-card>
         </div>
@@ -118,8 +115,7 @@ import AdminPanel from '@/components/AdminPanel'
         username2: '',
         password2: ''
         },
-        admin:[],
-        status:false
+        admin:[]
         
      }
      
@@ -145,7 +141,6 @@ import AdminPanel from '@/components/AdminPanel'
         
       } else {
         console.log("The username and/or password is incorrect");
-        
         //alert("The username and/or password is incorrect")
       } 
     },
@@ -202,7 +197,7 @@ import AdminPanel from '@/components/AdminPanel'
     axios.get('http://localhost:8085/adminlogin')
     .then((response) => {
       console.log(response.data);
-      this.admin = response.data;
+      this.form1 = response.data;
     })
     .catch((error) => {
       console.log(error);
