@@ -9,10 +9,13 @@ import BootstrapVueIcons from 'bootstrap-vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import {faFacebook} from '@fortawesome/free-brands-svg-icons'
+import { faFacebook, faTwitter, faEnvelope } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faFacebook)
+library.add(faTwitter)
+library.add(faEnvelope)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false

@@ -16,10 +16,9 @@
         <hr class="w-100 clearfix d-md-none" />
         <b-col md="6">
           <h6 class="text-uppercase mb-4 font-weight-bold">&nbsp;&nbsp;&nbsp;<u>Quick Links</u></h6>
-          <p><font-awesome-icon icon="facebook"/></p>
-          <p><i class="fas fa-envelope mr-3"></i> </p>
-          <p><i class="fas fa-phone mr-3"></i> </p>
-          <p><i class="fas fa-print mr-3"></i> </p>
+          <p><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }"/></p>
+          <p><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter' }"/></p>
+          <p><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'envelope'}"/></p>
         </b-col>
       </b-row>
       <hr />
