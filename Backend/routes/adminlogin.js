@@ -5,7 +5,8 @@ const url = 'mongodb://localhost:27017/Inventory_FAS';
 
 router.get('/', async(req, res) => {
     const adminlogin = await loadAdminLogincollection();
-    res.send(await adminlogin.find({Username:"adminims"},{Username}).toArray());
+    res.send(await adminlogin.find({}, { projection: { _id: 0, Username: 1} }).toArray());
+    
 });
 
 
@@ -14,3 +15,16 @@ async function loadAdminLogincollection() {
     return client.db('Inventory_FAS').collection("Admin_Login")
 }
 module.exports = router;
+
+/*var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("Inventory_FAS");
+  dbo.collection("Admin_Login").find({}, { projection: { _id: 0, Username: 1} }).toArray(function(err, result) {
+    if (err) throw err;
+    console.log(result);
+    db.close();
+  });
+});*/

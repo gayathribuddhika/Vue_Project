@@ -105,6 +105,7 @@ import AdminPanel from '@/components/AdminPanel'
     name: "Login",
     data(){
       return{
+        admin:[],
         
         form1: {
         username1: '',
@@ -115,7 +116,7 @@ import AdminPanel from '@/components/AdminPanel'
         username2: '',
         password2: ''
         },
-        admin:[],
+        
         
         
      }
@@ -135,8 +136,8 @@ import AdminPanel from '@/components/AdminPanel'
 
   methods: {
     login1(){
-      var username = axios.get('http://localhost:8085/adminlogin');
-       if (this.form1.username1 == username && this.form1.password1 == "admin123"){
+      axios.get('http://localhost:8085/adminlogin');
+       if (this.form1.username1 == axios.get('http://localhost:8085/adminlogin',admin.Username) && this.form1.password1 == "admin123"){
         this.$router.replace({ name: "AdminPanel"})
         console.log("Login Successfull");
         
