@@ -28,6 +28,7 @@
               required
               v-model= "form1.username1"
               
+              
             />
             </b-form-group>
             
@@ -105,7 +106,7 @@ import AdminPanel from '@/components/AdminPanel'
     name: "Login",
     data(){
       return{
-        admin:[],
+       
         
         form1: {
         username1: '',
@@ -137,7 +138,7 @@ import AdminPanel from '@/components/AdminPanel'
   methods: {
     login1(){
       axios.get('http://localhost:8085/adminlogin');
-       if (this.form1.username1 == axios.get('http://localhost:8085/adminlogin',admin.Username) && this.form1.password1 == "admin123"){
+       if (this.form1.username1 == axios.get('http://localhost:8085/adminlogin',Username) && this.form1.password1 == "admin123"){
         this.$router.replace({ name: "AdminPanel"})
         console.log("Login Successfull");
         
