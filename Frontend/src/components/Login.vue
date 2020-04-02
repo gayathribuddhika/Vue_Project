@@ -138,7 +138,7 @@ import AdminPanel from '@/components/AdminPanel'
   methods: {
     login1(){
       
-        if (this.form1.username1 == axios.get('http://localhost:8085/adminlogin',Username) && this.form1.password1 == "admin123"){
+        if (this.form1.username1 == "adminims" && this.form1.password1 == "Admin123ims"){
         this.$router.replace({ name: "AdminPanel"})
         console.log("Login Successfull");
         
