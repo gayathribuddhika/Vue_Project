@@ -5,7 +5,7 @@ const url = 'mongodb://localhost:27017/Inventory_FAS';
 
 router.get('/', async(req, res) => {
     const adminlogin = await loadAdminLogincollection();
-    res.send(await adminlogin.find({}).toArray());
+    res.send(await adminlogin.find({Username:"adminims"},{Username}).toArray());
 });
 
 

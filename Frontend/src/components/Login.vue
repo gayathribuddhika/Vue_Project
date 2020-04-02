@@ -47,7 +47,7 @@
             <a href="#">Forgot your password?</a>
             </b-form-group>
             <b-button type="submit" variant="primary">Login</b-button>
-            <p class="help is-danger" v-show="status" v-text="status"></p>
+            
             </b-form>
           </b-card>
         </div>
@@ -116,7 +116,7 @@ import AdminPanel from '@/components/AdminPanel'
         password2: ''
         },
         admin:[],
-        status:false
+        
         
      }
      
@@ -135,7 +135,8 @@ import AdminPanel from '@/components/AdminPanel'
 
   methods: {
     login1(){
-       if (this.form1.username1 == "admin" && this.form1.password1 == "admin123"){
+      var username = axios.get('http://localhost:8085/adminlogin');
+       if (this.form1.username1 == username && this.form1.password1 == "admin123"){
         this.$router.replace({ name: "AdminPanel"})
         console.log("Login Successfull");
         
@@ -195,21 +196,27 @@ import AdminPanel from '@/components/AdminPanel'
     }
   },*/
 
-  mounted () {
-    axios.get('http://localhost:8085/adminlogin')
-    .then((response) => {
-      console.log(response.data);
-      this.admin = response.data;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  
+    
+    
+    /*
+    axios.get("http://localhost:8085/adminlogin", {
+      username : this.form1.username1,
+      password : this.form1.password1 
+      .then((Response) => {
+        console.log(response.data);
+        this.admin = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    })*/
 
   }
   
 }
 
-  }
+  
 </script>
 
 
