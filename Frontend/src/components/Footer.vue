@@ -18,7 +18,7 @@
           <h6 class="text-uppercase mb-4 font-weight-bold">&nbsp;&nbsp;&nbsp;<u>Quick Links</u></h6>
           <p><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }"/></p>
           <p><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter' }"/></p>
-          <p><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'envelope'}"/></p>
+          <p><font-awesome-icon icon="envelope"/></p>
         </b-col>
       </b-row>
       <hr />
