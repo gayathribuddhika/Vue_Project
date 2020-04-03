@@ -166,3 +166,5 @@ margin-left: 10px;
 }
 
 </style>
+
+<!--<button>Edit</button><button onclick="return confirm('Are you sure to delete this record?');" :href="/lab/lab1/delete/'this._id'">Delete</button> -->
