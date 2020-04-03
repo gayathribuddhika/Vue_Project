@@ -91,7 +91,12 @@ router.post('/lab3', async (req, res) => {
       });
     });
   });*/
-
+  router.delete('/lab1', function (req, res) {
+    Post.findByIdAndRemove({_id: req.params.id}, function(err){
+        if(err) res.json(err);
+        else res.json('Successfully removed');
+    });
+});
 
 
 async function loadLab1collection() {
