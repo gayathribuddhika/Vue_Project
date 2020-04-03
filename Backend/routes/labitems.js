@@ -64,21 +64,20 @@ router.post('/lab3', async (req, res) => {
     
     res.status(201).send();
 });
-
 /*router.delete('/id', function(req, res, next) {
     records.delete(req.params.id, req.body, function (err, post) {
       if (err) return next(err);
       res.json(post);
     });
-  });*/
-  /*router.get('/delete', function(req, res, next) {
+  });
+  router.get('/delete', function(req, res, next) {
  
     var id = req.query.id;
    
     MongoClient.connect(url, function(err, db) {
       if(err) { throw err;  }
-      db.collection('CIS/LAB/01', function(err,  db) {
-        CIS/LAB/01.deleteOne({_id: new mongodb.ObjectID(id)});
+      db.collection('LAB01_CIS', function(err,  db) {
+        LAB01_CIS.deleteOne({_id: new mongodb.ObjectID(id)});
         if (err){
     
          throw err;
@@ -91,13 +90,13 @@ router.post('/lab3', async (req, res) => {
          }
       });
     });
-  });
-*/
+  });*/
+
 
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
-    return client.db('Inventory_FAS').collection("CIS/LAB/01")
+    return client.db('Inventory_FAS').collection("LAB01_CIS")
 }
 async function loadLab2collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
