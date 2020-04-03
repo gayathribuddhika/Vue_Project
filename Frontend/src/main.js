@@ -9,6 +9,7 @@ import BootstrapVueIcons from 'bootstrap-vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap-vue/dist/bootstrap-vue-icons.min.css'
 import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faUser } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
