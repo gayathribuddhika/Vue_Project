@@ -64,40 +64,31 @@ router.post('/lab3', async (req, res) => {
     
     res.status(201).send();
 });
-/*router.delete('/id', function(req, res, next) {
-    records.delete(req.params.id, req.body, function (err, post) {
-      if (err) return next(err);
-      res.json(post);
-    });
-  });
-  router.get('/delete', function(req, res, next) {
- 
-    var id = req.query.id;
-   
-    MongoClient.connect(url, function(err, db) {
-      if(err) { throw err;  }
-      db.collection('LAB01_CIS', function(err,  db) {
-        LAB01_CIS.deleteOne({_id: new mongodb.ObjectID(id)});
-        if (err){
-    
-         throw err;
-     
-        }else{
-      
-           db.close();
-            res.redirect('/');
-      
-         }
-      });
-    });
-  });*/
-  router.delete('/lab1', function (req, res) {
-    Post.findByIdAndRemove({_id: req.params.id}, function(err){
-        if(err) res.json(err);
-        else res.json('Successfully removed');
+
+router.get('delete/:id', (req, res) => {
+    LAB01_CIS.findByidAndRemove(req.params.id, (err, doc) => {
+        if(!err){
+            res.redirect("/adminpanel/currentstatus");
+        } else {
+            console.log('Error in record delete : ' + err)
+        }
     });
 });
+/*
+  var MongoClient = require('mongodb').MongoClient;
+var uri = "mongodb://localhost:27017/";
 
+MongoClient.connect(uri, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("Inventory_FAS");
+    var myquery = { Asset_Description: 'ACs' };
+    dbo.collection("LAB01_CIS").deleteOne(myquery, function(err, obj) {
+      if (err) throw err;
+      console.log("1 document deleted");
+      db.close();
+    });
+  });
+ */ 
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });

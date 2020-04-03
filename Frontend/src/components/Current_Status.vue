@@ -32,7 +32,7 @@
                 <td>{{item.Make}}</td>
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
-                <td><button>Edit</button><button @click.prevent="deletePost(item._id)">Delete</button></td>
+                <td></td>
               </tr>
             </tbody>
           </table>
@@ -98,8 +98,8 @@ export default {
       deletePost(id)
       {
         let uri = 'http://localhost:8085/lab/lab1';
-        this.axios.delete(uri).then(response => {
-          this.items.splice(this.items.indexOf(id), 1);
+          axios.delete(uri).then(response => {
+          this.items.splice(this.items.indexOf(_id));
         });
       }
     },
