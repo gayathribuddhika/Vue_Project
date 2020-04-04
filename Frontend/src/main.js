@@ -6,14 +6,13 @@ import LayoutPlugin from 'bootstrap-vue'
 import NavbarPlugin from 'bootstrap-vue'
 import Vuelidate from 'vuelidate'
 import BootstrapVueIcons from 'bootstrap-vue'
-
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 library.add(faFacebook)
 library.add(faTwitter)
