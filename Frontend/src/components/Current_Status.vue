@@ -32,7 +32,7 @@
                 <td>{{item.Make}}</td>
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
-                <td><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></td>
+                <td><a href="#" onclick = "return confirm('Are you sure to delete?')">Delete</a></td>
               </tr>
             </tbody>
           </table>
