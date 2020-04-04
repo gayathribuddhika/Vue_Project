@@ -143,8 +143,8 @@
                     </b-textarea>
                 </b-form-group>
                 
-            <b-button type="submit" variant="primary" :disabled="submitted === 'pending'" >Submit</b-button>
-            <b-button type="reset" variant="danger">Reset</b-button>
+            <b-button type="submit" variant="primary" :disabled="submitted === 'pending'" >Submit</b-button>&nbsp;&nbsp;&nbsp;
+            <b-button type="reset" variant="danger">Reset</b-button>&nbsp;&nbsp;&nbsp;
             <router-link to="/currentstatus"><b-button type="button" variant="success">View All</b-button></router-link>
             <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
             <p v-if="submitted === 'pending'">Sending...</p>

@@ -201,22 +201,25 @@ import AdminPanel from '@/components/AdminPanel'
   
     
     
-    /*
-    axios.get("http://localhost:8085/adminlogin", {
+ /* login1() { 
+    axios.post("http://localhost:8085/adminlogin", {
       username : this.form1.username1,
       password : this.form1.password1 
-      .then((Response) => {
+    })
+      .then( res => {
         console.log(response.data);
-        this.admin = response.data;
+        this.form1.username1 = ''
+        this.form1.password1 = ''
+        router.replace({name:"Adminpanel"})
       })
       .catch((error) => {
         console.log(error);
       })
-    })*/
-
+    
+*/
   }
-  
-}
+  }
+
 
   
 </script>

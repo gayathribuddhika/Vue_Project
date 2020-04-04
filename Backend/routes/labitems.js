@@ -81,11 +81,11 @@ async function loadLab1collection() {
 }
 async function loadLab2collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
-    return client.db('Inventory_FAS').collection("CIS/LAB/02")
+    return client.db('Inventory_FAS').collection("LAB02_CIS")
 }
 async function loadLab3collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
-    return client.db('Inventory_FAS').collection("CIS/LAB/03")
+    return client.db('Inventory_FAS').collection("LAB03_CIS")
 }
 
 

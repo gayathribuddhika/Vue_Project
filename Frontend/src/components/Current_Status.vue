@@ -32,7 +32,7 @@
                 <td>{{item.Make}}</td>
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
-                <td><button type ="button" onclick = "return confirm('Are you sure to delete?')">Delete</button></td>
+                <td><button type ="submit" onclick = "return confirm('Are you sure to delete?');" :href = "`/lab/lab1/delete/${this._id}`">Delete</button></td>
               </tr>
             </tbody>
           </table>
