@@ -145,6 +145,7 @@
                 
             <b-button type="submit" variant="primary" :disabled="submitted === 'pending'" >Submit</b-button>
             <b-button type="reset" variant="danger">Reset</b-button>
+            <router-link to="/currentstatus"><b-button type="button" variant="success">View All</b-button></router-link>
             <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
             <p v-if="submitted === 'pending'">Sending...</p>
             <p v-if="submitted === 'error'">Please fill all the required fields</p>
