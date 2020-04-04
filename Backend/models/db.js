@@ -7,7 +7,7 @@ MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
         return console.log("Error in DB Connection");
     }
     else{
-        console.log("Mongodb Connected");
+        console.log("Mongodb is Connected");
     }
     
        

@@ -68,7 +68,7 @@ router.post('/lab3', async (req, res) => {
 router.get('delete/:id', (req, res) => {
     LAB01_CIS.findByidAndRemove(req.params.id, (err, doc) => {
         if(!err){
-            res.redirect("/adminpanel/currentstatus");
+            res.redirect("/currentstatus");
         } else {
             console.log('Error in record delete : ' + err)
         }

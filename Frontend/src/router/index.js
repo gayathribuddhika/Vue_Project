@@ -47,7 +47,7 @@ export default new Router({
       component: StaffPanel
     },
     {
-      path:'/adminpanel/currentstatus',
+      path:'/currentstatus',
       name:"Current_Status",
       component: current_status
     },
