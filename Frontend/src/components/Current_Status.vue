@@ -94,7 +94,7 @@ export default {
       
     }
   },
-  methods: {
+  /*methods: {
       deletePost(id)
       {
         let uri = 'http://localhost:8085/lab/lab1';
@@ -103,6 +103,7 @@ export default {
         });
       }
     },
+
   /*methods: {
     deletedata: (items, id) => {
       axios.delete("http://localhost:8085/lab/lab1" + id)
