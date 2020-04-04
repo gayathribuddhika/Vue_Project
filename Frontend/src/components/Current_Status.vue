@@ -32,7 +32,7 @@
                 <td>{{item.Make}}</td>
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
-                <td><a href="#" onclick = "return confirm('Are you sure to delete?')">Delete</a></td>
+                <td><a v-for="item in items" v-bind:key="item._id" :href="`/lab/lab1/delete/${this._id}`" onclick = "return confirm('Are you sure to delete?')">Delete</a></td>
               </tr>
             </tbody>
           </table>

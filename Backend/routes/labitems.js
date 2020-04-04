@@ -74,21 +74,6 @@ router.get('delete/:id', (req, res) => {
         }
     });
 });
-/*
-  var MongoClient = require('mongodb').MongoClient;
-var uri = "mongodb://localhost:27017/";
-
-MongoClient.connect(uri, function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("Inventory_FAS");
-    var myquery = { Asset_Description: 'ACs' };
-    dbo.collection("LAB01_CIS").deleteOne(myquery, function(err, obj) {
-      if (err) throw err;
-      console.log("1 document deleted");
-      db.close();
-    });
-  });
- */ 
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
