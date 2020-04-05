@@ -75,6 +75,12 @@ router.get('delete/:id', (req, res) => {
     });
 });
 
+/*router.delete('/lab1/:id', function(req, res, next) {
+    //console.log(req.params.id);
+
+    res.send({type:DELETE});
+})*/
+
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('Inventory_FAS').collection("LAB01_CIS")
