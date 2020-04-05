@@ -32,7 +32,7 @@
                 <td>{{item.Make}}</td>
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
-                <td><button type ="submit" v-on:click="deleteRecord">Delete</button></td>
+                <td><button type ="submit" onclick="return confirm('Are you sure to delete this?')">Delete</button></td>
               </tr>
             </tbody>
           </table>
