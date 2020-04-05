@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
+var Item = require('../models/items_details');
 
 
 router.get('/lab1', async(req, res) => {
@@ -65,8 +66,8 @@ router.post('/lab3', async (req, res) => {
     res.status(201).send();
 });
 
-router.get('delete/:id', (req, res) => {
-    LAB01_CIS.findByidAndRemove(req.params.id, (err, doc) => {
+router.route('/delete/:id').get(function (req, res) {
+    Item.findByidAndRemove({_id: req.params.id}, (err, LAB01_CIS) => {
         if(!err){
             res.redirect("/currentstatus");
         } else {

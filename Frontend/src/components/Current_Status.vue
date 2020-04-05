@@ -32,7 +32,7 @@
                 <td>{{item.Make}}</td>
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
-                <td><button type ="submit" @click="deleteRecord">Delete</button></td>
+                <td><button type ="submit" v-on:click="deleteItem(item._id)">Delete</button></td>
               </tr>
             </tbody>
           </table>
@@ -95,8 +95,8 @@ export default {
     }
   },
   methods: {
-      deleteRecord() {
-      axios.delete("http://localhost:8085/lab/delete",this.items.id)
+      /*deleteRecord() {
+      axios.delete("http://localhost:8085/lab/lab1/{{id}}")
         .then(response => {
           console.log(response.data);
           this.$router.push({ name: "Current_Status" });
@@ -104,7 +104,13 @@ export default {
         .catch(e => {
           console.log(e);
         });
-    }
+    }*/
+    deleteItem(id)
+            {
+              let uri = 'http://localhost:8085/lab/lab1/delete/'+id;
+              this.items.splice(id, 1);
+              this.axios.get(uri);
+            }
     },
 
   /*methods: {
