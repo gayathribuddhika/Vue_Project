@@ -37,7 +37,7 @@ const labRouter = require('./routes/labitems');
 app.use('/lab', labRouter);
 
 const deleteRouter = require('./routes/labitems');
-app.use('/lab/lab1', deleteRouter);
+app.use('/lab/lab1  ', deleteRouter);
 
 const port = 8085;
 app.listen(port, () => {

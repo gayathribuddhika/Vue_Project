@@ -32,7 +32,7 @@
                 <td>{{item.Make}}</td>
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
-                <td><button type ="submit" onclick="return confirm('Are you sure to delete this?')">Delete</button></td>
+                <td><a href="`/lab/lab1/delete/${this._id}`"><button type ="submit" onclick="return confirm('Are you sure to delete this?')">Delete</button></a></td>
               </tr>
             </tbody>
           </table>
@@ -94,7 +94,7 @@ export default {
       
     }
   },
-  methods: {
+  /*methods: {
       deleteRecord() {
       axios.delete("http://localhost:8085/lab/lab1/delete/{{id}}")
         .then(response => {
@@ -110,8 +110,8 @@ export default {
               let uri = 'http://localhost:8085/lab/lab1/delete/'+id;
               this.items.splice(id, 1);
               this.axios.get(uri);
-            }*/
-    },
+            }
+    },*/
 
   /*methods: {
     deletedata: (items, id) => {
