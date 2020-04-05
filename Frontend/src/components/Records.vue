@@ -11,7 +11,7 @@
                 
                 class="mb-0"
             >
-                <!--<b-form-group
+                <b-form-group
                     label-cols-sm="3"
                     label="Select LAB"
                     label-for="select_lab"
@@ -24,7 +24,7 @@
                         :options="select_labs"
                     >
                     </b-form-select>
-                </b-form-group> -->
+                </b-form-group>
                 <b-form-group
                     label-cols-sm="3"
                     label="ID"
@@ -164,7 +164,7 @@ import { required } from "vuelidate/lib/validators";
     data() {
       return {
         form: {
-          
+          select_lab:null,
           id: '',
           category: null,
           description: null,
@@ -175,8 +175,8 @@ import { required } from "vuelidate/lib/validators";
           comment: ''
         },
 
-        /*select_labs: [{ text: 'Select One', value: null }, 'CIS/LAB/01', 'CIS/LAB/02', 'CIS/LAB/03', 'CIS/LAB/04', 'CIS/LAB/05'],
-        show: true,*/
+        select_labs: [{ text: 'Select One', value: null }, 'CIS/LAB/01', 'CIS/LAB/02', 'CIS/LAB/03', 'CIS/LAB/04', 'CIS/LAB/05'],
+        show: true,
         
         categories: [{ text: 'Select One', value: null }, 'Computer', 'Accessories', 'Office Equipments', 'Communication Equipments', 'Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System)', 'Furniture', 'Other'],
         show: true,
@@ -191,7 +191,7 @@ import { required } from "vuelidate/lib/validators";
 
     validations: {
           form: {
-              
+              select_lab: { required },
               id: { required },
               category: { required },
               description: { required },
@@ -245,6 +245,7 @@ import { required } from "vuelidate/lib/validators";
         onReset(evt) {
             evt.preventDefault()
             // Reset our form values
+            //this.from.select_lab = null
             this.form.id = ''
             this.form.category = null
             this.form.description = null
