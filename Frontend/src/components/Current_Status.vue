@@ -32,7 +32,10 @@
                 <td>{{item.Make}}</td>
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
-                <td><a href="`/lab/lab1/delete/${this._id}`"><button type ="submit" onclick="return confirm('Are you sure to delete this?')">Delete</button></a></td>
+                <td>
+                  <button>Edit</button>
+                  <a href="`/lab/lab1/delete/${this._id}`"><button type ="submit" onclick="return confirm('Are you sure to delete this?')">Delete</button></a>
+                </td>
               </tr>
             </tbody>
           </table>

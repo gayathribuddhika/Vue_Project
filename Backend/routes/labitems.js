@@ -66,8 +66,8 @@ router.post('/lab3', async (req, res) => {
     res.status(201).send();
 });
 
-router.get('/delete/:id').get(function (req, res) {
-    LAB01_CIS.findByidAndRemove({_id: req.params.id}, (err, doc) => {
+router.get('/delete/:id',(req, res) => {
+    LAB01_CIS.findByidAndRemove(req.params.id, (err, doc) => {
         if(!err){
             res.redirect("/currentstatus");
         } else {
