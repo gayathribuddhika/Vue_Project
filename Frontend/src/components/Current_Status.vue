@@ -34,7 +34,7 @@
                 <td>{{item.Comments}}</td>
                 <td>
                   <button>Edit</button>
-                  <a href="`/lab/lab1/delete/${this._id}`"><button type ="submit" onclick="return confirm('Are you sure to delete this?')">Delete</button></a>
+                  <button type ="submit" @click.prevent="deletePost(item._id)" onclick="return confirm('Are you sure to delete this?')">Delete</button>
                 </td>
               </tr>
             </tbody>
@@ -97,8 +97,8 @@ export default {
       
     }
   },
-  /*methods: {
-      deleteRecord() {
+  methods: {
+      /*deleteRecord() {
       axios.delete("http://localhost:8085/lab/lab1/delete/{{id}}")
         .then(response => {
           console.log(response.data);
@@ -107,23 +107,18 @@ export default {
         .catch(e => {
           console.log(e);
         });
-    }
-    /*deleteItem(id)
-            {
-              let uri = 'http://localhost:8085/lab/lab1/delete/'+id;
-              this.items.splice(id, 1);
-              this.axios.get(uri);
-            }
-    },*/
-
-  /*methods: {
-    deletedata: (items, id) => {
-      axios.delete("http://localhost:8085/lab/lab1" + id)
-      .then((response => this.items.splice(id, 1)),
-      window.location(reload))
+    }*/
+    
+      deletePost(id)
+      {
+        let uri = `http://localhost:8085/lab/lab1/delete/${id}`;
+        this.axios.delete(uri).then(response => {
+          this.items.splice(this.items.indexOf(id), 1);
+        });
       }
-  },*/
-  
+    
+  },
+      
   mounted () {
     axios.get('http://localhost:8085/lab/lab1')
     .then((response) => {

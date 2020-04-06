@@ -24,10 +24,10 @@ app.use('/stafflogin', staffloginRouter);
 const adminloginRouter = require('./routes/adminlogin');
 app.use('/adminlogin', adminloginRouter);
 
-const lab1Router = require('./routes/labitems');
-app.use('/lab', lab1Router);
+const labRouter = require('./routes/labitems');
+app.use('/lab', labRouter);
 
-const lab2Router = require('./routes/labitems');
+/*const lab2Router = require('./routes/labitems');
 app.use('/lab', lab2Router);
 
 const lab3Router = require('./routes/labitems');
@@ -37,7 +37,7 @@ const labRouter = require('./routes/labitems');
 app.use('/lab', labRouter);
 
 const deleteRouter = require('./routes/labitems');
-app.use('/lab/lab1  ', deleteRouter);
+app.use('/lab/lab1  ', deleteRouter);*/
 
 const port = 8085;
 app.listen(port, () => {

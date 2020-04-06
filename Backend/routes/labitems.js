@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
-
+const Item = require("../models/item.model")
 
 
 router.get('/lab1', async(req, res) => {
@@ -66,7 +66,7 @@ router.post('/lab3', async (req, res) => {
     res.status(201).send();
 });
 
-router.get('/delete/:id',(req, res) => {
+/*router.delete('lab1/delete/:id',(req, res) => {
     LAB01_CIS.findByidAndRemove(req.params.id, (err, doc) => {
         if(!err){
             res.redirect("/currentstatus");
@@ -74,13 +74,20 @@ router.get('/delete/:id',(req, res) => {
             console.log('Error in record delete : ' + err)
         }
     });
-});
+});*/
 
 /*router.delete('/lab1/:id', function(req, res, next) {
     //console.log(req.params.id);
 
     res.send({type:DELETE});
 })*/
+
+router.route('lab1/delete/:id').delete(function (req, res) {
+    Item.findByIdAndRemove({_id: req.params.id}, function(err){
+        if(err) res.json(err);
+        else res.json('Successfully removed');
+    });
+});
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
