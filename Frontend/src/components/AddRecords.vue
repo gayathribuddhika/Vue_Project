@@ -40,7 +40,7 @@
                         :class="{ 'hasError': $v.form.id.$error } "
                     >
                     </b-form-input>
-                </b-form-group>
+                </b-form-group> 
                 <b-form-group
                     label-cols-sm="3"
                     label="Main Category"

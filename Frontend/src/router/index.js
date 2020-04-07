@@ -8,7 +8,7 @@ import Home from '@/components/Home'
 import AdminPanel from '@/components/AdminPanel'
 import StaffPanel from '@/components/StaffPanel'
 import current_status from '@/components/Current_Status'
-import Records from '@/components/Records'
+import AddRecords from '@/components/AddRecords'
 import AdminProfile from '@/components/AdminProfile'
 import StaffProfile from '@/components/StaffProfile'
 
@@ -53,9 +53,9 @@ export default new Router({
       component: current_status
     },
     {
-      path:'/adminpanel/records',
-      name:"Records",
-      component: Records
+      path:'/adminpanel/addrecords',
+      name:"AddRecords",
+      component: AddRecords
     },
     {
       path:'/adminpanel/profile',

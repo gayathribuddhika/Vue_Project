@@ -4,11 +4,9 @@ const mongoose = require('mongoose');
 const ItemSchema = new mongoose.Schema({
     Id: {
         type: Number
-        
     },
     Main_Category: {
         type: String
-        
     },
     Asset_Description: {
         type: String
