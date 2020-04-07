@@ -25,15 +25,8 @@
       </div>
       
     </b-list-group>
-    
-    
     </b-card>
-    
-    
     <b-card title="Dashboard">
-    <br>
-    
-    
     </b-card>    
     
   </b-card-group>
@@ -42,7 +35,7 @@
 
 
 <script>
-//import current_status from '@/components/Current_Status';
+import current_status from '@/components/Current_Status';
 
 export default {
   name: 'AdminPanel',
