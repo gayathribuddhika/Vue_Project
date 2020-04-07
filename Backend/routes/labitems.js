@@ -82,12 +82,14 @@ router.post('/lab3', async (req, res) => {
     res.send({type:DELETE});
 })*/
 
-router.route('lab1/delete/:id').delete(function (req, res) {
-    Item.findByIdAndRemove({_id: req.params.id}, function(err){
+router.route('lab/lab1/:id').get((req, res) => {
+    Item.findByIdAndRemove({_id: req.params.id}, function(err, LAB01_CIS){
         if(err) res.json(err);
         else res.json('Successfully removed');
     });
 });
+
+
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });

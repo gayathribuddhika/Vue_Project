@@ -34,7 +34,7 @@
                 <td>{{item.Comments}}</td>
                 <td>
                   <button>Edit</button>
-                  <button type ="submit" onclick="return confirm('Are you sure to delete this?')">Delete</button>
+                  <button type ="submit" @click.prevent="deletePost(item._id)" onclick="return confirm('Are you sure to delete this?')">Delete</button>
                 </td>
               </tr>
             </tbody>
