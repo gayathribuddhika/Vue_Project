@@ -35,6 +35,7 @@
                     <b-form-input
                         id="record_id"
                         v-model="form.id"
+
                         type="number"
                         required
                         :class="{ 'hasError': $v.form.id.$error } "
