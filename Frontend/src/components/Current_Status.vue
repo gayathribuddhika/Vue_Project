@@ -8,19 +8,7 @@
           <h5><router-link to="/adminpanel">Back</router-link></h5>
           <center><h2>Current Details of Items - CIS/LAB/01</h2></center>
           <br>
-          <div class="overflow-auto">
-          <b-pagination
-      v-model="currentPage"
-      :total-rows="rows"
-      :per-page="perPage"
-      aria-controls="my-table"
-    ></b-pagination>
-    <p class="mt-3">Current Page: {{ currentPage }}</p>
-          <table id="my-table"
-      :items="items"
-      :per-page="perPage"
-      :current-page="currentPage"
-      small>
+          <table>
             <thead>
               <tr>
                 <th>ID</th>
@@ -53,7 +41,7 @@
               </tr>
             </tbody>
           </table>
-          </div>
+          
         </b-card-text>
       </b-tab>
       <b-tab title="CIS/LAB/02">
@@ -109,11 +97,9 @@ export default {
   
   data() {
     return {
-      perPage: 3,
-      currentPage: 1,
+      //perPage: 3,
+      //currentPage: 1,
       items: []
-      
-      
     }
   },
   methods: {
