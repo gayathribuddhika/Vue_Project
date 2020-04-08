@@ -14,6 +14,7 @@
                 <th>ID</th>
                 <th>Main Category</th>
                 <th>Asset Description</th>
+                <th>Serial Num</th>
                 <th>Asset Code</th>
                 <th>Qty</th>
                 <th>Make</th>
@@ -27,6 +28,7 @@
                 <td>{{item.Id}}</td>
                 <td>{{item.Main_Category}}</td>
                 <td>{{item.Asset_Description}}</td>
+                <td>{{item.Serial_Num}}</td>
                 <td>{{item.Asset_Code}}</td>
                 <td>{{item.Qty}}</td>
                 <td>{{item.Make}}</td>
@@ -52,6 +54,7 @@
                 <th>ID</th>
                 <th>Main Category</th>
                 <th>Asset Description</th>
+                <th>Serial Num</th>
                 <th>Asset Code</th>
                 <th>Qty</th>
                 <th>Make</th>
@@ -65,6 +68,7 @@
                 <td>{{item.Id}}</td>
                 <td>{{item.Main_Category}}</td>
                 <td>{{item.Asset_Description}}</td>
+                <td>{{item.Serial_Num}}</td>
                 <td>{{item.Asset_Code}}</td>
                 <td>{{item.Qty}}</td>
                 <td>{{item.Make}}</td>

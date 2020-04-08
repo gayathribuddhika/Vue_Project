@@ -30,18 +30,17 @@
                     label="ID"
                     label-for="record_id"
                     label-align-sm="right"
-                    
                 >
                     <b-form-input
                         id="record_id"
                         v-model="form.id"
-
                         type="number"
                         required
                         :class="{ 'hasError': $v.form.id.$error } "
                     >
                     </b-form-input>
-                </b-form-group> 
+                </b-form-group>
+                
                 <b-form-group
                     label-cols-sm="3"
                     label="Main Category"
@@ -72,6 +71,21 @@
                     >
                     </b-form-select>
                 </b-form-group>
+                <b-form-group
+                    label-cols-sm="3"
+                    label="Serial No:"
+                    label-for="serial_num"
+                    label-align-sm="right"
+                >
+                    <b-form-input
+                        id="serial_num"
+                        v-model="form.serial_num"
+                        type="string"
+                        required
+                        :class="{ 'hasError': $v.form.serial_num.$error } "
+                    >
+                    </b-form-input>
+                </b-form-group>  
                 <b-form-group
                     label-cols-sm="3"
                     label="Asset Code"
@@ -169,6 +183,7 @@ import { required } from "vuelidate/lib/validators";
           id: '',
           category: null,
           description: null,
+          serial_num:'',
           code: '',
           qty: '',
           make: '',
@@ -179,7 +194,7 @@ import { required } from "vuelidate/lib/validators";
         select_labs: [{ text: 'Select One', value: null }, 'CIS/LAB/01', 'CIS/LAB/02', 'CIS/LAB/03', 'CIS/LAB/04', 'CIS/LAB/05'],
         show: true,
         
-        categories: [{ text: 'Select One', value: null }, 'Computer', 'Accessories', 'Office Equipments', 'Communication Equipments', 'Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System)', 'Furniture', 'Other'],
+        categories: [{ text: 'Select One', value: null }, 'Accessories', 'Communication Equipments','Computer', 'Furniture', 'Office Equipments',  'Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)'],
         show: true,
 
         descriptions: [{ text: 'Select One', value: null }, 'Fans', 'ACs', 'Whiteboard', 'Projector', 'Projector Screen', 'Sound System', 'Printer', 'Monitor', 'System Unit', 'UPS', 'Mouse', 'Keyboard', 'Computer Table', 'Computer Chair', 'Normal Chair', 'Computrt Table', 'Telephone', 'Laminationg Machine', 'Photocopy Machine'],
@@ -196,6 +211,7 @@ import { required } from "vuelidate/lib/validators";
               id: { required },
               category: { required },
               description: { required },
+              serial_num: { required },
               code: { required },
               qty: { required }
           }
@@ -209,6 +225,7 @@ import { required } from "vuelidate/lib/validators";
                 id: this.form.id,
                 Main_Category: this.form.category,
                 Asset_Description: this.form.description,
+                Serial_Num:this.form.serial_num,
                 Asset_Code: this.form.code,
                 Qty: this.form.qty,
                 Make: this.form.make,
