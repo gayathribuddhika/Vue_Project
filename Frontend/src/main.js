@@ -10,7 +10,6 @@ import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { BIconArrowUp } from 'bootstrap-vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -19,7 +18,6 @@ library.add(faFacebook)
 library.add(faTwitter)
 library.add(faEnvelope)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
-Vue.component('BIconArrowUp', BIconArrowUp)
 
 Vue.config.productionTip = false
 
