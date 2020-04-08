@@ -35,7 +35,7 @@
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
                 <td>
-                  <button>Edit</button>
+                  <b-icon-arrow-up></b-icon-arrow-up>
                   <button type ="submit" @click.prevent="deletePost(item._id)" onclick="return confirm('Are you sure to delete this?')">Delete</button>
                 </td>
               </tr>
@@ -152,7 +152,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   border: 3px solid #44475C;
-  margin: 10px 10px 10px 10px;
+  margin: 5px 5px 5px 5px;
 }
 
 table th {

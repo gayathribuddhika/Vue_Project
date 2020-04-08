@@ -267,6 +267,7 @@ import { required } from "vuelidate/lib/validators";
             this.form.id = ''
             this.form.category = null
             this.form.description = null
+            this.form.serial_num = ''
             this.form.code = ''
             this.form.qty = ''
             this.form.make = ''
