@@ -25,7 +25,7 @@
                     >
                     </b-form-select>
                 </b-form-group>
-                <b-form-group
+                <!--<b-form-group
                     label-cols-sm="3"
                     label="ID"
                     label-for="record_id"
@@ -39,7 +39,7 @@
                         :class="{ 'hasError': $v.form.id.$error } "
                     >
                     </b-form-input>
-                </b-form-group>
+                </b-form-group>-->
                 
                 <b-form-group
                     label-cols-sm="3"
@@ -180,7 +180,7 @@ import { required } from "vuelidate/lib/validators";
       return {
         form: {
           select_lab:null,
-          id: '',
+          //id: '',
           category: null,
           description: null,
           serial_num:'',
@@ -208,7 +208,7 @@ import { required } from "vuelidate/lib/validators";
     validations: {
           form: {
               select_lab: { required },
-              id: { required },
+              //id: { required },
               category: { required },
               description: { required },
               serial_num: { required },
@@ -222,7 +222,7 @@ import { required } from "vuelidate/lib/validators";
          
         addToRecords() {
             let newRecord = {
-                id: this.form.id,
+                //id: this.form.id,
                 Main_Category: this.form.category,
                 Asset_Description: this.form.description,
                 Serial_Num:this.form.serial_num,
@@ -264,7 +264,7 @@ import { required } from "vuelidate/lib/validators";
             evt.preventDefault()
             // Reset our form values
             //this.from.select_lab = null
-            this.form.id = ''
+            //this.form.id = ''
             this.form.category = null
             this.form.description = null
             this.form.serial_num = ''
