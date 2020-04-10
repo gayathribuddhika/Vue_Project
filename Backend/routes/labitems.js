@@ -15,12 +15,12 @@ router.post('/lab1', function (req, res, next) {
         useNewUrlParser: true
     }, function (err, db) {
         if (err) throw err;
-        var dbo = db.db(dbName);
+        var dbo = db.db("Inventory_FAS");
         req.body.dateOfEntry = new Date();
         req.body.isDeleted = "false";
         var countRow;
-        var sequenceDocument = dbo.collection("counterVisualization").findOneAndUpdate({
-            _id: "tid"
+        var sequenceDocument = dbo.collection("LAB01_CIS").findOneAndUpdate({
+            _id: "itemid"
         }, {
             $inc: {
                 sequence_value: 1
@@ -28,15 +28,15 @@ router.post('/lab1', function (req, res, next) {
         }, {
             new: true
         });
-        dbo.collection("counterVisualization").find({
-            _id: "tid"
+        dbo.collection("LAB01_CIS").find({
+            _id: "itemid"
         }).toArray(function (err, result1) {
             if (err) {
                 throw err;
             } else {
                 countRow = result1[0].sequence_value;
                 req.body["_id"] = countRow;
-                dbo.collection("visualization").insertOne(req.body, function (err, resDB) {
+                dbo.collection("LAB01_CIS").insertOne(req.body, function (err, resDB) {
                     if (err) {
                         throw err;
                         res.status(401);
