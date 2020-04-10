@@ -23,7 +23,7 @@ router.get('/lab3', async(req, res) => {
 router.post('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
     await lab1.insertOne({
-        //Id: req.body.id,
+        Id: req.body.id,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
         Serial_Num: req.body.Serial_Num,
