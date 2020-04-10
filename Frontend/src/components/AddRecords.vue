@@ -80,7 +80,7 @@
                     <b-form-input
                         id="serial_num"
                         v-model="form.serial_num"
-                        type="string"
+                        type="text"
                         required
                         :class="{ 'hasError': $v.form.serial_num.$error } "
                     >

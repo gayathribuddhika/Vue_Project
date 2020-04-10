@@ -135,11 +135,11 @@ export default {
     });
   
   },
-  computed: {
+  /*computed: {
     rows() {
       return this.items.length
     }
-  }
+  }*/
 
   
 }
