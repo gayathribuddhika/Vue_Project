@@ -114,11 +114,11 @@ export default {
         });
     }*/
     
-      deletePost(_id)
+      deletePost(id)
       {
-        let uri = "http://localhost:8085/lab/lab1/";
-        axios.delete(uri+_id).then(response => {
-          this.items.splice(this.items.indexOf(_id), 1);
+        let uri = `http://localhost:8085/lab/lab1/${id}`;
+        axios.delete(uri).then(response => {
+          this.items.splice(this.items.indexOf(id), 1);
         });
       }
     
