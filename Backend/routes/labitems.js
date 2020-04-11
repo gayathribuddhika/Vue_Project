@@ -85,8 +85,8 @@ router.post('/lab3', async (req, res) => {
     res.send({type:DELETE});
 })*/
 
-router.route('lab1/:id').get(function(req, res) {
-    Item.findByIdAndRemove({_id: req.params.id}, function(err){
+router.delete('lab1/_id',function(req, res) {
+    Item.findByIdAndRemove({_id: req.params._id}, function(err){
         if(err) res.json(err);
         else res.json('Successfully removed');
     });
