@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-let ContactSchema = new Schema({
-    
+const ContactSchema = mongoose.Schema({
     Address: {
         type: String
     },
@@ -17,4 +15,4 @@ let ContactSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("Contact", ContactSchema);
+module.exports = mongoose.model('Contact', ContactSchema);

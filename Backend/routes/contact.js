@@ -14,3 +14,27 @@ async function loadContactscollection() {
 }
 
 module.exports = router;
+
+/*var Contact = require('../models/contact.model');
+var express = require('express');
+var router = express.Router();
+
+router.route('/').get((req, res) => {
+    Contact.find((err, contacts) =>{
+      if(err){
+        console.log(err);
+      }
+      else {
+        res.json(contacts);
+      }
+    });
+  });
+
+router.route('/todos/:id').get((req, res) => {
+    var id = req.params.id;
+    Todo.findById(id, (err, todo) =>{
+        res.json(todo);
+    });
+});
+
+  module.exports = router;*/
