@@ -15,10 +15,10 @@ router.get('/lab2', async(req, res) => {
     res.send(await lab2.find({}).toArray());
 });
 
-router.get('/lab3', async(req, res) => {
+/*router.get('/lab3', async(req, res) => {
     const lab3 = await loadLab3collection();
     res.send(await lab3.find({}).toArray());
-});
+});*/
 
 router.post('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
@@ -36,7 +36,7 @@ router.post('/lab1', async (req, res) => {
     
     res.status(201).send();
 });
-router.post('/lab2', async (req, res) => {
+/*router.post('/lab2', async (req, res) => {
     const lab2 = await loadLab2collection();
     await lab2.insertOne({
         Id: req.body.id,
@@ -67,29 +67,13 @@ router.post('/lab3', async (req, res) => {
     });
     
     res.status(201).send();
-});
-
-/*router.delete('lab1/delete/:id',(req, res) => {
-    LAB01_CIS.findByidAndRemove(req.params.id, (err, doc) => {
-        if(!err){
-            res.redirect("/currentstatus");
-        } else {
-            console.log('Error in record delete : ' + err)
-        }
-    });
 });*/
 
-/*router.delete('/lab1/:id', function(req, res, next) {
-    //console.log(req.params.id);
-
-    res.send({type:DELETE});
-})*/
-
-router.delete('lab1/:id',function(req, res) {
-    LAB01_CIS.findByIdAndRemove({_id: req.params.id}, function(err){
-        if(err) res.json(err);
-        else res.json('Successfully removed');
-    });
+router.delete('/lab1/:id', async(req, res) => {
+    const lab1 = await loadLab1collection();
+    await lab1.deleteOne({_id:new mongodb.ObjectID(req.params.id)});
+    res.status(200).send();
+    
 });
 
 
