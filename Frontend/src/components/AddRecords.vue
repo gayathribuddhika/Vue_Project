@@ -132,7 +132,7 @@
                 </b-form-group>
                 <b-form-group
                     label-cols-sm="3"
-                    label="Conditions"
+                    label="Condition"
                     label-for="record_condition"
                     label-align-sm="right"
                 >
