@@ -229,7 +229,7 @@ import { required } from "vuelidate/lib/validators";
                 Asset_Code: this.form.code,
                 Qty: this.form.qty,
                 Make: this.form.make,
-                condition: this.form.condition,
+                Condition: this.form.condition,
                 Comments: this.form.comment
             }
             console.log('submit')
@@ -253,10 +253,6 @@ import { required } from "vuelidate/lib/validators";
                 .catch((error) => {
                     console.log(error);
                 });
-                
-                    
-                
-
                 
         },
              

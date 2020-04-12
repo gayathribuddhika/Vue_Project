@@ -35,8 +35,8 @@
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
                 <td>
-                  
-                  <button type ="submit" @click.prevent="deletePost(item._id)" onclick="return confirm('Are you sure to delete this?')">Delete</button>
+                  <button>Edit</button>
+                  <button type ="submit" @click.prevent="deletePost(item._id)">Delete</button>
                 </td>
               </tr>
             </tbody>
@@ -103,23 +103,17 @@ export default {
     }
   },
   methods: {
-      /*deleteRecord() {
-      axios.delete("http://localhost:8085/lab/lab1/delete/{{id}}")
-        .then(response => {
-          console.log(response.data);
-          this.$router.push({ name: "Current_Status" });
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    }*/
+      
     
       deletePost(id)
       {
-        let uri = `http://localhost:8085/lab/lab1/${id}`;
-        axios.delete(uri).then(response => {
+        this.$confirm("Are sure?").then((response) => {
+          let uri = `http://localhost:8085/lab/lab1/${id}`;
+          axios.delete(uri).then(response => {
           this.items.splice(this.items.indexOf(id), 1);
         });
+        });
+        
       }
     
   },
@@ -135,11 +129,7 @@ export default {
     });
   
   },
-  /*computed: {
-    rows() {
-      return this.items.length
-    }
-  }*/
+  
 
   
 }
@@ -185,4 +175,3 @@ margin-left: 10px;
 
 </style>
 
-<!--<button>Edit</button><button onclick="return confirm('Are you sure to delete this record?');" :href="/lab/lab1/delete/'this._id'">Delete</button> -->

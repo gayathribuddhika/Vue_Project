@@ -10,10 +10,7 @@ import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-import VueSidebarMenu from 'vue-sidebar-menu'
-import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
-Vue.use(VueSidebarMenu)
+import VueSimpleAlert from'vue-simple-alert'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -30,6 +27,7 @@ Vue.use(LayoutPlugin)
 Vue.use(NavbarPlugin)
 Vue.use(Vuelidate)
 Vue.use(BootstrapVueIcons)
+Vue.use(VueSimpleAlert)
 
 
 new Vue({

@@ -25,7 +25,9 @@
     "vue": "^2.6.11",
     "vue-router": "^3.0.1",
     "vue-sidebar-menu": "^4.5.3",
-    "vuelidate": "^0.7.4"
+    "vue-simple-alert": "^1.1.1",
+    "vuelidate": "^0.7.4",
+    "vuetify-confirm": "^2.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
