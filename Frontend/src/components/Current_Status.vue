@@ -116,11 +116,20 @@ export default {
         
       },
 
+      getItem()
+            {
+              let uri = `http://localhost:8085/lab/lab1/edit/${id}`;
+                this.axios.get(uri).then((response) => {
+                    this.items = response.data;
+                });
+            },
+
+
       updateRecord(id)
       {
         let uri = `http://localhost:8085/lab/lab1/${id}`;
-        axios.post(uri, this.items).then(() => {
-        this.$replace({name:"Records"});
+        axios.post(uri, this.items).then((response) => {
+        this.$router.push({name:"AddRecords"});
         });
         
         

@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
-
-
+//var Item = require('./models/item.model')
 
 router.get('/lab1', async(req, res) => {
     const lab1 = await loadLab1collection();
@@ -75,13 +74,22 @@ router.delete('/lab1/:id', async(req, res) => {
     res.status(200).send();
     
 });
-
-/*router.put('/lab1/:id', async(req, res) => {
+router.get('/lab1/edit/:id', async (req, res) =>{
     const lab1 = await loadLab1collection();
-    await lab1.deleteOne({_id:new mongodb.ObjectID(req.params.id)});
-    res.status(200).send();
+    var id = req.params.id;
+    lab1.findById(id, function (err, item){
+        res.json(item);
+    });
+  });
+
+router.get('/lab1/:id', async(req, res) => {
+    const lab1 = await loadLab1collection();
+    var id = req.params.id;
+    lab1.findById(id, function(err,item){
+        res.json(item);
+    });
     
-});*/
+});
 
     
 
