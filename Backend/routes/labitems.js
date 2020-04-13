@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
-const Item = require("../models/item.model")
+
 
 
 router.get('/lab1', async(req, res) => {
@@ -76,7 +76,14 @@ router.delete('/lab1/:id', async(req, res) => {
     
 });
 
+/*router.put('/lab1/:id', async(req, res) => {
+    const lab1 = await loadLab1collection();
+    await lab1.deleteOne({_id:new mongodb.ObjectID(req.params.id)});
+    res.status(200).send();
+    
+});*/
 
+    
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -90,9 +97,5 @@ async function loadLab3collection() {
     const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('Inventory_FAS').collection("LAB03_CIS")
 }
-
-
-
-
 
 module.exports = router;

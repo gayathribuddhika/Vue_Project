@@ -35,8 +35,8 @@
                 <td>{{item.Condition}}</td>
                 <td>{{item.Comments}}</td>
                 <td>
-                  <button>Edit</button>
-                  <button type ="submit" @click.prevent="deletePost(item._id)">Delete</button>
+                  <button type="submit" @click.prevent="updateRecord(item._id)">Edit</button>
+                  <button type ="submit" @click.prevent="deleteRecord(item._id)">Delete</button>
                 </td>
               </tr>
             </tbody>
@@ -105,14 +105,24 @@ export default {
   methods: {
       
     
-      deletePost(id)
+      deleteRecord(id)
       {
-        this.$confirm("Are sure?").then((response) => {
+        this.$confirm("Do you really want to delete this?").then((response) => {
           let uri = `http://localhost:8085/lab/lab1/${id}`;
           axios.delete(uri).then(response => {
           this.items.splice(this.items.indexOf(id), 1);
         });
         });
+        
+      },
+
+      updateRecord(id)
+      {
+        let uri = `http://localhost:8085/lab/lab1/${id}`;
+        axios.post(uri, this.items).then(() => {
+        this.$replace({name:"Records"});
+        });
+        
         
       }
     
@@ -130,7 +140,7 @@ export default {
   
   },
   
-
+  
   
 }
 </script>
