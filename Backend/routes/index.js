@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-    res.send("Hello World");
+    res.send("Welcome to Inventory Management System");
 });
 
 module.exports = router;

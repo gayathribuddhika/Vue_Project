@@ -4,12 +4,12 @@ const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
 //var Item = require('./models/item.model')
 
-router.get('/lab1', async(req, res) => {
+router.get('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
     res.send(await lab1.find({}).toArray());
 });
 
-router.get('/lab2', async(req, res) => {
+router.get('/lab2', async (req, res) => {
     const lab2 = await loadLab2collection();
     res.send(await lab2.find({}).toArray());
 });
@@ -32,7 +32,7 @@ router.post('/lab1', async (req, res) => {
         Condition: req.body.Condition,
         Comments: req.body.Comments
     });
-    
+    //labelName:"Add a New Record"
     res.status(201).send();
 });
 /*router.post('/lab2', async (req, res) => {
@@ -68,41 +68,59 @@ router.post('/lab3', async (req, res) => {
     res.status(201).send();
 });*/
 
-router.delete('/lab1/:id', async(req, res) => {
+router.delete('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
-    await lab1.deleteOne({_id:new mongodb.ObjectID(req.params.id)});
+    await lab1.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
     res.status(200).send();
-    
+    res.redirect("/Current_Status");
 });
-router.get('/lab1/edit/:id', async (req, res) =>{
+/*router.get('/lab1/edit/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     var id = req.params.id;
-    lab1.findById(id, function (err, item){
-        res.json(item);
+    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, docs) {
+        res.json(docs);
     });
-  });
-
-router.get('/lab1/:id', async(req, res) => {
-    const lab1 = await loadLab1collection();
-    var id = req.params.id;
-    lab1.findById(id, function(err,item){
-        res.json(item);
-    });
-    
 });
 
-    
+router.post('/lab1/update/:id', async function(req, res) {
+    const lab1 = await loadLab1collection();
+    var id = req.params.id;
+    await lab1.findByIdAndUpdate({ _id: new mongodb.ObjectID(req.params.id) }, {
+        Id: req.body.id,
+        Main_Category: req.body.Main_Category,
+        Asset_Description: req.body.Asset_Description,
+        Serial_Num: req.body.Serial_Num,
+        Asset_Code: req.body.Asset_Code,
+        Qty: req.body.Qty,
+        Make: req.body.Make,
+        Condition: req.body.Condition,
+        Comments: req.body.Comments
+    }, { new: true })
+        .then(() => {
+            res.json(docs)
+        })
+});*/
+
+
+/*router.put('/lab1/update/:id', async function(req, res, next) {
+    const lab1 = await loadLab1collection();
+    await lab1.findByIdAndUpdate(req.params.id, req.body, function (err, item) {
+      if (err) return next(err);
+      res.json(item);
+    });
+  });*/
+
 
 async function loadLab1collection() {
-    const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
+    const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('Inventory_FAS').collection("LAB01_CIS")
 }
 async function loadLab2collection() {
-    const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
+    const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('Inventory_FAS').collection("LAB02_CIS")
 }
 async function loadLab3collection() {
-    const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
+    const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('Inventory_FAS').collection("LAB03_CIS")
 }
 
