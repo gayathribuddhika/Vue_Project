@@ -72,7 +72,8 @@ router.delete('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     await lab1.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
     res.status(200).send();
-    res.redirect("/Current_Status");
+    
+    
 });
 /*router.get('/lab1/edit/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
@@ -80,35 +81,15 @@ router.delete('/lab1/:id', async (req, res) => {
     await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, docs) {
         res.json(docs);
     });
-});
-
-router.post('/lab1/update/:id', async function(req, res) {
-    const lab1 = await loadLab1collection();
-    var id = req.params.id;
-    await lab1.findByIdAndUpdate({ _id: new mongodb.ObjectID(req.params.id) }, {
-        Id: req.body.id,
-        Main_Category: req.body.Main_Category,
-        Asset_Description: req.body.Asset_Description,
-        Serial_Num: req.body.Serial_Num,
-        Asset_Code: req.body.Asset_Code,
-        Qty: req.body.Qty,
-        Make: req.body.Make,
-        Condition: req.body.Condition,
-        Comments: req.body.Comments
-    }, { new: true })
-        .then(() => {
-            res.json(docs)
-        })
 });*/
 
-
-/*router.put('/lab1/update/:id', async function(req, res, next) {
+router.get('/lab1/update/:id', async function(req, res, next) {
     const lab1 = await loadLab1collection();
-    await lab1.findByIdAndUpdate(req.params.id, req.body, function (err, item) {
+    await lab1.findByIdAndUpdate(req.params.id, req.body, function (err, docs) {
       if (err) return next(err);
-      res.json(item);
+      res.json(docs);
     });
-  });*/
+  });
 
 
 async function loadLab1collection() {

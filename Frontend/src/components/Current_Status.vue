@@ -36,7 +36,7 @@
                   <td>{{item.Condition}}</td>
                   <td>{{item.Comments}}</td>
                   <td>
-                    <button type="submit" >Edit</button>
+                    <button type="submit" @click.prevent="updateRecord(item._id)">Edit</button>
                     <button type="submit" @click.prevent="deleteRecord(item._id)">Delete</button>
                   </td>
                 </tr>
@@ -126,7 +126,7 @@ export default {
     },
 
     getItem() {
-      let uri = `http://localhost:8085/lab/lab1/edit/${id}`;
+      let uri = `http://localhost:8085/lab/lab1/update/${id}`;
       axios.get(uri).then(response => {
         this.items = response.data;
       });
