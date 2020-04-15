@@ -36,7 +36,7 @@
                   <td>{{item.Condition}}</td>
                   <td>{{item.Comments}}</td>
                   <td>
-                    <button type="submit" @click.prevent="updateRecord(item._id)">Edit</button>
+                    <button type="submit">Edit</button>
                     <button type="submit" @click.prevent="deleteRecord(item._id)">Delete</button>
                   </td>
                 </tr>
@@ -110,8 +110,7 @@ export default {
 
   data() {
     return {
-      items: [],
-      
+      items: []
     };
   },
   methods: {
@@ -120,36 +119,29 @@ export default {
         let uri = `http://localhost:8085/lab/lab1/${id}`;
         axios.delete(uri).then(response => {
           this.items.splice(this.items.indexOf(id), 1);
-          
         });
       });
     },
 
-    getItem() {
-      let uri = `http://localhost:8085/lab/lab1/update/${id}`;
-      axios.get(uri).then(response => {
-        this.items = response.data;
-      });
-    },
-
-    updateRecord(id) {
+    /*updateRecord(id) {
       let uri = `http://localhost:8085/lab/lab1/update/${id}`;
       axios.post(uri, this.items).then(response => {
         this.$router.push({ name: "AddRecords" });
       });
-    }
-  },
+    },*/
+  
 
-  mounted() {
-    axios
-      .get("http://localhost:8085/lab/lab1")
-      .then(response => {
-        console.log(response.data);
-        this.items = response.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    mounted() {
+      axios
+        .get("http://localhost:8085/lab/lab1")
+        .then(response => {
+          console.log(response.data);
+          this.items = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
   }
 };
 </script>

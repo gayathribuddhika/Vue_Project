@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
-//var Item = require('./models/item.model')
+//var Item = require('../models/item.model')
 
 router.get('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
@@ -32,7 +32,6 @@ router.post('/lab1', async (req, res) => {
         Condition: req.body.Condition,
         Comments: req.body.Comments
     });
-    //labelName:"Add a New Record"
     res.status(201).send();
 });
 /*router.post('/lab2', async (req, res) => {
@@ -83,9 +82,10 @@ router.delete('/lab1/:id', async (req, res) => {
     });
 });*/
 
-router.get('/lab1/update/:id', async function(req, res, next) {
+router.get('/lab1/update/:id', async (req, res, next) =>{
     const lab1 = await loadLab1collection();
-    await lab1.findByIdAndUpdate(req.params.id, req.body, function (err, docs) {
+    var id = req.params.id;
+    lab1.findOneAndUpdate(id, req.body, (err, docs) =>{
       if (err) return next(err);
       res.json(docs);
     });

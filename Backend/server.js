@@ -28,18 +28,6 @@ app.use('/adminlogin', adminloginRouter);
 const labRouter = require('./routes/labitems');
 app.use('/lab', labRouter);
 
-/*const lab2Router = require('./routes/labitems');
-app.use('/lab', lab2Router);
-
-const lab3Router = require('./routes/labitems');
-app.use('/lab', lab3Router);
-
-const labRouter = require('./routes/labitems');
-app.use('/lab', labRouter);
-
-const deleteRouter = require('./routes/labitems');
-app.use('/lab/lab1  ', deleteRouter);*/
-
 const port = 8085;
 app.listen(port, () => {
     console.log('server started on port ' + port);
