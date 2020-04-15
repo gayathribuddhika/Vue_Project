@@ -52,7 +52,7 @@
             <center>
               <h2>Current Details of Items - CIS/LAB/02</h2>
             </center>
-            <br/>
+            <br />
             <table>
               <thead>
                 <tr>
@@ -121,7 +121,7 @@ export default {
           this.items.splice(this.items.indexOf(id), 1);
         });
       });
-    },
+    }
 
     /*updateRecord(id) {
       let uri = `http://localhost:8085/lab/lab1/update/${id}`;
@@ -129,19 +129,17 @@ export default {
         this.$router.push({ name: "AddRecords" });
       });
     },*/
-  
-
-    mounted() {
-      axios
-        .get("http://localhost:8085/lab/lab1")
-        .then(response => {
-          console.log(response.data);
-          this.items = response.data;
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
+  },
+  mounted() {
+    axios
+      .get("http://localhost:8085/lab/lab1")
+      .then(response => {
+        console.log(response.data);
+        this.items = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 };
 </script>

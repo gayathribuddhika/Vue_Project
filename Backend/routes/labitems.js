@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
-//var Item = require('../models/item.model')
+var Item = require('../models/item.model')
 
 router.get('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
@@ -74,6 +74,14 @@ router.delete('/lab1/:id', async (req, res) => {
     
     
 });
+
+/*router.post('/lab1/update/:id', (req, res) => {
+    const lab1 = loadLab1collection();
+    lab1.findByIdAndUpdate(req.params.id, req.body.data , { new: true }, (err, item) => {
+      if (err) return res.status(404).send({message: err.message});
+      return res.send({ message: 'record updated!', item });
+    });
+  });*/
 /*router.get('/lab1/edit/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     var id = req.params.id;
@@ -82,14 +90,14 @@ router.delete('/lab1/:id', async (req, res) => {
     });
 });*/
 
-router.get('/lab1/update/:id', async (req, res, next) =>{
+/*router.get('/lab1/update/:id', async (req, res, next) =>{
     const lab1 = await loadLab1collection();
     var id = req.params.id;
     lab1.findOneAndUpdate(id, req.body, (err, docs) =>{
       if (err) return next(err);
       res.json(docs);
     });
-  });
+  });*/
 
 
 async function loadLab1collection() {

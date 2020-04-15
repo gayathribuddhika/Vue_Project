@@ -12,12 +12,13 @@ import AddRecords from '@/components/AddRecords'
 import AdminProfile from '@/components/AdminProfile'
 import StaffProfile from '@/components/StaffProfile'
 import Sidebar from '@/components/Sidebar'
+import UpdateRecord from '@/components/UpdateRecord'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    
+
     {
       path: '/contacts',
       name: 'contacts',
@@ -34,50 +35,50 @@ export default new Router({
       component: Login
     },
     {
-      path:'/',
-      name:"Home",
+      path: '/',
+      name: "Home",
       component: Home
     },
     {
-      path:'/adminpanel',
-      name:"AdminPanel",
+      path: '/adminpanel',
+      name: "AdminPanel",
       component: AdminPanel
     },
     {
-      path:'/staffpanel',
-      name:"StaffPanel",
+      path: '/staffpanel',
+      name: "StaffPanel",
       component: StaffPanel
     },
     {
-      path:'/adminpanel/currentstatus',
-      name:"Current_Status",
+      path: '/adminpanel/currentstatus',
+      name: "Current_Status",
       component: current_status
     },
     {
-      path:'/staffpanel/currentstatus',
-      name:"Current_Status",
-      component: current_status
-    },
-    {
-      path:'/adminpanel/addrecords',
-      name:"AddRecords",
+      path: '/adminpanel/addrecords',
+      name: "AddRecords",
       component: AddRecords
     },
     {
-      path:'/adminpanel/profile',
-      name:"AdminProfile",
+      path: '/adminpanel/profile',
+      name: "AdminProfile",
       component: AdminProfile
     },
     {
-      path:'/staffpanel/profile',
-      name:"StaffProfile",
+      path: '/staffpanel/profile',
+      name: "StaffProfile",
       component: StaffProfile
     },
     {
-      path:'/sidebar',
-      name:"Sidebar",
+      path: '/sidebar',
+      name: "Sidebar",
       component: Sidebar
+    },
+    {
+      path: '/updaterecord',
+      name: "UpdateRecord",
+      component: UpdateRecord
     }
-    
+
   ]
 })
