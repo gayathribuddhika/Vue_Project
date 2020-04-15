@@ -75,29 +75,6 @@ router.delete('/lab1/:id', async (req, res) => {
     
 });
 
-/*router.post('/lab1/update/:id', (req, res) => {
-    const lab1 = loadLab1collection();
-    lab1.findByIdAndUpdate(req.params.id, req.body.data , { new: true }, (err, item) => {
-      if (err) return res.status(404).send({message: err.message});
-      return res.send({ message: 'record updated!', item });
-    });
-  });*/
-/*router.get('/lab1/edit/:id', async (req, res) => {
-    const lab1 = await loadLab1collection();
-    var id = req.params.id;
-    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, docs) {
-        res.json(docs);
-    });
-});*/
-
-/*router.get('/lab1/update/:id', async (req, res, next) =>{
-    const lab1 = await loadLab1collection();
-    var id = req.params.id;
-    lab1.findOneAndUpdate(id, req.body, (err, docs) =>{
-      if (err) return next(err);
-      res.json(docs);
-    });
-  });*/
 
 
 async function loadLab1collection() {

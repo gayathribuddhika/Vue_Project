@@ -121,14 +121,9 @@ export default {
           this.items.splice(this.items.indexOf(id), 1);
         });
       });
-    }
+    },
 
-    /*updateRecord(id) {
-      let uri = `http://localhost:8085/lab/lab1/update/${id}`;
-      axios.post(uri, this.items).then(response => {
-        this.$router.push({ name: "AddRecords" });
-      });
-    },*/
+    
   },
   mounted() {
     axios
