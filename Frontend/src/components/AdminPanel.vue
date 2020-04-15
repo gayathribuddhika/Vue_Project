@@ -16,7 +16,7 @@
     <b-list-group variant="dark">
       <div>
       <b-list-group-item variant="dark" href="#">Dashboard</b-list-group-item>
-      <b-list-group-item variant="dark"><router-link to = "currentstatus">Current Status</router-link></b-list-group-item>
+      <b-list-group-item variant="dark"><router-link to = "adminpanel/currentstatus">Current Status</router-link></b-list-group-item>
       <b-list-group-item variant="dark"><router-link to = "adminpanel/addrecords">Add new record</router-link></b-list-group-item>
       <b-list-group-item variant="dark" href="#">Delete a Record</b-list-group-item>
       <b-list-group-item variant="dark" href="#">Create a Report</b-list-group-item>

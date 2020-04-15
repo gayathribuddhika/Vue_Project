@@ -49,7 +49,12 @@ export default new Router({
       component: StaffPanel
     },
     {
-      path:'/currentstatus',
+      path:'/adminpanel/currentstatus',
+      name:"Current_Status",
+      component: current_status
+    },
+    {
+      path:'/staffpanel/currentstatus',
       name:"Current_Status",
       component: current_status
     },
@@ -73,5 +78,6 @@ export default new Router({
       name:"Sidebar",
       component: Sidebar
     }
+    
   ]
 })

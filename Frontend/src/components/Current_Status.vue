@@ -52,7 +52,7 @@
             <center>
               <h2>Current Details of Items - CIS/LAB/02</h2>
             </center>
-            <br />
+            <br/>
             <table>
               <thead>
                 <tr>
