@@ -151,7 +151,7 @@ import axios from "axios";
 import { required } from "vuelidate/lib/validators";
 
 export default {
-  name: "Records",
+  name: "AddRecords",
   data() {
     return {
       form: {
@@ -230,6 +230,7 @@ export default {
 
   methods: {
     addToRecords() {
+      this.axios("")
       let newRecord = {
         //id: this.form.id,
         Main_Category: this.form.category,
@@ -283,6 +284,17 @@ export default {
         this.show = true;
       });
     }
+  },
+  mounted() {
+    axios
+      .get("http://localhost:8085/lab/lab1")
+      .then(response => {
+        console.log(response.data);
+        this.items = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 };
 </script>

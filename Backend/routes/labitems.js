@@ -75,7 +75,31 @@ router.delete('/lab1/:id', async (req, res) => {
     
 });
 
+router.put('lab1/update/:id', (req, res, next) => {
+    Item.findById(req.params.id, function (err, item){
+        if(!item) {
+            return res.status(404).send('No se ha encontrado el usuario');
+        } else {
+            item.Id = req.body.id;
+            item.Main_Category= req.body.Main_Category;
+            item.Asset_Description= req.body.Asset_Description;
+            item.Serial_Num= req.body.Serial_Num;
+            item.Asset_Code= req.body.Asset_Code;
+            item.Qty= req.body.Qty;
+            item.Make= req.body.Make;
+            item.Condition= req.body.Condition;
+            item.Comments= req.body.Comments;
 
+            item.save()
+            .then(item => {
+                res.status(200).json('Usuario Actualizado completamente');
+            })
+            .catch(err => {
+                res.status(400).send('Se ha producido un error al actualizar los datos del usuario');
+            });
+        }
+    })
+});
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
