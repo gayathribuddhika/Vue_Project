@@ -9,6 +9,11 @@ router.get('/lab1', async (req, res) => {
     res.send(await lab1.find({}).toArray());
 });
 
+router.get('/lab1/:id', async (req, res) => {
+    const lab1 = await loadLab1collection();
+    res.send(await lab1.find({ _id: new mongodb.ObjectID(req.params.id) }).toArray());
+});
+
 router.get('/lab2', async (req, res) => {
     const lab2 = await loadLab2collection();
     res.send(await lab2.find({}).toArray());
@@ -75,7 +80,7 @@ router.delete('/lab1/:id', async (req, res) => {
     
 });
 
-router.put('lab1/update/:id', (req, res, next) => {
+/*router.put('lab1/update/:id', (req, res, next) => {
     Item.findById(req.params.id, function (err, item){
         if(!item) {
             return res.status(404).send('No se ha encontrado el usuario');
@@ -99,7 +104,7 @@ router.put('lab1/update/:id', (req, res, next) => {
             });
         }
     })
-});
+});*/
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });

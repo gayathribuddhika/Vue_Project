@@ -230,7 +230,7 @@ export default {
 
   methods: {
     addToRecords() {
-      this.axios("")
+      
       let newRecord = {
         //id: this.form.id,
         Main_Category: this.form.category,

@@ -36,7 +36,7 @@
                   <td>{{item.Condition}}</td>
                   <td>{{item.Comments}}</td>
                   <td>
-                    <button type="submit">Edit</button>
+                    <button type="submit"@click.prevent="updateRecord(item._id)">Edit</button>
                     <button type="submit" @click.prevent="deleteRecord(item._id)">Delete</button>
                   </td>
                 </tr>
@@ -122,7 +122,13 @@ export default {
         });
       });
     },
-
+    updateRecord(id){
+      let url = `http://localhost:8085/lab/lab1/${id}`;
+      axios.get(url).then(response => {
+        this.items.splice(this.items.indexOf(id), 1);
+        this.$router.replace({name:'AddRecords'})
+      });
+    }
     
   },
   mounted() {

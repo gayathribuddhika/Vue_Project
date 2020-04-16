@@ -221,7 +221,7 @@ export default {
 
   methods: {
     updateRecords() {
-      this.axios.put('/lab1/update' + this.$route.params.id, this.user)
+      this.axios.put('/lab1/update' + this.$route.params.id, this.items)
                     .then(res => {
                         console.log(res);
                         this.$router.replace({name: 'Current_Status'});
