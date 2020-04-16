@@ -9,10 +9,10 @@ router.get('/lab1', async (req, res) => {
     res.send(await lab1.find({}).toArray());
 });
 
-router.get('/lab1/:id', async (req, res) => {
+/*router.get('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     res.send(await lab1.find({ _id: new mongodb.ObjectID(req.params.id) }).toArray());
-});
+});*/
 
 router.get('/lab2', async (req, res) => {
     const lab2 = await loadLab2collection();
@@ -80,8 +80,8 @@ router.delete('/lab1/:id', async (req, res) => {
     
 });
 
-/*router.post('lab1/update/:id', (req, res) => {
-    Item.findByIdAndUpdate(req.params.id, (err, items) => {
+router.post('lab1/update/:id', (req, res) => {
+    Item.findByIdAndUpdate({ _id: new mongodb.ObjectID(req.params.id) }, (err, items) => {
         if(!items) {
             return res.status(404).send('Error occured');
         } else {
@@ -104,7 +104,7 @@ router.delete('/lab1/:id', async (req, res) => {
             });
         }
     })
-});*/
+});
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });

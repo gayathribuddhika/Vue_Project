@@ -123,7 +123,7 @@ export default {
         });
       });
     },
-    /*updateRecord(items,id){
+    updateRecord(items,id){
       let url = `http://localhost:8085/lab/lab1/${id}`;
       axios.post(url,items).updateRecord(this.items)
         .then((result) => {
@@ -131,17 +131,9 @@ export default {
         },(error) => {
           this.showError="true";
         });
-    }*/
+    }
 
-    updateRecord(){
-      let data = { Id: this.Id, Main_Category: this.Main_Category,Asset_Description:this.Asset_Description,Serial_Num:this.Serial_Num,Asset_Code:this.Asset_Code,Qty:this.Qty,Make:this.Make,Condition:this.Condition,Comments:this.Comments }
-      updateRecord(data, this.items._id)
-        .then(data => {
-          this.$replace({name:"AddRecords"});
-          
-        })
-        .catch(err => alert(err.message));
-    },
+    
     
   },
   mounted() {
