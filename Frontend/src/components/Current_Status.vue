@@ -36,7 +36,7 @@
                   <td>{{item.Condition}}</td>
                   <td>{{item.Comments}}</td>
                   <td>
-                    <button type="submit" @click.prevent="updateRecord(item._id)">Edit</button>
+                    <button type="submit" @click.prevent="updateRecord()">Edit</button>
                     <button type="submit" @click.prevent="deleteRecord(item._id)">Delete</button>
                   </td>
                 </tr>
@@ -104,6 +104,7 @@
 
 <script>
 import axios from "axios";
+import {updateRecord} from '@/components/repositary'
 
 export default {
   name: "Current_Status",
@@ -122,13 +123,25 @@ export default {
         });
       });
     },
-    updateRecord(id){
+    /*updateRecord(items,id){
       let url = `http://localhost:8085/lab/lab1/${id}`;
-      axios.get(url).then(response => {
-        this.items.splice(this.items.indexOf(id), 1);
-        this.$router.replace({name:'AddRecords'})
-      });
-    }
+      axios.post(url,items).updateRecord(this.items)
+        .then((result) => {
+          console.log(result);
+        },(error) => {
+          this.showError="true";
+        });
+    }*/
+
+    updateRecord(){
+      let data = { Id: this.Id, Main_Category: this.Main_Category,Asset_Description:this.Asset_Description,Serial_Num:this.Serial_Num,Asset_Code:this.Asset_Code,Qty:this.Qty,Make:this.Make,Condition:this.Condition,Comments:this.Comments }
+      updateRecord(data, this.items._id)
+        .then(data => {
+          this.$replace({name:"AddRecords"});
+          
+        })
+        .catch(err => alert(err.message));
+    },
     
   },
   mounted() {

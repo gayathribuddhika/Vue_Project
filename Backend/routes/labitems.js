@@ -80,31 +80,31 @@ router.delete('/lab1/:id', async (req, res) => {
     
 });
 
-router.put('lab1/update/:id', (req, res, next) => {
-    Item.findById(req.params.id, function (err, item){
-        if(!item) {
-            return res.status(404).send('No se ha encontrado el usuario');
+/*router.post('lab1/update/:id', (req, res) => {
+    Item.findByIdAndUpdate(req.params.id, (err, items) => {
+        if(!items) {
+            return res.status(404).send('Error occured');
         } else {
-            item.Id = req.body.id;
-            item.Main_Category= req.body.Main_Category;
-            item.Asset_Description= req.body.Asset_Description;
-            item.Serial_Num= req.body.Serial_Num;
-            item.Asset_Code= req.body.Asset_Code;
-            item.Qty= req.body.Qty;
-            item.Make= req.body.Make;
-            item.Condition= req.body.Condition;
-            item.Comments= req.body.Comments;
+            items.Id = req.body.id;
+            items.Main_Category= req.body.Main_Category;
+            items.Asset_Description= req.body.Asset_Description;
+            items.Serial_Num= req.body.Serial_Num;
+            items.Asset_Code= req.body.Asset_Code;
+            items.Qty= req.body.Qty;
+            items.Make= req.body.Make;
+            items.Condition= req.body.Condition;
+            items.Comments= req.body.Comments;
 
-            item.save()
+            items.save()
             .then(item => {
-                res.status(200).json('Usuario Actualizado completamente');
+                res.json("successfull");
             })
             .catch(err => {
-                res.status(400).send('Se ha producido un error al actualizar los datos del usuario');
+                res.status(400).send('Error in updating');
             });
         }
     })
-});
+});*/
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
