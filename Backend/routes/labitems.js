@@ -80,7 +80,7 @@ router.delete('/lab1/:id', async (req, res) => {
     
 });
 
-/*router.put('lab1/update/:id', (req, res, next) => {
+router.put('lab1/update/:id', (req, res, next) => {
     Item.findById(req.params.id, function (err, item){
         if(!item) {
             return res.status(404).send('No se ha encontrado el usuario');
@@ -104,7 +104,7 @@ router.delete('/lab1/:id', async (req, res) => {
             });
         }
     })
-});*/
+});
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
