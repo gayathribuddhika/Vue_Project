@@ -36,7 +36,7 @@
                   <td>{{item.Condition}}</td>
                   <td>{{item.Comments}}</td>
                   <td>
-                    <button type="submit"@click.prevent="updateRecord(item._id)">Edit</button>
+                    <button type="submit" @click.prevent="updateRecord(item._id)">Edit</button>
                     <button type="submit" @click.prevent="deleteRecord(item._id)">Delete</button>
                   </td>
                 </tr>
