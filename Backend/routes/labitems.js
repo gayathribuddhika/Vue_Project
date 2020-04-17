@@ -76,36 +76,41 @@ router.delete('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     await lab1.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
     res.status(200).send();
-    
-    
+
+
 });
 
-router.post('lab1/update/:id', (req, res) => {
-    Item.findByIdAndUpdate({ _id: new mongodb.ObjectID(req.params.id) }, (err, items) => {
-        if(!items) {
-            return res.status(404).send('Error occured');
-        } else {
-            items.Id = req.body.id;
-            items.Main_Category= req.body.Main_Category;
-            items.Asset_Description= req.body.Asset_Description;
-            items.Serial_Num= req.body.Serial_Num;
-            items.Asset_Code= req.body.Asset_Code;
-            items.Qty= req.body.Qty;
-            items.Make= req.body.Make;
-            items.Condition= req.body.Condition;
-            items.Comments= req.body.Comments;
-
-            items.save()
-            .then(item => {
-                res.json("successfull");
-            })
-            .catch(err => {
-                res.status(400).send('Error in updating');
+router.post('lab1/update/:id', async(req, res) => {
+    const lab1 = await loadLab1collection();
+    await lab1.findOneAndUpdate({ _id: new mongodb.ObjectID(req.params.id) }, {
+        Id: req.body.id,
+        Main_Category: req.body.Main_Category,
+        Asset_Description: req.body.Asset_Description,
+        Serial_Num: req.body.Serial_Num,
+        Asset_Code: req.body.Asset_Code,
+        Qty: req.body.Qty,
+        Make: req.body.Make,
+        Condition: req.body.Condition,
+        Comments: req.body.Comments
+    }, { new: true })
+        .then(item => {
+            if (!item) {
+                return res.status(404).send({
+                    message: "Customer not found with id " + req.params.id
+                });
+            }
+            res.send(item);
+        }).catch(err => {
+            if (err.kind === 'ObjectId') {
+                return res.status(404).send({
+                    message: "Customer not found with id " + req.params.id
+                });
+            }
+            return res.status(500).send({
+                message: "Error updating customer with id " + req.params.customerId
             });
-        }
-    })
+        });
 });
-
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('Inventory_FAS').collection("LAB01_CIS")

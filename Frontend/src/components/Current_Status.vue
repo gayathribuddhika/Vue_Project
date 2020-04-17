@@ -36,7 +36,7 @@
                   <td>{{item.Condition}}</td>
                   <td>{{item.Comments}}</td>
                   <td>
-                    <button type="submit" @click.prevent="updateRecord()">Edit</button>
+                    <button type="submit" @click.prevent="updateRecord(item._id)">Edit</button>
                     <button type="submit" @click.prevent="deleteRecord(item._id)">Delete</button>
                   </td>
                 </tr>
@@ -104,7 +104,7 @@
 
 <script>
 import axios from "axios";
-import {updateRecord} from '@/components/repositary'
+import { updateRecord } from "@/components/repositary";
 
 export default {
   name: "Current_Status",
@@ -123,18 +123,12 @@ export default {
         });
       });
     },
-    updateRecord(items,id){
-      let url = `http://localhost:8085/lab/lab1/${id}`;
-      axios.post(url,items).updateRecord(this.items)
-        .then((result) => {
-          console.log(result);
-        },(error) => {
-          this.showError="true";
-        });
+    updateRecord(id) {
+      let url = `http://localhost:8085/lab/lab1/update/${id}`;
+      axios.post(url).then(response => {
+        this.items.splice(this.items.indexOf(id), 1);
+      });
     }
-
-    
-    
   },
   mounted() {
     axios
