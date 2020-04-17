@@ -76,13 +76,12 @@ router.delete('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     await lab1.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
     res.status(200).send();
-
-
+    
+    
 });
 
-router.post('lab1/update/:id', async(req, res) => {
-    const lab1 = await loadLab1collection();
-    await lab1.findOneAndUpdate({ _id: new mongodb.ObjectID(req.params.id) }, {
+router.post('lab1/update/:id', (req, res) => {
+    Item.findOneAndUpdate({ _id: new mongodb.ObjectID(req.params.id) }, {
         Id: req.body.id,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
@@ -92,24 +91,24 @@ router.post('lab1/update/:id', async(req, res) => {
         Make: req.body.Make,
         Condition: req.body.Condition,
         Comments: req.body.Comments
-    }, { new: true })
-        .then(item => {
-            if (!item) {
-                return res.status(404).send({
-                    message: "Customer not found with id " + req.params.id
-                });
-            }
-            res.send(item);
-        }).catch(err => {
-            if (err.kind === 'ObjectId') {
-                return res.status(404).send({
-                    message: "Customer not found with id " + req.params.id
-                });
-            }
-            return res.status(500).send({
-                message: "Error updating customer with id " + req.params.customerId
+    }, {new: true})
+    .then(item => {
+        if(!item) {
+            return res.status(404).send({
+                message: "Customer not found with id " + req.params.id
             });
+        }
+        res.send(item);
+    }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Customer not found with id " + req.params.id
+            });                
+        }
+        return res.status(500).send({
+            message: "Error updating customer with id " + req.params.id
         });
+});
 });
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
