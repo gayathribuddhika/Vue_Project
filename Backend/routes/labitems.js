@@ -9,10 +9,10 @@ router.get('/lab1', async (req, res) => {
     res.send(await lab1.find({}).toArray());
 });
 
-/*router.get('/lab1/:id', async (req, res) => {
+router.get('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     res.send(await lab1.find({ _id: new mongodb.ObjectID(req.params.id) }).toArray());
-});*/
+});
 
 router.get('/lab2', async (req, res) => {
     const lab2 = await loadLab2collection();
@@ -104,8 +104,10 @@ router.post('/lab1/update/:id', async function (req, res) {
             item.Make = req.body.Make;
             item.Condition = req.body.Condition;
             item.Comments = req.body.Comments;
+
+            res.json(item);
         }
-        res.json(item);
+        
     })
 });
 
