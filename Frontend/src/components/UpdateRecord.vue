@@ -5,7 +5,7 @@
       &nbsp;&nbsp;&nbsp;<router-link to="/adminpanel">Back</router-link>
     </div>
     <b-card bg-variant="light" body-class="text-center">
-      <b-form @submit.prevent="updatePost" v-if="show">
+      <b-form @submit.prevent="updateRecord(form.item._id)" v-if="show" >
         <b-form-group
           label-cols-lg="3"
           label="Update a Record"
@@ -134,7 +134,7 @@
 
           <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Update</b-button>&nbsp;&nbsp;&nbsp;
           <b-button type="reset" variant="danger">Reset</b-button>&nbsp;&nbsp;&nbsp;
-          <router-link to="/currentstatus">
+          <router-link to="/adminpanel x/currentstatus">
             <b-button type="button" variant="success">View All</b-button>
           </router-link>
           <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
@@ -222,14 +222,15 @@ export default {
   created() {
         let uri = `http://localhost:8085/lab/lab1/edit/${id}`;
         this.axios.get(uri).then((response) => {
-            this.items = response.data;
+            this.form.items = response.data;
+            //this.form.fill(data);
         });
       },
 
   methods: {
-    updatePost(id) {
+    updateRecord(id) {
           let uri = `http://localhost:8085/lab/lab1/update/${id}`;
-          this.axios.post(uri, this.items).then(() => {
+          this.axios.post(uri, this.form.items).then(() => {
             this.$router.push({name: 'CurrentStatus'});
           });
         }
