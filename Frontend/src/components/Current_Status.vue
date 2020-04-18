@@ -36,7 +36,7 @@
                   <td>{{item.Condition}}</td>
                   <td>{{item.Comments}}</td>
                   <td>
-                    <router-link :to="{name: 'UpdateRecord', params: { id: item._id }}" class="btn btn-primary">Edit</router-link>
+                    <router-link :to="{name: 'UpdateRecord', params: {id:item._id }}" class="btn btn-primary">Edit</router-link>
                     <button type="submit" class="btn btn-primary" @click.prevent="deleteRecord(item._id)">Delete</button>
                   </td>
                 </tr>

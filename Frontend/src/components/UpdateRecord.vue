@@ -227,7 +227,7 @@ export default {
       },
 
   methods: {
-    updatePost() {
+    updatePost(id) {
           let uri = `http://localhost:8085/lab/lab1/update/${id}`;
           this.axios.post(uri, this.items).then(() => {
             this.$router.push({name: 'CurrentStatus'});

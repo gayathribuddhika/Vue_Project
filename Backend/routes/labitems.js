@@ -93,7 +93,7 @@ router.post('/lab1/update/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
     await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
         if (!item)
-            res.status(404).send("data is not found");
+            res.status(404).send("Not found");
         else {
             item.Id = req.body.id;
             item.Main_Category = req.body.Main_Category;
