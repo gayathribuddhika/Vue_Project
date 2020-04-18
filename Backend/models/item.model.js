@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let ItemSchema = new Schema({
+let Item = new Schema({
     Id: {
         type: Number
     },
@@ -22,7 +22,10 @@ let ItemSchema = new Schema({
     },
     Comments: {
         type: String
-    }
-});
+    },
+},
+    {
+        collection: 'LAB01_CIS'
+    });
 
-module.exports = mongoose.model("Item", ItemSchema);
+module.exports = mongoose.model("Item", Item);

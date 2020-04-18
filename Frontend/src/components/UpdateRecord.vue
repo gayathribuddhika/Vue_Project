@@ -5,10 +5,10 @@
       &nbsp;&nbsp;&nbsp;<router-link to="/adminpanel">Back</router-link>
     </div>
     <b-card bg-variant="light" body-class="text-center">
-      <b-form @submit.prevent="updateRecords" @reset="onReset" v-if="show">
+      <b-form @submit.prevent="updatePost" v-if="show">
         <b-form-group
           label-cols-lg="3"
-          label="Add a New Record"
+          label="Update a Record"
           label-size="lg"
           label-class="font-weight-bold pt-0"
           class="mb-0"
@@ -132,7 +132,7 @@
             <b-textarea id="record_comment" v-model="form.comment" type="text"></b-textarea>
           </b-form-group>
 
-          <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Submit</b-button>&nbsp;&nbsp;&nbsp;
+          <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Update</b-button>&nbsp;&nbsp;&nbsp;
           <b-button type="reset" variant="danger">Reset</b-button>&nbsp;&nbsp;&nbsp;
           <router-link to="/currentstatus">
             <b-button type="button" variant="success">View All</b-button>
@@ -155,7 +155,7 @@ export default {
   data() {
     return {
       form: {
-        
+        items:{}
       },
 
       select_labs: [
@@ -219,16 +219,23 @@ export default {
     }
   },
 
-  methods: {
-    updateRecords() {
-      this.axios.put('/lab1/update' + this.$route.params.id, this.items)
-                    .then(res => {
-                        console.log(res);
-                        this.$router.replace({name: 'Current_Status'});
-                    });
-    },
+  created() {
+        let uri = `http://localhost:8085/lab/lab1/edit/${id}`;
+        this.axios.get(uri).then((response) => {
+            this.items = response.data;
+        });
+      },
 
-    onReset(evt) {
+  methods: {
+    updatePost() {
+          let uri = `http://localhost:8085/lab/lab1/update/${id}`;
+          this.axios.post(uri, this.items).then(() => {
+            this.$router.push({name: 'CurrentStatus'});
+          });
+        }
+  },
+
+    /*onReset(evt) {
       evt.preventDefault();
       // Reset our form values
       //this.from.select_lab = null
@@ -247,8 +254,8 @@ export default {
       this.$nextTick(() => {
         this.show = true;
       });
-    }
+    }*/
   }
-};
+
 </script>
 

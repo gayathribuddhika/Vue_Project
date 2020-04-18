@@ -76,22 +76,42 @@ router.delete('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     await lab1.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
     res.status(200).send();
-    
-    
+
+
+});
+router.get('/lab1/edit/:id', async function (req, res) {
+    const lab1 = await loadLab1collection();
+    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
+        if (err) {
+            res.json(err);
+        }
+        res.json(item);
+    });
 });
 
-router.post('lab1/update/:id', (req, res) => {
-    Item.findOneAndUpdate({ _id: new mongodb.ObjectID(req.params.id) }, {
-        Id: req.body.id,
-        Main_Category: req.body.Main_Category,
-        Asset_Description: req.body.Asset_Description,
-        Serial_Num: req.body.Serial_Num,
-        Asset_Code: req.body.Asset_Code,
-        Qty: req.body.Qty,
-        Make: req.body.Make,
-        Condition: req.body.Condition,
-        Comments: req.body.Comments
-    }, {new: true})
+router.post('/lab1/update/:id', async function (req, res) {
+    const lab1 = await loadLab1collection();
+    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
+        if (!item)
+            res.status(404).send("data is not found");
+        else {
+            item.Id = req.body.id;
+            item.Main_Category = req.body.Main_Category;
+            item.Asset_Description = req.body.Asset_Description;
+            item.Serial_Num = req.body.Serial_Num;
+            item.Asset_Code = req.body.Asset_Code;
+            item.Qty = req.body.Qty;
+            item.Make = req.body.Make;
+            item.Condition = req.body.Condition;
+            item.Comments = req.body.Comments;
+        }
+        res.json(item);
+    })
+});
+
+
+/*router.post('lab1/update/:id', (req, res) => {
+    Item.findOneAndUpdate(req.params.id, req.body, {new: true})
     .then(item => {
         if(!item) {
             return res.status(404).send({
@@ -109,7 +129,7 @@ router.post('lab1/update/:id', (req, res) => {
             message: "Error updating customer with id " + req.params.id
         });
 });
-});
+});*/
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('Inventory_FAS').collection("LAB01_CIS")
