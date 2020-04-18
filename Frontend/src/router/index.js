@@ -75,7 +75,7 @@ export default new Router({
       component: Sidebar
     },
     {
-      path: '/updaterecord',
+      path: '/updaterecord/:id',
       name: "UpdateRecord",
       component: UpdateRecord
     }

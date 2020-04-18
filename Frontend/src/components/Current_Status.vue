@@ -123,12 +123,7 @@ export default {
         });
       });
     },
-    /*updateRecord(id) {
-      let url = `http://localhost:8085/lab/lab1/update/${id}`;
-      axios.post(url).then(response => {
-        this.items.splice(this.items.indexOf(id), 1);
-      });
-    }*/
+    
   },
   mounted() {
     axios

@@ -5,7 +5,7 @@
       &nbsp;&nbsp;&nbsp;<router-link to="/adminpanel">Back</router-link>
     </div>
     <b-card bg-variant="light" body-class="text-center">
-      <b-form @submit.prevent="updateRecord(form.item._id)" v-if="show" >
+      <b-form @submit.prevent="updateRecord" v-if="show" >
         <b-form-group
           label-cols-lg="3"
           label="Update a Record"
@@ -221,16 +221,16 @@ export default {
 
   created() {
         let uri = `http://localhost:8085/lab/lab1/edit/${id}`;
-        this.axios.get(uri).then((response) => {
+        axios.get(uri).then((response) => {
             this.form.items = response.data;
             //this.form.fill(data);
         });
       },
 
   methods: {
-    updateRecord(id) {
+    updateRecord() {
           let uri = `http://localhost:8085/lab/lab1/update/${id}`;
-          this.axios.post(uri, this.form.items).then(() => {
+          axios.post(uri, this.form.items).then(() => {
             this.$router.push({name: 'CurrentStatus'});
           });
         }
