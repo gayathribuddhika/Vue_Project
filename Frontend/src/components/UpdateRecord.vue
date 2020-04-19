@@ -222,8 +222,8 @@ export default {
   created() {
         let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
         axios.get(uri).then((response) => {
-            this.form.items = response.data;
-            //this.form.fill(data);
+          this.form.items = response.data;
+          //this.form.fill(data);
         });
       },
 
