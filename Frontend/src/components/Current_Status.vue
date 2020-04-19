@@ -120,6 +120,7 @@ export default {
         let uri = `http://localhost:8085/lab/lab1/${id}`;
         axios.delete(uri).then(response => {
           this.items.splice(this.items.indexOf(id), 1);
+          
         });
       });
     },

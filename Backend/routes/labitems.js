@@ -89,9 +89,9 @@ router.get('/lab1/edit/:id', async function (req, res) {
     });
 });
 
-router.post('/lab1/update/:id', async function (req, res) {
+router.put('/lab1/update/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
-    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
+    await lab1.findOneAndUpdate({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
         if (!item)
             res.status(404).send("Not found");
         else {
@@ -109,9 +109,7 @@ router.post('/lab1/update/:id', async function (req, res) {
         }
 
     })
-        .catch(() => {
-            res.status(400).send("Unable to update the database");
-        })
+        
 });
 
 async function loadLab1collection() {
