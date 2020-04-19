@@ -23,6 +23,7 @@
     "bvue": "0.0.1",
     "express": "^4.17.1",
     "vue": "^2.6.11",
+    "vue-axios": "^2.1.5",
     "vue-router": "^3.0.1",
     "vue-sidebar-menu": "^4.5.3",
     "vue-simple-alert": "^1.1.1",

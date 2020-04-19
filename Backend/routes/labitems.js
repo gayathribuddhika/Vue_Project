@@ -107,31 +107,13 @@ router.post('/lab1/update/:id', async function (req, res) {
 
             res.json(item);
         }
-        
+
     })
+        .catch(() => {
+            res.status(400).send("Unable to update the database");
+        })
 });
 
-
-/*router.post('lab1/update/:id', (req, res) => {
-    Item.findOneAndUpdate(req.params.id, req.body, {new: true})
-    .then(item => {
-        if(!item) {
-            return res.status(404).send({
-                message: "Customer not found with id " + req.params.id
-            });
-        }
-        res.send(item);
-    }).catch(err => {
-        if(err.kind === 'ObjectId') {
-            return res.status(404).send({
-                message: "Customer not found with id " + req.params.id
-            });                
-        }
-        return res.status(500).send({
-            message: "Error updating customer with id " + req.params.id
-        });
-});
-});*/
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('Inventory_FAS').collection("LAB01_CIS")
