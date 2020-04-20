@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
-var Item = require('../models/item.model')
+//var Item = require('../models/item.model')
 
 router.get('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
@@ -13,10 +13,10 @@ router.get('/lab1', async (req, res) => {
     Item.findById({}).toArray();
 });*/
 
-router.get('/lab1/:id', async (req, res) => {
+/*router.get('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     res.send(await lab1.find({ _id: new mongodb.ObjectID(req.params.id) }).toArray());
-});
+});*/
 
 router.get('/lab2', async (req, res) => {
     const lab2 = await loadLab2collection();
@@ -79,11 +79,10 @@ router.post('/lab3', async (req, res) => {
 
 router.delete('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
-    await lab1.findOneAndRemove({ _id: new mongodb.ObjectID(req.params.id) });
+    await lab1.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
     res.status(200).send({message:"Deleted Successfully"});
-   
-
 });
+
 router.put('/lab1/edit/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
     await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
