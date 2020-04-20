@@ -101,26 +101,31 @@ router.get('/lab1/edit/:id', async function (req, res) {
 
 router.post('/lab1/update/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
-    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
-        if (err)
-            res.status(404).send("Not found");
-        else {
-            item.Select_Lab = req.body.Select_Lab;
-            //item.Id = req.body.id;
-            item.Main_Category = req.body.Main_Category;
-            item.Asset_Description = req.body.Asset_Description;
-            item.Serial_Num = req.body.Serial_Num;
-            item.Asset_Code = req.body.Asset_Code;
-            item.Qty = req.body.Qty;
-            item.Make = req.body.Make;
-            item.Condition = req.body.Condition;
-            item.Comments = req.body.Comments;
-
-            res.json(item);
-        }
+    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, {
+        Select_Lab: req.body.Select_Lab,
+        Id: req.body.id,
+        Main_Category: req.body.Main_Category,
+        Asset_Description: req.body.Asset_Description,
+        Serial_Num: req.body.Serial_Num,
+        Asset_Code: req.body.Asset_Code,
+        Qty: req.body.Qty,
+        Make: req.body.Make,
+        Condition: req.body.Condition,
+        Comments: req.body.Comments
 
     }, { new: true })
-
+        .then(item => {
+            if(!item){
+                return res.status(404).send({
+                    message: "Item Not Found"
+            })
+        }
+        res.send(item);
+    }).catch(err =>{
+        return res.status(500).send({
+            message:"Something went wrong"
+        });
+    });
 });
 
 async function loadLab1collection() {
