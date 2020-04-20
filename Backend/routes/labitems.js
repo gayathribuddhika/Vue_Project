@@ -10,7 +10,8 @@ router.get('/lab1', async (req, res) => {
 });
 
 /*router.get('lab1', (req, res)=> {
-    Item.findById({}).toArray();
+    Item.findById({_id:id}).toArray();
+    res.send("OK");
 });*/
 
 /*router.get('/lab1/:id', async (req, res) => {
@@ -88,7 +89,7 @@ router.delete('/lab1/:id', async (req, res) => {
 
 });
 
-router.put('/lab1/edit/:id', async function (req, res) {
+router.get('/lab1/edit/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
     await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
         if (err) {
@@ -98,10 +99,10 @@ router.put('/lab1/edit/:id', async function (req, res) {
     });
 });
 
-router.put('/lab1/update/:id', async function (req, res) {
+router.post('/lab1/update/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
     await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
-        if (!item)
+        if (err)
             res.status(404).send("Not found");
         else {
             item.Select_Lab = req.body.Select_Lab;
@@ -118,7 +119,7 @@ router.put('/lab1/update/:id', async function (req, res) {
             res.json(item);
         }
 
-    })
+    }, { new: true })
 
 });
 

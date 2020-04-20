@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 require('./models/db');
+require('./models/item.model')
 
 const indexRouter = require('./routes/index');
 app.use('/', indexRouter);
