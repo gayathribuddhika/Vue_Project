@@ -9,6 +9,10 @@ router.get('/lab1', async (req, res) => {
     res.send(await lab1.find({}).toArray());
 });
 
+/*router.get('lab1', (req, res)=> {
+    Item.findById({}).toArray();
+});*/
+
 router.get('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     res.send(await lab1.find({ _id: new mongodb.ObjectID(req.params.id) }).toArray());
@@ -75,12 +79,12 @@ router.post('/lab3', async (req, res) => {
 
 router.delete('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
-    await lab1.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
-    res.status(200).send();
-
+    await lab1.findOneAndRemove({ _id: new mongodb.ObjectID(req.params.id) });
+    res.status(200).send({message:"Deleted Successfully"});
+   
 
 });
-router.get('/lab1/edit/:id', async function (req, res) {
+router.put('/lab1/edit/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
     await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
         if (err) {

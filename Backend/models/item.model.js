@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let Item = new Schema({
+    Select_Lab: {
+        type: String
+    },
     Id: {
         type: Number
     },
