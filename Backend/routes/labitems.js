@@ -27,7 +27,8 @@ router.get('/lab2', async (req, res) => {
 router.post('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
     await lab1.insertOne({
-        Id: req.body.id,
+        Select_Lab:req.body.Select_Lab,
+        //Id: req.body.id,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
         Serial_Num: req.body.Serial_Num,
@@ -91,11 +92,12 @@ router.get('/lab1/edit/:id', async function (req, res) {
 
 router.put('/lab1/update/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
-    await lab1.findOneAndUpdate({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
+    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
         if (!item)
             res.status(404).send("Not found");
         else {
-            item.Id = req.body.id;
+            item.Select_Lab = req.body.Select_Lab;
+            //item.Id = req.body.id;
             item.Main_Category = req.body.Main_Category;
             item.Asset_Description = req.body.Asset_Description;
             item.Serial_Num = req.body.Serial_Num;

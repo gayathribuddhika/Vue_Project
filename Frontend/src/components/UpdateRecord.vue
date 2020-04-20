@@ -23,7 +23,7 @@
               id="select_lab"
               v-model="form.select_lab"
               required
-              :options="select_labs"
+              :options="select_lab"
             ></b-form-select>
           </b-form-group>
           <!--<b-form-group
@@ -158,7 +158,7 @@ export default {
         items:{}
       },
 
-      select_labs: [
+      select_lab: [
         { text: "Select One", value: null },
         "CIS/LAB/01",
         "CIS/LAB/02",
