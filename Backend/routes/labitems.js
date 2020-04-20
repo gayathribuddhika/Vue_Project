@@ -31,7 +31,7 @@ router.get('/lab2', async (req, res) => {
 router.post('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
     await lab1.insertOne({
-        Select_Lab:req.body.Select_Lab,
+        Select_Lab: req.body.Select_Lab,
         //Id: req.body.id,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
@@ -79,8 +79,13 @@ router.post('/lab3', async (req, res) => {
 
 router.delete('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
-    await lab1.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
-    res.status(200).send({message:"Deleted Successfully"});
+    await lab1.deleteOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
+        if (err) {
+            res.json(err);
+        }
+        res.status(200).send({ message: "Deleted Successfully" });
+    });
+
 });
 
 router.put('/lab1/edit/:id', async function (req, res) {
@@ -114,7 +119,7 @@ router.put('/lab1/update/:id', async function (req, res) {
         }
 
     })
-        
+
 });
 
 async function loadLab1collection() {
