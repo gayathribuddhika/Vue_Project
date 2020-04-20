@@ -56,7 +56,7 @@
             <table>
               <thead>
                 <tr>
-                  <th>ID</th>
+                  <!--<th>ID</th>-->
                   <th>Main Category</th>
                   <th>Asset Description</th>
                   <th>Serial Num</th>
@@ -70,7 +70,7 @@
               </thead>
               <tbody>
                 <tr v-for="item in items" v-bind:key="item._id">
-                  <td>{{item.Id}}</td>
+                  <!--<td>{{item.Id}}</td>-->
                   <td>{{item.Main_Category}}</td>
                   <td>{{item.Asset_Description}}</td>
                   <td>{{item.Serial_Num}}</td>
