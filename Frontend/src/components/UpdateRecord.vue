@@ -220,18 +220,22 @@ export default {
   },
 
   created() {
-        let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
-        axios.get(uri).then((response) => {
-          this.form.items = response.data;
-          //this.form.fill(data);
-        });
-      },
-
+        this.getRecord();
+  },
   methods: {
+    getRecord(){
+      let uri =  `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`
+      axios.get(uri)
+      .then(res =>{
+        this.form.items = res.data;
+        console.log(this.form.items);
+      })
+    },
     updateRecord() {
           let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
-          axios.post(uri, this.form.items).then((response) => {
-            this.$router.push({name: 'Current_Status'});
+          axios.put(uri, this.form.items).then((response) => {
+            console.log(res);
+            this.$router.replace({name: 'Current_Status'});
           });
         }
   },

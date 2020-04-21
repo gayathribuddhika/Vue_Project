@@ -89,7 +89,7 @@ router.delete('/lab1/:id', async (req, res) => {
 
 });
 
-router.get('/lab1/edit/:id', async function (req, res) {
+/*router.get('/lab1/edit/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
     await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
         if (err) {
@@ -97,9 +97,9 @@ router.get('/lab1/edit/:id', async function (req, res) {
         }
         res.json(item);
     });
-});
+});*/
 
-router.post('/lab1/update/:id', async function (req, res) {
+router.put('/lab1/update/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
     await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, {
         Select_Lab: req.body.Select_Lab,
