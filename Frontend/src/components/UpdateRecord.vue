@@ -224,17 +224,17 @@ export default {
   },
   methods: {
     getRecord(){
-      let uri =  `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`
+      let uri =  `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`
       axios.get(uri)
-      .then(res =>{
-        this.form.items = res.data;
-        console.log(this.form.items);
+      .then((response) =>{
+        this.items = response.data;
+        console.log(this.items);
       })
     },
     updateRecord() {
           let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
-          axios.put(uri, this.form.items).then((response) => {
-            console.log(res);
+          axios.put(uri, this.items).then((response) => {
+            console.log(response);
             this.$router.replace({name: 'Current_Status'});
           });
         }
