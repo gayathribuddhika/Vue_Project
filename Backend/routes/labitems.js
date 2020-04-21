@@ -43,7 +43,12 @@ router.post('/lab1', async (req, res) => {
         Condition: req.body.Condition,
         Comments: req.body.Comments
     });
+
+
+
     res.status(201).send();
+
+
 });
 /*router.post('/lab2', async (req, res) => {
     const lab2 = await loadLab2collection();
@@ -101,7 +106,7 @@ router.get('/lab1/edit/:id', async function (req, res) {
 
 router.put('/lab1/update/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
-    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) },  {
+    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, {
         Select_Lab: req.body.Select_Lab,
         Id: req.body.id,
         Main_Category: req.body.Main_Category,
@@ -113,22 +118,43 @@ router.put('/lab1/update/:id', async function (req, res) {
         Condition: req.body.Condition,
         Comments: req.body.Comments,
 
-        new:true
-
-    })
+    }, { new: true })
         .then(item => {
-            if(!item){
+            if (!item) {
                 return res.status(404).send({
                     message: "Item Not Found"
-            })
-        }
-        res.send(item);
-    }).catch(err =>{
-        return res.status(500).send({
-            message:"Something went wrong"
+                })
+            }
+            res.send(item);
+        }).catch(err => {
+            return res.status(500).send({
+                message: "Something went wrong"
+            });
         });
-    });
 });
+
+/*router.put('/lab1/update/:id', async (req, res, next) => {
+    const lab1 = await loadLab1collection();
+    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
+        if (!item) {
+            return res.status(404).send('Item Not Found');
+        } else if (err) {
+            return res.status(400).send("Error in Update");
+        } else {
+            item.Select_Lab = req.body.Select_Lab;
+            item.Id = req.body.id;
+            item.Main_Category = req.body.Main_Category;
+            item.Asset_Description = req.body.Asset_Description;
+            item.Serial_Num = req.body.Serial_Num;
+            item.Asset_Code = req.body.Asset_Code;
+            item.Qty = req.body.Qty;
+            item.Make = req.body.Make;
+            item.Condition = req.body.Condition;
+            item.Comments = req.body.Comments;
+        }
+        res.status(200).json('Updated Successfully');
+    })
+});*/
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });

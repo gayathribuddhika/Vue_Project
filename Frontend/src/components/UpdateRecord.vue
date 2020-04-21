@@ -1,11 +1,12 @@
 <template>
   <div>
-    <br>
+    <br />
     <div>
-      &nbsp;&nbsp;&nbsp;<router-link to="/adminpanel">Back</router-link>
+      &nbsp;&nbsp;&nbsp;
+      <router-link to="/adminpanel">Back</router-link>
     </div>
     <b-card bg-variant="light" body-class="text-center">
-      <b-form @submit.prevent ="updateRecord" v-if="show">
+      <b-form v-on:submit.prevent="updateRecord" v-if="show">
         <b-form-group
           label-cols-lg="3"
           label="Update a Record"
@@ -19,12 +20,7 @@
             label-for="select_lab"
             label-align-sm="right"
           >
-            <b-form-select
-              id="select_lab"
-              v-model="form.select_lab"
-              required
-              :options="select_lab"
-            ></b-form-select>
+            <b-form-select id="select_lab" v-model="form.select_lab" required :options="select_lab"></b-form-select>
           </b-form-group>
           <!--<b-form-group
                     label-cols-sm="3"
@@ -155,7 +151,7 @@ export default {
   data() {
     return {
       form: {
-        items:{}
+        items: {}
       },
 
       select_lab: [
@@ -220,27 +216,26 @@ export default {
   },
 
   created() {
-        this.getRecord();
+    this.getRecord();
   },
   methods: {
-    getRecord(){
-      let uri =  `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`
-      axios.get(uri)
-      .then((response) =>{
+    getRecord() {
+      let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
+      axios.get(uri).then(response => {
         this.items = response.data;
         console.log(this.items);
-      })
+      });
     },
     updateRecord() {
-          let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
-          axios.put(uri, this.items).then((response) => {
-            console.log(response);
-            this.$router.replace({name: 'Current_Status'});
-          });
-        }
-  },
+      let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
+      axios.put(uri, this.items).then(response => {
+        console.log(response);
+        this.$router.replace({ name: "Current_Status" });
+      });
+    }
+  }
 
-    /*onReset(evt) {
+  /*onReset(evt) {
       evt.preventDefault();
       // Reset our form values
       //this.from.select_lab = null
@@ -260,7 +255,6 @@ export default {
         this.show = true;
       });
     }*/
-  }
-
+};
 </script>
 

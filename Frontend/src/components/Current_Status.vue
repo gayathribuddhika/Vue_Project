@@ -36,8 +36,8 @@
                   <td>{{item.Condition}}</td>
                   <td>{{item.Comments}}</td>
                   <td>
-                    <router-link :to="{name: 'UpdateRecord', params: {id:item._id }}" class="btn btn-primary">Edit</router-link>
-                    <button type="submit" class="btn btn-primary" @click.prevent="deleteRecord(item._id)">Delete</button>
+                    <router-link :to="{name: 'UpdateRecord', params: {id:item._id }}" class="btn btn-success">Edit</router-link>
+                    <button type="submit" class="btn btn-danger" v-on:click="deleteRecord(item._id)">Delete</button>
                   </td>
                 </tr>
               </tbody>
@@ -114,20 +114,12 @@ export default {
       items: {}
     };
   },
-  methods: {
-    deleteRecord(id) {
-      this.$confirm("Do you really want to delete this?").then(response => {
-        let uri = `http://localhost:8085/lab/lab1/${id}`;
-        axios.delete(uri).then(response => {
-          this.items.splice(this.items.indexOf(id), 1);
-          
-        });
-      });
-    },
-    
+  created(){
+    this.fetchRecord();
   },
-  mounted() {
-    axios
+  methods: {
+    fetchRecord(){
+      axios
       .get("http://localhost:8085/lab/lab1")
       .then(response => {
         console.log(response.data);
@@ -136,7 +128,30 @@ export default {
       .catch(error => {
         console.log(error);
       });
+    },
+    /*deleteRecord(id) {
+      this.$confirm("Do you really want to delete this?").then(response => {
+        let uri = `http://localhost:8085/lab/lab1/${id}`;
+        axios.delete(uri).then(response => {
+          this.items.splice(this.items.indexOf(id), 1);
+          
+        });
+      });
+    }*/
+    deleteRecord(id){
+      const response = confirm("Do you really want to delete this?")
+      if(response){
+        axios.delete(`http://localhost:8085/lab/lab1/${id}`)
+        .then(response => {
+          this.fetchRecord();
+        })
+        .catch(error => console.log(error));
+      }
+      return;
+    }
+    
   }
+  
 };
 </script>
 
