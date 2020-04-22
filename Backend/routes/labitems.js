@@ -104,7 +104,7 @@ router.get('/lab1/edit/:id', async function (req, res) {
     });
 });
 
-router.put('/lab1/update/:id', async function (req, res) {
+/*router.put('/lab1/update/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
     await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, {
         Select_Lab: req.body.Select_Lab,
@@ -131,9 +131,9 @@ router.put('/lab1/update/:id', async function (req, res) {
                 message: "Something went wrong"
             });
         });
-});
+});*/
 
-/*router.put('/lab1/update/:id', async (req, res, next) => {
+/*router.put('/lab1/update/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, function (err, item) {
         if (!item) {
@@ -152,9 +152,18 @@ router.put('/lab1/update/:id', async function (req, res) {
             item.Condition = req.body.Condition;
             item.Comments = req.body.Comments;
         }
-        res.status(200).json('Updated Successfully');
+        //res.status(200).json('Updated Successfully');
+        //res.json(item);
     })
 });*/
+
+router.put('/lab1/update/:id', async function(req, res, next) {
+    const lab1 = await loadLab1collection();
+    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, req.body, function (err, item) {
+      if (err) return next(err);
+      res.json(item);
+    });
+  });
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
