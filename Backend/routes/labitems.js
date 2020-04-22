@@ -35,7 +35,7 @@ router.get('/lab2', async (req, res) => {
     res.send(await lab3.find({}).toArray());
 });*/
 
-router.post('/lab1', async (req, res) => {
+/*router.post('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
     await lab1.insertOne({
         Select_Lab: req.body.Select_Lab,
@@ -50,7 +50,7 @@ router.post('/lab1', async (req, res) => {
         Comments: req.body.Comments
     });
        res.status(201).send();
-});
+});*/
 /*router.post('/lab2', async (req, res) => {
     const lab2 = await loadLab2collection();
     await lab2.insertOne({

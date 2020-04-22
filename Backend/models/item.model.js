@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let Item = new Schema({
+const ItemSchema = new Schema({
     Select_Lab: {
         type: String
     },
@@ -27,4 +27,4 @@ let Item = new Schema({
 }
     );
 
-module.exports = mongoose.model("Item", Item);
+module.exports = Item = mongoose.model("item", ItemSchema);
