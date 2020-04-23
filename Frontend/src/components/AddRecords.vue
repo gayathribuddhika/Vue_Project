@@ -1,8 +1,9 @@
 <template>
   <div>
-    <br>
+    <br />
     <div>
-      &nbsp;&nbsp;&nbsp;<router-link to="/adminpanel">Back</router-link>
+      &nbsp;&nbsp;&nbsp;
+      <router-link to="/adminpanel">Back</router-link>
     </div>
     <b-card bg-variant="light" body-class="text-center">
       <b-form @submit.prevent="addToRecords" @reset="onReset" v-if="show">
@@ -230,7 +231,6 @@ export default {
 
   methods: {
     addToRecords() {
-      
       let newRecord = {
         //id: this.form.id,
         Main_Category: this.form.category,
