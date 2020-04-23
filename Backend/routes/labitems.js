@@ -4,26 +4,15 @@ const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
 const Item = require('../models/item.model')
 
-/*router.get('/lab1', async (req, res) => {
+router.get('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
     res.send(await lab1.find({}).toArray());
-});*/
-
-router.get('/lab1', (req, res)=> {
-    Item.find(function(err, item){
-        if(err){
-            res.status(500).send({message:"Can't get"})
-        }else{
-            res.json(item);
-        }
-    
-    })
 });
 
-/*router.get('/lab1/:id', async (req, res) => {
+router.get('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
     res.send(await lab1.find({ _id: new mongodb.ObjectID(req.params.id) }).toArray());
-});*/
+});
 
 router.get('/lab2', async (req, res) => {
     const lab2 = await loadLab2collection();
@@ -35,7 +24,7 @@ router.get('/lab2', async (req, res) => {
     res.send(await lab3.find({}).toArray());
 });*/
 
-/*router.post('/lab1', async (req, res) => {
+router.post('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
     await lab1.insertOne({
         Select_Lab: req.body.Select_Lab,
@@ -50,7 +39,7 @@ router.get('/lab2', async (req, res) => {
         Comments: req.body.Comments
     });
        res.status(201).send();
-});*/
+});
 /*router.post('/lab2', async (req, res) => {
     const lab2 = await loadLab2collection();
     await lab2.insertOne({
@@ -105,6 +94,14 @@ router.get('/lab1/edit/:id', async function (req, res) {
     });
 });
 
+router.get('/lab1/update/:id', async function(req, res, next) {
+    const lab1 = await loadLab1collection();
+    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, req.body, (err, item) => {
+      if (err) return next(err);
+      res.json(item);
+    });
+  });
+
 /*router.put('/lab1/update/:id', async function (req, res) {
     const lab1 = await loadLab1collection();
     await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, {
@@ -158,13 +155,7 @@ router.get('/lab1/edit/:id', async function (req, res) {
     })
 });*/
 
-router.get('/lab1/update/:id', async function(req, res, next) {
-    const lab1 = await loadLab1collection();
-    await lab1.findOne({ _id: new mongodb.ObjectID(req.params.id) }, req.body, (err, item) => {
-      if (err) return next(err);
-      res.json(item);
-    });
-  });
+
 
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
