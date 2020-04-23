@@ -4,21 +4,21 @@ const mongodb = require('mongodb');
 const url = 'mongodb://localhost:27017/Inventory_FAS';
 const Item = require('../models/item.model')
 
-router.get('/lab1', async (req, res) => {
+/*router.get('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
     res.send(await lab1.find({}).toArray());
-});
+});*/
 
-/*router.get('lab1', (req, res)=> {
-    Item.findOne(req.params.id,function(err, item){
+router.get('/lab1', (req, res)=> {
+    Item.find(function(err, item){
         if(err){
-            res.status(500).json({message:"Can't get"})
+            res.status(500).send({message:"Can't get"})
         }else{
             res.json(item);
         }
     
     })
-});*/
+});
 
 /*router.get('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
