@@ -224,13 +224,16 @@ export default {
       axios.get(uri).then(response => {
         this.items = response.data;
         console.log(this.items);
+      })
+      .catch(error => {
+        console.log(error)
       });
     },
     updateRecord() {
       let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
       axios.put(uri, this.items).then(response => {
         console.log(response);
-        this.$router.replace({ name: "Current_Status" });
+        this.$router.push({ name: "Current_Status" });
       });
     }
   }

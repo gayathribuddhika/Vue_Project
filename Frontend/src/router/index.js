@@ -11,7 +11,7 @@ import current_status from '@/components/Current_Status'
 import AddRecords from '@/components/AddRecords'
 import AdminProfile from '@/components/AdminProfile'
 import StaffProfile from '@/components/StaffProfile'
-import Sidebar from '@/components/Sidebar'
+import ResetPassword from '@/components/ResetPassword'
 import UpdateRecord from '@/components/UpdateRecord'
 
 Vue.use(Router)
@@ -70,15 +70,15 @@ export default new Router({
       component: StaffProfile
     },
     {
-      path: '/sidebar',
-      name: "Sidebar",
-      component: Sidebar
-    },
-    {
       path: '/updaterecord/:id',
       name: "UpdateRecord",
       component: UpdateRecord
-    }
+    },
+    {
+      path: '/login/resetpassword',
+      name: "ResetPassword",
+      component: ResetPassword
+    },
 
   ]
 })
