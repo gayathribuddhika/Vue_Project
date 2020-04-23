@@ -10,7 +10,7 @@
       <br />
       <b-form-group
         id="fieldset-horizontal"
-        label-cols-sm="4"
+        cccccc
         label-cols-lg="3"
         label="Enter your email"
         label-for="email"
@@ -21,10 +21,8 @@
           placeholder="Enter your organization email here"
         ></b-form-input>
       </b-form-group>
-      <b-form-group>
-        <b-button variant="primary" align-center>SEND</b-button>
-      </b-form-group>
     </b-form>
+    <b-button variant="primary">SEND</b-button>
       </b-jumbotron>
   </div>
   </div>
@@ -48,8 +46,8 @@ export default {
 }
 #resetpassword {
   padding-top: 40px;
-  margin-left: 450px;
-  margin-right: 450px;
+  margin-left: 425px;
+  margin-right: 425px;
   padding-bottom: 50px;
 }
 </style>
