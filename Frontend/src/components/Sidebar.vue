@@ -1,29 +1,21 @@
 <template>
   <div>
-    <b-card>
-      <b-nav vertical>
-        <b-nav-item to="/login/resetpassword" exact exact-active-class="active">Active</b-nav-item>
-        <b-nav-item to="/some/route/foo" exact exact-active-class="active">Foo</b-nav-item>
-        <b-nav-item to="/some/route/bar" exact exact-active-class="active">Bar</b-nav-item>
-      </b-nav>
-      <b-card-body>
-      <!-- Child route gets rendered in <router-view> or <nuxt-child> -->
-      <router-view></router-view>
-      <!-- Or if using Nuxt.js
-      <nuxt-child></nuxt-child>
-      -->
-    </b-card-body>
-    </b-card>
-  </div>
+  <b-card >
+    <b-tabs pills card vertical variant ="dark">
+      <b-tab title="Dashboard" active><b-card-text>Tab contents 1</b-card-text></b-tab>
+      <b-tab title="Current Details"><b-card-text>Tab contents 2</b-card-text></b-tab>
+      <b-tab title="Add a new Record"><b-card-text>Tab contents 3</b-card-text></b-tab>
+      <b-tab title="Delete a Record"><b-card-text>Tab contents 3</b-card-text></b-tab>
+      <b-tab title="Update/Edit a Record"><b-card-text>Tab contents 3</b-card-text></b-tab>
+      <b-tab title="Create a Report"><b-card-text>Tab contents 3</b-card-text></b-tab>
+      <b-tab title="Logout" router-link ="/login/resetpassword"></b-tab>
+    </b-tabs>
+  </b-card>
+</div>
 </template>
+
 <script>
 export default {
   
 }
 </script>
-
-<style>
-
-
-
-</style>

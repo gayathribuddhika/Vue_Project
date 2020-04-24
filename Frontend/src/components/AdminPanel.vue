@@ -41,7 +41,7 @@
         </b-list-group>
       </b-card>
       <b-card title="Dashboard">
-        
+        <b-card-text>dhsc cuw wfgw fgcv sdcsuewineq w</b-card-text>
       </b-card>
       
     </b-card-group>
