@@ -40,7 +40,9 @@
           </div>
         </b-list-group>
       </b-card>
-      <b-card title="Dashboard"></b-card>
+      <b-card title="Dashboard">
+        
+      </b-card>
       
     </b-card-group>
   </div>
