@@ -11,7 +11,11 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSimpleAlert from'vue-simple-alert'
-import BootstrapSideBar from 'b-sidebar'
+
+import BSidebar from 'bootstrap-vue'
+Vue.component('b-sidebar', BSidebar)
+import SidebarPlugin from 'bootstrap-vue'
+Vue.use(SidebarPlugin)
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -29,7 +33,7 @@ Vue.use(NavbarPlugin)
 Vue.use(Vuelidate)
 Vue.use(BootstrapVueIcons)
 Vue.use(VueSimpleAlert)
-Vue.use(BootstrapSideBar)
+
 
 /*import VueSidebarMenu from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
@@ -37,8 +41,9 @@ Vue.use(VueSidebarMenu)*/
 
 
 new Vue({
-  el: '#app',
+  //el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
-})
+  render:h => h(App),
+  /*components: { App },
+  template: '<App/>'*/
+}).$mount('#app')
