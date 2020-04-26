@@ -2,6 +2,7 @@
   <div>
     <b-card body-bg-variant="light" border-variant="dark">
       <b-tabs pills card vertical no-body>
+        
         <b-tab title="Dashboard">
           <b-card-text>Dashboard</b-card-text>
         </b-tab>
