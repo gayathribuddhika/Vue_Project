@@ -19,7 +19,7 @@
 
         <b-list-group variant="dark">
           <div>
-            <b-list-group-item variant="dark" href="#">Dashboard</b-list-group-item>
+            <b-list-group-item variant="dark">Dashboard</b-list-group-item>
             <b-list-group-item variant="dark">
               <router-link to="adminpanel/currentstatus">Current Details</router-link>
             </b-list-group-item>
@@ -41,7 +41,7 @@
         </b-list-group>
       </b-card>
       <b-card title="Dashboard">
-        <b-card-text>dhsc cuw wfgw fgcv sdcsuewineq w</b-card-text>
+        <b-card-text>This shows the Admin Dashboard.</b-card-text>
       </b-card>
       
     </b-card-group>
