@@ -45,7 +45,7 @@
             /> 
             
             <br>
-            <a href="#">Forgot your password?</a>
+            <router-link to="/login/resetpassword">Forgot your password?</router-link>
             </b-form-group>
             <b-button type="submit" variant="primary">Login</b-button>
             
@@ -83,7 +83,7 @@
               v-model= "form2.password2"
             /> 
             <br>
-            <a href="#">Forgot your password?</a>
+            <router-link to="/login/resetpassword">Forgot your password?</router-link> 
             </b-form-group>
             <b-button type="submit" variant="primary">Login</b-button>
             </b-form>
