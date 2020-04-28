@@ -33,5 +33,5 @@ app.use('/lab', Item)
 
 const port = 8085;
 app.listen(port, () => {
-    console.log('server started on port ' + port);
+    console.log('Server started on port ' + port);
 });
