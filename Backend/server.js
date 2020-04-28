@@ -1,23 +1,19 @@
 const express = require('express');
-const app = express ();
+const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({
-    extended:true
+    extended: true
 }));
 app.use(bodyParser.json());
 
 require('./config/db');
 
-
-/*const indexRouter = require('./routes/index');
-app.use('/', indexRouter);
-
 const contactRouter = require('./routes/contact');
-app.use('/contact', contactRouter);
+app.use('/contacts', contactRouter);
 
 const staffloginRouter = require('./routes/stafflogin');
 app.use('/stafflogin', staffloginRouter);
@@ -25,11 +21,14 @@ app.use('/stafflogin', staffloginRouter);
 const adminloginRouter = require('./routes/adminlogin');
 app.use('/adminlogin', adminloginRouter);
 
-const labRouter = require('./routes/labitems');
-app.use('/lab', labRouter); */
+const labItem1 = require('./routes/lab1_items');
+app.use('/lab', labItem1);
 
-const Item = require('./routes/lab1_items')
-app.use('/lab', Item)
+const labItem2 = require('./routes/lab2_items');
+app.use('/lab', labItem2);
+
+const labItem3 = require('./routes/lab3_items');
+app.use('/lab', labItem3);
 
 const port = 8085;
 app.listen(port, () => {

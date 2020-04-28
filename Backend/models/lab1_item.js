@@ -5,7 +5,7 @@ const Item = new Schema({
     Select_Lab: {
         type: String
     },
-    
+
     Main_Category: {
         type: String
     },
@@ -24,7 +24,7 @@ const Item = new Schema({
     Comments: {
         type: String
     },
-},{collection: 'LAB01_CIS'}
-    );
+}, { collection: 'LAB01_CIS' }
+);
 
 module.exports = mongoose.model("ItemLab1", Item);

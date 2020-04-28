@@ -64,7 +64,7 @@ export default {
     }
   },
   mounted () {
-    axios.get('http://localhost:8085/contact')
+    axios.get('http://localhost:8085/contacts')
     .then((response) => {
       console.log(response.data);
       this.contacts = response.data;

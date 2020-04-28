@@ -1,16 +1,18 @@
-const express = require('express');
-const router = express.Router();
-const mongodb = require('mongodb');
-const url = 'mongodb://localhost:27017/Inventory_FAS';
+const express = require("express")
+const router = express.Router()
+const cors = require("cors")
 
-router.get('/', async(req, res) => {
-    const stafflogin = await loadStaffLogincollection();
-    res.send(await stafflogin.find({}).toArray());
+const Staff = require("../models/staff_details")
+router.use(cors())
+
+router.get('/', (req, res) => {
+    Staff.find(function (err, staff) {
+        if (err) {
+            res.json(err);
+        }
+        res.json(staff);
+    });
 });
 
-async function loadStaffLogincollection() {
-    const client = await mongodb.MongoClient.connect (url, { useNewUrlParser: true, useUnifiedTopology: true });
-    return client.db('Inventory_FAS').collection("Staff_Login")
-}
-
 module.exports = router;
+
