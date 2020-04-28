@@ -10,10 +10,10 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-require('./models/db');
+require('./config/db');
 
 
-const indexRouter = require('./routes/index');
+/*const indexRouter = require('./routes/index');
 app.use('/', indexRouter);
 
 const contactRouter = require('./routes/contact');
@@ -26,7 +26,10 @@ const adminloginRouter = require('./routes/adminlogin');
 app.use('/adminlogin', adminloginRouter);
 
 const labRouter = require('./routes/labitems');
-app.use('/lab', labRouter);
+app.use('/lab', labRouter); */
+
+const Item = require('./routes/Items')
+app.use('/lab', Item)
 
 const port = 8085;
 app.listen(port, () => {

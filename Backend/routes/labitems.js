@@ -1,8 +1,8 @@
-const express = require('express');
+/*const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
-const url = 'mongodb://localhost:27017/Inventory_FAS';
-const Item = require('../models/item.model')
+//const url = 'mongodb://localhost:27017/Inventory_FAS';
+//const Item = require('../models/item.model')
 
 router.get('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
@@ -19,10 +19,10 @@ router.get('/lab2', async (req, res) => {
     res.send(await lab2.find({}).toArray());
 });
 
-/*router.get('/lab3', async(req, res) => {
+router.get('/lab3', async(req, res) => {
     const lab3 = await loadLab3collection();
     res.send(await lab3.find({}).toArray());
-});*/
+});
 
 router.post('/lab1', async (req, res) => {
     const lab1 = await loadLab1collection();
@@ -40,7 +40,7 @@ router.post('/lab1', async (req, res) => {
     });
        res.status(201).send();
 });
-/*router.post('/lab2', async (req, res) => {
+router.post('/lab2', async (req, res) => {
     const lab2 = await loadLab2collection();
     await lab2.insertOne({
         Id: req.body.id,
@@ -71,7 +71,7 @@ router.post('/lab3', async (req, res) => {
     });
     
     res.status(201).send();
-});*/
+});
 
 router.delete('/lab1/:id', async (req, res) => {
     const lab1 = await loadLab1collection();
@@ -156,7 +156,7 @@ router.get('/lab1/update/:id', async function(req, res, next) {
 });*/
 
 
-
+/*
 async function loadLab1collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('Inventory_FAS').collection("LAB01_CIS")
@@ -169,5 +169,5 @@ async function loadLab3collection() {
     const client = await mongodb.MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('Inventory_FAS').collection("LAB03_CIS")
 }
-
+*/
 module.exports = router;

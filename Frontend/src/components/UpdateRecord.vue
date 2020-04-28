@@ -130,7 +130,7 @@
 
           <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Update</b-button>&nbsp;&nbsp;&nbsp;
           <b-button type="reset" variant="danger">Reset</b-button>&nbsp;&nbsp;&nbsp;
-          <router-link to="/adminpanel x/currentstatus">
+          <router-link to="/adminpanel/currentstatus">
             <b-button type="button" variant="success">View All</b-button>
           </router-link>
           <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
@@ -216,11 +216,7 @@ export default {
   },
 
   created() {
-    this.getRecord();
-  },
-  methods: {
-    getRecord() {
-      let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
+    let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
       axios.get(uri).then(response => {
         this.items = response.data;
         console.log(this.items);
@@ -228,10 +224,11 @@ export default {
       .catch(error => {
         console.log(error)
       });
-    },
+  },
+  methods: {
     updateRecord() {
       let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
-      axios.put(uri, this.items).then(response => {
+        axios.post(uri, this.items).then(response => {
         console.log(response);
         this.$router.push({ name: "Current_Status" });
       });

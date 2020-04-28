@@ -141,7 +141,7 @@ export default {
     deleteRecord(id){
       const response = confirm("Do you really want to delete this?")
       if(response){
-        axios.delete(`http://localhost:8085/lab/lab1/${id}`)
+        axios.delete(`http://localhost:8085/lab/lab1/delete/${id}`)
         .then(response => {
           this.fetchRecord();
         })
