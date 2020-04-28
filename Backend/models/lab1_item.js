@@ -27,4 +27,4 @@ const Item = new Schema({
 },{collection: 'LAB01_CIS'}
     );
 
-module.exports = mongoose.model("Item", Item);
+module.exports = mongoose.model("ItemLab1", Item);

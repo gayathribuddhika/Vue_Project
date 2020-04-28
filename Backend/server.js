@@ -28,7 +28,7 @@ app.use('/adminlogin', adminloginRouter);
 const labRouter = require('./routes/labitems');
 app.use('/lab', labRouter); */
 
-const Item = require('./routes/Items')
+const Item = require('./routes/lab1_items')
 app.use('/lab', Item)
 
 const port = 8085;

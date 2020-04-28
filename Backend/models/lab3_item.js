@@ -1,20 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ItemSchema = new Schema({
+const Item = new Schema({
+    Select_Lab: {
+        type: String
+    },
+    
     Main_Category: {
         type: String
     },
     Asset_Description: {
         type: String
     },
-    Serial_Num: {
-        type: String
-    },
     Asset_Code: {
-        type: String
-    },
-    Qty: {
         type: String
     },
     Make: {
@@ -26,6 +24,7 @@ const ItemSchema = new Schema({
     Comments: {
         type: String
     },
-},{collection: 'LAB01_CIS'});
+},{collection: 'LAB03_CIS'}
+    );
 
-module.exports = mongoose.model("Item", ItemSchema);
+module.exports = mongoose.model("ItemLab3", Item);

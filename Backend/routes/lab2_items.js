@@ -2,10 +2,10 @@ const express = require("express")
 const router = express.Router()
 const cors = require("cors")
 
-const Item = require("../models/Item")
+const Item = require("../models/lab2_item")
 router.use(cors())
 
-router.get('/lab1', (req, res) => {
+router.get('/lab2', (req, res) => {
     Item.find(function (err, items) {
         if (err) {
             res.json(err);
@@ -14,25 +14,25 @@ router.get('/lab1', (req, res) => {
     });
 });
 
-router.post('/lab1', function (req, res) {
+router.post('/lab2', function (req, res) {
     let item = new Item(req.body);
     item.save()
         .then(() => {
             res.status(200).send('Record is saved Successfully');
         })
         .catch(() => {
-            res.status(400).send("unable to save to database");
+            res.status(400).send("Unable to save to database");
         });
 });
 
-router.delete('/lab1/delete/:id', function (req, res) {
+router.delete('/lab2/delete/:id', function (req, res) {
     Item.findOneAndDelete({ _id: req.params.id }, function (err) {
         if (err) res.json(err);
         else res.json('Successfully removed');
     });
 });
 
-router.get('/lab1/edit/:id', function (req, res) {
+router.get('/lab2/edit/:id', function (req, res) {
     let id = req.params.id;
     Item.findById(id, function (err, item) {
         if (err) {
@@ -42,7 +42,7 @@ router.get('/lab1/edit/:id', function (req, res) {
     });
 });
 
-router.post('/lab1/update/:id', function (req, res) {
+router.post('/lab2/update/:id', function (req, res) {
     Item.findById(req.params.id, function (err, item) {
         if (!item)
             res.status(404).send("Record is not found");
