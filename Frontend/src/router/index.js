@@ -15,6 +15,7 @@ import ResetPassword from '@/components/ResetPassword'
 import UpdateRecord from '@/components/UpdateRecord'
 import Sidebar from '@/components/Sidebar'
 
+
 Vue.use(Router)
 
 export default new Router({

@@ -216,24 +216,42 @@ export default {
   },
 
   created() {
-    let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
+    let uri = `http://localhost:8085/lab/lab1/${this.$route.params.id}`;
       axios.get(uri).then(response => {
         this.items = response.data;
         console.log(this.items);
       })
       .catch(error => {
-        console.log(error)
+        console.log(error);
       });
   },
   methods: {
     updateRecord() {
       let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
-        axios.post(uri, this.items).then(response => {
+        axios.put(uri, this.items).then(response => {
         console.log(response);
-        this.$router.push({ name: "Current_Status" });
+        //this.$router.push({ name: "Current_Status" });
       });
     }
   }
+  /*methods: {
+    updateRecord() {
+      axios.get(`http://localhost:8085/lab/lab1/${this.$route.params.id}`)
+      .then(data => res.json())
+      .then(data => {
+        this.form.items = new Items (
+          data.Main_Category,
+          data.Asset_Description,
+          data.Serial_Num,
+          data.Asset_Code,
+          data.Qty,
+          data.Make,
+          data.Condition,
+          data.Comments
+        );
+      });
+    }
+  },*/
 
   /*onReset(evt) {
       evt.preventDefault();

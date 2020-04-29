@@ -2,10 +2,10 @@ const express = require("express")
 const router = express.Router()
 const cors = require("cors")
 
-const Item = require("../models/lab1_item")
+const Item = require("../models/lab5_item")
 router.use(cors())
 
-router.get('/lab1', (req, res) => {
+router.get('/lab5', (req, res) => {
     Item.find(function (err, items) {
         if (err) {
             res.json(err);
@@ -14,7 +14,7 @@ router.get('/lab1', (req, res) => {
     });
 });
 
-router.post('/lab1', function (req, res) {
+router.post('/lab5', function (req, res) {
     let item = new Item(req.body);
     item.save()
         .then(() => {
@@ -25,14 +25,14 @@ router.post('/lab1', function (req, res) {
         });
 });
 
-router.delete('/lab1/delete/:id', function (req, res) {
+router.delete('/lab5/delete/:id', function (req, res) {
     Item.findOneAndDelete({ _id: req.params.id }, function (err) {
         if (err) res.json(err);
         else res.json('Successfully removed');
     });
 });
 
-router.get('/lab1/:id', function (req, res) {
+router.get('/lab5/edit/:id', function (req, res) {
     let id = req.params.id;
     Item.findById(id, function (err, item) {
         if (err) {
@@ -42,7 +42,7 @@ router.get('/lab1/:id', function (req, res) {
     });
 });
 
-/*router.post('/lab1/update/:id', function (req, res) {
+router.post('/lab5/update/:id', function (req, res) {
     Item.findById(req.params.id, function (err, item) {
         if (!item)
             res.status(404).send("Record is not found");
@@ -63,7 +63,6 @@ router.get('/lab1/:id', function (req, res) {
                 });
         }
     });
-});*/
-
+});
 
 module.exports = router;
