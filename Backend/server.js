@@ -30,6 +30,12 @@ app.use('/lab', labItem2);
 const labItem3 = require('./routes/lab3_items');
 app.use('/lab', labItem3);
 
+const labItem4 = require('./routes/lab4_items');
+app.use('/lab', labItem4);
+
+const labItem5 = require('./routes/lab5_items');
+app.use('/lab', labItem5);
+
 const port = 8085;
 app.listen(port, () => {
     console.log('Server started on port ' + port);
