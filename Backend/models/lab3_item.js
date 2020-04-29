@@ -2,17 +2,23 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Item = new Schema({
-    Select_Lab: {
+    item_id: {
         type: String
     },
-    
+
     Main_Category: {
         type: String
     },
     Asset_Description: {
         type: String
     },
+    Serial_Num: {
+        type: String
+    },
     Asset_Code: {
+        type: String
+    },
+    Qty: {
         type: String
     },
     Make: {
