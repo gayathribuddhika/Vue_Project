@@ -2,214 +2,257 @@
   <div>
     <b-card no-body>
       <b-tabs pills card width="100%" content-class="mt-3" justified>
+        <h5>
+          <router-link to="/adminpanel">Back</router-link>
+        </h5>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
         <b-tab title="CIS/LAB/01" active>
           <b-card-text>
-            <h5>
-              <router-link to="/adminpanel">Back</router-link>
-            </h5>
             <center>
               <h2>Current Details of Items - CIS/LAB/01</h2>
             </center>
             <br />
-            <table>
-              <thead>
-                <tr>
-                  <th>Main Category</th>
-                  <th>Asset Description</th>
-                  <th>Serial Num</th>
-                  <th>Asset Code</th>
-                  <th>Qty</th>
-                  <th>Make</th>
-                  <th>Condition</th>
-                  <th>Comments</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="item in itemsLab1" v-bind:key="item._id">
-                  <td>{{item.Main_Category}}</td>
-                  <td>{{item.Asset_Description}}</td>
-                  <td>{{item.Serial_Num}}</td>
-                  <td>{{item.Asset_Code}}</td>
-                  <td>{{item.Qty}}</td>
-                  <td>{{item.Make}}</td>
-                  <td>{{item.Condition}}</td>
-                  <td>{{item.Comments}}</td>
-                  <td>
-                    <router-link :to="{name: 'UpdateRecord', params: {id:item._id }}" class="btn btn-success">Edit</router-link>
-                    <button type="submit" class="btn btn-danger" v-on:click="deleteRecord1(item._id)">Delete</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive-lg">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Main Category</th>
+                    <th>Asset Description</th>
+                    <th>Serial Num</th>
+                    <th>Asset Code</th>
+                    <th>Qty</th>
+                    <th>Make</th>
+                    <th>Condition</th>
+                    <th>Comments</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in itemsLab1" v-bind:key="item._id">
+                    <td>{{item.Main_Category}}</td>
+                    <td>{{item.Asset_Description}}</td>
+                    <td>{{item.Serial_Num}}</td>
+                    <td>{{item.Asset_Code}}</td>
+                    <td>{{item.Qty}}</td>
+                    <td>{{item.Make}}</td>
+                    <td>{{item.Condition}}</td>
+                    <td>{{item.Comments}}</td>
+                    <td>
+                      <router-link
+                        :to="{name: 'UpdateRecord', params: {id:item._id }}"
+                        class="btn btn-success"
+                      >Edit</router-link>
+                      <button
+                        type="submit"
+                        class="btn btn-danger"
+                        v-on:click="deleteRecord1(item._id)"
+                      >Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </b-card-text>
         </b-tab>
         <b-tab title="CIS/LAB/02">
           <b-card-text>
-            <h5>
-              <router-link to="/adminpanel">Back</router-link>
-            </h5>
             <center>
               <h2>Current Details of Items - CIS/LAB/02</h2>
             </center>
             <br />
-            <table>
-              <thead>
-                <tr>
-                  <th>Main Category</th>
-                  <th>Asset Description</th>
-                  <th>Serial Num</th>
-                  <th>Asset Code</th>
-                  <th>Qty</th>
-                  <th>Make</th>
-                  <th>Condition</th>
-                  <th>Comments</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="item in itemsLab2" v-bind:key="item._id">
-                  <td>{{item.Main_Category}}</td>
-                  <td>{{item.Asset_Description}}</td>
-                  <td>{{item.Serial_Num}}</td>
-                  <td>{{item.Asset_Code}}</td>
-                  <td>{{item.Qty}}</td>
-                  <td>{{item.Make}}</td>
-                  <td>{{item.Condition}}</td>
-                  <td>{{item.Comments}}</td>
-                  <td>
-                    <router-link :to="{name: 'UpdateRecord', params: {id:item._id }}" class="btn btn-success">Edit</router-link>
-                    <button type="submit" class="btn btn-danger" v-on:click="deleteRecord2(item._id)">Delete</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive-lg">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Main Category</th>
+                    <th>Asset Description</th>
+                    <th>Serial Num</th>
+                    <th>Asset Code</th>
+                    <th>Qty</th>
+                    <th>Make</th>
+                    <th>Condition</th>
+                    <th>Comments</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in itemsLab2" v-bind:key="item._id">
+                    <td>{{item.Main_Category}}</td>
+                    <td>{{item.Asset_Description}}</td>
+                    <td>{{item.Serial_Num}}</td>
+                    <td>{{item.Asset_Code}}</td>
+                    <td>{{item.Qty}}</td>
+                    <td>{{item.Make}}</td>
+                    <td>{{item.Condition}}</td>
+                    <td>{{item.Comments}}</td>
+                    <td>
+                      <router-link
+                        :to="{name: 'UpdateRecord', params: {id:item._id }}"
+                        class="btn btn-success"
+                      >Edit</router-link>
+                      <button
+                        type="submit"
+                        class="btn btn-danger"
+                        v-on:click="deleteRecord2(item._id)"
+                      >Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </b-card-text>
         </b-tab>
         <b-tab title="CIS/LAB/03">
           <b-card-text>
-            <h5>
-              <router-link to="/adminpanel">Back</router-link>
-            </h5>
             <center>
               <h2>Current Details of Items - CIS/LAB/03</h2>
             </center>
             <br />
-            <table>
-              <thead>
-                <tr>
-                  <th>Main Category</th>
-                  <th>Asset Description</th>
-                  <th>Serial Num</th>
-                  <th>Asset Code</th>
-                  <th>Qty</th>
-                  <th>Make</th>
-                  <th>Condition</th>
-                  <th>Comments</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="item in itemsLab3" v-bind:key="item._id">
-                  <td>{{item.Main_Category}}</td>
-                  <td>{{item.Asset_Description}}</td>
-                  <td>{{item.Serial_Num}}</td>
-                  <td>{{item.Asset_Code}}</td>
-                  <td>{{item.Qty}}</td>
-                  <td>{{item.Make}}</td>
-                  <td>{{item.Condition}}</td>
-                  <td>{{item.Comments}}</td>
-                  <td>
-                    <router-link :to="{name: 'UpdateRecord', params: {id:item._id }}" class="btn btn-success">Edit</router-link>
-                    <button type="submit" class="btn btn-danger" v-on:click="deleteRecord3(item._id)">Delete</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive-lg">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Main Category</th>
+                    <th>Asset Description</th>
+                    <th>Serial Num</th>
+                    <th>Asset Code</th>
+                    <th>Qty</th>
+                    <th>Make</th>
+                    <th>Condition</th>
+                    <th>Comments</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in itemsLab3" v-bind:key="item._id">
+                    <td>{{item.Main_Category}}</td>
+                    <td>{{item.Asset_Description}}</td>
+                    <td>{{item.Serial_Num}}</td>
+                    <td>{{item.Asset_Code}}</td>
+                    <td>{{item.Qty}}</td>
+                    <td>{{item.Make}}</td>
+                    <td>{{item.Condition}}</td>
+                    <td>{{item.Comments}}</td>
+                    <td>
+                      <router-link
+                        :to="{name: 'UpdateRecord', params: {id:item._id }}"
+                        class="btn btn-success"
+                      >Edit</router-link>
+                      <button
+                        type="submit"
+                        class="btn btn-danger"
+                        v-on:click="deleteRecord3(item._id)"
+                      >Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </b-card-text>
         </b-tab>
         <b-tab title="CIS/LAB/04">
           <b-card-text>
-            <h5>
-              <router-link to="/adminpanel">Back</router-link>
-            </h5>
             <center>
               <h2>Current Details of Items - CIS/LAB/04</h2>
             </center>
             <br />
-            <table>
-              <thead>
-                <tr>
-                  <th>Main Category</th>
-                  <th>Asset Description</th>
-                  <th>Serial Num</th>
-                  <th>Asset Code</th>
-                  <th>Qty</th>
-                  <th>Make</th>
-                  <th>Condition</th>
-                  <th>Comments</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="item in itemsLab4" v-bind:key="item._id">
-                  <td>{{item.Main_Category}}</td>
-                  <td>{{item.Asset_Description}}</td>
-                  <td>{{item.Serial_Num}}</td>
-                  <td>{{item.Asset_Code}}</td>
-                  <td>{{item.Qty}}</td>
-                  <td>{{item.Make}}</td>
-                  <td>{{item.Condition}}</td>
-                  <td>{{item.Comments}}</td>
-                  <td>
-                    <router-link :to="{name: 'UpdateRecord', params: {id:item._id }}" class="btn btn-success">Edit</router-link>
-                    <button type="submit" class="btn btn-danger" v-on:click="deleteRecord4(item._id)">Delete</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive-lg">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Main Category</th>
+                    <th>Asset Description</th>
+                    <th>Serial Num</th>
+                    <th>Asset Code</th>
+                    <th>Qty</th>
+                    <th>Make</th>
+                    <th>Condition</th>
+                    <th>Comments</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in itemsLab4" v-bind:key="item._id">
+                    <td>{{item.Main_Category}}</td>
+                    <td>{{item.Asset_Description}}</td>
+                    <td>{{item.Serial_Num}}</td>
+                    <td>{{item.Asset_Code}}</td>
+                    <td>{{item.Qty}}</td>
+                    <td>{{item.Make}}</td>
+                    <td>{{item.Condition}}</td>
+                    <td>{{item.Comments}}</td>
+                    <td>
+                      <router-link
+                        :to="{name: 'UpdateRecord', params: {id:item._id }}"
+                        class="btn btn-success"
+                      >Edit</router-link>
+                      <button
+                        type="submit"
+                        class="btn btn-danger"
+                        v-on:click="deleteRecord4(item._id)"
+                      >Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </b-card-text>
         </b-tab>
         <b-tab title="CIS/LAB/05">
           <b-card-text>
-            <h5>
-              <router-link to="/adminpanel">Back</router-link>
-            </h5>
             <center>
               <h2>Current Details of Items - CIS/LAB/05</h2>
             </center>
             <br />
-            <table>
-              <thead>
-                <tr>
-                  <th>Main Category</th>
-                  <th>Asset Description</th>
-                  <th>Serial Num</th>
-                  <th>Asset Code</th>
-                  <th>Qty</th>
-                  <th>Make</th>
-                  <th>Condition</th>
-                  <th>Comments</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="item in itemsLab5" v-bind:key="item._id">
-                  <td>{{item.Main_Category}}</td>
-                  <td>{{item.Asset_Description}}</td>
-                  <td>{{item.Serial_Num}}</td>
-                  <td>{{item.Asset_Code}}</td>
-                  <td>{{item.Qty}}</td>
-                  <td>{{item.Make}}</td>
-                  <td>{{item.Condition}}</td>
-                  <td>{{item.Comments}}</td>
-                  <td>
-                    <router-link :to="{name: 'UpdateRecord', params: {id:item._id }}" class="btn btn-success">Edit</router-link>
-                    <button type="submit" class="btn btn-danger" v-on:click="deleteRecord5(item._id)">Delete</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive-lg">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Main Category</th>
+                    <th>Asset Description</th>
+                    <th>Serial Num</th>
+                    <th>Asset Code</th>
+                    <th>Qty</th>
+                    <th>Make</th>
+                    <th>Condition</th>
+                    <th>Comments</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in itemsLab5" v-bind:key="item._id">
+                    <td>{{item.Main_Category}}</td>
+                    <td>{{item.Asset_Description}}</td>
+                    <td>{{item.Serial_Num}}</td>
+                    <td>{{item.Asset_Code}}</td>
+                    <td>{{item.Qty}}</td>
+                    <td>{{item.Make}}</td>
+                    <td>{{item.Condition}}</td>
+                    <td>{{item.Comments}}</td>
+                    <td>
+                      <router-link
+                        :to="{name: 'UpdateRecord', params: {id:item._id }}"
+                        class="btn btn-success"
+                      >Edit</router-link>
+                      <button
+                        type="submit"
+                        class="btn btn-danger"
+                        v-on:click="deleteRecord5(item._id)"
+                      >Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </b-card-text>
         </b-tab>
       </b-tabs>
@@ -219,7 +262,6 @@
 
 <script>
 import axios from "axios";
-
 
 export default {
   name: "Current_Status",
@@ -233,7 +275,7 @@ export default {
       itemsLab5: {}
     };
   },
-  created(){
+  created() {
     this.fetchRecord1();
     this.fetchRecord2();
     this.fetchRecord3();
@@ -241,121 +283,123 @@ export default {
     this.fetchRecord5();
   },
   methods: {
-    fetchRecord1(){
+    fetchRecord1() {
       axios
-      .get("http://localhost:8085/lab/lab1")
-      .then(response => {
-        console.log(response.data);
-        this.itemsLab1 = response.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    },
-    fetchRecord2(){
-      axios
-      .get("http://localhost:8085/lab/lab2")
-      .then(response => {
-        console.log(response.data);
-        this.itemsLab2 = response.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    },
-    fetchRecord3(){
-      axios
-      .get("http://localhost:8085/lab/lab3")
-      .then(response => {
-        console.log(response.data);
-        this.itemsLab3 = response.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    },
-    fetchRecord4(){
-      axios
-      .get("http://localhost:8085/lab/lab4")
-      .then(response => {
-        console.log(response.data);
-        this.itemsLab4 = response.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    },
-    fetchRecord5(){
-      axios
-      .get("http://localhost:8085/lab/lab5")
-      .then(response => {
-        console.log(response.data);
-        this.itemsLab5 = response.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    },
-    
-    
-    deleteRecord1(id){
-      const response = confirm("Do you really want to delete this?")
-      if(response){
-        axios.delete(`http://localhost:8085/lab/lab1/delete/${id}`)
+        .get("http://localhost:8085/lab/lab1")
         .then(response => {
-          this.fetchRecord1();
+          console.log(response.data);
+          this.itemsLab1 = response.data;
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    fetchRecord2() {
+      axios
+        .get("http://localhost:8085/lab/lab2")
+        .then(response => {
+          console.log(response.data);
+          this.itemsLab2 = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    fetchRecord3() {
+      axios
+        .get("http://localhost:8085/lab/lab3")
+        .then(response => {
+          console.log(response.data);
+          this.itemsLab3 = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    fetchRecord4() {
+      axios
+        .get("http://localhost:8085/lab/lab4")
+        .then(response => {
+          console.log(response.data);
+          this.itemsLab4 = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    fetchRecord5() {
+      axios
+        .get("http://localhost:8085/lab/lab5")
+        .then(response => {
+          console.log(response.data);
+          this.itemsLab5 = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+
+    deleteRecord1(id) {
+      const response = confirm("Do you really want to delete this?");
+      if (response) {
+        axios
+          .delete(`http://localhost:8085/lab/lab1/delete/${id}`)
+          .then(response => {
+            this.fetchRecord1();
+          })
+          .catch(error => console.log(error));
       }
       return;
     },
-    deleteRecord2(id){
-      const response = confirm("Do you really want to delete this?")
-      if(response){
-        axios.delete(`http://localhost:8085/lab/lab2/delete/${id}`)
-        .then(response => {
-          this.fetchRecord2();
-        })
-        .catch(error => console.log(error));
+    deleteRecord2(id) {
+      const response = confirm("Do you really want to delete this?");
+      if (response) {
+        axios
+          .delete(`http://localhost:8085/lab/lab2/delete/${id}`)
+          .then(response => {
+            this.fetchRecord2();
+          })
+          .catch(error => console.log(error));
       }
       return;
     },
-    deleteRecord3(id){
-      const response = confirm("Do you really want to delete this?")
-      if(response){
-        axios.delete(`http://localhost:8085/lab/lab3/delete/${id}`)
-        .then(response => {
-          this.fetchRecord3();
-        })
-        .catch(error => console.log(error));
+    deleteRecord3(id) {
+      const response = confirm("Do you really want to delete this?");
+      if (response) {
+        axios
+          .delete(`http://localhost:8085/lab/lab3/delete/${id}`)
+          .then(response => {
+            this.fetchRecord3();
+          })
+          .catch(error => console.log(error));
       }
       return;
     },
-    deleteRecord4(id){
-      const response = confirm("Do you really want to delete this?")
-      if(response){
-        axios.delete(`http://localhost:8085/lab/lab4/delete/${id}`)
-        .then(response => {
-          this.fetchRecord4();
-        })
-        .catch(error => console.log(error));
+    deleteRecord4(id) {
+      const response = confirm("Do you really want to delete this?");
+      if (response) {
+        axios
+          .delete(`http://localhost:8085/lab/lab4/delete/${id}`)
+          .then(response => {
+            this.fetchRecord4();
+          })
+          .catch(error => console.log(error));
       }
       return;
     },
-    deleteRecord5(id){
-      const response = confirm("Do you really want to delete this?")
-      if(response){
-        axios.delete(`http://localhost:8085/lab/lab5/delete/${id}`)
-        .then(response => {
-          this.fetchRecord5();
-        })
-        .catch(error => console.log(error));
+    deleteRecord5(id) {
+      const response = confirm("Do you really want to delete this?");
+      if (response) {
+        axios
+          .delete(`http://localhost:8085/lab/lab5/delete/${id}`)
+          .then(response => {
+            this.fetchRecord5();
+          })
+          .catch(error => console.log(error));
       }
       return;
     }
-    
   }
-  
 };
 </script>
 
@@ -395,5 +439,5 @@ h6 {
   margin-top: 10px;
   margin-left: 10px;
 }
-</style>
 
+</style>

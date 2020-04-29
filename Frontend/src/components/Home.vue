@@ -15,7 +15,7 @@
           </div>
         </b-col>
         <b-col md="4">
-          <b-img :src="require('../assets/lab2.jpg')"></b-img>
+          <b-img :src="require('../assets/lab2.jpg')" full-width></b-img>
         </b-col> 
       </b-row>
     </b-container>
