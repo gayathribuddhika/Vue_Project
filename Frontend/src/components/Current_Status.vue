@@ -1,24 +1,28 @@
 <template>
   <div>
+    <div class="btn">
+      <b-button squared variant="dark" to="/adminpanel">Back</b-button>
+    </div>
     <b-card no-body>
       <b-tabs pills card width="100%" content-class="mt-3" justified>
-        <h5>
-          <router-link to="/adminpanel">Back</router-link>
-        </h5>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+          <h2>Current Details of Items</h2>
+
+          <form class="form-inline">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </nav>
+
         <b-tab title="CIS/LAB/01" active>
           <b-card-text>
             <center>
-              <h2>Current Details of Items - CIS/LAB/01</h2>
+              <h3>CIS/LAB/01</h3>
             </center>
             <br />
             <div class="table-responsive-lg">
@@ -47,15 +51,15 @@
                     <td>{{item.Condition}}</td>
                     <td>{{item.Comments}}</td>
                     <td>
-                      <router-link
+                      <b-button
                         :to="{name: 'UpdateRecord', params: {id:item._id }}"
-                        class="btn btn-success"
-                      >Edit</router-link>
-                      <button
+                        variant="success"
+                      >Edit</b-button>
+                      <b-button
                         type="submit"
-                        class="btn btn-danger"
+                        variant="danger"
                         v-on:click="deleteRecord1(item._id)"
-                      >Delete</button>
+                      >Delete</b-button>
                     </td>
                   </tr>
                 </tbody>
@@ -66,7 +70,7 @@
         <b-tab title="CIS/LAB/02">
           <b-card-text>
             <center>
-              <h2>Current Details of Items - CIS/LAB/02</h2>
+              <h3>CIS/LAB/02</h3>
             </center>
             <br />
             <div class="table-responsive-lg">
@@ -95,15 +99,15 @@
                     <td>{{item.Condition}}</td>
                     <td>{{item.Comments}}</td>
                     <td>
-                      <router-link
+                      <b-button
                         :to="{name: 'UpdateRecord', params: {id:item._id }}"
-                        class="btn btn-success"
-                      >Edit</router-link>
-                      <button
+                        variant="success"
+                      >Edit</b-button>
+                      <b-button
                         type="submit"
-                        class="btn btn-danger"
+                        variant="danger"
                         v-on:click="deleteRecord2(item._id)"
-                      >Delete</button>
+                      >Delete</b-button>
                     </td>
                   </tr>
                 </tbody>
@@ -114,7 +118,7 @@
         <b-tab title="CIS/LAB/03">
           <b-card-text>
             <center>
-              <h2>Current Details of Items - CIS/LAB/03</h2>
+              <h3>CIS/LAB/03</h3>
             </center>
             <br />
             <div class="table-responsive-lg">
@@ -143,15 +147,15 @@
                     <td>{{item.Condition}}</td>
                     <td>{{item.Comments}}</td>
                     <td>
-                      <router-link
+                      <b-button
                         :to="{name: 'UpdateRecord', params: {id:item._id }}"
-                        class="btn btn-success"
-                      >Edit</router-link>
-                      <button
+                        variant="success"
+                      >Edit</b-button>
+                      <b-button
                         type="submit"
-                        class="btn btn-danger"
+                        variant="danger"
                         v-on:click="deleteRecord3(item._id)"
-                      >Delete</button>
+                      >Delete</b-button>
                     </td>
                   </tr>
                 </tbody>
@@ -162,7 +166,7 @@
         <b-tab title="CIS/LAB/04">
           <b-card-text>
             <center>
-              <h2>Current Details of Items - CIS/LAB/04</h2>
+              <h3>CIS/LAB/04</h3>
             </center>
             <br />
             <div class="table-responsive-lg">
@@ -191,15 +195,15 @@
                     <td>{{item.Condition}}</td>
                     <td>{{item.Comments}}</td>
                     <td>
-                      <router-link
+                      <b-button
                         :to="{name: 'UpdateRecord', params: {id:item._id }}"
-                        class="btn btn-success"
-                      >Edit</router-link>
-                      <button
+                        variant="success"
+                      >Edit</b-button>
+                      <b-button
                         type="submit"
-                        class="btn btn-danger"
+                        variant="danger"
                         v-on:click="deleteRecord4(item._id)"
-                      >Delete</button>
+                      >Delete</b-button>
                     </td>
                   </tr>
                 </tbody>
@@ -210,7 +214,7 @@
         <b-tab title="CIS/LAB/05">
           <b-card-text>
             <center>
-              <h2>Current Details of Items - CIS/LAB/05</h2>
+              <h3>CIS/LAB/05</h3>
             </center>
             <br />
             <div class="table-responsive-lg">
@@ -239,15 +243,15 @@
                     <td>{{item.Condition}}</td>
                     <td>{{item.Comments}}</td>
                     <td>
-                      <router-link
+                      <b-button
                         :to="{name: 'UpdateRecord', params: {id:item._id }}"
-                        class="btn btn-success"
-                      >Edit</router-link>
-                      <button
+                        variant="success"
+                      >Edit</b-button>
+                      <b-button
                         type="submit"
-                        class="btn btn-danger"
+                        variant="danger"
                         v-on:click="deleteRecord5(item._id)"
-                      >Delete</button>
+                      >Delete</b-button>
                     </td>
                   </tr>
                 </tbody>
@@ -272,7 +276,12 @@ export default {
       itemsLab2: {},
       itemsLab3: {},
       itemsLab4: {},
-      itemsLab5: {}
+      itemsLab5: {},
+      l1: "01",
+      l2: "02",
+      l3: "03",
+      l4: "04",
+      l5: "05"
     };
   },
   created() {
@@ -435,9 +444,8 @@ table tbody tr:nth-child(2n) td {
   background: #d4d8f9;
 }
 
-h6 {
+h5 {
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 15px;
 }
-
 </style>
