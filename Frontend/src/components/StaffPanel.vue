@@ -19,18 +19,17 @@
 
         <b-list-group variant="dark">
           <div>
-            <b-list-group-item variant="dark" href="#">Dashboard</b-list-group-item>
-            <b-list-group-item variant="dark">
-              <router-link to="staffpanel/currentstatus">Current Status</router-link>
+            <b-list-group-item variant="dark">Dashboard</b-list-group-item>
+            <b-list-group-item variant="dark" to="staffpanel/currentstatus">
+              Current Status
             </b-list-group-item>
             <b-list-group-item variant="dark">
-              <router-link to="#">Current Details-Summary Report</router-link>
+              Current Details-Summary Report
             </b-list-group-item>
-            <b-list-group-item variant="dark" href="#">Add New Record</b-list-group-item>
-            <b-list-group-item variant="dark" href="#">Delete a Record</b-list-group-item>
-            <b-list-group-item variant="dark" href="#">Create a Report</b-list-group-item>
-            <b-list-group-item variant="dark" href="#">Edit Profile</b-list-group-item>
-            <b-list-group-item variant="dark" href="home.vue">Logout</b-list-group-item>
+            
+            <b-list-group-item variant="dark">Create a Report</b-list-group-item>
+            <b-list-group-item variant="dark">Edit Profile</b-list-group-item>
+            <b-list-group-item variant="dark" to="login">Logout</b-list-group-item>
           </div>
         </b-list-group>
       </b-card>

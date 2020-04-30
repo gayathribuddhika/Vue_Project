@@ -42,6 +42,16 @@ router.get('/lab1/:id', function (req, res) {
     });
 });
 
+router.get('/lab1/serialnum', function (req, res) {
+    
+    Item.find({Serial_Num:req.params.Serial_Num}, function (err, item) {
+        if (err) {
+            res.json(err);
+        }
+        res.json(item);
+    });
+});
+
 /*router.post('/lab1/update/:id', function (req, res) {
     Item.findById(req.params.id, function (err, item) {
         if (!item)

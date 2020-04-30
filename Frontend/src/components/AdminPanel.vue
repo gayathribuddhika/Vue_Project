@@ -2,7 +2,7 @@
   <div>
     <b-card-group>
       <b-card
-        style="max-width: 15rem;"
+        style="max-width: 17rem;"
         img-alt="Image"
         img-top
         body-bg-variant="dark"
@@ -19,27 +19,15 @@
 
         <b-list-group variant="dark">
           <div>
-            <b-list-group-item variant="dark" href="#">Dashboard</b-list-group-item>
-            <b-list-group-item variant="dark">
-              <router-link to="adminpanel/currentstatus">Current Details</router-link>
-            </b-list-group-item>
-            <b-list-group-item variant="dark">
-              <router-link to="#">Current Details-Summary Report</router-link>
-            </b-list-group-item>
-            <b-list-group-item variant="dark">
-              <router-link to="adminpanel/addrecords">Add a new Record</router-link>
-            </b-list-group-item>
-            <b-list-group-item variant="dark">
-              <router-link to="adminpanel/currentstatus">Delete a Record</router-link>
-            </b-list-group-item>
-            <b-list-group-item variant="dark">
-              <router-link to="adminpanel/currentstatus">Update/Edit a Record</router-link>
-            </b-list-group-item>
-            <b-list-group-item variant="dark" href="#">Create a Report</b-list-group-item>
-            <b-list-group-item variant="dark" href="#">Edit Profile</b-list-group-item>
-            <b-list-group-item variant="dark">
-              <router-link to="login">Logout</router-link>
-            </b-list-group-item>
+            <b-list-group-item variant="dark">Dashboard</b-list-group-item>
+            <b-list-group-item variant="dark" to="adminpanel/currentstatus">Current Details</b-list-group-item>
+            <b-list-group-item variant="dark">Current Details-Summary Report</b-list-group-item>
+            <b-list-group-item variant="dark" to="adminpanel/addrecords">Add a new Record</b-list-group-item>
+            <b-list-group-item variant="dark" to="adminpanel/currentstatus">Delete a Record</b-list-group-item>
+            <b-list-group-item variant="dark" to="adminpanel/currentstatus">Update/Edit a Record</b-list-group-item>
+            <b-list-group-item variant="dark">Create a Report</b-list-group-item>
+            <b-list-group-item variant="dark">Edit Profile</b-list-group-item>
+            <b-list-group-item variant="dark" to="login">Logout</b-list-group-item>
           </div>
         </b-list-group>
       </b-card>
