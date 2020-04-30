@@ -1,7 +1,10 @@
 <template>
     <div>
+        <br />
         <h1><center>Contact Information</center></h1>
-        <b-jumbotron fluid>
+        <br />
+        <center>
+        <b-card body-class="text-justify" class="mb-2" style="background-color: #e3f2fd; max-width: 60rem;">
         <div>
           
             <h4>Address</h4>
@@ -45,7 +48,8 @@
             </div>
           
         </div>
-        </b-jumbotron>
+        </b-card>
+        </center>
     </div>
    
 

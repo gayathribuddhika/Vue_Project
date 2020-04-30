@@ -32,13 +32,13 @@
             </h6>
             <div class="icons">
               <p>
-                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }" />
+                <router-link to="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }" /></router-link>
               </p>
               <p>
-                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter' }" />
+                <router-link to="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter' }" /></router-link>
               </p>
               <p>
-                <font-awesome-icon icon="envelope" />
+                <router-link to="#"><font-awesome-icon icon="envelope" /></router-link>
               </p>
             </div>
           </b-col>
