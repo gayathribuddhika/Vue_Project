@@ -2,6 +2,7 @@
   <div>
     <div class="btn">
       <b-button squared variant="dark" to="/adminpanel">Back</b-button>
+      <b-button squared variant="dark" to="/adminpanel/addrecords">Add Records</b-button>
       <b-button squared variant="dark" to="#" align="right">Details Summary Report</b-button>
     </div>
     
@@ -16,7 +17,7 @@
             <input
               class="form-control mr-sm-2"
               type="search"
-              placeholder="Search"
+              placeholder="Search by Serial Number"
               aria-label="Search"
             />
             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>

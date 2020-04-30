@@ -10,7 +10,7 @@
             label-cols-lg="3"
             label="Add a New Record"
             label-size="lg"
-            label-class="font-weight-bold pt-0"
+            label-class="font-weight-bold pt-1"
             class="mb-0"
           >
             <b-form-group
@@ -235,7 +235,7 @@ export default {
   },
 
   methods: {
-    addToRecords() {
+    /*addToRecords() {
       let newRecord = {
         //id: this.form.id,
         Main_Category: this.form.category,
@@ -261,13 +261,165 @@ export default {
           setTimeout(() => {
             this.submitted = "ok";
           }, 500);
-
-          //alert("Successfully Added to Database")
         })
         .catch(error => {
           console.log(error);
         });
+    },*/
+    addToRecords(){
+      if( this.form.select_lab == "CIS/LAB/01"){
+        let newRecord = {
+        //id: this.form.id,
+        Main_Category: this.form.category,
+        Asset_Description: this.form.description,
+        Serial_Num: this.form.serial_num,
+        Asset_Code: this.form.code,
+        Qty: this.form.qty,
+        Make: this.form.make,
+        Condition: this.form.condition,
+        Comments: this.form.comment
+      };
+      console.log("submit");
+
+      this.$v.$touch();
+      if (this.$v.form.error) {
+        this.submitted = "error";
+      } else console.log(newRecord);
+      axios
+        .post("http://localhost:8085/lab/lab1", newRecord)
+        .then(response => {
+          console.log(response);
+          this.submitted = "pending";
+          setTimeout(() => {
+            this.submitted = "ok";
+          }, 500);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      } else if ( this.form.select_lab == "CIS/LAB/02") {
+        let newRecord = {
+        //id: this.form.id,
+        Main_Category: this.form.category,
+        Asset_Description: this.form.description,
+        Serial_Num: this.form.serial_num,
+        Asset_Code: this.form.code,
+        Qty: this.form.qty,
+        Make: this.form.make,
+        Condition: this.form.condition,
+        Comments: this.form.comment
+      };
+      console.log("submit");
+
+      this.$v.$touch();
+      if (this.$v.form.error) {
+        this.submitted = "error";
+      } else console.log(newRecord);
+      axios
+        .post("http://localhost:8085/lab/lab2", newRecord)
+        .then(response => {
+          console.log(response);
+          this.submitted = "pending";
+          setTimeout(() => {
+            this.submitted = "ok";
+          }, 500);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      } else if ( this.form.select_lab == "CIS/LAB/03") {
+        let newRecord = {
+        //id: this.form.id,
+        Main_Category: this.form.category,
+        Asset_Description: this.form.description,
+        Serial_Num: this.form.serial_num,
+        Asset_Code: this.form.code,
+        Qty: this.form.qty,
+        Make: this.form.make,
+        Condition: this.form.condition,
+        Comments: this.form.comment
+      };
+      console.log("submit");
+
+      this.$v.$touch();
+      if (this.$v.form.error) {
+        this.submitted = "error";
+      } else console.log(newRecord);
+      axios
+        .post("http://localhost:8085/lab/lab3", newRecord)
+        .then(response => {
+          console.log(response);
+          this.submitted = "pending";
+          setTimeout(() => {
+            this.submitted = "ok";
+          }, 500);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      } else if ( this.form.select_lab == "CIS/LAB/04") {
+        let newRecord = {
+        //id: this.form.id,
+        Main_Category: this.form.category,
+        Asset_Description: this.form.description,
+        Serial_Num: this.form.serial_num,
+        Asset_Code: this.form.code,
+        Qty: this.form.qty,
+        Make: this.form.make,
+        Condition: this.form.condition,
+        Comments: this.form.comment
+      };
+      console.log("submit");
+
+      this.$v.$touch();
+      if (this.$v.form.error) {
+        this.submitted = "error";
+      } else console.log(newRecord);
+      axios
+        .post("http://localhost:8085/lab/lab4", newRecord)
+        .then(response => {
+          console.log(response);
+          this.submitted = "pending";
+          setTimeout(() => {
+            this.submitted = "ok";
+          }, 500);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      } else if(this.form.select_lab == "CIS/LAB/05") {
+        let newRecord = {
+        //id: this.form.id,
+        Main_Category: this.form.category,
+        Asset_Description: this.form.description,
+        Serial_Num: this.form.serial_num,
+        Asset_Code: this.form.code,
+        Qty: this.form.qty,
+        Make: this.form.make,
+        Condition: this.form.condition,
+        Comments: this.form.comment
+      };
+      console.log("submit");
+
+      this.$v.$touch();
+      if (this.$v.form.error) {
+        this.submitted = "error";
+      } else console.log(newRecord);
+      axios
+        .post("http://localhost:8085/lab/lab5", newRecord)
+        .then(response => {
+          console.log(response);
+          this.submitted = "pending";
+          setTimeout(() => {
+            this.submitted = "ok";
+          }, 500);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      }
     },
+
 
     onReset(evt) {
       evt.preventDefault();
@@ -289,17 +441,6 @@ export default {
         this.show = true;
       });
     }
-  },
-  mounted() {
-    axios
-      .get("http://localhost:8085/lab/lab1")
-      .then(response => {
-        console.log(response.data);
-        this.items = response.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
   }
 };
 </script>
