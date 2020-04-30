@@ -2,7 +2,11 @@
   <div>
     <div class="btn">
       <b-button squared variant="dark" to="/adminpanel">Back</b-button>
+      <b-button squared variant="dark" to="#" align="right">Details Summary Report</b-button>
     </div>
+    
+      
+    
     <b-card no-body>
       <b-tabs pills card width="100%" content-class="mt-3" justified>
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
@@ -448,4 +452,6 @@ h5 {
   margin-top: 10px;
   margin-left: 15px;
 }
+
+
 </style>

@@ -1,9 +1,8 @@
 <template>
   <div>
-    <br />
-    <div>
-      &nbsp;&nbsp;&nbsp;
-      <router-link to="/adminpanel">Back</router-link>
+    
+    <div class="btn">
+      <b-button squared variant="dark" to="/adminpanel">Back</b-button>
     </div>
     <b-card bg-variant="light" body-class="text-center">
       <b-form v-on:submit.prevent="updateRecord" v-if="show">

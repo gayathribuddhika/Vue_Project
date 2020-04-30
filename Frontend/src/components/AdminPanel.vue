@@ -24,6 +24,9 @@
               <router-link to="adminpanel/currentstatus">Current Details</router-link>
             </b-list-group-item>
             <b-list-group-item variant="dark">
+              <router-link to="#">Current Details-Summary Report</router-link>
+            </b-list-group-item>
+            <b-list-group-item variant="dark">
               <router-link to="adminpanel/addrecords">Add a new Record</router-link>
             </b-list-group-item>
             <b-list-group-item variant="dark">
@@ -43,7 +46,6 @@
       <b-card title="Dashboard">
         <b-card-text>dhsc cuw wfgw fgcv sdcsuewineq w</b-card-text>
       </b-card>
-      
     </b-card-group>
   </div>
 </template>
