@@ -5,7 +5,6 @@ const Item = new Schema({
     Item_id: {
         type: String
     },
-
     Main_Category: {
         type: String
     },
