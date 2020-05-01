@@ -3,10 +3,9 @@ const Schema = mongoose.Schema;
 
 const Item = new Schema({
     
-    item_id: {
+    Item_id: {
         type: String
     },
-
     Main_Category: {
         type: String
     },
