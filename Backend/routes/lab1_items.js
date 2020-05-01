@@ -16,6 +16,7 @@ router.get('/lab1', (req, res) => {
 
 router.post('/lab1', function (req, res) {
     let item = new Item(req.body);
+    const Item_id = 
     item.save()
         .then(() => {
             res.status(200).send('Record is saved Successfully');
@@ -44,28 +45,8 @@ router.get('/lab1/:id', function (req, res) {
 
 
 
-/*router.post('/lab1/update/:id', function (req, res) {
-    Item.findById(req.params.id, function (err, item) {
-        if (!item)
-            res.status(404).send("Record is not found");
-        else {
-            item.Main_Category = req.body.Main_Category;
-            item.Asset_Description = req.body.Asset_Description;
-            item.Serial_Num = req.body.Serial_Num;
-            item.Asset_Code = req.body.Asset_Code;
-            item.Qty = req.body.Qty;
-            item.Make = req.body.Make;
-            item.Condition = req.body.Condition;
-            item.Comments = req.body.Comments;
-            item.save().then(() => {
-                res.json('Update is Completed');
-            })
-                .catch(() => {
-                    res.status(400).send("Unable to update the DB");
-                });
-        }
-    });
-});*/
+
+
 
 
 module.exports = router;

@@ -14,6 +14,21 @@ import VueSimpleAlert from'vue-simple-alert'
 
 import BSidebar from 'bootstrap-vue'
 Vue.component('b-sidebar', BSidebar)
+
+import BTable from 'bootstrap-vue'
+Vue.component('b-table', BTable)
+
+import BTbody from 'bootstrap-vue'
+Vue.component('b-tbody', BTbody)
+import BThead from 'bootstrap-vue'
+Vue.component('b-tbody', BThead)
+import BTr from 'bootstrap-vue'
+Vue.component('b-tbody', BTr)
+import BTh from 'bootstrap-vue'
+Vue.component('b-tbody', BTh)
+import BTd from 'bootstrap-vue'
+Vue.component('b-tbody', BTd)
+
 import SidebarPlugin from 'bootstrap-vue'
 Vue.use(SidebarPlugin)
 
