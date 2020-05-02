@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const Item = new Schema({
     Item_id: {
-        type: String
+        type: Number,
     },
     Main_Category: {
         type: String
@@ -32,4 +32,17 @@ const Item = new Schema({
 },{collection: 'LAB03_CIS'}
     );
 
+    /*Item.pre("save", function (next) {
+        var doc = this;
+        counter.findByIdAndUpdate(
+        { "_id": "Item_id" },
+        { "$inc": { "seq": 1 } }
+        , function(error, counter) {
+        if(error) return next(error);
+        doc.Item_id= counter.seq.toString();
+        next();
+        });
+        });*/
+
 module.exports = mongoose.model("ItemLab3", Item);
+

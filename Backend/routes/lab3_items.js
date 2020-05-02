@@ -25,6 +25,28 @@ router.post('/lab3', function (req, res) {
         });
 });
 
+/*router.post('/lab3', function (req, res) {
+    let item = new Item({
+        Item_id: req.body.Item_id,
+        Main_Category: req.body.Main_Category,
+        Asset_Description: req.body.Asset_Description,
+        Serial_Num: req.body.Serial_Num,
+        Asset_Code: req.body.Asset_Code,
+        Qty: req.body.Qty,
+        Make: req.body.Main_Category,
+        Condition: req.body.Condition,
+        Comments: req.body.Comments,
+        
+    });
+    item.save()
+        .then(() => {
+            res.status(200).send('Record is saved Successfully');
+        })
+        .catch(() => {
+            res.status(400).send("Unable to save to database");
+        });
+});*/
+
 router.delete('/lab3/delete/:id', function (req, res) {
     Item.findOneAndDelete({ _id: req.params.id }, function (err) {
         if (err) res.json(err);
@@ -64,5 +86,14 @@ router.post('/lab3/update/:id', function (req, res) {
         }
     });
 });
+
+/*function getNextSequenceValue(Item_id){
+    var sequenceDocument = Item.findAndModify({
+       query:{_id: Item_id },
+       update: {$inc:{sequence_value:1}},
+       new:true
+    });
+    return sequenceDocument.sequence_value;
+ }*/
 
 module.exports = router;

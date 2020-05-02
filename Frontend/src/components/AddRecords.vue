@@ -161,7 +161,7 @@ export default {
     return {
       form: {
         select_lab: null,
-        //id: '',
+        //id: 1,
         category: null,
         description: null,
         serial_num: "",
