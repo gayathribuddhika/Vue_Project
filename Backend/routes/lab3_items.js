@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
 const cors = require("cors")
+const url = "mongodb://localhost:27017/"
+const MongoClient = require('mongodb').MongoClient;
 
 const Item = require("../models/lab3_item")
 router.use(cors())
@@ -14,7 +16,7 @@ router.get('/lab3', (req, res) => {
     });
 });
 
-router.post('/lab3', function (req, res) {
+/*router.post('/lab3', function (req, res) {
     let item = new Item(req.body);
     item.save()
         .then(() => {
@@ -23,7 +25,7 @@ router.post('/lab3', function (req, res) {
         .catch(() => {
             res.status(400).send("Unable to save to database");
         });
-});
+});*/
 
 /*router.post('/lab3', function (req, res) {
     let item = new Item({
@@ -95,5 +97,8 @@ router.post('/lab3/update/:id', function (req, res) {
     });
     return sequenceDocument.sequence_value;
  }*/
+
+
+ 
 
 module.exports = router;

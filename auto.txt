@@ -1,4 +1,4 @@
-router.post('/lab1', function (req, res, next) {
+router.post('/lab3', function (req, res, next) {
     MongoClient.connect(url, {
         useNewUrlParser: true
     }, function (err, db) {
@@ -7,8 +7,8 @@ router.post('/lab1', function (req, res, next) {
         req.body.dateOfEntry = new Date();
         req.body.isDeleted = "false";
         var countRow;
-        var sequenceDocument = dbo.collection("LAB01_CIS").findOneAndUpdate({
-            _id: "itemid"
+        var sequenceDocument = dbo.collection("counters").findOneAndUpdate({
+            _id: "Item_id"
         }, {
             $inc: {
                 sequence_value: 1
@@ -16,15 +16,15 @@ router.post('/lab1', function (req, res, next) {
         }, {
             new: true
         });
-        dbo.collection("LAB01_CIS").find({
-            _id: "itemid"
+        dbo.collection("LAB03_CIS").find({
+            _id: "Item_id"
         }).toArray(function (err, result1) {
             if (err) {
                 throw err;
             } else {
                 countRow = result1[0].sequence_value;
                 req.body["_id"] = countRow;
-                dbo.collection("LAB01_CIS").insertOne(req.body, function (err, resDB) {
+                dbo.collection("LAB03_CIS").insertOne(req.body, function (err, resDB) {
                     if (err) {
                         throw err;
                         res.status(401);
