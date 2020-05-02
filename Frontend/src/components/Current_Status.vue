@@ -19,6 +19,7 @@
               type="search"
               placeholder="Search by Serial Number"
               aria-label="Search"
+              
             />
             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
           </form>
@@ -282,11 +283,8 @@ export default {
       itemsLab3: {},
       itemsLab4: {},
       itemsLab5: {},
-      l1: "01",
-      l2: "02",
-      l3: "03",
-      l4: "04",
-      l5: "05"
+      
+      serial_num:''
     };
   },
   created() {

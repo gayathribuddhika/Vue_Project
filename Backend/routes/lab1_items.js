@@ -14,9 +14,28 @@ router.get('/lab1', (req, res) => {
     });
 });
 
-router.post('/lab1', function (req, res) {
+/*router.post('/lab1', function (req, res) {
     let item = new Item(req.body);
-    const Item_id = 
+    item.save()
+        .then(() => {
+            res.status(200).send('Record is saved Successfully');
+        })
+        .catch(() => {
+            res.status(400).send("Unable to save to database");
+        });
+});*/
+
+router.post('/lab1', function (req, res) {
+    let item = new Item({
+        Main_Category: req.body.Main_Category,
+        Asset_Description: req.body.Asset_Description,
+        Serial_Num: req.body.Serial_Num,
+        Asset_Code: req.body.Asset_Code,
+        Qty: req.body.Qty,
+        Make: req.body.Main_Category,
+        Condition: req.body.Condition,
+        Comments: req.body.Comments
+    });
     item.save()
         .then(() => {
             res.status(200).send('Record is saved Successfully');
@@ -43,7 +62,15 @@ router.get('/lab1/:id', function (req, res) {
     });
 });
 
-
+router.get('/lab1', function (req, res) {
+    let serial_num = req.params.serial_num;
+    Item.find(serial_num, function (err, item) {
+        if (err) {
+            res.json(err);
+        }
+        res.json(item);
+    });
+});
 
 
 

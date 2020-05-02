@@ -2,6 +2,7 @@
   <div>
     <div class="btn">
       <b-button squared variant="dark" to="/adminpanel">Back</b-button>
+      <b-button squared variant="dark" to="/adminpanel/currentstatus">View All</b-button>
     </div>
     <center>
       <b-card bg-variant="light" body-class="text-center" class="mb-2" style="max-width: 75rem;">
@@ -136,12 +137,10 @@
             >
               <b-textarea id="record_comment" v-model="form.comment" type="text"></b-textarea>
             </b-form-group>
-
-            <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Submit</b-button>&nbsp;&nbsp;&nbsp;
-            <b-button type="reset" variant="danger">Reset</b-button>&nbsp;&nbsp;&nbsp;
-            <router-link to="/adminpanel/currentstatus">
-              <b-button type="button" variant="success">View All</b-button>
-            </router-link>
+          
+            <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Submit</b-button>
+            <b-button type="reset" variant="danger">Reset</b-button>
+            
             <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
             <p v-if="submitted === 'pending'">Sending...</p>
             <p v-if="submitted === 'error'">Please fill all the required fields</p>
