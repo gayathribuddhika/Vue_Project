@@ -12,18 +12,16 @@
       <b-tabs pills card width="100%" content-class="mt-3" justified>
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
           <h2>Current Details of Items</h2>
-
           <form class="form-inline">
             <input
               class="form-control mr-sm-2"
               type="search"
               placeholder="Search by Serial Number"
               aria-label="Search"
-              
             />
             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
           </form>
-        </nav>
+       </nav>
 
         <b-tab title="CIS/LAB/01" active>
           <b-card-text>
