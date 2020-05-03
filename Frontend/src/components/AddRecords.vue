@@ -162,6 +162,7 @@ export default {
       form: {
         select_lab: null,
         //id: 1,
+        
         category: null,
         description: null,
         serial_num: "",
@@ -440,6 +441,7 @@ export default {
         this.show = true;
       });
     }
+    
   }
 };
 </script>

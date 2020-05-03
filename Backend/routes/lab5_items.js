@@ -15,7 +15,19 @@ router.get('/lab5', (req, res) => {
 });
 
 router.post('/lab5', function (req, res) {
-    let item = new Item(req.body);
+    
+    let item = new Item({ 
+        //Item_id: req.body.Item_id,
+        Main_Category: req.body.Main_Category,
+        Asset_Description: req.body.Asset_Description,
+        Serial_Num: req.body.Serial_Num,
+        Asset_Code: req.body.Asset_Code,
+        Qty: req.body.Qty,
+        Make: req.body.Main_Category,
+        Condition: req.body.Condition,
+        Comments: req.body.Comments,
+        
+    });
     item.save()
         .then(() => {
             res.status(200).send('Record is saved Successfully');
@@ -64,5 +76,6 @@ router.post('/lab5/update/:id', function (req, res) {
         }
     });
 });
+
 
 module.exports = router;
