@@ -19,7 +19,7 @@
 
         <b-list-group variant="dark">
           <div>
-            <b-list-group-item variant="dark">Dashboard</b-list-group-item>
+            <b-list-group-item variant="dark" active>Dashboard</b-list-group-item>
             <b-list-group-item variant="dark" to="adminpanel/currentstatus">Current Details</b-list-group-item>
             <b-list-group-item variant="dark">Current Details-Summary Report</b-list-group-item>
             <b-list-group-item variant="dark" to="adminpanel/addrecords">Add a new Record</b-list-group-item>
@@ -32,7 +32,42 @@
         </b-list-group>
       </b-card>
       <b-card title="Dashboard">
-        <b-card-text>dhsc cuw wfgw fgcv sdcsuewineq w</b-card-text>
+        
+        <div>
+          <b-card-group deck>
+            <b-card bg-variant="primary" text-variant="white" header="Total Items" class="text-center">
+              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            </b-card>
+            <b-card
+              bg-variant="secondary"
+              text-variant="white"
+              header="Total Category"
+              class="text-center"
+            >
+              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            </b-card>
+
+            <b-card bg-variant="success" text-variant="white" header="Total Stock" class="text-center">
+              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            </b-card>
+          </b-card-group>
+        </div>
+
+        <div class="mt-3">
+          <b-card-group deck>
+            <b-card bg-variant="warning" header="Light" class="text-center">
+              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            </b-card>
+
+            <b-card bg-variant="danger" header="Dark" text-variant="white" class="text-center">
+              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            </b-card>
+
+            <b-card header="info" class="text-center" bg-variant="info">
+              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            </b-card>
+          </b-card-group>
+        </div>
       </b-card>
     </b-card-group>
   </div>
