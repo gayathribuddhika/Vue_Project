@@ -5,7 +5,12 @@
       <b-button squared variant="dark" to="/adminpanel/addrecords">Add Records</b-button>
       <b-button squared variant="dark" to="#" align="right">Details Summary Report</b-button>
     </div>
-    
+    <b-pagination
+      v-model="currentPage"
+      :total-rows="rows"
+      :per-page="perPage"
+      aria-controls="my-table"
+    ></b-pagination>
       
     
     <b-card no-body>
@@ -22,6 +27,7 @@
             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
           </form>
        </nav>
+       
 
         <b-tab title="CIS/LAB/01" active>
           <b-card-text>
