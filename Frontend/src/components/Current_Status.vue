@@ -11,8 +11,9 @@
           <h2>Current Details of Items</h2>
           <form class="form-inline">
             <input
+              id="itemInput"
               class="form-control mr-sm-2"
-              type="search"
+              type="text"
               placeholder="Search by Serial Number"
               aria-label="Search"
             />
@@ -40,7 +41,7 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="itemTable">
                   <tr v-for="item in itemsLab1" v-bind:key="item._id">
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
@@ -88,7 +89,7 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="itemTable">
                   <tr v-for="item in itemsLab2" v-bind:key="item._id">
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
@@ -136,7 +137,7 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="itemTable">
                   <tr v-for="item in itemsLab3" v-bind:key="item._id">
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
@@ -184,7 +185,7 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="itemTable">
                   <tr v-for="item in itemsLab4" v-bind:key="item._id">
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
@@ -233,7 +234,7 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="itemTable">
                   <tr v-for="item in itemsLab5" v-bind:key="item._id">
                     <td>{{item.Item_id}}</td>
                     <td>{{item.Main_Category}}</td>
@@ -411,6 +412,15 @@ export default {
     }
   }
 };
+
+$(document).ready(function(){
+  $("#itemInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#itemTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
 </script>
 
 <style>

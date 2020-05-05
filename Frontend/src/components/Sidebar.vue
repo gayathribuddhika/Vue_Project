@@ -1,37 +1,52 @@
-<template v-slot:cell(actions)="{ item }">
-  <div>
-    <b-table striped hover :items="items" :fields="fields"></b-table>
-  </div>
+<template>
+  <div class="container">
+  <h2>Filterable Table</h2>
+  <p>Type something in the input field to search the table for first names, last names or emails:</p>  
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@mail.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@greatstuff.com</td>
+      </tr>
+      <tr>
+        <td>Anja</td>
+        <td>Ravendale</td>
+        <td>a_r@test.com</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p>Note that we start the search in tbody, to prevent filtering the table headers.</p>
+</div>
 </template>
 
 <script>
-import axios from 'axios'
-export default {
-  name: "Sidebar",
-  data() {
-    return {
-      items:[],
-      fields:[Main_Category, Asset_Description, Serial_Num, Asset_Code, Qty, Make, Condition, Comments, {
-        key: 'actions'}]
-    }
-  },
-
-  /*created() {
-    this.getRecords();
-  },*/
-
-  methods: {
-    getRecords(){
-      axios
-        .get("http://localhost:8085/lab/lab1")
-        .then(response => {
-          console.log(response.data);
-          this.items = response.data;
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
-  },
-}
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
 </script>
