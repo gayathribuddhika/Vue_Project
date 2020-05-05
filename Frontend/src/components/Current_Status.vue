@@ -269,6 +269,9 @@
 
 <script>
 import axios from "axios";
+import JQuery from 'jquery'
+window.$ = JQuery
+
 //import AddRecords from '@/components/AddRecords'
 
 export default {
