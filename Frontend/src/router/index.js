@@ -13,7 +13,7 @@ import AdminProfile from '@/components/AdminProfile'
 import StaffProfile from '@/components/StaffProfile'
 import ResetPassword from '@/components/ResetPassword'
 import UpdateRecord from '@/components/UpdateRecord'
-import Sidebar from '@/components/Sidebar'
+import Sample from '@/components/Sample'
 
 
 Vue.use(Router)
@@ -82,9 +82,9 @@ export default new Router({
       component: ResetPassword
     },
     {
-      path: '/sidebar',
-      name: "Sidebar",
-      component: Sidebar
+      path: '/sample',
+      name: "Sample",
+      component: Sample
     }
 
   ]

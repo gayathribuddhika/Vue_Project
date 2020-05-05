@@ -14,10 +14,10 @@
               id="itemInput"
               class="form-control mr-sm-2"
               type="text"
-              placeholder="Search by Serial Number"
-              aria-label="Search"
+              placeholder="Search"
+              
             />
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            <!--<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>-->
           </form>
         </nav>
         <b-tab title="CIS/LAB/01" active>
@@ -269,10 +269,7 @@
 
 <script>
 import axios from "axios";
-import JQuery from 'jquery'
-window.$ = JQuery
-
-//import AddRecords from '@/components/AddRecords'
+import $ from 'jquery'
 
 export default {
   name: "Current_Status",

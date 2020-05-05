@@ -12,7 +12,6 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSimpleAlert from'vue-simple-alert'
 
-
 import BSidebar from 'bootstrap-vue'
 Vue.component('b-sidebar', BSidebar)
 
