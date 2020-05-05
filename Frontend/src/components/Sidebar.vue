@@ -1,6 +1,6 @@
-<template>
+<template v-slot:cell(actions)="{ item }">
   <div>
-    <b-table striped hover :items="items"></b-table>
+    <b-table striped hover :items="items" :fields="fields"></b-table>
   </div>
 </template>
 
@@ -10,7 +10,9 @@ export default {
   name: "Sidebar",
   data() {
     return {
-      items:[]
+      items:[],
+      fields:[Main_Category, Asset_Description, Serial_Num, Asset_Code, Qty, Make, Condition, Comments, {
+        key: 'actions'}]
     }
   },
 

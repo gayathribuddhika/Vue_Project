@@ -5,14 +5,6 @@
       <b-button squared variant="dark" to="/adminpanel/addrecords">Add Records</b-button>
       <b-button squared variant="dark" to="#" align="right">Details Summary Report</b-button>
     </div>
-    <b-pagination
-      v-model="currentPage"
-      :total-rows="rows"
-      :per-page="perPage"
-      aria-controls="my-table"
-    ></b-pagination>
-      
-    
     <b-card no-body>
       <b-tabs pills card width="100%" content-class="mt-3" justified>
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
@@ -26,9 +18,7 @@
             />
             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
           </form>
-       </nav>
-       
-
+        </nav>
         <b-tab title="CIS/LAB/01" active>
           <b-card-text>
             <center>
@@ -290,10 +280,8 @@ export default {
       itemsLab3: {},
       itemsLab4: {},
       itemsLab5: {},
-      
-      serial_num:'',
-      
-      
+
+      serial_num: ""
     };
   },
   created() {
@@ -421,7 +409,6 @@ export default {
       }
       return;
     }
-    
   }
 };
 </script>
@@ -462,6 +449,4 @@ h5 {
   margin-top: 10px;
   margin-left: 15px;
 }
-
-
 </style>
