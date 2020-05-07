@@ -15,6 +15,8 @@
       :per-page="perPage"
       :current-page="currentPage"
       small
+      hover
+      
     ></b-table>
   </div>
 </template>

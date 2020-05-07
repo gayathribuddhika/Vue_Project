@@ -430,6 +430,7 @@ table {
   border-collapse: collapse;
   border: 3px solid #44475c;
   margin: 5px 5px 5px 5px;
+  
 }
 
 table th {
