@@ -22,32 +22,64 @@
             <h3>CIS/LAB/01</h3>
           </center>
           <br />
+          <div class="overflow-auto">
+            <b-pagination
+      v-model="currentPage"
+      :total-rows="rowtable1"
+      :per-page="perPage"
+      aria-controls="my-table"
+    ></b-pagination>
+    <p class="mt-3">Current Page: {{ currentPage }}</p>
           <b-table
             id="my-table"
-            :items="items1"
+            :items="itemsLab1"
             :fields="fields"
             :per-page="perPage"
             :current-page="currentPage"
             hover
+            striped
             bordered
             responsive="lg"
           ></b-table>
+          </div>
         </b-tab>
         <b-tab title="CIS/LAB/02">
           <center>
             <h3>CIS/LAB/02</h3>
           </center>
           <br />
+          <div class="overflow-auto">
+            <b-pagination
+      v-model="currentPage"
+      :total-rows="rowtable2"
+      :per-page="perPage"
+      aria-controls="my-table"
+    ></b-pagination>
+    <p class="mt-3">Current Page: {{ currentPage }}</p>
           <b-table
             id="my-table"
-            :items="items2"
+            :items="itemsLab2"
             :fields="fields"
             :per-page="perPage"
             :current-page="currentPage"
+            table-variant="primary"
             hover
+            striped
             bordered
             responsive="lg"
-          ></b-table>
+          >
+          <template>
+        <b-button size="sm" class="mr-1">
+          Info modal
+        </b-button>
+        <b-button size="sm" >
+          Details
+        </b-button>
+      </template>
+
+          </b-table>
+
+          </div>
         </b-tab>
       </b-tabs>
     </b-card>
@@ -60,8 +92,11 @@ export default {
   data() {
     return {
       fields:["ID", "Main_Category", "Asset_Description", "Serial_Num", "Asset_Code", "Qty", "Make", "Condition", "Comments"],
-      items1: [],
-      items2: []
+      itemsLab1: [],
+      itemsLab2: [],
+      
+      perPage: 3,
+      currentPage: 1
     };
   },
   created() {
@@ -69,8 +104,11 @@ export default {
     this.fetchRecord2();
   },
   computed: {
-    rows() {
-      return this.items.length;
+    rowtable1() {
+      return this.itemsLab1.length;
+    },
+    rowtable2() {
+      return this.itemsLab2.length;
     }
   },
   methods: {
@@ -79,7 +117,7 @@ export default {
         .get("http://localhost:8085/lab/lab1")
         .then(response => {
           console.log(response.data);
-          this.items1 = response.data;
+          this.itemsLab1 = response.data;
         })
         .catch(error => {
           console.log(error);
@@ -90,7 +128,7 @@ export default {
         .get("http://localhost:8085/lab/lab2")
         .then(response => {
           console.log(response.data);
-          this.items2 = response.data;
+          this.itemsLab2 = response.data;
         })
         .catch(error => {
           console.log(error);
@@ -99,3 +137,7 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+</style>
