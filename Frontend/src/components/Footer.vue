@@ -55,7 +55,7 @@
     </b-card-footer>
   </div>
 </template>
-<style>
+<style scoped>
 .icons {
   text-align: center;
 }

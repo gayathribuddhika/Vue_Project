@@ -225,7 +225,7 @@ import AdminPanel from '@/components/AdminPanel'
 </script>
 
 
-<style>
+<style scoped>
 #form{
   margin-top: 20px;
   

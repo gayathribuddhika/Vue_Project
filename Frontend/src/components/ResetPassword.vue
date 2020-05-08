@@ -45,7 +45,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #back {
   margin-left: 250px;
   margin-right: 250px;

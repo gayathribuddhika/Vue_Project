@@ -423,7 +423,7 @@ $(document).ready(function(){
 });
 </script>
 
-<style>
+<style socped>
 table {
   font-family: "Open Sans", sans-serif;
   width: 100%;

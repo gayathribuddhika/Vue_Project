@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #homepage{
     padding-top: 30px;
     padding-bottom: 10px;

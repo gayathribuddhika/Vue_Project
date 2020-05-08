@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #aboutus{
     padding-top: 30px;
     padding-bottom: 300px;
