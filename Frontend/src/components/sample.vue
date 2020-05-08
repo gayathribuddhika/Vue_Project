@@ -34,6 +34,8 @@
               striped
               bordered
               responsive="lg"
+              sticky-header
+              head-variant="dark"
             ></b-table>
           </div>
         </b-tab>
