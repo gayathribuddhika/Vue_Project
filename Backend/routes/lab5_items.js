@@ -78,4 +78,12 @@ router.put('/lab5/update/:id', function (req, res) {
 });
 
 
+/*router.post('/lab5/update/:id', (req, res) => {
+    let options = { new: true };
+      Item.findByIdAndUpdate(req.params.id, req.body.data , options, (err, item) => {
+        if (err) return res.status(404).send({message: err.message});
+        return res.send({ message: 'note updated!', item });
+      });
+    });*/
+
 module.exports = router;

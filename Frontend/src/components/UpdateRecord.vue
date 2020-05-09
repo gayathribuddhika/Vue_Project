@@ -227,7 +227,7 @@ export default {
   methods: {
     updateRecord() {
       let uri = `http://localhost:8085/lab/lab5/update/${this.$route.params.id}`;
-        axios.put(uri, this.items).then(response => {
+        axios.post(uri, this.items).then(response => {
         console.log(response);
         //this.$router.push({ name: "Current_Status" });
       });
