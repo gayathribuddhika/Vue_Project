@@ -3,6 +3,7 @@
     
     <div class="btn">
       <b-button squared variant="dark" to="/adminpanel">Back</b-button>
+      <b-button squared variant="dark" to="/adminpanel/currentstatus">View All</b-button>
     </div>
     <b-card bg-variant="light" body-class="text-center">
       <b-form v-on:submit.prevent="updateRecord" v-if="show">
@@ -127,11 +128,9 @@
             <b-textarea id="record_comment" v-model="form.comment" type="text"></b-textarea>
           </b-form-group>
 
-          <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Update</b-button>&nbsp;&nbsp;&nbsp;
+          <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Update</b-button>
           <b-button type="reset" variant="danger">Reset</b-button>&nbsp;&nbsp;&nbsp;
-          <router-link to="/adminpanel/currentstatus">
-            <b-button type="button" variant="success">View All</b-button>
-          </router-link>
+          
           <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
           <p v-if="submitted === 'pending'">Sending...</p>
           <p v-if="submitted === 'error'">Please fill all the required fields</p>
@@ -215,7 +214,7 @@ export default {
   },
 
   created() {
-    let uri = `http://localhost:8085/lab/lab1/${this.$route.params.id}`;
+    let uri = `http://localhost:8085/lab/lab5/update/${this.$route.params.id}`;
       axios.get(uri).then(response => {
         this.items = response.data;
         console.log(this.items);
@@ -224,34 +223,17 @@ export default {
         console.log(error);
       });
   },
+  
   methods: {
     updateRecord() {
-      let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
+      let uri = `http://localhost:8085/lab/lab5/update/${this.$route.params.id}`;
         axios.put(uri, this.items).then(response => {
         console.log(response);
         //this.$router.push({ name: "Current_Status" });
       });
     }
   }
-  /*methods: {
-    updateRecord() {
-      axios.get(`http://localhost:8085/lab/lab1/${this.$route.params.id}`)
-      .then(data => res.json())
-      .then(data => {
-        this.form.items = new Items (
-          data.Main_Category,
-          data.Asset_Description,
-          data.Serial_Num,
-          data.Asset_Code,
-          data.Qty,
-          data.Make,
-          data.Condition,
-          data.Comments
-        );
-      });
-    }
-  },*/
-
+  
   /*onReset(evt) {
       evt.preventDefault();
       // Reset our form values

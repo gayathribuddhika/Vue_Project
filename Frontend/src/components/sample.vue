@@ -36,7 +36,9 @@
               responsive="lg"
               sticky-header
               head-variant="dark"
-            ></b-table>
+            >
+              <b-button size="sm" class="mr-1">Delete</b-button>
+            </b-table>
           </div>
         </b-tab>
         <!--<b-tab title="CIS/LAB/02">
@@ -87,7 +89,8 @@ export default {
         "Qty",
         "Make",
         "Condition",
-        "Comments"
+        "Comments",
+        "Action"
       ],
       itemsLab1: [],
       itemsLab2: [],
