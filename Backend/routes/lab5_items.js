@@ -54,7 +54,7 @@ router.get('/lab5/edit/:id', function (req, res) {
     });
 });
 
-router.post('/lab5/update/:id', function (req, res) {
+/*router.post('/lab5/update/:id', function (req, res) {
     Item.findById(req.params.id, function (err, item) {
         if (!item)
             res.status(404).send("Record is not found");
@@ -75,15 +75,20 @@ router.post('/lab5/update/:id', function (req, res) {
                 });
         }
     });
+});*/
+
+router.post('/lab5/update/:id', (req, res, next) => {
+    Item.findByIdAndUpdate(req.params.id, {
+        $set:req.body
+    }, (err, item) => {
+        if(err) {
+            return next(error);
+        } else {
+            res.json(item)
+            console.log("Database Successfully Updated")
+
+        }
+    })
 });
-
-
-/*router.post('/lab5/update/:id', (req, res) => {
-    let options = { new: true };
-      Item.findByIdAndUpdate(req.params.id, req.body.data , options, (err, item) => {
-        if (err) return res.status(404).send({message: err.message});
-        return res.send({ message: 'note updated!', item });
-      });
-    });*/
 
 module.exports = router;
