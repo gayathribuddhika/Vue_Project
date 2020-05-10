@@ -214,7 +214,7 @@ export default {
   },
 
   created() {
-    let uri = `http://localhost:8085/lab/lab5/update/${this.$route.params.id}`;
+    let uri = `http://localhost:8085/lab/lab5/edit/${this.$route.params.id}`;
       axios.get(uri).then(response => {
         this.items = response.data;
         console.log(this.items);

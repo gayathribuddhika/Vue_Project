@@ -20,7 +20,7 @@
             <!--<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>-->
           </form>
         </nav>
-        <b-tab title="CIS/LAB/01" active>
+        <b-tab title="CIS/LAB/01">
           <b-card-text>
             <center>
               <h3>CIS/LAB/01</h3>

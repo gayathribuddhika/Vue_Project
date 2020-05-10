@@ -54,7 +54,7 @@ router.get('/lab5/edit/:id', function (req, res) {
     });
 });
 
-router.put('/lab5/update/:id', function (req, res) {
+router.post('/lab5/update/:id', function (req, res) {
     Item.findById(req.params.id, function (err, item) {
         if (!item)
             res.status(404).send("Record is not found");
