@@ -3,6 +3,9 @@ const Schema = mongoose.Schema;
 
 const Item = new Schema({
     
+    Select_LAB: {
+        type: String
+    },
     Item_id: {
         type: String
     },

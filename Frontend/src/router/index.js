@@ -72,7 +72,7 @@ export default new Router({
       component: StaffProfile
     },
     {
-      path: '/updaterecord/:id',
+      path: '/edit/:id',
       name: "UpdateRecord",
       component: UpdateRecord
     },
@@ -89,3 +89,5 @@ export default new Router({
 
   ]
 })
+
+

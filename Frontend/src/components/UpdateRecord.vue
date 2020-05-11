@@ -20,7 +20,13 @@
             label-for="select_lab"
             label-align-sm="right"
           >
-            <b-form-select id="select_lab" v-model="form.select_lab" required :options="select_lab"></b-form-select>
+            <b-form-select 
+              id="select_lab" 
+              v-model="form.select_lab" 
+              required 
+              :options="select_lab"
+            >
+            </b-form-select>
           </b-form-group>
           <!--<b-form-group
                     label-cols-sm="3"
