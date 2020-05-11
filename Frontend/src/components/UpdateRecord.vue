@@ -154,9 +154,9 @@ export default {
   name: "UpdateRecords",
   data() {
     return {
-      form: [
-        //items: []
-      ],
+      form: {
+        items:{}
+      },
 
       select_lab: [
         { text: "Select One", value: null },
@@ -222,8 +222,8 @@ export default {
   created() {
     let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
       axios.get(uri).then(response => {
-        this.form = response.data;
-        console.log(this.form);
+        this.items = response.data;
+        console.log(this.items);
       })
       .catch(error => {
         console.log(error);
@@ -233,9 +233,12 @@ export default {
   methods: {
     updateRecord() {
       let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
-        axios.post(uri, this.form).then(response => {
+        axios.post(uri, this.items).then(response => {
         console.log(response);
         //this.$router.push({ name: "Current_Status" });
+      })
+      .catch(error => {
+        console.log(error);
       });
     }
   }

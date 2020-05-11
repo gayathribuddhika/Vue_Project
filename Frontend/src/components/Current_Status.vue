@@ -341,7 +341,7 @@ export default {
         .then(response => {
           console.log(response.data);
           this.itemsLab5 = response.data;
-          this.increment();
+          
         })
         .catch(error => {
           console.log(error);
