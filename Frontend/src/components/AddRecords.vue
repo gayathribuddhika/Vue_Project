@@ -269,6 +269,7 @@ export default {
       if( this.form.select_lab == "CIS/LAB/01"){
         let newRecord = {
         //id: this.form.id,
+        Select_LAB: this.form.select_lab,
         Main_Category: this.form.category,
         Asset_Description: this.form.description,
         Serial_Num: this.form.serial_num,
@@ -299,6 +300,7 @@ export default {
       } else if ( this.form.select_lab == "CIS/LAB/02") {
         let newRecord = {
         //id: this.form.id,
+        Select_LAB: this.form.select_lab,
         Main_Category: this.form.category,
         Asset_Description: this.form.description,
         Serial_Num: this.form.serial_num,
@@ -329,6 +331,7 @@ export default {
       } else if ( this.form.select_lab == "CIS/LAB/03") {
         let newRecord = {
         //id: this.form.id,
+        Select_LAB: this.form.select_lab,
         Main_Category: this.form.category,
         Asset_Description: this.form.description,
         Serial_Num: this.form.serial_num,
@@ -359,6 +362,7 @@ export default {
       } else if ( this.form.select_lab == "CIS/LAB/04") {
         let newRecord = {
         //id: this.form.id,
+        Select_LAB: this.form.select_lab,
         Main_Category: this.form.category,
         Asset_Description: this.form.description,
         Serial_Num: this.form.serial_num,
@@ -389,6 +393,7 @@ export default {
       } else if(this.form.select_lab == "CIS/LAB/05") {
         let newRecord = {
         //id: this.form.id,
+        Select_LAB: this.form.select_lab,
         Main_Category: this.form.category,
         Asset_Description: this.form.description,
         Serial_Num: this.form.serial_num,

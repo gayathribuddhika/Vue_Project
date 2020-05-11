@@ -222,7 +222,6 @@
               <table>
                 <thead>
                   <tr>
-                    <th>Item ID</th>
                     <th>Main Category</th>
                     <th>Asset Description</th>
                     <th>Serial Num</th>
@@ -236,7 +235,6 @@
                 </thead>
                 <tbody id="itemTable">
                   <tr v-for="item in itemsLab5" v-bind:key="item._id">
-                    <td>{{item.Item_id}}</td>
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
                     <td>{{item.Serial_Num}}</td>

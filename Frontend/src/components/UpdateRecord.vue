@@ -220,7 +220,7 @@ export default {
   },
 
   created() {
-    let uri = `http://localhost:8085/lab/lab5/edit/${this.$route.params.id}`;
+    let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
       axios.get(uri).then(response => {
         this.form = response.data;
         console.log(this.form);
@@ -232,7 +232,7 @@ export default {
   
   methods: {
     updateRecord() {
-      let uri = `http://localhost:8085/lab/lab5/update/${this.$route.params.id}`;
+      let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
         axios.post(uri, this.form).then(response => {
         console.log(response);
         //this.$router.push({ name: "Current_Status" });
