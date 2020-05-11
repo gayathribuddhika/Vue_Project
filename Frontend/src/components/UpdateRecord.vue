@@ -148,9 +148,9 @@ export default {
   name: "UpdateRecords",
   data() {
     return {
-      form: {
+      form: [
         //items: []
-      },
+      ],
 
       select_lab: [
         { text: "Select One", value: null },
