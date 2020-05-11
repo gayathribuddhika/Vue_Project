@@ -43,7 +43,7 @@ router.post('/lab2', function (req, res) {
         Serial_Num: req.body.Serial_Num,
         Asset_Code: req.body.Asset_Code,
         Qty: req.body.Qty,
-        Make: req.body.Main_Category,
+        Make: req.body.Make,
         Condition: req.body.Condition,
         Comments: req.body.Comments
     });

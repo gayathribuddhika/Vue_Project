@@ -38,13 +38,12 @@ router.get('/lab5/:id', function (req, res) {
 router.post('/lab5', function (req, res) {
     let item = new Item({
         Select_LAB:req.body.Select_LAB,
-        Item_id: req.body.Item_id,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
         Serial_Num: req.body.Serial_Num,
         Asset_Code: req.body.Asset_Code,
         Qty: req.body.Qty,
-        Make: req.body.Main_Category,
+        Make: req.body.Make,
         Condition: req.body.Condition,
         Comments: req.body.Comments,
         
