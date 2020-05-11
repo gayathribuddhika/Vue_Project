@@ -14,6 +14,16 @@ router.get('/lab1', (req, res) => {
     });
 });
 
+router.get('/lab1/:id', function (req, res) {
+    let id = req.params.id;
+    Item.findById(id, function (err, item) {
+        if (err) {
+            res.json(err);
+        }
+        res.json(item);
+    });
+});
+
 /*router.post('/lab1', function (req, res) {
     let item = new Item(req.body);
     item.save()
@@ -27,6 +37,7 @@ router.get('/lab1', (req, res) => {
 
 router.post('/lab1', function (req, res) {
     let item = new Item({
+        Select_LAB:req.body.Select_LAB,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
         Serial_Num: req.body.Serial_Num,
@@ -52,7 +63,7 @@ router.delete('/lab1/delete/:id', function (req, res) {
     });
 });
 
-router.get('/lab1/:id', function (req, res) {
+router.get('/lab1/edit/:id', function (req, res) {
     let id = req.params.id;
     Item.findById(id, function (err, item) {
         if (err) {
@@ -62,18 +73,28 @@ router.get('/lab1/:id', function (req, res) {
     });
 });
 
-/*router.get('/lab1/query', function (req, res) {
-    let query = {Serial_Num:"lab1_00001"};
-    Item.findOne(query, function (err, item) {
-        if (err) {
-            res.json(err);
+router.post('/lab1/update/:id', function (req, res) {
+    Item.findById(req.params.id, function (err, item) {
+        if (!item)
+            res.status(404).send("Record is not found");
+        else {
+            item.Select_LAB = req.body.Select_LAB;
+            item.Main_Category = req.body.Main_Category;
+            item.Asset_Description = req.body.Asset_Description;
+            item.Serial_Num = req.body.Serial_Num;
+            item.Asset_Code = req.body.Asset_Code;
+            item.Qty = req.body.Qty;
+            item.Make = req.body.Make;
+            item.Condition = req.body.Condition;
+            item.Comments = req.body.Comments;
+            item.save().then(() => {
+                res.json('Update is Completed');
+            })
+                .catch(() => {
+                    res.status(400).send("Unable to update the DB");
+                });
         }
-        res.json(item);
     });
-});*/
-
-
-
-
+});
 
 module.exports = router;

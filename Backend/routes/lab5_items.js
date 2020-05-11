@@ -14,10 +14,31 @@ router.get('/lab5', (req, res) => {
     });
 });
 
+router.get('/lab5/:id', function (req, res) {
+    let id = req.params.id;
+    Item.findById(id, function (err, item) {
+        if (err) {
+            res.json(err);
+        }
+        res.json(item);
+    });
+});
+
+/*router.post('/lab5', function (req, res) {
+    let item = new Item(req.body);
+    item.save()
+        .then(() => {
+            res.status(200).send('Record is saved Successfully');
+        })
+        .catch(() => {
+            res.status(400).send("Unable to save to database");
+        });
+});*/
+
 router.post('/lab5', function (req, res) {
-    
-    let item = new Item({ 
-        //Item_id: req.body.Item_id,
+    let item = new Item({
+        Select_LAB:req.body.Select_LAB,
+        Item_id: req.body.Item_id,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
         Serial_Num: req.body.Serial_Num,
@@ -44,7 +65,7 @@ router.delete('/lab5/delete/:id', function (req, res) {
     });
 });
 
-router.get('/lab5/edit/:id', function (req, res) {
+/*router.get('/lab5/edit/:id', function (req, res) {
     let id = req.params.id;
     Item.findById(id, function (err, item) {
         if (err) {
@@ -54,12 +75,13 @@ router.get('/lab5/edit/:id', function (req, res) {
     });
 });
 
-/*router.post('/lab5/update/:id', function (req, res) {
+router.post('/lab5/update/:id', function (req, res) {
     Item.findById(req.params.id, function (err, item) {
         if (!item)
             res.status(404).send("Record is not found");
         else {
             item.Main_Category = req.body.Main_Category;
+            item.Select_LAB = req.body.Select_LAB;
             item.Asset_Description = req.body.Asset_Description;
             item.Serial_Num = req.body.Serial_Num;
             item.Asset_Code = req.body.Asset_Code;
@@ -76,19 +98,5 @@ router.get('/lab5/edit/:id', function (req, res) {
         }
     });
 });*/
-
-router.post('/lab5/update/:id', (req, res, next) => {
-    Item.findByIdAndUpdate(req.params.id, {
-        $set:req.body
-    }, (err, item) => {
-        if(err) {
-            return next(error);
-        } else {
-            res.json(item)
-            console.log("Database Successfully Updated")
-
-        }
-    })
-});
 
 module.exports = router;

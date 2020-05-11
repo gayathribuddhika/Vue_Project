@@ -16,6 +16,16 @@ router.get('/lab3', (req, res) => {
     });
 });
 
+router.get('/lab3/:id', function (req, res) {
+    let id = req.params.id;
+    Item.findById(id, function (err, item) {
+        if (err) {
+            res.json(err);
+        }
+        res.json(item);
+    });
+});
+
 /*router.post('/lab3', function (req, res) {
     let item = new Item(req.body);
     item.save()
@@ -27,8 +37,9 @@ router.get('/lab3', (req, res) => {
         });
 });*/
 
-/*router.post('/lab3', function (req, res) {
+router.post('/lab3', function (req, res) {
     let item = new Item({
+        Select_LAB:req.body.Select_LAB,
         Item_id: req.body.Item_id,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
@@ -47,7 +58,7 @@ router.get('/lab3', (req, res) => {
         .catch(() => {
             res.status(400).send("Unable to save to database");
         });
-});*/
+});
 
 router.delete('/lab3/delete/:id', function (req, res) {
     Item.findOneAndDelete({ _id: req.params.id }, function (err) {
@@ -56,7 +67,7 @@ router.delete('/lab3/delete/:id', function (req, res) {
     });
 });
 
-router.get('/lab3/edit/:id', function (req, res) {
+/*router.get('/lab3/edit/:id', function (req, res) {
     let id = req.params.id;
     Item.findById(id, function (err, item) {
         if (err) {
@@ -71,6 +82,7 @@ router.post('/lab3/update/:id', function (req, res) {
         if (!item)
             res.status(404).send("Record is not found");
         else {
+            item.Select_LAB = req.body.Select_LAB;
             item.Main_Category = req.body.Main_Category;
             item.Asset_Description = req.body.Asset_Description;
             item.Serial_Num = req.body.Serial_Num;
@@ -87,18 +99,6 @@ router.post('/lab3/update/:id', function (req, res) {
                 });
         }
     });
-});
-
-/*function getNextSequenceValue(Item_id){
-    var sequenceDocument = Item.findAndModify({
-       query:{_id: Item_id },
-       update: {$inc:{sequence_value:1}},
-       new:true
-    });
-    return sequenceDocument.sequence_value;
- }*/
-
-
- 
+});*/
 
 module.exports = router;
