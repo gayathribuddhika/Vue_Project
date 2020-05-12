@@ -14,7 +14,7 @@ import StaffProfile from '@/components/StaffProfile'
 import ResetPassword from '@/components/ResetPassword'
 import UpdateRecord from '@/components/UpdateRecord'
 import Sample from '@/components/Sample'
-
+import AddData from '@/components/AddData'
 
 Vue.use(Router)
 
@@ -85,6 +85,11 @@ export default new Router({
       path: '/sample',
       name: "Sample",
       component: Sample
+    },
+    {
+      path: '/adddata',
+      name: "AddData",
+      component: AddData
     }
 
   ]
