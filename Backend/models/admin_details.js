@@ -4,10 +4,12 @@ const Schema = mongoose.Schema;
 const adminSchema = new Schema({
     
     Username: {
-        type: String
+        type: String,
+        //required:[true,"Username is required"]
     },
     Password: {
-        type: String
+        type: String,
+        //required:[true,"Username is required"]
     },
     Email: {
         type: String
