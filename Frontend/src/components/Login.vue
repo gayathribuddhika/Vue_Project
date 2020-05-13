@@ -25,9 +25,8 @@
             <b-form-input
               id="username1"
               placeholder="Enter your username"
-              required
               v-model= "form1.username1"
-              
+              required
               
             />
             </b-form-group>
@@ -40,8 +39,8 @@
               id="password1"
               type="password"
               placeholder="Enter your password"
-              required
               v-model= "form1.password1"
+              required
             /> 
             
             <br>
@@ -124,7 +123,7 @@ import AdminPanel from '@/components/AdminPanel'
      
   },
 
-  validations: {
+  /*validations: {
     form1:{
       username1: {required},
       password1: {required}
@@ -133,7 +132,7 @@ import AdminPanel from '@/components/AdminPanel'
       username2: {required},
       password2: {required}
     }
-  },
+  },*/
 
   methods: {
     login1(){
