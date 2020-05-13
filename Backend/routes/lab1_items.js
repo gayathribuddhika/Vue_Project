@@ -73,7 +73,7 @@ router.get('/lab1/edit/:id', function (req, res) {
     });
 });
 
-/*router.post('/lab1/update/:id', function (req, res) {
+router.post('/lab1/update/:id', function (req, res) {
     Item.findById(req.params.id, function (err, item) {
         if (!item)
             res.status(404).send("Record is not found");
@@ -95,9 +95,9 @@ router.get('/lab1/edit/:id', function (req, res) {
                 });
         }
     });
-});*/
+});
 
-router.route('/lab1/update/:id').post((req, res, next) => {
+/*router.route('/lab1/update/:id').post((req, res, next) => {
     Item.findByIdAndUpdate(req.params.id, {
       $set: req.body
     }, (error, data) => {
@@ -108,6 +108,6 @@ router.route('/lab1/update/:id').post((req, res, next) => {
         console.log('Student successfully updated!')
       }
     })
-  })
+  })*/
 
 module.exports = router;

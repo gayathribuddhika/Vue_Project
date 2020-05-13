@@ -41,7 +41,7 @@
             <b-card
               bg-variant="secondary"
               text-variant="white"
-              header="Total Category"
+              header="Total Categories"
               class="text-center"
             >
               <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
@@ -75,34 +75,6 @@
 
 
 <script>
-import current_status from "@/components/Current_Status";
 
-export default {
-  name: "AdminPanel"
-  /*components:{
-    current_status
-  },*/
-  /*data() {
-    return {
-      authenticated: false,
-      adminAccount:{
-        username:"adminims",
-        password: "admin123ims"
-      }
-    }
-  },
-  mounted() {
-    if(!this.authenticated) {
-                this.$router.replace({ name: "Login" });
-            }
-  },
-  methods: {
-    setAuthenticated(status) {
-                this.authenticated = status;
-            },
-            logout() {
-                this.authenticated = false;
-            }
-  },*/
-};
+
 </script>>

@@ -42,7 +42,7 @@
             <b-card
               bg-variant="secondary"
               text-variant="white"
-              header="Total Category"
+              header="Total Categories"
               class="text-center"
             >
               <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
