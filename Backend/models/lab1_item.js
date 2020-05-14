@@ -4,25 +4,31 @@ const Schema = mongoose.Schema;
 const Item = new Schema({
     
     Select_LAB: {
-        type: String
+        type: String,
+        required:[true]
     },
     Item_id: {
         type: String
     },
     Main_Category: {
-        type: String
+        type: String,
+        required:true
     },
     Asset_Description: {
-        type: String
+        type: String,
+        required:true
     },
     Serial_Num: {
-        type: String
+        type: String,
+        required:true
     },
     Asset_Code: {
-        type: String
+        type: String,
+        required:true
     },
     Qty: {
-        type: String
+        type: String,
+        required:true
     },
     Make: {
         type: String

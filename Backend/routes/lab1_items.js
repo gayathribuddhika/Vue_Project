@@ -56,7 +56,13 @@ router.post('/lab1', function (req, res) {
         });
 });
 
-router.delete('/lab1/delete/:id', function (req, res) {
+/*router.post('/lab1', function(req, res) {             //this also working properly...
+    Item.create(req.body).then(function (item){
+        res.send(item);
+    });
+})*/
+
+router.delete('/lab1/delete/:id', function (req, res) {               //can also use findByIdAndRemove
     Item.findOneAndDelete({ _id: req.params.id }, function (err) {
         if (err) res.json(err);
         else res.json('Successfully removed');
