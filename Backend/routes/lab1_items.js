@@ -79,7 +79,7 @@ router.get('/lab1/edit/:id', function (req, res) {
     });
 });
 
-router.post('/lab1/update/:id', function (req, res) {
+/*router.post('/lab1/update/:id', function (req, res) {
     Item.findById(req.params.id, function (err, item) {
         if (!item)
             res.status(404).send("Record is not found");
@@ -100,6 +100,13 @@ router.post('/lab1/update/:id', function (req, res) {
                     res.status(400).send("Unable to update the DB");
                 });
         }
+    });
+});*/
+router.put('/lab1/update/:id', function(req, res) {
+    Item.findByIdAndUpdate({_id:req.params.id},req.body).then(function(){
+        Item.findOne({_id:req.params.id}).then (function(item){
+        res.send(item);
+        })
     });
 });
 

@@ -210,7 +210,6 @@ export default {
         "Computer Table",
         "Computer Chair",
         "Normal Chair",
-        "Computrt Table",
         "Telephone",
         "Laminationg Machine",
         "Photocopy Machine"
