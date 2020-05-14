@@ -5,7 +5,7 @@ const cors = require("cors")
 const Staff = require("../models/staff_details")
 router.use(cors())
 
-router.get('/', (req, res) => {
+router.get('/stafflogin', (req, res) => {
     Staff.find(function (err, staff) {
         if (err) {
             res.json(err);

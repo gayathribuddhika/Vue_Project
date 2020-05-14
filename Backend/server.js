@@ -14,13 +14,13 @@ app.use(bodyParser.json());
 require('./config/db');
 
 const contactRouter = require('./routes/contact');
-app.use('/contacts', contactRouter);
+app.use('/', contactRouter);
 
 const staffloginRouter = require('./routes/stafflogin');
-app.use('/stafflogin', staffloginRouter);
+app.use('/', staffloginRouter);
 
 const adminloginRouter = require('./routes/adminlogin');
-app.use('/adminlogin', adminloginRouter);
+app.use('/', adminloginRouter);
 
 const labItem1 = require('./routes/lab1_items');
 app.use('/lab', labItem1);

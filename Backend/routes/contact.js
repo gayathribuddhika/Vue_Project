@@ -5,7 +5,7 @@ const cors = require("cors")
 const Contact = require("../models/contact.model")
 router.use(cors())
 
-router.get('/', (req, res) => {
+router.get('/contacts', (req, res) => {
     Contact.find(function (err, contacts) {
         if (err) {
             res.json(err);
