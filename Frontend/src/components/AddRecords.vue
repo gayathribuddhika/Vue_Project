@@ -4,15 +4,17 @@
       <b-button squared variant="dark" to="/adminpanel">Back</b-button>
       <b-button squared variant="dark" to="/adminpanel/currentstatus">View All</b-button>
     </div>
+    
     <center>
-      <b-card bg-variant="light" body-class="text-center" class="mb-2" style="max-width: 75rem;">
+      <br />
+      <b-card bg-variant="light" body-class="text-center" class="mb-2" style="max-width: 65rem;">
         <b-form @submit.prevent="addToRecords" @reset="onReset" v-if="show">
           <b-form-group
             label-cols-lg="3"
             label="Add a New Record"
             label-size="lg"
             label-class="font-weight-bold pt-1"
-            class="mb-0"
+            class="mb-2"
           >
             <b-form-group
               label-cols-sm="3"
