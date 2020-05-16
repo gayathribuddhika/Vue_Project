@@ -8,7 +8,7 @@
     <center>
       <br />
       <b-card bg-variant="light" body-class="text-center" class="mb-2" style="max-width: 65rem;">
-        <b-form @submit.prevent="addToRecords" @reset="onReset" v-if="show">
+        <b-form @submit.prevent="handleTwo" @reset="onReset" v-if="show">
           <b-form-group
             label-cols-lg="3"
             label="Add a New Record"
@@ -140,7 +140,7 @@
               <b-textarea id="record_comment" v-model="form.comment" type="text"></b-textarea>
             </b-form-group>
           
-            <b-button type="submit" variant="primary" :disabled="submitted === 'pending'" >Submit</b-button>
+            <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Submit</b-button>
             <b-button type="reset" variant="danger">Reset</b-button>
             
             <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
@@ -172,7 +172,7 @@ export default {
         condition: "",
         comment: "",
 
-        id: 0
+        counter: 0
       },
 
       select_labs: [
@@ -236,43 +236,19 @@ export default {
   },
 
   methods: {
-    /*addToRecords() {
-      let newRecord = {
-        //id: this.form.id,
-        Main_Category: this.form.category,
-        Asset_Description: this.form.description,
-        Serial_Num: this.form.serial_num,
-        Asset_Code: this.form.code,
-        Qty: this.form.qty,
-        Make: this.form.make,
-        Condition: this.form.condition,
-        Comments: this.form.comment
-      };
-      console.log("submit");
-
-      this.$v.$touch();
-      if (this.$v.form.error) {
-        this.submitted = "error";
-      } else console.log(newRecord);
-      axios
-        .post("http://localhost:8085/lab/lab1", newRecord)
-        .then(response => {
-          console.log(response);
-          this.submitted = "pending";
-          setTimeout(() => {
-            this.submitted = "ok";
-          }, 500);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    },*/
+    handleTwo(){
+      this.incrementId();
+      this.addToRecords();
+    },
+    incrementId(){
+      this.form.counter += 1;
+    },
     addToRecords(){
       if( this.form.select_lab == "CIS/LAB/01"){
         let newRecord = {
         
         Select_LAB: this.form.select_lab,
-        Item_id: this.form.id,
+        Item_id: this.form.counter,
         Main_Category: this.form.category,
         Asset_Description: this.form.description,
         Serial_Num: this.form.serial_num,
