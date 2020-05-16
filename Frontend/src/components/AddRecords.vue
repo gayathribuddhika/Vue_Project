@@ -140,7 +140,7 @@
               <b-textarea id="record_comment" v-model="form.comment" type="text"></b-textarea>
             </b-form-group>
           
-            <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Submit</b-button>
+            <b-button type="submit" variant="primary" :disabled="submitted === 'pending'" >Submit</b-button>
             <b-button type="reset" variant="danger">Reset</b-button>
             
             <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
@@ -163,7 +163,6 @@ export default {
     return {
       form: {
         select_lab: null,
-        //id: 1,
         category: null,
         description: null,
         serial_num: "",
@@ -171,7 +170,9 @@ export default {
         qty: "",
         make: "",
         condition: "",
-        comment: ""
+        comment: "",
+
+        id: 0
       },
 
       select_labs: [
@@ -269,8 +270,9 @@ export default {
     addToRecords(){
       if( this.form.select_lab == "CIS/LAB/01"){
         let newRecord = {
-        //id: this.form.id,
+        
         Select_LAB: this.form.select_lab,
+        Item_id: this.form.id,
         Main_Category: this.form.category,
         Asset_Description: this.form.description,
         Serial_Num: this.form.serial_num,
