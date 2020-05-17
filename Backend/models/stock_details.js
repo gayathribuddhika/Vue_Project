@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const stockSchema = new Schema({
+const stock = new Schema({
     List_of_Items: {
         type: String
     },
@@ -14,6 +14,6 @@ const stockSchema = new Schema({
     Damaged: {
         type: Number
     }
-}, { collection: "Stores" })
+}, { collection: "Stores" });
 
-module.exports = mongoose.model("Store", stockSchema)
+module.exports = mongoose.model("store", stock);
