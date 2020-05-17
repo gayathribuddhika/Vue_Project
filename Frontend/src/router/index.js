@@ -15,6 +15,7 @@ import ResetPassword from '@/components/ResetPassword'
 import UpdateRecord from '@/components/UpdateRecord'
 import Sample from '@/components/Sample'
 import AddData from '@/components/AddData'
+import StockReport from '@/components/StockReport'
 
 Vue.use(Router)
 
@@ -90,6 +91,11 @@ export default new Router({
       path: '/adddata',
       name: "AddData",
       component: AddData
+    },
+    {
+      path: '/stockreport',
+      name: "StockReport",
+      component: StockReport
     }
 
   ]

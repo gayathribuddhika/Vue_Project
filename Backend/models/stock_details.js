@@ -8,7 +8,7 @@ const stock = new Schema({
     In_Stock: {
         type: Number
     },
-    On_Stock: {
+    On_Order: {
         type: Number
     },
     Damaged: {

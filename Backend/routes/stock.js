@@ -43,11 +43,11 @@ router.route('/update-store/:id').post((req, res, next) => {
         if (error) {
             return next(error);
         } else {
-            res.json(data)
-            console.log('Stores successfully updated!')
+            res.send("Update Successfully")
+            
         }
-    })
-})
+    });
+});
 
 
 router.route('/delete-store/:id').delete((req, res, next) => {
@@ -57,8 +57,8 @@ router.route('/delete-store/:id').delete((req, res, next) => {
         } else {
             res.send('Successfully removed');
         }
-    })
-})
+    });
+});
 
 
 module.exports = router;
