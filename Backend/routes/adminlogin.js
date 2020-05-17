@@ -14,7 +14,7 @@ router.get('/adminlogin', (req, res) => {
     });
 });
 
-/*router.post('/adminlogin', function (req, res) {
+router.post('/adminlogin', function (req, res) {
     let admin = new Admin({
         Username: req.body.Username,
         Password: req.body.Password
@@ -26,7 +26,7 @@ router.get('/adminlogin', (req, res) => {
         .catch(() => {
             res.status(400).send("Unable to Login");
         });
-});*/
+});
 
 module.exports = router;
 

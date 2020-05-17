@@ -24,10 +24,8 @@
                       id="username1"
                       placeholder="Enter your username"
                       v-model="form1.username1"
-                      :class="{ 'is-invalid': isSubmitted && $v.form1.username1.$error }"
+                      required
                     />
-                    <div v-if="isSubmitted && !$v.form1.username1.required" class="invalid-feedback">Username field is required</div>
-                    <div v-if="isSubmitted && !$v.form1.username1 == 'adminims'" class="invalid-feedback">Username is incorrect</div>
                   </b-form-group>
 
                   <b-form-group label="Password:" label-for="password1">
@@ -36,10 +34,9 @@
                       type="password"
                       placeholder="Enter your password"
                       v-model="form1.password1"
-                      :class="{ 'is-invalid': isSubmitted && $v.form1.password1.$error }"
+                      required
                     />
-                     <div v-if="isSubmitted && !$v.form1.password1.required" class="invalid-feedback">Password field is required</div>
-                     <div v-if="isSubmitted && !$v.form1.password1 == 'Admin123ims'" class="invalid-feedback">Password is incorrect</div> 
+
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
                   </b-form-group>
@@ -100,9 +97,7 @@ export default {
       form2: {
         username2: "",
         password2: ""
-      },
-
-      isSubmitted:false
+      }
     };
   },
 
@@ -118,7 +113,7 @@ export default {
   },
 
   methods: {
-    /*login1() {
+    login1() {
       if (
         this.form1.username1 == "adminims" &&
         this.form1.password1 == "Admin123ims"
@@ -130,20 +125,9 @@ export default {
 
         //alert("The username and/or password is incorrect")
       }
-    }*/
-    login1(){
-      this.isSubmitted = true;
-
-                this.$v.$touch();
-                if (this.$v.$invalid) {
-                    return;
-                }
-
-                alert("SUCCESS!" + JSON.stringify(this.form1));
-            }
     }
     
-  
+  }
 };
 </script>
 
