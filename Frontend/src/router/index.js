@@ -16,6 +16,7 @@ import UpdateRecord from '@/components/UpdateRecord'
 import Sample from '@/components/Sample'
 import AddData from '@/components/AddData'
 import StockReport from '@/components/StockReport'
+import UpdateStock from '@/components/UpdateStock'
 
 Vue.use(Router)
 
@@ -96,6 +97,11 @@ export default new Router({
       path: '/stockreport',
       name: "StockReport",
       component: StockReport
+    },
+    {
+      path: '/edit-stock',
+      name: "edit",
+      component: UpdateStock
     }
 
   ]
