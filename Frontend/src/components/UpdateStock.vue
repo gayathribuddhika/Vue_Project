@@ -3,39 +3,40 @@
     <div class="col-sm-6">
       <br />
       <div class="card">
-          <div class="card-body">
-      <h3 class="text-center">Update Stock Details</h3>
-      
-      <form @submit.prevent="handleUpdateForm">
-        <div class="form-group">
-          <label>Item</label>
-          <input type="text" class="form-control" v-model="stock.List_of_Items" required />
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label>In Stock</label>
-            <input type="number" class="form-control" v-model="stock.In_Stock" required />
-          </div>
+        <div class="card-body">
+          <h3 class="text-center">Update Stock Details</h3>
 
-          <div class="form-group col-md-4">
-            <label>On Order</label>
-            <input type="number" class="form-control" v-model="stock.On_Order" required />
-          </div>
+          <form @submit.prevent="handleUpdateForm">
 
-          <div class="form-group col-md-4">
-            <label>Damaged</label>
-            <input type="number" class="form-control" v-model="stock.Damaged" required />
-          </div>
-        </div>
+            <div class="form-group">
+              <label>Item</label>
+              <input type="text" class="form-control" v-model="stock.List_of_Items" required />
+            </div>
 
-        <div class="form-group">
-          <button class="btn btn-primary btn-block">Update</button>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label>In Stock</label>
+                <input type="number" class="form-control" v-model="stock.In_Stock" required />
+              </div>
+              <div class="form-group col-md-4">
+                <label>On Order</label>
+                <input type="number" class="form-control" v-model="stock.On_Order" required />
+              </div>
+              <div class="form-group col-md-4">
+                <label>Damaged</label>
+                <input type="number" class="form-control" v-model="stock.Damaged" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-primary btn-block">Update</button>
+            </div>
+
+          </form>
+          
         </div>
-      </form>
-      
       </div>
-      </div>
-      <br>
+      <br />
     </div>
   </div>
 </template>
