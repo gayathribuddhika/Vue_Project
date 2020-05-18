@@ -37,7 +37,6 @@ router.get('/edit-store/:id', (req, res, next) => {
     })
 })
 
-
 router.post('/update-store/:id', (req, res, next) => {
     Store.findOneAndUpdate(req.params.id, {
         $set: req.body
@@ -50,7 +49,6 @@ router.post('/update-store/:id', (req, res, next) => {
         }
     });
 });
-
 
 router.delete('/delete-store/:id', (req, res, next) => {
     Store.findOneAndRemove(req.params.id, (error) => {
