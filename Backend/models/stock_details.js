@@ -2,8 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const stock = new Schema({
+    No: {
+        type: Number,
+    },
     List_of_Items: {
-        type: String
+        type: String,
     },
     In_Stock: {
         type: Number

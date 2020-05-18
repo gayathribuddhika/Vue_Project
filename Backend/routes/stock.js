@@ -20,7 +20,9 @@ router.route('/create-store').post((req, res, next) => {
         if (error) {
             return next(error)
         } else {
+            //res.json(data);
             res.status(200).send('Record is saved Successfully');
+            
         }
     })
 });
