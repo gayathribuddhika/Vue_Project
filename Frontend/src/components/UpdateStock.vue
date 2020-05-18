@@ -1,8 +1,11 @@
 <template>
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-sm-6">
       <br />
+      <div class="card">
+          <div class="card-body">
       <h3 class="text-center">Update Stock Details</h3>
+      
       <form @submit.prevent="handleUpdateForm">
         <div class="form-group">
           <label>Item</label>
@@ -29,6 +32,10 @@
           <button class="btn btn-primary btn-block">Update</button>
         </div>
       </form>
+      
+      </div>
+      </div>
+      <br>
     </div>
   </div>
 </template>
