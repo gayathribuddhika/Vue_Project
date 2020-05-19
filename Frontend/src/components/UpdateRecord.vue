@@ -142,7 +142,15 @@ export default {
     return {
       form: {},
 
-      show: true,
+      /*select_labs: [
+        { text: "Select One", value: null },
+        "CIS/LAB/01",
+        "CIS/LAB/02",
+        "CIS/LAB/03",
+        "CIS/LAB/04",
+        "CIS/LAB/05"
+      ],
+      show: true,*/
 
       categories: [
         { text: "Select One", value: null },
