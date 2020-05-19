@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <div class="btn">
       <b-button squared variant="dark" to="/adminpanel">Back</b-button>
       <b-button squared variant="dark" to="/adminpanel/currentstatus">View All</b-button>
@@ -20,13 +19,7 @@
             label-for="select_lab"
             label-align-sm="right"
           >
-            <b-form-input 
-              id="select_lab" 
-              v-model="form.Select_LAB" 
-              required 
-              type="text"
-            >
-            </b-form-input>
+            <b-form-input id="select_lab" v-model="form.Select_LAB" required type="text"></b-form-input>
           </b-form-group>
           <!--<b-form-group
                     label-cols-sm="3"
@@ -136,7 +129,7 @@
 
           <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Update</b-button>
           <b-button type="reset" variant="danger">Reset</b-button>
-          
+
           <p v-if="submitted === 'ok'">Record Updated Successfully!!!</p>
           <p v-if="submitted === 'pending'">Sending...</p>
           <p v-if="submitted === 'error'">Please fill all the required fields</p>
@@ -215,210 +208,213 @@ export default {
     this.lab3Record();
     this.lab4Record();
     this.lab5Record();
-
-    /*let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
-      axios.get(uri).then(response => {
-        this.form = response.data;
-        console.log(this.form);
-      })
-      .catch(error => {
-        console.log(error);
-      });*/
   },
-  
+
   methods: {
-    lab1Record(){
+    lab1Record() {
       let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
-      axios.get(uri).then(response => {
-        this.form = response.data;
-        console.log(this.form);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
-    lab2Record(){
+    lab2Record() {
       let uri = `http://localhost:8085/lab/lab2/edit/${this.$route.params.id}`;
-      axios.get(uri).then(response => {
-        this.form = response.data;
-        console.log(this.form);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
-    lab3Record(){
+    lab3Record() {
       let uri = `http://localhost:8085/lab/lab3/edit/${this.$route.params.id}`;
-      axios.get(uri).then(response => {
-        this.form = response.data;
-        console.log(this.form);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
-    lab4Record(){
+    lab4Record() {
       let uri = `http://localhost:8085/lab/lab4/edit/${this.$route.params.id}`;
-      axios.get(uri).then(response => {
-        this.form = response.data;
-        console.log(this.form);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
-    lab5Record(){
+    lab5Record() {
       let uri = `http://localhost:8085/lab/lab5/edit/${this.$route.params.id}`;
-      axios.get(uri).then(response => {
-        this.form = response.data;
-        console.log(this.form);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
-    
-    updateRecord(){
-      if( this.form.Select_LAB == "CIS/LAB/01"){
+
+    updateRecord() {
+      if (this.form.Select_LAB == "CIS/LAB/01") {
         let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
-          axios.post(uri, this.form).then(response => {
-          console.log(response);
-          this.submitted = "pending";
-          setTimeout(() => {
-            this.submitted = "ok";
-          }, 500);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-      } else if ( this.form.Select_LAB == "CIS/LAB/02") {
+        axios
+          .post(uri, this.form)
+          .then(response => {
+            console.log(response);
+            this.submitted = "pending";
+            setTimeout(() => {
+              this.submitted = "ok";
+            }, 500);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      } else if (this.form.Select_LAB == "CIS/LAB/02") {
         let newRecord = {
-        //id: this.form.id,
-        Select_LAB: this.form.select_lab,
-        Main_Category: this.form.category,
-        Asset_Description: this.form.description,
-        Serial_Num: this.form.serial_num,
-        Asset_Code: this.form.code,
-        Qty: this.form.qty,
-        Make: this.form.make,
-        Condition: this.form.condition,
-        Comments: this.form.comment
-      };
-      console.log("submit");
+          //id: this.form.id,
+          Select_LAB: this.form.select_lab,
+          Main_Category: this.form.category,
+          Asset_Description: this.form.description,
+          Serial_Num: this.form.serial_num,
+          Asset_Code: this.form.code,
+          Qty: this.form.qty,
+          Make: this.form.make,
+          Condition: this.form.condition,
+          Comments: this.form.comment
+        };
+        console.log("submit");
 
-      this.$v.$touch();
-      if (this.$v.form.error) {
-        this.submitted = "error";
-      } else console.log(newRecord);
-      axios
-        .post("http://localhost:8085/lab/lab2", newRecord)
-        .then(response => {
-          console.log(response);
-          this.submitted = "pending";
-          setTimeout(() => {
-            this.submitted = "ok";
-          }, 500);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-      } else if ( this.form.Select_LAB == "CIS/LAB/03") {
+        this.$v.$touch();
+        if (this.$v.form.error) {
+          this.submitted = "error";
+        } else console.log(newRecord);
+        axios
+          .post("http://localhost:8085/lab/lab2", newRecord)
+          .then(response => {
+            console.log(response);
+            this.submitted = "pending";
+            setTimeout(() => {
+              this.submitted = "ok";
+            }, 500);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      } else if (this.form.Select_LAB == "CIS/LAB/03") {
         let newRecord = {
-        //id: this.form.id,
-        Select_LAB: this.form.select_lab,
-        Main_Category: this.form.category,
-        Asset_Description: this.form.description,
-        Serial_Num: this.form.serial_num,
-        Asset_Code: this.form.code,
-        Qty: this.form.qty,
-        Make: this.form.make,
-        Condition: this.form.condition,
-        Comments: this.form.comment
-      };
-      console.log("submit");
+          //id: this.form.id,
+          Select_LAB: this.form.select_lab,
+          Main_Category: this.form.category,
+          Asset_Description: this.form.description,
+          Serial_Num: this.form.serial_num,
+          Asset_Code: this.form.code,
+          Qty: this.form.qty,
+          Make: this.form.make,
+          Condition: this.form.condition,
+          Comments: this.form.comment
+        };
+        console.log("submit");
 
-      this.$v.$touch();
-      if (this.$v.form.error) {
-        this.submitted = "error";
-      } else console.log(newRecord);
-      axios
-        .post("http://localhost:8085/lab/lab3", newRecord)
-        .then(response => {
-          console.log(response);
-          this.submitted = "pending";
-          setTimeout(() => {
-            this.submitted = "ok";
-          }, 500);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-      } else if ( this.form.Select_LAB == "CIS/LAB/04") {
+        this.$v.$touch();
+        if (this.$v.form.error) {
+          this.submitted = "error";
+        } else console.log(newRecord);
+        axios
+          .post("http://localhost:8085/lab/lab3", newRecord)
+          .then(response => {
+            console.log(response);
+            this.submitted = "pending";
+            setTimeout(() => {
+              this.submitted = "ok";
+            }, 500);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      } else if (this.form.Select_LAB == "CIS/LAB/04") {
         let newRecord = {
-        //id: this.form.id,
-        Select_LAB: this.form.select_lab,
-        Main_Category: this.form.category,
-        Asset_Description: this.form.description,
-        Serial_Num: this.form.serial_num,
-        Asset_Code: this.form.code,
-        Qty: this.form.qty,
-        Make: this.form.make,
-        Condition: this.form.condition,
-        Comments: this.form.comment
-      };
-      console.log("submit");
+          //id: this.form.id,
+          Select_LAB: this.form.select_lab,
+          Main_Category: this.form.category,
+          Asset_Description: this.form.description,
+          Serial_Num: this.form.serial_num,
+          Asset_Code: this.form.code,
+          Qty: this.form.qty,
+          Make: this.form.make,
+          Condition: this.form.condition,
+          Comments: this.form.comment
+        };
+        console.log("submit");
 
-      this.$v.$touch();
-      if (this.$v.form.error) {
-        this.submitted = "error";
-      } else console.log(newRecord);
-      axios
-        .post("http://localhost:8085/lab/lab4", newRecord)
-        .then(response => {
-          console.log(response);
-          this.submitted = "pending";
-          setTimeout(() => {
-            this.submitted = "ok";
-          }, 500);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-      } else if(this.form.Select_LAB == "CIS/LAB/05") {
+        this.$v.$touch();
+        if (this.$v.form.error) {
+          this.submitted = "error";
+        } else console.log(newRecord);
+        axios
+          .post("http://localhost:8085/lab/lab4", newRecord)
+          .then(response => {
+            console.log(response);
+            this.submitted = "pending";
+            setTimeout(() => {
+              this.submitted = "ok";
+            }, 500);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      } else if (this.form.Select_LAB == "CIS/LAB/05") {
         let newRecord = {
-        //id: this.form.id,
-        Select_LAB: this.form.select_lab,
-        Main_Category: this.form.category,
-        Asset_Description: this.form.description,
-        Serial_Num: this.form.serial_num,
-        Asset_Code: this.form.code,
-        Qty: this.form.qty,
-        Make: this.form.make,
-        Condition: this.form.condition,
-        Comments: this.form.comment
-      };
-      console.log("submit");
+          //id: this.form.id,
+          Select_LAB: this.form.select_lab,
+          Main_Category: this.form.category,
+          Asset_Description: this.form.description,
+          Serial_Num: this.form.serial_num,
+          Asset_Code: this.form.code,
+          Qty: this.form.qty,
+          Make: this.form.make,
+          Condition: this.form.condition,
+          Comments: this.form.comment
+        };
+        console.log("submit");
 
-      this.$v.$touch();
-      if (this.$v.form.error) {
-        this.submitted = "error";
-      } else console.log(newRecord);
-      axios
-        .post("http://localhost:8085/lab/lab5", newRecord)
-        .then(response => {
-          console.log(response);
-          this.submitted = "pending";
-          setTimeout(() => {
-            this.submitted = "ok";
-          }, 500);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-  }
+        this.$v.$touch();
+        if (this.$v.form.error) {
+          this.submitted = "error";
+        } else console.log(newRecord);
+        axios
+          .post("http://localhost:8085/lab/lab5", newRecord)
+          .then(response => {
+            console.log(response);
+            this.submitted = "pending";
+            setTimeout(() => {
+              this.submitted = "ok";
+            }, 500);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      }
     },
-  
-  onReset(evt) {
+
+    onReset(evt) {
       evt.preventDefault();
       // Reset our form values
       //this.from.select_lab = null
@@ -438,7 +434,7 @@ export default {
         this.show = true;
       });
     }
-}
-}
+  }
+};
 </script>
 
