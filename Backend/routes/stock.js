@@ -5,7 +5,7 @@ const cors = require("cors")
 const Store = require("../models/stock_details");
 router.use(cors())
 
-router.get('/store', (req, res) =>{
+router.get('/stock', (req, res) =>{
     Store.find((error, data) => {
         if (error) {
             return next(error)
@@ -15,7 +15,7 @@ router.get('/store', (req, res) =>{
     })
 })
 
-router.post('/create-store', (req, res, next) => {
+router.post('/create-stock', (req, res, next) => {
     Store.create(req.body, (error, data) => {
         if (error) {
             return next(error)
@@ -27,7 +27,7 @@ router.post('/create-store', (req, res, next) => {
     })
 });
 
-router.get('/edit-store/:id', (req, res, next) => {
+router.get('/edit-stock/:id', (req, res, next) => {
     Store.findById(req.params.id, (error, data) => {
         if (error) {
             return next(error)
@@ -37,8 +37,8 @@ router.get('/edit-store/:id', (req, res, next) => {
     })
 })
 
-router.post('/update-store/:id', (req, res, next) => {
-    Store.findOneAndUpdate(req.params.id, {
+router.post('/update-stock/:id', (req, res, next) => {
+    Store.findByIdAndUpdate(req.params.id, {
         $set: req.body
     }, (error, data) => {
         if (error) {
@@ -50,8 +50,8 @@ router.post('/update-store/:id', (req, res, next) => {
     });
 });
 
-router.delete('/delete-store/:id', (req, res, next) => {
-    Store.findOneAndRemove(req.params.id, (error) => {
+router.delete('/delete-stock/:id', (req, res, next) => {
+    Store.findByIdAndDelete(req.params.id, (error) => {
         if (error) {
             return next(error);
         } else {

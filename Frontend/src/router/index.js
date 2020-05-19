@@ -15,8 +15,9 @@ import ResetPassword from '@/components/ResetPassword'
 import UpdateRecord from '@/components/UpdateRecord'
 import Sample from '@/components/Sample'
 import AddData from '@/components/AddData'
-import StockReport from '@/components/StockReport'
+import StockDetails from '@/components/StockDetails'
 import UpdateStock from '@/components/UpdateStock'
+import AddStockDetails from '@/components/AddStockDetails'
 
 Vue.use(Router)
 
@@ -94,14 +95,19 @@ export default new Router({
       component: AddData
     },
     {
-      path: '/adminpanel/stockreport',
-      name: "StockReport",
-      component: StockReport
+      path: '/adminpanel/stockdetails',
+      name: "StockDetails",
+      component: StockDetails
     },
     {
-      path: '/adminpanel/stockreport/edit-stock/:id',
+      path: '/adminpanel/stockdetails/edit-stock/:id',
       name: "edit",
       component: UpdateStock
+    },
+    {
+      path: '/adminpanel/stockdetails/add-details',
+      name: "AddStockDetails",
+      component: AddStockDetails
     }
 
   ]

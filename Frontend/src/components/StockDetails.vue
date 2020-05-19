@@ -2,7 +2,7 @@
 <div>
   <div class="btn">
       <b-button squared variant="dark" to="/adminpanel">Back</b-button>
-      
+      <b-button squared variant="dark" to="/adminpanel/stockdetails/add-details">Add Details</b-button>
     </div>
   <div class="row">
     <div class="col-md-12">
@@ -52,9 +52,9 @@ export default {
     };
   },
   created() {
-    let apiURL = "http://localhost:8085/store";
+    let uri = "http://localhost:8085/stock";
     axios
-      .get(apiURL)
+      .get(uri)
       .then(res => {
         this.stocks = res.data;
       })
@@ -64,12 +64,12 @@ export default {
   },
   methods: {
     deleteStock(id) {
-      let apiURL = `http://localhost:8085/delete-store/${id}`;
+      let uri = `http://localhost:8085/delete-stock/${id}`;
       let indexOfArrayItem = this.stocks.findIndex(i => i._id === id);
 
       if (window.confirm("Do you really want to delete?")) {
         axios
-          .delete(apiURL)
+          .delete(uri)
           .then(() => {
             this.stocks.splice(indexOfArrayItem, 1);
           })

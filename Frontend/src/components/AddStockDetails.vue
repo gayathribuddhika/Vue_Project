@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="btn">
-      <b-button squared variant="dark" to="/adminpanel/stockdetails">Back</b-button>
+      <b-button squared variant="dark" to="/adminpanel/stockdetails">Stock Details</b-button>
     </div>
     <div class="row justify-content-center">
       <div class="col-sm-6">
         <br />
         <div class="card">
           <div class="card-body">
-            <h3 class="text-center">Update Stock Details</h3>
+            <h3 class="text-center">Add Stock Details</h3>
 
-            <form @submit.prevent="updateStock">
+            <form @submit.prevent="addStock">
               <div class="form-group">
                 <label>Item</label>
                 <input type="text" class="form-control" v-model="stock.List_of_Items" required />
@@ -32,7 +32,7 @@
               </div>
 
               <div class="form-group">
-                <button class="btn btn-primary btn-block">Update</button>
+                <button class="btn btn-primary btn-block">Add</button>
               </div>
             </form>
           </div>
@@ -44,35 +44,35 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  data() {
-    return {
-      stock: {}
-    };
-  },
-  created() {
-    let uri = `http://localhost:8085/edit-stock/${this.$route.params.id}`;
-
-    axios.get(uri).then(res => {
-      this.stock = res.data;
-    });
-  },
-  methods: {
-    updateStock() {
-      let uri = `http://localhost:8085/update-stock/${this.$route.params.id}`;
-
-      axios
-        .post(uri, this.stock)
-        .then(res => {
-          console.log(res);
-          this.$router.push({ name: "StockDetails" });
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
-  }
-};
+    data(){
+        return {
+            stock: {
+                List_of_Items: "",
+                In_Stock: "",
+                On_Order: "",
+                Damaged: ""
+            }
+        }
+    },
+    methods: {
+            addStock() {
+                let uri = 'http://localhost:8085/create-stock';
+                
+                axios.post(uri, this.stock).then(() => {
+                  this.$router.push({name: "StockDetails"})
+                  this.stock = {
+                    List_of_Items: "",
+                    In_Stock: "",
+                    On_Order: "",
+                    Damaged: ""
+                  }
+                }).catch(error => {
+                    console.log(error)
+                });
+                }
+        }
+}
 </script>
