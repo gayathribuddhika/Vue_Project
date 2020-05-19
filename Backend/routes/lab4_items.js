@@ -24,20 +24,10 @@ router.get('/lab4/:id', function (req, res) {
     });
 });
 
-/*router.post('/lab4', function (req, res) {
-    let item = new Item(req.body);
-    item.save()
-        .then(() => {
-            res.status(200).send('Record is saved Successfully');
-        })
-        .catch(() => {
-            res.status(400).send("Unable to save to database");
-        });
-});*/
-
 router.post('/lab4', function (req, res) {
     let item = new Item({
         Select_LAB:req.body.Select_LAB,
+        Item_id:req.body.Item_id,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
         Serial_Num: req.body.Serial_Num,
@@ -45,8 +35,7 @@ router.post('/lab4', function (req, res) {
         Qty: req.body.Qty,
         Make: req.body.Make,
         Condition: req.body.Condition,
-        Comments: req.body.Comments,
-        
+        Comments: req.body.Comments
     });
     item.save()
         .then(() => {
@@ -57,14 +46,14 @@ router.post('/lab4', function (req, res) {
         });
 });
 
-router.delete('/lab4/delete/:id', function (req, res) {
+router.delete('/lab4/delete/:id', function (req, res) {               //can also use findByIdAndRemove
     Item.findOneAndDelete({ _id: req.params.id }, function (err) {
         if (err) res.json(err);
         else res.json('Successfully removed');
     });
 });
 
-/*router.get('/lab4/edit/:id', function (req, res) {
+router.get('/lab4/edit/:id', function (req, res) {
     let id = req.params.id;
     Item.findById(id, function (err, item) {
         if (err) {
@@ -96,6 +85,7 @@ router.post('/lab4/update/:id', function (req, res) {
                 });
         }
     });
-});*/
+});
+
 
 module.exports = router;
