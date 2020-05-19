@@ -20,7 +20,7 @@
         <b-list-group variant="dark">
           <div>
             <b-list-group-item variant="dark" active>Dashboard</b-list-group-item>
-            <b-list-group-item variant="dark" to="adminpanel/currentstatus">Current Details</b-list-group-item>
+            <b-list-group-item variant="dark" to="adminpanel/currentstatus">Current Details - Items</b-list-group-item>
             <b-list-group-item variant="dark">Current Details-Summary Report</b-list-group-item>
             <b-list-group-item variant="dark" to="adminpanel/addrecords">Add a new Record</b-list-group-item>
             <b-list-group-item variant="dark" to="adminpanel/currentstatus">Delete a Record</b-list-group-item>

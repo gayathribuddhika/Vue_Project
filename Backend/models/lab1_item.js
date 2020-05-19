@@ -5,7 +5,7 @@ const Item = new Schema({
     
     Select_LAB: {
         type: String,
-        required:[true]
+        required:true
     },
     Item_id: {
         type: String

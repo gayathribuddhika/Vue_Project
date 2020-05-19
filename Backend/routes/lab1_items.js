@@ -87,5 +87,17 @@ router.post('/lab1/update/:id', function (req, res) {
     });
 });
 
+/*router.post('/lab1/update/:id', (req, res, next) => {
+    Item.findByIdAndUpdate(req.params.id, {
+        $set: req.body
+    }, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.send("Update Successfully")
+            
+        }
+    });
+});*/
 
 module.exports = router;

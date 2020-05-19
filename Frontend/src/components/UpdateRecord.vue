@@ -18,11 +18,11 @@
           <b-form-group
             label-cols-sm="3"
             label="Selected LAB"
-            label-for="record_lab"
+            label-for="select_lab"
             label-align-sm="right"
           >
             <b-form-input
-              id="record_lab"
+              id="select_lab"
               v-model="form.Select_LAB"
               required
               type="text"
@@ -339,7 +339,7 @@ export default {
       }
     },
 
-    onReset(evt) {
+    /*onReset(evt) {
       evt.preventDefault();
       // Reset our form values
       //this.from.select_lab = null
@@ -358,7 +358,7 @@ export default {
       this.$nextTick(() => {
         this.show = true;
       });
-    }
+    }*/
   }
 };
 </script>
