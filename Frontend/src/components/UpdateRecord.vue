@@ -4,14 +4,16 @@
       <b-button squared variant="dark" to="/adminpanel">Back</b-button>
       <b-button squared variant="dark" to="/adminpanel/currentstatus">View All</b-button>
     </div>
-    <b-card bg-variant="light" body-class="text-center">
+    <center>
+    <br />
+    <b-card bg-variant="light" body-class="text-center" class="mb-2" style="max-width: 65rem;">
       <b-form v-on:submit.prevent="updateRecord" v-if="show">
         <b-form-group
           label-cols-lg="3"
           label="Update a Record"
           label-size="lg"
-          label-class="font-weight-bold pt-0"
-          class="mb-0"
+          label-class="font-weight-bold pt-1"
+          class="mb-2"
         >
           <b-form-group
             label-cols-sm="3"
@@ -126,6 +128,7 @@
         </b-form-group>
       </b-form>
     </b-card>
+    </center>
   </div>
 </template>
 
