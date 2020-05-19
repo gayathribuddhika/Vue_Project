@@ -94,12 +94,12 @@ export default new Router({
       component: AddData
     },
     {
-      path: '/stockreport',
+      path: '/adminpanel/stockreport',
       name: "StockReport",
       component: StockReport
     },
     {
-      path: '/edit-stock',
+      path: '/adminpanel/stockreport/edit-stock/:id',
       name: "edit",
       component: UpdateStock
     }

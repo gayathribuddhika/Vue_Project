@@ -25,6 +25,7 @@
             <b-list-group-item variant="dark" to="adminpanel/addrecords">Add a new Record</b-list-group-item>
             <b-list-group-item variant="dark" to="adminpanel/currentstatus">Delete a Record</b-list-group-item>
             <b-list-group-item variant="dark" to="adminpanel/currentstatus">Update/Edit a Record</b-list-group-item>
+            <b-list-group-item variant="dark" to="adminpanel/stockreport">Stock Details</b-list-group-item>
             <b-list-group-item variant="dark">Create a Report</b-list-group-item>
             <b-list-group-item variant="dark">Edit Profile</b-list-group-item>
             <b-list-group-item variant="dark" to="login">Logout</b-list-group-item>

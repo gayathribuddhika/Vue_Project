@@ -1,4 +1,9 @@
 <template>
+<div>
+  <div class="btn">
+      <b-button squared variant="dark" to="/adminpanel">Back</b-button>
+      
+    </div>
   <div class="row">
     <div class="col-md-12">
       <div class="table-responsive-sm">
@@ -34,6 +39,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
