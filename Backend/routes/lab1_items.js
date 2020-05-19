@@ -24,17 +24,6 @@ router.get('/lab1/:id', function (req, res) {
     });
 });
 
-/*router.post('/lab1', function (req, res) {
-    let item = new Item(req.body);
-    item.save()
-        .then(() => {
-            res.status(200).send('Record is saved Successfully');
-        })
-        .catch(() => {
-            res.status(400).send("Unable to save to database");
-        });
-});*/
-
 router.post('/lab1', function (req, res) {
     let item = new Item({
         Select_LAB:req.body.Select_LAB,
@@ -57,12 +46,6 @@ router.post('/lab1', function (req, res) {
         });
 });
 
-/*router.post('/lab1', function(req, res) {             //this also working properly...
-    Item.create(req.body).then(function (item){
-        res.send(item);
-    });
-})*/
-
 router.delete('/lab1/delete/:id', function (req, res) {               //can also use findByIdAndRemove
     Item.findOneAndDelete({ _id: req.params.id }, function (err) {
         if (err) res.json(err);
@@ -80,7 +63,7 @@ router.get('/lab1/edit/:id', function (req, res) {
     });
 });
 
-/*router.post('/lab1/update/:id', function (req, res) {
+router.post('/lab1/update/:id', function (req, res) {
     Item.findById(req.params.id, function (err, item) {
         if (!item)
             res.status(404).send("Record is not found");
@@ -102,26 +85,7 @@ router.get('/lab1/edit/:id', function (req, res) {
                 });
         }
     });
-});*/
-router.put('/lab1/update/:id', function(req, res) {
-    Item.findByIdAndUpdate({_id:req.params.id},req.body).then(function(){
-        Item.findOne({_id:req.params.id}).then (function(item){
-        res.send(item);
-        })
-    });
 });
 
-/*router.route('/lab1/update/:id').post((req, res, next) => {
-    Item.findByIdAndUpdate(req.params.id, {
-      $set: req.body
-    }, (error, data) => {
-      if (error) {
-        return next(error);
-      } else {
-        res.json(data)
-        console.log('Student successfully updated!')
-      }
-    })
-  })*/
 
 module.exports = router;
