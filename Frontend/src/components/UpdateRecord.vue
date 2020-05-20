@@ -7,7 +7,7 @@
     <center>
     <br />
     <b-card bg-variant="light" body-class="text-center" class="mb-2" style="max-width: 65rem;">
-      <b-form v-on:submit.prevent="updateRecord" v-if="show">
+      <b-form @submit.prevent="updateRecord" v-if="show">
         <b-form-group
           label-cols-lg="3"
           label="Update a Record"
@@ -142,16 +142,6 @@ export default {
     return {
       form: {},
 
-      /*select_labs: [
-        { text: "Select One", value: null },
-        "CIS/LAB/01",
-        "CIS/LAB/02",
-        "CIS/LAB/03",
-        "CIS/LAB/04",
-        "CIS/LAB/05"
-      ],
-      show: true,*/
-
       categories: [
         { text: "Select One", value: null },
         "Accessories",
@@ -191,7 +181,7 @@ export default {
     };
   },
 
-  /*validations: {
+  validations: {
     form: {
       select_lab: { required },
       //id: { required },
@@ -201,22 +191,20 @@ export default {
       code: { required },
       qty: { required }
     }
-  },*/
+  },
 
   created() {
-    this.lab1Record();
-    this.lab2Record();
-    this.lab3Record();
-    this.lab4Record();
-    this.lab5Record();
+    this.fetchRecord1();
+    /*this.fetchRecord2();
+    this.fetchRecord3();
+    this.fetchRecord4();
+    this.fetchRecord5();*/
   },
 
   methods: {
-    lab1Record() {
+    fetchRecord1(){
       let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
-      axios
-        .get(uri)
-        .then(response => {
+      axios.get(uri).then(response => {
           this.form = response.data;
           console.log(this.form);
         })
@@ -224,11 +212,9 @@ export default {
           console.log(error);
         });
     },
-    lab2Record() {
+    fetchRecord2(){
       let uri = `http://localhost:8085/lab/lab2/edit/${this.$route.params.id}`;
-      axios
-        .get(uri)
-        .then(response => {
+      axios.get(uri).then(response => {
           this.form = response.data;
           console.log(this.form);
         })
@@ -236,11 +222,9 @@ export default {
           console.log(error);
         });
     },
-    lab3Record() {
+    /*fetchRecord3(){
       let uri = `http://localhost:8085/lab/lab3/edit/${this.$route.params.id}`;
-      axios
-        .get(uri)
-        .then(response => {
+      axios.get(uri).then(response => {
           this.form = response.data;
           console.log(this.form);
         })
@@ -248,11 +232,9 @@ export default {
           console.log(error);
         });
     },
-    lab4Record() {
+    fetchRecord4(){
       let uri = `http://localhost:8085/lab/lab4/edit/${this.$route.params.id}`;
-      axios
-        .get(uri)
-        .then(response => {
+      axios.get(uri).then(response => {
           this.form = response.data;
           console.log(this.form);
         })
@@ -260,20 +242,89 @@ export default {
           console.log(error);
         });
     },
-    lab5Record() {
+    fetchRecord5(){
       let uri = `http://localhost:8085/lab/lab5/edit/${this.$route.params.id}`;
-      axios
-        .get(uri)
-        .then(response => {
+      axios.get(uri).then(response => {
           this.form = response.data;
           console.log(this.form);
         })
         .catch(error => {
           console.log(error);
         });
-    },
-
-    
+    },*/
+    updateRecord() {
+      if (this.form.Select_LAB == "CIS/LAB/01") {
+        let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
+        axios
+          .post(uri, this.form)
+          .then(response => {
+            console.log(response);
+            this.submitted = "pending";
+            setTimeout(() => {
+              this.submitted = "ok";
+            }, 500);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      } else if (this.form.Select_LAB == "CIS/LAB/02") {
+        let uri = `http://localhost:8085/lab/lab2/update/${this.$route.params.id}`;
+        axios
+          .post(uri, this.form)
+          .then(response => {
+            console.log(response);
+            this.submitted = "pending";
+            setTimeout(() => {
+              this.submitted = "ok";
+            }, 500);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      } else if (this.form.Select_LAB == "CIS/LAB/03") {
+        let uri = `http://localhost:8085/lab/lab3/update/${this.$route.params.id}`;
+        axios
+          .post(uri, this.form)
+          .then(response => {
+            console.log(response);
+            this.submitted = "pending";
+            setTimeout(() => {
+              this.submitted = "ok";
+            }, 500);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      } else if (this.form.Select_LAB == "CIS/LAB/04") {
+        let uri = `http://localhost:8085/lab/lab4/update/${this.$route.params.id}`;
+        axios
+          .post(uri, this.form)
+          .then(response => {
+            console.log(response);
+            this.submitted = "pending";
+            setTimeout(() => {
+              this.submitted = "ok";
+            }, 500);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      } else if (this.form.Select_LAB == "CIS/LAB/05") {
+        let uri = `http://localhost:8085/lab/lab5/update/${this.$route.params.id}`;
+        axios
+          .post(uri, this.form)
+          .then(response => {
+            console.log(response);
+            this.submitted = "pending";
+            setTimeout(() => {
+              this.submitted = "ok";
+            }, 500);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      }
+},
     
 
     /*onReset(evt) {

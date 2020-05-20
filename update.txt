@@ -1,73 +1,67 @@
-updateRecord() {
-      if (this.form.Select_LAB == "CIS/LAB/01") {
-        let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
-        axios
-          .post(uri, this.form)
-          .then(response => {
-            console.log(response);
-            this.submitted = "pending";
-            setTimeout(() => {
-              this.submitted = "ok";
-            }, 500);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      } else if (this.form.Select_LAB == "CIS/LAB/02") {
-        let uri = `http://localhost:8085/lab/lab2/update/${this.$route.params.id}`;
-        axios
-          .post(uri, this.form)
-          .then(response => {
-            console.log(response);
-            this.submitted = "pending";
-            setTimeout(() => {
-              this.submitted = "ok";
-            }, 500);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      } else if (this.form.Select_LAB == "CIS/LAB/03") {
-        let uri = `http://localhost:8085/lab/lab3/update/${this.$route.params.id}`;
-        axios
-          .post(uri, this.form)
-          .then(response => {
-            console.log(response);
-            this.submitted = "pending";
-            setTimeout(() => {
-              this.submitted = "ok";
-            }, 500);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      } else if (this.form.Select_LAB == "CIS/LAB/04") {
-        let uri = `http://localhost:8085/lab/lab4/update/${this.$route.params.id}`;
-        axios
-          .post(uri, this.form)
-          .then(response => {
-            console.log(response);
-            this.submitted = "pending";
-            setTimeout(() => {
-              this.submitted = "ok";
-            }, 500);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      } else if (this.form.Select_LAB == "CIS/LAB/05") {
-        let uri = `http://localhost:8085/lab/lab5/update/${this.$route.params.id}`;
-        axios
-          .post(uri, this.form)
-          .then(response => {
-            console.log(response);
-            this.submitted = "pending";
-            setTimeout(() => {
-              this.submitted = "ok";
-            }, 500);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      }
-},
+lab1Record() {
+      let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    lab2Record() {
+      let uri = `http://localhost:8085/lab/lab2/edit/${this.$route.params.id}`;
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    lab3Record() {
+      let uri = `http://localhost:8085/lab/lab3/edit/${this.$route.params.id}`;
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    lab4Record() {
+      let uri = `http://localhost:8085/lab/lab4/edit/${this.$route.params.id}`;
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    lab5Record() {
+      let uri = `http://localhost:8085/lab/lab5/edit/${this.$route.params.id}`;
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+
+
+this.lab1Record();
+    this.lab2Record();
+    this.lab3Record();
+    this.lab4Record();
+    this.lab5Record();
