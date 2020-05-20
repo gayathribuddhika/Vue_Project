@@ -191,7 +191,7 @@ export default {
     };
   },
 
-  validations: {
+  /*validations: {
     form: {
       select_lab: { required },
       //id: { required },
@@ -201,7 +201,7 @@ export default {
       code: { required },
       qty: { required }
     }
-  },
+  },*/
 
   created() {
     this.lab1Record();
@@ -273,79 +273,8 @@ export default {
         });
     },
 
-    updateRecord() {
-      if (this.form.Select_LAB == "CIS/LAB/01") {
-        let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
-        axios
-          .post(uri, this.form)
-          .then(response => {
-            console.log(response);
-            this.submitted = "pending";
-            setTimeout(() => {
-              this.submitted = "ok";
-            }, 500);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      } else if (this.form.Select_LAB == "CIS/LAB/02") {
-        let uri = `http://localhost:8085/lab/lab2/update/${this.$route.params.id}`;
-        axios
-          .post(uri, this.form)
-          .then(response => {
-            console.log(response);
-            this.submitted = "pending";
-            setTimeout(() => {
-              this.submitted = "ok";
-            }, 500);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      } else if (this.form.Select_LAB == "CIS/LAB/03") {
-        let uri = `http://localhost:8085/lab/lab3/update/${this.$route.params.id}`;
-        axios
-          .post(uri, this.form)
-          .then(response => {
-            console.log(response);
-            this.submitted = "pending";
-            setTimeout(() => {
-              this.submitted = "ok";
-            }, 500);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      } else if (this.form.Select_LAB == "CIS/LAB/04") {
-        let uri = `http://localhost:8085/lab/lab4/update/${this.$route.params.id}`;
-        axios
-          .post(uri, this.form)
-          .then(response => {
-            console.log(response);
-            this.submitted = "pending";
-            setTimeout(() => {
-              this.submitted = "ok";
-            }, 500);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      } else if (this.form.Select_LAB == "CIS/LAB/05") {
-        let uri = `http://localhost:8085/lab/lab5/update/${this.$route.params.id}`;
-        axios
-          .post(uri, this.form)
-          .then(response => {
-            console.log(response);
-            this.submitted = "pending";
-            setTimeout(() => {
-              this.submitted = "ok";
-            }, 500);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      }
-    },
+    
+    
 
     /*onReset(evt) {
       evt.preventDefault();
