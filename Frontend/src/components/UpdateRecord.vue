@@ -140,7 +140,13 @@ export default {
   name: "UpdateRecords",
   data() {
     return {
-      form: {},
+      form: {
+        lab1:{},
+        lab2:{},
+        lab3:{},
+        lab4:{},
+        lab5:{}
+      },
 
       categories: [
         { text: "Select One", value: null },
@@ -194,9 +200,9 @@ export default {
   },
 
   created() {
-    this.fetchRecord1();
-    /*this.fetchRecord2();
-    this.fetchRecord3();
+    //this.fetchRecord1();
+    this.fetchRecord2();
+    /*this.fetchRecord3();
     this.fetchRecord4();
     this.fetchRecord5();*/
   },
