@@ -2,7 +2,7 @@
   <div>
     <b-card-group>
       <b-card
-        style="max-width: 17rem;"
+        style="max-width: 18rem;"
         img-alt="Image"
         img-top
         body-bg-variant="dark"
@@ -21,8 +21,8 @@
           <div>
             <b-list-group-item variant="dark" active>Dashboard</b-list-group-item>
             <b-list-group-item variant="dark" to="adminpanel/currentstatus">Current Details - Items</b-list-group-item>
-            <b-list-group-item variant="dark">Current Details-Summary Report</b-list-group-item>
-            <b-list-group-item variant="dark" to="adminpanel/addrecords">Add a new Record</b-list-group-item>
+            <b-list-group-item variant="dark" to="adminpanel/summarydetails">Current Details - Summary </b-list-group-item>
+            <b-list-group-item variant="dark" to="adminpanel/addrecords" >Add a new Record</b-list-group-item>
             <b-list-group-item variant="dark" to="adminpanel/currentstatus">Delete a Record</b-list-group-item>
             <b-list-group-item variant="dark" to="adminpanel/currentstatus">Update/Edit a Record</b-list-group-item>
             <b-list-group-item variant="dark" to="adminpanel/stockdetails">Stock Details</b-list-group-item>
