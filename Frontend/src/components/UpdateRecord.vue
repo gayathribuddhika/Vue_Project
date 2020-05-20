@@ -140,13 +140,7 @@ export default {
   name: "UpdateRecords",
   data() {
     return {
-      form: {
-        lab1:{},
-        lab2:{},
-        lab3:{},
-        lab4:{},
-        lab5:{}
-      },
+      form: {},
 
       categories: [
         { text: "Select One", value: null },
@@ -200,14 +194,15 @@ export default {
   },
 
   created() {
-    //this.fetchRecord1();
-    this.fetchRecord2();
-    /*this.fetchRecord3();
+    this.fetchRecord1();
+    /*this.fetchRecord2();
+    this.fetchRecord3();
     this.fetchRecord4();
     this.fetchRecord5();*/
   },
 
   methods: {
+    
     fetchRecord1(){
       let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
       axios.get(uri).then(response => {
@@ -218,7 +213,7 @@ export default {
           console.log(error);
         });
     },
-    fetchRecord2(){
+    /*fetchRecord2(){
       let uri = `http://localhost:8085/lab/lab2/edit/${this.$route.params.id}`;
       axios.get(uri).then(response => {
           this.form = response.data;
@@ -228,7 +223,7 @@ export default {
           console.log(error);
         });
     },
-    /*fetchRecord3(){
+    fetchRecord3(){
       let uri = `http://localhost:8085/lab/lab3/edit/${this.$route.params.id}`;
       axios.get(uri).then(response => {
           this.form = response.data;
