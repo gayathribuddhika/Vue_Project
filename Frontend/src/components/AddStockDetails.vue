@@ -36,8 +36,7 @@
                 <button class="btn btn-primary btn-block" :disabled="submitted === 'pending'">Add</button>
               </div>
               <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
-            <p v-if="submitted === 'pending'">Sending...</p>
-            
+              <p v-if="submitted === 'pending'">Sending...</p>
             </form>
           </div>
         </div>
@@ -48,40 +47,43 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-    data(){
-        return {
-            stock: {
-                List_of_Items: "",
-                In_Stock: "",
-                On_Order: "",
-                Damaged: ""
-            },
-            submitted: null
-        }
-    },
-    methods: {
-            addStock() {
-                let uri = 'http://localhost:8085/create-stock';
-                
-                axios.post(uri, this.stock).then(() => {
-                  //this.$router.push({name: "StockDetails"})
-                  this.stock = {
-                    List_of_Items: "",
-                    In_Stock: "",
-                    On_Order: "",
-                    Damaged: ""
-                  }
-                  this.submitted = "pending";
+  data() {
+    return {
+      stock: {
+        List_of_Items: "",
+        In_Stock: "",
+        On_Order: "",
+        Damaged: ""
+      },
+      submitted: null
+    };
+  },
+  methods: {
+    addStock() {
+      let uri = "http://localhost:8085/create-stock";
+
+      axios
+        .post(uri, this.stock)
+        .then(() => {
+          //this.$router.push({name: "StockDetails"})
+          this.stock = {
+            List_of_Items: "",
+            In_Stock: "",
+            On_Order: "",
+            Damaged: ""
+          };
+          this.submitted = "pending";
           setTimeout(() => {
             this.submitted = "ok";
           }, 500);
-                }).catch(error => {
-                    console.log(error)
-                });
-                }
-        }
-}
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }
+};
 </script>
