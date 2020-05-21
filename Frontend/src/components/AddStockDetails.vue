@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="btn">
-      <b-button squared variant="dark" to="/adminpanel/stockdetails">Stock Details</b-button>
+      <b-button squared variant="dark" to="/adminpanel">Back</b-button>
+      <b-button squared variant="dark" to="/adminpanel/stockdetails">Show Stock Details</b-button>
     </div>
     <div class="row justify-content-center">
       <div class="col-sm-6">
@@ -32,8 +33,11 @@
               </div>
 
               <div class="form-group">
-                <button class="btn btn-primary btn-block">Add</button>
+                <button class="btn btn-primary btn-block" :disabled="submitted === 'pending'">Add</button>
               </div>
+              <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
+            <p v-if="submitted === 'pending'">Sending...</p>
+            
             </form>
           </div>
         </div>
@@ -54,7 +58,8 @@ export default {
                 In_Stock: "",
                 On_Order: "",
                 Damaged: ""
-            }
+            },
+            submitted: null
         }
     },
     methods: {
@@ -62,13 +67,17 @@ export default {
                 let uri = 'http://localhost:8085/create-stock';
                 
                 axios.post(uri, this.stock).then(() => {
-                  this.$router.push({name: "StockDetails"})
+                  //this.$router.push({name: "StockDetails"})
                   this.stock = {
                     List_of_Items: "",
                     In_Stock: "",
                     On_Order: "",
                     Damaged: ""
                   }
+                  this.submitted = "pending";
+          setTimeout(() => {
+            this.submitted = "ok";
+          }, 500);
                 }).catch(error => {
                     console.log(error)
                 });

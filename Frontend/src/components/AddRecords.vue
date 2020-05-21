@@ -2,7 +2,7 @@
   <div>
     <div class="btn">
       <b-button squared variant="dark" to="/adminpanel">Back</b-button>
-      <b-button squared variant="dark" to="/adminpanel/currentstatus">View All</b-button>
+      <b-button squared variant="dark" to="/adminpanel/currentstatus">Current Details</b-button>
     </div>
     
     <center>
