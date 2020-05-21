@@ -11,7 +11,7 @@
           <div class="card-body">
             <h3 class="text-center">Add Stock Details</h3>
 
-            <form @submit.prevent="addStock">
+            <form @submit.prevent="handleTwo">
               <div class="form-group">
                 <label>Item</label>
                 <input type="text" class="form-control" v-model="stock.List_of_Items" required />
@@ -20,22 +20,22 @@
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label>In Stock</label>
-                  <input type="number" class="form-control" v-model="stock.In_Stock" required />
+                  <input type="number" class="form-control" v-model="stock.In_Stock"  />
                 </div>
                 <div class="form-group col-md-4">
                   <label>On Order</label>
-                  <input type="number" class="form-control" v-model="stock.On_Order" required />
+                  <input type="number" class="form-control" v-model="stock.On_Order" />
                 </div>
                 <div class="form-group col-md-4">
                   <label>Damaged</label>
-                  <input type="number" class="form-control" v-model="stock.Damaged" required />
+                  <input type="number" class="form-control" v-model="stock.Damaged"  />
                 </div>
               </div>
 
               <div class="form-group">
                 <button class="btn btn-primary btn-block" :disabled="submitted === 'pending'">Add</button>
               </div>
-              <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
+              <p v-if="submitted === 'ok'">Record Added Successfully!!!</p>
               <p v-if="submitted === 'pending'">Sending...</p>
             </form>
           </div>
@@ -56,12 +56,22 @@ export default {
         List_of_Items: "",
         In_Stock: "",
         On_Order: "",
-        Damaged: ""
+        Damaged: "",
+        
+        counter: 0
       },
-      submitted: null
+      submitted: null,
+      
     };
   },
   methods: {
+    handleTwo(){
+      this.IncrementID();
+      this.addStock();
+    },
+    IncrementID(){
+      this.stock.counter += 1;
+    },
     addStock() {
       let uri = "http://localhost:8085/create-stock";
 
@@ -70,6 +80,7 @@ export default {
         .then(() => {
           //this.$router.push({name: "StockDetails"})
           this.stock = {
+            No: this.stock.counter,
             List_of_Items: "",
             In_Stock: "",
             On_Order: "",
@@ -79,6 +90,7 @@ export default {
           setTimeout(() => {
             this.submitted = "ok";
           }, 500);
+          //console.log("Added Successfully");
         })
         .catch(error => {
           console.log(error);

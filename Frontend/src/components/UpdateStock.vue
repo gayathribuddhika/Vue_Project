@@ -32,8 +32,10 @@
               </div>
 
               <div class="form-group">
-                <button class="btn btn-primary btn-block">Update</button>
+                <button class="btn btn-primary btn-block" :disabled="submitted === 'pending'">Update</button>
               </div>
+              <p v-if="submitted === 'ok'">Record Updated Successfully!!!</p>
+              <p v-if="submitted === 'pending'">Sending...</p>
             </form>
           </div>
         </div>
@@ -49,7 +51,8 @@ import axios from "axios";
 export default {
   data() {
     return {
-      stock: {}
+      stock: {},
+      submitted:false
     };
   },
   created() {
@@ -67,8 +70,13 @@ export default {
         .post(uri, this.stock)
         .then(res => {
           console.log(res);
-          this.$router.push({ name: "StockDetails" });
+          //this.$router.push({ name: "StockDetails" });
+          this.submitted = "pending";
+          setTimeout(() => {
+            this.submitted = "ok";
+          }, 500);
         })
+        
         .catch(error => {
           console.log(error);
         });

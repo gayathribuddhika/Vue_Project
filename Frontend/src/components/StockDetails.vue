@@ -21,7 +21,7 @@
           </thead>
           <tbody>
             <tr v-for="stock in stocks" :key="stock._id">
-              <td></td>
+              <td>{{ stock.No}}</td>
               <td>{{ stock.List_of_Items }}</td>
               <td>{{ stock.In_Stock }}</td>
               <td>{{ stock.On_Order }}</td>
