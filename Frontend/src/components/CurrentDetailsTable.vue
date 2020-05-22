@@ -44,7 +44,8 @@ export default {
   name: "CurrentDetailsTable",
   data() {
     return {
-      itemsLab1: {}
+      itemsLab1: {},
+      itemsLab2: {}
     };
   },
   created() {
