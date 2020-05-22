@@ -40,6 +40,7 @@ Vue.use(VueSimpleAlert)
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 Vue.use(VueSidebarMenu)*/
 
+export const bus = new Vue();
 
 new Vue({
   //el: '#app',
