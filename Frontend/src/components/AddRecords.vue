@@ -8,7 +8,7 @@
     <center>
       <br />
       <b-card bg-variant="light" body-class="text-center" class="mb-2" style="max-width: 65rem;">
-        <b-form @submit.prevent="handleTwo" @reset="onReset" v-if="show">
+        <b-form @submit.prevent="addToRecords" @reset="onReset" v-if="show">
           <b-form-group
             label-cols-lg="3"
             label="Add a New Record"
@@ -236,19 +236,13 @@ export default {
   },
 
   methods: {
-    handleTwo(){
-      this.incrementId();
-      this.addToRecords();
-    },
-    incrementId(){
-      this.form.counter += 1;
-    },
+    
     addToRecords(){
       if( this.form.select_lab == "CIS/LAB/01"){
         let newRecord = {
         
         Select_LAB: this.form.select_lab,
-        Item_id: this.form.counter,
+        //Item_id: this.form.counter,
         Main_Category: this.form.category,
         Asset_Description: this.form.description,
         Serial_Num: this.form.serial_num,

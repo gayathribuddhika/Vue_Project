@@ -11,24 +11,23 @@
           <div class="card-body">
             <h3 class="text-center">Add Stock Details</h3>
 
-            <form @submit.prevent="handleTwo">
+            <form @submit.prevent="addStock">
               <div class="form-group">
                 <label>Item</label>
                 <input type="text" class="form-control" v-model="stock.List_of_Items" required />
               </div>
-
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label>In Stock</label>
-                  <input type="number" class="form-control" v-model="stock.In_Stock"  />
+                  <input type="number" class="form-control" v-model="stock.In_Stock" required />
                 </div>
                 <div class="form-group col-md-4">
                   <label>On Order</label>
-                  <input type="number" class="form-control" v-model="stock.On_Order" />
+                  <input type="number" class="form-control" v-model="stock.On_Order" required />
                 </div>
                 <div class="form-group col-md-4">
                   <label>Damaged</label>
-                  <input type="number" class="form-control" v-model="stock.Damaged"  />
+                  <input type="number" class="form-control" v-model="stock.Damaged" required />
                 </div>
               </div>
 
@@ -58,20 +57,14 @@ export default {
         On_Order: "",
         Damaged: "",
         
-        counter: 0
+       
       },
       submitted: null,
       
     };
   },
   methods: {
-    handleTwo(){
-      this.IncrementID();
-      this.addStock();
-    },
-    IncrementID(){
-      this.stock.counter += 1;
-    },
+    
     addStock() {
       let uri = "http://localhost:8085/create-stock";
 
@@ -80,7 +73,7 @@ export default {
         .then(() => {
           //this.$router.push({name: "StockDetails"})
           this.stock = {
-            No: this.stock.counter,
+            //No: this.stock.counter,
             List_of_Items: "",
             In_Stock: "",
             On_Order: "",

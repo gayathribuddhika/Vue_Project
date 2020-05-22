@@ -44,7 +44,7 @@
                 </thead>
                 <tbody id="itemTable">
                   <tr v-for="item in itemsLab1" v-bind:key="item._id">
-                    <td>{{item.Item_id}}</td>
+                    <td></td>
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
                     <td>{{item.Serial_Num}}</td>
