@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="stock in stocks" :key="stock._id">
+        <tr>
           <td></td>
           <td></td>
           <td></td>
@@ -26,8 +26,12 @@
 </template>
 
 <script>
-
 export default {
-    nam: "SummaryTable"
+    name: "SummaryTable",
+    data() {
+        return {
+            
+        }
+    },
 }
 </script>
