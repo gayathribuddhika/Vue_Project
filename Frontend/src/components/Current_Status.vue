@@ -3,7 +3,7 @@
     <div class="btn">
       <b-button squared variant="dark" to="/adminpanel">Back</b-button>
       <b-button squared variant="dark" to="/adminpanel/addrecords">Add Records</b-button>
-      <b-button squared variant="dark" to="#" align="right">Details Summary Report</b-button>
+      <b-button squared variant="dark" to="/adminpanel/summarydetails" align="right">Details Summary Report</b-button>
     </div>
     <b-card no-body>
       <b-tabs pills card width="100%" content-class="mt-3" justified>
