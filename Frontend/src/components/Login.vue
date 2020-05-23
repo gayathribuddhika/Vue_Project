@@ -25,6 +25,7 @@
                       placeholder="Enter your username"
                       required
                       v-model="form1.username1"
+                      
                     />
                   </b-form-group>
 
@@ -35,6 +36,7 @@
                       placeholder="Enter your password"
                       required
                       v-model="form1.password1"
+                      
                     />
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
@@ -114,7 +116,7 @@ export default {
   },
 
   methods: {
-    login1() {
+    /*login1() {
       if (
         this.form1.username1 == "adminims" &&
         this.form1.password1 == "Admin123ims"
@@ -122,24 +124,38 @@ export default {
         this.$router.replace({ name: "AdminPanel" });
         console.log("Login Successfull");
       } else {
-        console.log("The username and/or password is incorrect");
+        //console.log("The username and/or password is incorrect");
 
-        //alert("The username and/or password is incorrect")
+        alert("The username and/or password is incorrect")
+      }
+      /*this.$v.$touch()
+      const isInvalid = this.$v.$invalid
+
+      if(isInvalid){
+        alert("Please Check All Fields!")
+      }else {
+        this.$router.replace({ name: "AdminPanel" });
+        console.log("Login Successfull");
       }
     }
-    /*login1(){
-      this.isSubmitted = true;
+  }*/
 
-                this.$v.$touch();
-                if (this.$v.$invalid) {
-                    return;
-                }
+  login1() {
+      let uri = "http://localhost:8085/adminlogin";
 
-                alert("SUCCESS!" + JSON.stringify(this.form1));
-            }
-    }*/
+      axios
+        .post(uri, this.form1)
+        .then(() => {
+          //this.$router.push({name: "StockDetails"})
+          this.form1 = {
+            username1:"",
+            password1: ""
+          }
+        }    
+    
+        )}
   }
-};
+}
 </script>
 
 
