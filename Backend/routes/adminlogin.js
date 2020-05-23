@@ -21,12 +21,24 @@ router.post('/adminlogin', function (req, res) {
     });
     admin.save()
         .then(() => {
-            res.status(200).send('Successfully Login');
+            res.status(200).send('Saved Successfully');
         })
         .catch(() => {
-            res.status(400).send("Unable to Login");
+            res.status(400).send("Unable to save");
         });
 });
+
+/*router.post('/adminlogin', (req, res, next) => {
+    Admin.create(req.body, (error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            //res.json(data);
+            res.status(200).send('Record is saved Successfully');
+            
+        }
+    })
+});*/
 
 module.exports = router;
 

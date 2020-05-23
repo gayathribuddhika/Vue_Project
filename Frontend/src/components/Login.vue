@@ -116,7 +116,7 @@ export default {
   },
 
   methods: {
-    /*login1() {
+    login1() {
       if (
         this.form1.username1 == "adminims" &&
         this.form1.password1 == "Admin123ims"
@@ -128,6 +128,7 @@ export default {
 
         alert("The username and/or password is incorrect")
       }
+    }
       /*this.$v.$touch()
       const isInvalid = this.$v.$invalid
 
@@ -140,7 +141,7 @@ export default {
     }
   }*/
 
-  login1() {
+  /*login1() {
       let uri = "http://localhost:8085/adminlogin";
 
       axios
@@ -153,7 +154,7 @@ export default {
           }
         }    
     
-        )}
+        )}*/
   }
 }
 </script>

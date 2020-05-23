@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       stock: {},
-      submitted:false
+      submitted: null
     };
   },
   created() {

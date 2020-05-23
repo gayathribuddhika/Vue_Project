@@ -194,14 +194,17 @@ export default {
   },
 
   created() {
-    this.fetchRecord1();
-    /*this.fetchRecord2();
-    this.fetchRecord3();
-    this.fetchRecord4();
-    this.fetchRecord5();*/
+    this.getAll();
   },
 
   methods: {
+    getAll(){
+      this.fetchRecord1();
+    this.fetchRecord2();
+    this.fetchRecord3();
+    this.fetchRecord4();
+    this.fetchRecord5();
+    },
     
     fetchRecord1(){
       let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
@@ -213,7 +216,7 @@ export default {
           console.log(error);
         });
     },
-    /*fetchRecord2(){
+    fetchRecord2(){
       let uri = `http://localhost:8085/lab/lab2/edit/${this.$route.params.id}`;
       axios.get(uri).then(response => {
           this.form = response.data;
@@ -252,7 +255,7 @@ export default {
         .catch(error => {
           console.log(error);
         });
-    },*/
+    },
     updateRecord() {
       if (this.form.Select_LAB == "CIS/LAB/01") {
         let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;

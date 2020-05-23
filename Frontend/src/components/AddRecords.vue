@@ -162,7 +162,7 @@ export default {
   data() {
     return {
       form: {
-        select_lab: null ,
+        select_lab: z ,
         category: null,
         description: null,
         serial_num: "",
