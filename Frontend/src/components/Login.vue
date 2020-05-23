@@ -18,16 +18,14 @@
           <b-col md="6">
             <div>
               <b-card bg-variant text-variant="dark" border-variant="dark">
-                <b-form @submit.prevent="login1()">
+                <b-form @submit.prevent="login1">
                   <b-form-group label="Username:" label-for="username1">
                     <b-form-input
                       id="username1"
                       placeholder="Enter your username"
+                      required
                       v-model="form1.username1"
-                      :class="{ 'is-invalid': isSubmitted && $v.form1.username1.$error }"
                     />
-                    <div v-if="isSubmitted && !$v.form1.username1.required" class="invalid-feedback">Username field is required</div>
-                    <div v-if="isSubmitted && !$v.form1.username1 == 'adminims'" class="invalid-feedback">Username is incorrect</div>
                   </b-form-group>
 
                   <b-form-group label="Password:" label-for="password1">
@@ -35,11 +33,9 @@
                       id="password1"
                       type="password"
                       placeholder="Enter your password"
+                      required
                       v-model="form1.password1"
-                      :class="{ 'is-invalid': isSubmitted && $v.form1.password1.$error }"
                     />
-                     <div v-if="isSubmitted && !$v.form1.password1.required" class="invalid-feedback">Password field is required</div>
-                     <div v-if="isSubmitted && !$v.form1.password1 == 'Admin123ims'" class="invalid-feedback">Password is incorrect</div> 
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
                   </b-form-group>
@@ -102,23 +98,23 @@ export default {
         password2: ""
       },
 
-      isSubmitted:false
+      isSubmitted: false
     };
   },
 
   validations: {
-    form1:{
-      username1: {required},
-      password1: {required}
+    form1: {
+      username1: { required },
+      password1: { required }
     },
-    form2:{
-      username2: {required},
-      password2: {required}
+    form2: {
+      username2: { required },
+      password2: { required }
     }
   },
 
   methods: {
-    /*login1() {
+    login1() {
       if (
         this.form1.username1 == "adminims" &&
         this.form1.password1 == "Admin123ims"
@@ -130,8 +126,8 @@ export default {
 
         //alert("The username and/or password is incorrect")
       }
-    }*/
-    login1(){
+    }
+    /*login1(){
       this.isSubmitted = true;
 
                 this.$v.$touch();
@@ -141,9 +137,8 @@ export default {
 
                 alert("SUCCESS!" + JSON.stringify(this.form1));
             }
-    }
-    
-  
+    }*/
+  }
 };
 </script>
 
