@@ -24,7 +24,7 @@
                       id="username1"
                       placeholder="Enter your username"
                       required
-                      v-model="form1.username1"
+                      v-model="form1.username"
                       
                     />
                   </b-form-group>
@@ -35,7 +35,7 @@
                       type="password"
                       placeholder="Enter your password"
                       required
-                      v-model="form1.password1"
+                      v-model="form1.password"
                       
                     />
                     <br />
@@ -56,7 +56,7 @@
                       id="username2"
                       placeholder="Enter your username"
                       required
-                      v-model="form2.username2"
+                      v-model="form2.username"
                     />
                   </b-form-group>
 
@@ -66,7 +66,7 @@
                       type="password"
                       placeholder="Enter your password"
                       required
-                      v-model="form2.password2"
+                      v-model="form2.password"
                     />
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
@@ -91,13 +91,13 @@ export default {
   data() {
     return {
       form1: {
-        username1: "",
-        password1: ""
+        username: "",
+        password: ""
       },
 
       form2: {
-        username2: "",
-        password2: ""
+        username: "",
+        password: ""
       },
 
       isSubmitted: false
@@ -106,20 +106,20 @@ export default {
 
   validations: {
     form1: {
-      username1: { required },
-      password1: { required }
+      username: { required },
+      password: { required }
     },
     form2: {
-      username2: { required },
-      password2: { required }
+      username: { required },
+      password: { required }
     }
   },
 
   methods: {
-    login1() {
+    /*login1() {
       if (
-        this.form1.username1 == "adminims" &&
-        this.form1.password1 == "Admin123ims"
+        this.form1.username == "adminims" &&
+        this.form1.password == "Admin123ims"
       ) {
         this.$router.replace({ name: "AdminPanel" });
         console.log("Login Successfull");
@@ -128,33 +128,20 @@ export default {
 
         alert("The username and/or password is incorrect")
       }
-    }
-      /*this.$v.$touch()
-      const isInvalid = this.$v.$invalid
-
-      if(isInvalid){
-        alert("Please Check All Fields!")
-      }else {
-        this.$router.replace({ name: "AdminPanel" });
-        console.log("Login Successfull");
-      }
-    }
-  }*/
-
-  /*login1() {
+    }*/
+     
+  login1() {
       let uri = "http://localhost:8085/adminlogin";
-
-      axios
-        .post(uri, this.form1)
+      axios.post(uri, this.form1)
         .then(() => {
           //this.$router.push({name: "StockDetails"})
           this.form1 = {
-            username1:"",
-            password1: ""
+            username:req.body.username,
+            password: req.body.username
           }
         }    
     
-        )}*/
+        )}
   }
 }
 </script>

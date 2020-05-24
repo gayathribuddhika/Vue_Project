@@ -3,15 +3,15 @@ const Schema = mongoose.Schema;
 
 const adminSchema = new Schema({
     
-    Username: {
+    username: {
         type: String,
         //required:[true,"Username is required"]
     },
-    Password: {
+    password: {
         type: String,
         //required:[true,"Username is required"]
     },
-    Email: {
+    email: {
         type: String
     }
 }, {collection: "Admin_Login"});
