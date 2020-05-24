@@ -130,18 +130,20 @@ export default {
       }
     }*/
      
-  login1() {
-      let uri = "http://localhost:8085/adminlogin";
-      axios.post(uri, this.form1)
-        .then(() => {
-          //this.$router.push({name: "StockDetails"})
-          this.form1 = {
-            username:req.body.username,
-            password: req.body.username
-          }
-        }    
-    
-        )}
+    login1() {
+      let newLogin = {
+        username:this.form1.username,
+        password:this.form1.password       
+      };
+      console.log(newLogin);
+      
+      axios.post('', newLogin).then((resposne) => {
+        console.log(resposne);
+      })
+      .catch((error) =>{
+        console.log(error);
+      })
+    }
   }
 }
 </script>

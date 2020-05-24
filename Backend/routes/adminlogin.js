@@ -16,8 +16,8 @@ router.get('/adminlogin', (req, res) => {
 
 router.post('/adminlogin', function (req, res) {
     let admin = new Admin({
-        Username: req.body.Username,
-        Password: req.body.Password
+        username: req.body.username,
+        password: req.body.password
     });
     admin.save()
         .then(() => {
@@ -28,17 +28,4 @@ router.post('/adminlogin', function (req, res) {
         });
 });
 
-/*router.post('/adminlogin', (req, res, next) => {
-    Admin.create(req.body, (error, data) => {
-        if (error) {
-            return next(error)
-        } else {
-            //res.json(data);
-            res.status(200).send('Record is saved Successfully');
-            
-        }
-    })
-});*/
-
 module.exports = router;
-
