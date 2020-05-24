@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 const staffSchema = new Schema({
     
-    Username: {
+    username: {
         type: String
     },
-    Password: {
+    password: {
         type: String
     },
-    Email: {
+    email: {
         type: String
     }
 }, {collection: "Staff_Login"});

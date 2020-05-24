@@ -19,13 +19,13 @@
             <div>
               <b-card bg-variant text-variant="dark" border-variant="dark">
                 <b-form @submit.prevent="login1">
-                  <center><p id="msg" v-if="submitted === 'error'">You entered Username or Password is Incorrect</p></center>
+                  <center><p id="msg" v-if="submitted1 === 'error'">You entered Username or Password is Incorrect</p></center>
                   <b-form-group label="Username:" label-for="username1">
                     <b-form-input
                       id="username1"
                       placeholder="Enter your username"
                       required
-                      v-model="form1.username"
+                      v-model="form1.username1"
                       
                     />
                   </b-form-group>
@@ -36,13 +36,13 @@
                       type="password"
                       placeholder="Enter your password"
                       required
-                      v-model="form1.password"
+                      v-model="form1.password1"
                       
                     />
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
                   </b-form-group>
-                  <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Login</b-button>
+                  <b-button type="submit" variant="primary" :disabled="submitted1 === 'pending'">Login</b-button>
                 </b-form>
               </b-card>
             </div>
@@ -52,12 +52,13 @@
             <div>
               <b-card bg-variant text-variant="dark" border-variant="dark">
                 <b-form @submit.prevent="login2">
+                  <center><p id="msg" v-if="submitted2 === 'error'">You entered Username or Password is Incorrect</p></center>
                   <b-form-group label="Username:" label-for="username2">
                     <b-form-input
                       id="username2"
                       placeholder="Enter your username"
                       required
-                      v-model="form2.username"
+                      v-model="form2.username2"
                     />
                   </b-form-group>
 
@@ -67,12 +68,12 @@
                       type="password"
                       placeholder="Enter your password"
                       required
-                      v-model="form2.password"
+                      v-model="form2.password2"
                     />
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
                   </b-form-group>
-                  <b-button type="submit" variant="primary">Login</b-button>
+                  <b-button type="submit" variant="primary" :disabled="submitted2 === 'pending'">Login</b-button>
                 </b-form>
               </b-card>
             </div>
@@ -92,36 +93,37 @@ export default {
   data() {
     return {
       form1: {
-        username: "",
-        password: "",
+        username1: "",
+        password1: "",
         
       },
 
       form2: {
-        username: "",
-        password: ""
+        username2: "",
+        password2: ""
       },
 
-      submitted: null
+      submitted1: null,
+      submitted2: null
     };
   },
 
   validations: {
     form1: {
-      username: { required },
-      password: { required }
+      username1: { required },
+      password1: { required }
     },
     form2: {
-      username: { required },
-      password: { required }
+      username2: { required },
+      password2: { required }
     }
   },
 
   methods: {
     login1() {
       let newLogin = {
-        username:this.form1.username,
-        password:this.form1.password       
+        username:this.form1.username1,
+        password:this.form1.password1       
       };
       console.log(newLogin);
       
@@ -132,9 +134,30 @@ export default {
       .catch((error) =>{
         console.log(error);
         //alert("Username or Password is incorrect");
-        this.submitted = "pending";
+        this.submitted1 = "pending";
           setTimeout(() => {
-            this.submitted = "error";
+            this.submitted1 = "error";
+          }, 500);
+        
+      })
+    },
+    login2() {
+      let newLogin = {
+        username:this.form2.username2,
+        password:this.form2.password2      
+      };
+      console.log(newLogin);
+      
+      axios.post('http://localhost:8085/stafflogin', newLogin).then((resposne) => {
+        console.log(resposne);
+        this.$router.push({name: "StaffPanel"});
+      })
+      .catch((error) =>{
+        console.log(error);
+        //alert("Username or Password is incorrect");
+        this.submitted2 = "pending";
+          setTimeout(() => {
+            this.submitted2 = "error";
           }, 500);
         
       })
