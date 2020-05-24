@@ -19,6 +19,7 @@
             <div>
               <b-card bg-variant text-variant="dark" border-variant="dark">
                 <b-form @submit.prevent="login1">
+                  <center><p id="msg" v-if="submitted === 'error'">You entered Username or Password is Incorrect</p></center>
                   <b-form-group label="Username:" label-for="username1">
                     <b-form-input
                       id="username1"
@@ -41,7 +42,7 @@
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
                   </b-form-group>
-                  <b-button type="submit" variant="primary">Login</b-button>
+                  <b-button type="submit" variant="primary" :disabled="submitted === 'pending'">Login</b-button>
                 </b-form>
               </b-card>
             </div>
@@ -101,7 +102,7 @@ export default {
         password: ""
       },
 
-      isSubmitted: false
+      submitted: null
     };
   },
 
@@ -117,20 +118,6 @@ export default {
   },
 
   methods: {
-    /*login1() {
-      if (
-        this.form1.username == "adminims" &&
-        this.form1.password == "Admin123ims"
-      ) {
-        this.$router.replace({ name: "AdminPanel" });
-        console.log("Login Successfull");
-      } else {
-        //console.log("The username and/or password is incorrect");
-
-        alert("The username and/or password is incorrect")
-      }
-    }*/
-     
     login1() {
       let newLogin = {
         username:this.form1.username,
@@ -144,7 +131,11 @@ export default {
       })
       .catch((error) =>{
         console.log(error);
-        alert("Username or Password is incorrect");
+        //alert("Username or Password is incorrect");
+        this.submitted = "pending";
+          setTimeout(() => {
+            this.submitted = "error";
+          }, 500);
         
       })
     }
@@ -156,5 +147,10 @@ export default {
 <style scoped>
 #form {
   margin-top: 20px;
+}
+#msg {
+  
+  font-size: 15px;
+  color:red;
 }
 </style>
