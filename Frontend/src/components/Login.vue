@@ -92,7 +92,8 @@ export default {
     return {
       form1: {
         username: "",
-        password: ""
+        password: "",
+        
       },
 
       form2: {
@@ -137,11 +138,14 @@ export default {
       };
       console.log(newLogin);
       
-      axios.post('', newLogin).then((resposne) => {
+      axios.post('http://localhost:8085/adminlogin', newLogin).then((resposne) => {
         console.log(resposne);
+        this.$router.push({name: "AdminPanel"});
       })
       .catch((error) =>{
         console.log(error);
+        alert("Username or Password is incorrect");
+        
       })
     }
   }

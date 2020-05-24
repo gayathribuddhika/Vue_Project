@@ -15,17 +15,20 @@ router.get('/adminlogin', (req, res) => {
 });
 
 router.post('/adminlogin', function (req, res) {
-    let admin = new Admin({
-        username: req.body.username,
-        password: req.body.password
-    });
-    admin.save()
-        .then(() => {
-            res.status(200).send('Saved Successfully');
-        })
-        .catch(() => {
-            res.status(400).send("Unable to save");
-        });
+    var username = req.body.username;
+    var password = req.body.password;
+    
+    Admin.findOne({username:username, password:password}, function(err, admin) {
+        if(err){
+            console.log(err);
+            return res.status(500).send();
+        }
+        if(!admin){
+            return res.status(404).send("User not Found");
+        }
+        return res.status(200).send("Login Successfull");
+    })
+    
 });
 
 module.exports = router;
