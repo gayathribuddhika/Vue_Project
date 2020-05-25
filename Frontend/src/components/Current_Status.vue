@@ -30,28 +30,27 @@
               <table>
                 <thead>
                   <tr>
-                    <th>Item ID</th>
+                    <!--<th>Item ID</th>-->
                     <th>Main Category</th>
                     <th>Asset Description</th>
-                    <th>Serial Num</th>
-                    <th>Asset Code</th>
                     <th>Qty</th>
-                    <th>Make</th>
+                    <th>Asset Code</th>
+                    <th>Serial Num</th>
                     <th>Condition</th>
+                    <th>Make</th>
                     <th>Comments</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody id="itemTable">
                   <tr v-for="item in itemsLab1" v-bind:key="item._id">
-                    <td>{{item.Item_id}}</td>
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
-                    <td>{{item.Serial_Num}}</td>
-                    <td>{{item.Asset_Code}}</td>
                     <td>{{item.Qty}}</td>
-                    <td>{{item.Make}}</td>
+                    <td>{{item.Asset_Code}}</td>
+                    <td>{{item.Serial_Num}}</td>
                     <td>{{item.Condition}}</td>
+                    <td>{{item.Make}}</td>
                     <td>{{item.Comments}}</td>
                     <td>
                       <b-button
@@ -82,11 +81,11 @@
                   <tr>
                     <th>Main Category</th>
                     <th>Asset Description</th>
-                    <th>Serial Num</th>
-                    <th>Asset Code</th>
                     <th>Qty</th>
-                    <th>Make</th>
+                    <th>Asset Code</th>
+                    <th>Serial Num</th>
                     <th>Condition</th>
+                    <th>Make</th>
                     <th>Comments</th>
                     <th>Action</th>
                   </tr>
@@ -95,11 +94,11 @@
                   <tr v-for="item in itemsLab2" v-bind:key="item._id">
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
-                    <td>{{item.Serial_Num}}</td>
-                    <td>{{item.Asset_Code}}</td>
                     <td>{{item.Qty}}</td>
-                    <td>{{item.Make}}</td>
+                    <td>{{item.Asset_Code}}</td>
+                    <td>{{item.Serial_Num}}</td>
                     <td>{{item.Condition}}</td>
+                    <td>{{item.Make}}</td>
                     <td>{{item.Comments}}</td>
                     <td>
                       <b-button
@@ -130,11 +129,11 @@
                   <tr>
                     <th>Main Category</th>
                     <th>Asset Description</th>
-                    <th>Serial Num</th>
-                    <th>Asset Code</th>
                     <th>Qty</th>
-                    <th>Make</th>
+                    <th>Asset Code</th>
+                    <th>Serial Num</th>
                     <th>Condition</th>
+                    <th>Make</th>
                     <th>Comments</th>
                     <th>Action</th>
                   </tr>
@@ -143,11 +142,11 @@
                   <tr v-for="item in itemsLab3" v-bind:key="item._id">
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
-                    <td>{{item.Serial_Num}}</td>
-                    <td>{{item.Asset_Code}}</td>
                     <td>{{item.Qty}}</td>
-                    <td>{{item.Make}}</td>
+                    <td>{{item.Asset_Code}}</td>
+                    <td>{{item.Serial_Num}}</td>
                     <td>{{item.Condition}}</td>
+                    <td>{{item.Make}}</td>
                     <td>{{item.Comments}}</td>
                     <td>
                       <b-button
@@ -178,11 +177,11 @@
                   <tr>
                     <th>Main Category</th>
                     <th>Asset Description</th>
-                    <th>Serial Num</th>
-                    <th>Asset Code</th>
                     <th>Qty</th>
-                    <th>Make</th>
+                    <th>Asset Code</th>
+                    <th>Serial Num</th>
                     <th>Condition</th>
+                    <th>Make</th>
                     <th>Comments</th>
                     <th>Action</th>
                   </tr>
@@ -191,11 +190,11 @@
                   <tr v-for="item in itemsLab4" v-bind:key="item._id">
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
-                    <td>{{item.Serial_Num}}</td>
-                    <td>{{item.Asset_Code}}</td>
                     <td>{{item.Qty}}</td>
-                    <td>{{item.Make}}</td>
+                    <td>{{item.Asset_Code}}</td>
+                    <td>{{item.Serial_Num}}</td>
                     <td>{{item.Condition}}</td>
+                    <td>{{item.Make}}</td>
                     <td>{{item.Comments}}</td>
                     <td>
                       <b-button
@@ -226,11 +225,11 @@
                   <tr>
                     <th>Main Category</th>
                     <th>Asset Description</th>
-                    <th>Serial Num</th>
-                    <th>Asset Code</th>
                     <th>Qty</th>
-                    <th>Make</th>
+                    <th>Asset Code</th>
+                    <th>Serial Num</th>
                     <th>Condition</th>
+                    <th>Make</th>
                     <th>Comments</th>
                     <th>Action</th>
                   </tr>
@@ -239,11 +238,11 @@
                   <tr v-for="item in itemsLab5" v-bind:key="item._id">
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
-                    <td>{{item.Serial_Num}}</td>
-                    <td>{{item.Asset_Code}}</td>
                     <td>{{item.Qty}}</td>
-                    <td>{{item.Make}}</td>
+                    <td>{{item.Asset_Code}}</td>
+                    <td>{{item.Serial_Num}}</td>
                     <td>{{item.Condition}}</td>
+                    <td>{{item.Make}}</td>
                     <td>{{item.Comments}}</td>
                     <td>
                       <b-button

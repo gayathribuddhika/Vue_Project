@@ -24,6 +24,16 @@ router.get('/lab1/:id', function (req, res) {
     });
 });
 
+router.get("/lab1/count", function(req, res) {
+    Item.count({}, function(err, result) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json(result);
+      }
+    });
+  });
+
 router.post('/lab1', function (req, res) {
     let item = new Item({
         Select_LAB:req.body.Select_LAB,
@@ -87,17 +97,6 @@ router.post('/lab1/update/:id', function (req, res) {
     });
 });
 
-/*router.post('/lab1/update/:id', (req, res, next) => {
-    Item.findByIdAndUpdate(req.params.id, {
-        $set: req.body
-    }, (error, data) => {
-        if (error) {
-            return next(error);
-        } else {
-            res.send("Update Successfully")
-            
-        }
-    });
-});*/
+
 
 module.exports = router;
