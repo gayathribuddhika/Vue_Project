@@ -24,15 +24,15 @@ router.get('/lab1/:id', function (req, res) {
     });
 });
 
-router.get("/lab1/count", function(req, res) {
-    Item.count({}, function(err, result) {
+/*router.get('/lab1/count', function(req, res) {
+    Item.count({Condition:"good"}, function(err, result) {
       if (err) {
         res.send(err);
       } else {
         res.json(result);
       }
     });
-  });
+  });*/
 
 router.post('/lab1', function (req, res) {
     let item = new Item({
