@@ -54,9 +54,9 @@
               <b-form-select
                 id="record_category"
                 v-model="form.category"
-                
+                required
                 :options="categories"
-                
+                :class="{ 'hasError': $v.form.category.$error }"
               ></b-form-select>
             </b-form-group>
             <b-form-group
@@ -69,6 +69,8 @@
                 id="record_description"
                 v-model="form.description"
                 :options="descriptions"
+                required
+                :class="{ 'hasError': $v.form.description.$error }"
                 
               ></b-form-select>
             </b-form-group>
@@ -225,8 +227,8 @@ export default {
     form: {
       select_lab: { required },
       //id: { required },
-      //category: { required },
-      //description: { required },
+      category: { required },
+      description: { required },
       serial_num: { required },
       code: { required }
       //qty: { required }
