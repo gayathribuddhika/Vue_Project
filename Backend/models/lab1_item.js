@@ -28,7 +28,7 @@ const Item = new Schema({
     },
     Qty: {
         type: String,
-        required:true
+        //required:true
     },
     Make: {
         type: String

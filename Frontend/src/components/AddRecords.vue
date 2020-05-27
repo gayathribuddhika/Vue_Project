@@ -111,9 +111,8 @@
                 id="record_qty"
                 v-model="form.qty"
                 type="number"
-                required
-                :class="{ 'hasError': $v.form.qty.$error }"
-              ></b-form-input>
+                >
+              </b-form-input>
             </b-form-group>
             <b-form-group
               label-cols-sm="3"
@@ -162,7 +161,7 @@ export default {
   data() {
     return {
       form: {
-        select_lab: z ,
+        select_lab: null,
         category: null,
         description: null,
         serial_num: "",
@@ -230,8 +229,8 @@ export default {
       category: { required },
       description: { required },
       serial_num: { required },
-      code: { required },
-      qty: { required }
+      code: { required }
+      //qty: { required }
     }
   },
 
