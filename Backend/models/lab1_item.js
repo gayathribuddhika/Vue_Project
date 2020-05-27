@@ -12,11 +12,11 @@ const Item = new Schema({
     },
     Main_Category: {
         type: String,
-        required:true
+        //required:true
     },
     Asset_Description: {
         type: String,
-        required:true
+        //required:true
     },
     Serial_Num: {
         type: String,

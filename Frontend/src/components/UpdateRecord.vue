@@ -38,9 +38,9 @@
             <b-form-select
               id="record_category"
               v-model="form.Main_Category"
-              required
+              
               :options="categories"
-              :class="{ 'hasError': $v.form.category.$error } "
+              
             ></b-form-select>
           </b-form-group>
           <b-form-group
@@ -52,9 +52,9 @@
             <b-form-select
               id="record_description"
               v-model="form.Asset_Description"
-              required
+              
               :options="descriptions"
-              :class="{ 'hasError': $v.form.description.$error } "
+              
             ></b-form-select>
           </b-form-group>
           <b-form-group
@@ -90,8 +90,7 @@
               id="record_qty"
               v-model="form.Qty"
               type="number"
-              required
-              :class="{ 'hasError': $v.form.qty.$error }"
+              
             ></b-form-input>
           </b-form-group>
           <b-form-group
@@ -185,11 +184,11 @@ export default {
     form: {
       select_lab: { required },
       //id: { required },
-      category: { required },
-      description: { required },
+      //category: { required },
+      //description: { required },
       serial_num: { required },
       code: { required },
-      qty: { required }
+      //qty: { required }
     }
   },
 
@@ -200,10 +199,10 @@ export default {
   methods: {
     getAll(){
       this.fetchRecord1();
-    this.fetchRecord2();
-    this.fetchRecord3();
-    this.fetchRecord4();
-    this.fetchRecord5();
+      /*this.fetchRecord2();
+      this.fetchRecord3();
+      this.fetchRecord4();
+      this.fetchRecord5();*/
     },
     
     fetchRecord1(){
@@ -216,7 +215,7 @@ export default {
           console.log(error);
         });
     },
-    fetchRecord2(){
+    /*fetchRecord2(){
       let uri = `http://localhost:8085/lab/lab2/edit/${this.$route.params.id}`;
       axios.get(uri).then(response => {
           this.form = response.data;
@@ -255,7 +254,7 @@ export default {
         .catch(error => {
           console.log(error);
         });
-    },
+    },*/
     updateRecord() {
       if (this.form.Select_LAB == "CIS/LAB/01") {
         let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
