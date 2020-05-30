@@ -87,7 +87,7 @@ router.post('/lab1/update/:id', function (req, res) {
     });
 });
 
-router.get("/lab1/count", function (req, res) {
+/*router.get("/lab1/count", function (req, res) {
     Item.countDocuments({}, function (err, result) {
         if (err) {
             res.send(err)
@@ -96,6 +96,6 @@ router.get("/lab1/count", function (req, res) {
             res.json(result)
         }
     })
-})
+})*/
 
 module.exports = router;
