@@ -98,16 +98,5 @@ router.post('/lab1/update/:id', function (req, res) {
     })
 })*/
 
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
-
-MongoClient.connect(url,{ useUnifiedTopology: true }, function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("Inventory_FAS");
-  var query = { Asset_Description: "Monitor" };
-  dbo.collection("LAB01_CIS").countDocuments(query)
-    
-  });
-
 
 module.exports = router;
