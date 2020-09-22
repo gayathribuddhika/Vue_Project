@@ -14,8 +14,8 @@ const adminSchema = new Schema({
     email: {
         type: String
     }
-}, {collection: "Admin_Login"});
+}, 
+    {collection: "Admin_Login"}
+);
 
 module.exports = mongoose.model("Admin", adminSchema);
-/*const Admin = mongoose.model("Admin_Login", adminSchema);
-module.exports = Admin;*/

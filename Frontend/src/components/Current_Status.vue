@@ -5,6 +5,9 @@
       <b-button squared variant="dark" to="/adminpanel/addrecords">Add Records</b-button>
       <b-button squared variant="dark" to="/adminpanel/summarydetails" align="right">Details Summary Report</b-button>
     </div>
+    <div class="overflow-auto">
+      <b-pagination-nav :link-gen="linkGen" :number-of-pages="10" use-router></b-pagination-nav>
+    </div>
     <b-card no-body>
       <b-tabs pills card width="100%" content-class="mt-3" justified>
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
@@ -292,6 +295,9 @@ export default {
     this.fetchRecord5();
   },
   methods: {
+    linkGen(pageNum) {
+        return pageNum === 1 ? '?' : `?page=${pageNum}`
+    },
     fetchRecord1() {
       axios
         .get("http://localhost:8085/lab/lab1")

@@ -19,6 +19,7 @@ import StockDetails from '@/components/StockDetails'
 import UpdateStock from '@/components/UpdateStock'
 import AddStockDetails from '@/components/AddStockDetails'
 import SummaryDetails from '@/components/SummaryDetails'
+import Reports from '@/components/Reports'
 
 Vue.use(Router)
 
@@ -114,6 +115,11 @@ export default new Router({
       path: '/adminpanel/summarydetails',
       name: "SummaryDetails",
       component: SummaryDetails
+    },
+    {
+      path: '/adminpanel/reports',
+      name: "Reports",
+      component: Reports
     }
 
   ]
