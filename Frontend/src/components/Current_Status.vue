@@ -30,7 +30,7 @@
             </center>
             <br />
             <div class="table-responsive-lg">
-              <table>
+              <table :per-page="perPage">
                 <thead>
                   <tr>
                     <!--<th>Item ID</th>-->
@@ -284,7 +284,9 @@ export default {
       itemsLab4: {},
       itemsLab5: {},
 
-      serial_num: ""
+      serial_num: "",
+      // perPage : 20
+      // currentPage = 1
     };
   },
   created() {
@@ -294,9 +296,14 @@ export default {
     this.fetchRecord4();
     this.fetchRecord5();
   },
+  // computed: {
+  //   rows() {
+  //     return this.itemsLab1.length
+  //   }
+  // },
   methods: {
     linkGen(pageNum) {
-        return pageNum === 1 ? '?' : `?page=${pageNum}`
+        return pageNum === 1 ? '?page=1' : `?page=${pageNum}`
     },
     fetchRecord1() {
       axios

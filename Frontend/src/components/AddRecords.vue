@@ -8,7 +8,7 @@
     <center>
       <br />
       <b-card bg-variant="light" body-class="text-center" class="mb-2" style="max-width: 65rem;">
-        <b-form @submit.prevent="addToRecords" @reset="onReset" v-if="show">
+        <b-form @submit.prevent="add_Records" @reset="onReset" v-if="show">
           <b-form-group
             label-cols-lg="3"
             label="Add a New Record"
@@ -192,7 +192,7 @@ export default {
         "Computer",
         "Furniture",
         "Office Equipments",
-        "Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)"
+        "Other Equipments"   //  (ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)
       ],
       show: true,
 
@@ -237,11 +237,11 @@ export default {
 
   methods: {
     
-    addToRecords(){
+    add_Records(){
       if( this.form.select_lab == "CIS/LAB/01"){
         let newRecord = {
         
-        Select_LAB: this.form.select_lab,
+        // Select_LAB: this.form.select_lab,
         //Item_id: this.form.counter,
         Main_Category: this.form.category,
         Asset_Description: this.form.description,

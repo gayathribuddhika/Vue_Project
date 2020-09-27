@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 const Item = new Schema({
 
-    Select_LAB: {
-        type: String,
-        required: true
-    },
-    Item_id: {
-        type: String
-    },
+    // Select_LAB: {
+    //     type: String,
+    //     required: true
+    // },
+    // Item_id: {
+    //     type: String
+    // },
     Main_Category: {
         type: String,
         required: true
