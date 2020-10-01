@@ -21,6 +21,8 @@ import AddStockDetails from '@/components/AddStockDetails'
 import SummaryDetails from '@/components/SummaryDetails'
 import Reports from '@/components/Reports'
 
+import Login1 from '@/components/Login1';
+
 Vue.use(Router)
 
 export default new Router({
@@ -120,6 +122,11 @@ export default new Router({
       path: '/adminpanel/reports',
       name: "Reports",
       component: Reports
+    },
+    {
+      path: '/login1',
+      name: 'Login1',
+      component: Login1
     }
 
   ]

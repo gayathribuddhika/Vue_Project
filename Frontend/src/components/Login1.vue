@@ -1,7 +1,7 @@
 <template>
   <div id="form">
     <b-jumbotron bg-variant="light" text-variant="dark" border-variant="dark">
-      <b-row>
+      <!-- <b-row>
         <b-col md="6">
           <h2>
             <center>Admin Login</center>
@@ -12,8 +12,8 @@
             <center>Staff Login</center>
           </h2>
         </b-col>
-      </b-row>
-      <b-container fluid>
+      </b-row> -->
+      <b-container>
         <b-row>
           <b-col md="6">
             <div>
@@ -42,13 +42,13 @@
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
                   </b-form-group>
-                  <b-button type="submit" variant="success" :disabled="submitted1 === 'pending'">Login</b-button>
+                  <b-button type="submit" variant="primary" :disabled="submitted1 === 'pending'">Login</b-button>
                 </b-form>
               </b-card>
             </div>
           </b-col>
 
-          <b-col md="6">
+          <!-- <b-col md="6">
             <div>
               <b-card bg-variant text-variant="dark" border-variant="dark">
                 <b-form @submit.prevent="login2">
@@ -73,11 +73,11 @@
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
                   </b-form-group>
-                  <b-button type="submit" variant="success" :disabled="submitted2 === 'pending'">Login</b-button>
+                  <b-button type="submit" variant="primary" :disabled="submitted2 === 'pending'">Login</b-button>
                 </b-form>
               </b-card>
             </div>
-          </b-col>
+          </b-col> -->
         </b-row>
       </b-container>
     </b-jumbotron>
@@ -89,7 +89,7 @@ import { required } from "vuelidate/lib/validators";
 import axios from "axios";
 
 export default {
-  name: "Login",
+  name: "Login1",
   data() {
     return {
       form1: {
@@ -108,16 +108,16 @@ export default {
     };
   },
 
-//   validations: {
-//     form1: {
-//       username1: { required },
-//       password1: { required }
-//     },
-//     form2: {
-//       username2: { required },
-//       password2: { required }
-//     }
-//   },
+  validations: {
+    form1: {
+      username1: { required },
+      password1: { required }
+    },
+    form2: {
+      username2: { required },
+      password2: { required }
+    }
+  },
 
   methods: {
     login1() {
@@ -131,15 +131,15 @@ export default {
         console.log(resposne);
         this.$router.push({name: "AdminPanel"});
       })
-    //   .catch((error) =>{
-    //     console.log(error);
-    //     //alert("Username or Password is incorrect");
-    //     this.submitted1 = "pending";
-    //       setTimeout(() => {
-    //         this.submitted1 = "error";
-    //       }, 500);
+      .catch((error) =>{
+        console.log(error);
+        //alert("Username or Password is incorrect");
+        this.submitted1 = "pending";
+          setTimeout(() => {
+            this.submitted1 = "error";
+          }, 500);
         
-    //   })
+      })
     },
     login2() {
       let newLogin = {
@@ -152,15 +152,15 @@ export default {
         console.log(resposne);
         this.$router.push({name: "StaffPanel"});
       })
-    //   .catch((error) =>{
-    //     console.log(error);
-    //     //alert("Username or Password is incorrect");
-    //     this.submitted2 = "pending";
-    //       setTimeout(() => {
-    //         this.submitted2 = "error";
-    //       }, 500);
+      .catch((error) =>{
+        console.log(error);
+        //alert("Username or Password is incorrect");
+        this.submitted2 = "pending";
+          setTimeout(() => {
+            this.submitted2 = "error";
+          }, 500);
         
-    //   })
+      })
     }
   }
 }
@@ -170,10 +170,11 @@ export default {
 <style scoped>
 #form {
   margin-top: 20px;
+  /* align-self: center; */
 }
 #msg {
-  
   font-size: 15px;
   color:red;
 }
+
 </style>
