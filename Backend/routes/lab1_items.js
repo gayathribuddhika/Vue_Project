@@ -87,16 +87,16 @@ router.post('/lab1/update/:id', function (req, res) {
     });
 });
 
-/*router.get("/lab1/count", function (req, res) {
-    Item.countDocuments({}, function (err, result) {
+router.get("/lab1/count", function (req, res) {
+    Item.count({}, function (err, result) {
         if (err) {
-            res.send(err)
+            res.send(err);
         }
         else {
-            res.json(result)
+            res.json(result);
         }
     })
-})*/
+})
 
 
 module.exports = router;

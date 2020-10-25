@@ -9,7 +9,7 @@
             <h2>Sabaragamuwa University of Sri Lanka</h2>
             <div class = "bttn">
                 <router-link to="/login">
-                    <b-button type="button" variant="primary">Login</b-button>
+                    <b-button type="button" variant="success">Login</b-button>
                 </router-link>
             </div>
           </div>
@@ -34,7 +34,7 @@ export default {
 #homepage{
     padding-top: 30px;
     padding-bottom: 10px;
-    background-color:lightblue;
+    background-color:lightgreen;
 
 }
 #home {
