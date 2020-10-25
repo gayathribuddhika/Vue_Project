@@ -2,8 +2,8 @@
   <div>
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css" />
     <b-card-footer
-      footer-bg-variant="dark"
-      footer-border-variant="dark"
+      footer-bg-variant="success"
+      footer-border-variant="success"
       footer-text-variant="light"
     >
       <b-container class="text-center text-md-senter">
@@ -55,6 +55,7 @@
     </b-card-footer>
   </div>
 </template>
+
 <style scoped>
 .icons {
   text-align: center;

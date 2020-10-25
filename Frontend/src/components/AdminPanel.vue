@@ -5,7 +5,7 @@
         style="max-width: 18rem;"
         img-alt="Image"
         img-top
-        body-bg-variant="dark"
+        body-bg-variant="success"
         body-text-variant="white"
       >
         <center>
@@ -76,6 +76,8 @@
 
 
 <script>
+</script>
 
+<style scoped>
 
-</script>>
+</style>

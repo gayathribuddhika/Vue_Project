@@ -1,6 +1,6 @@
 <template>
   <div id="form">
-    <b-jumbotron bg-variant="light" text-variant="dark" border-variant="dark">
+    <!-- <b-jumbotron bg-variant="light" text-variant="dark" border-variant="dark"> -->
       <b-row>
         <b-col md="6">
           <h2>
@@ -80,7 +80,7 @@
           </b-col>
         </b-row>
       </b-container>
-    </b-jumbotron>
+    <!-- </b-jumbotron> -->
   </div>
 </template>
 
@@ -170,6 +170,7 @@ export default {
 <style scoped>
 #form {
   margin-top: 20px;
+  padding-bottom: 25px;
 }
 #msg {
   

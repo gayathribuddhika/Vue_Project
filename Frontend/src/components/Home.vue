@@ -34,7 +34,7 @@ export default {
 #homepage{
     padding-top: 30px;
     padding-bottom: 10px;
-    background-color:lightgreen;
+    /* background-color:lightgreen; */
 
 }
 #home {
