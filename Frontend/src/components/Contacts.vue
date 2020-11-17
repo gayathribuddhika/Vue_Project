@@ -84,7 +84,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 div.contact {
-  margin-left: 100px;
+  margin-left: 60px;
+  margin-right: 10px;
 }
 
 p.text {
