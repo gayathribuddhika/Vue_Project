@@ -40,6 +40,9 @@ app.use('/lab', labItem5);
 const store = require('./routes/stock');
 app.use('/', store);
 
+const aboutusRouter = require('./routes/department_list');
+app.use('/', aboutusRouter);
+
 const port = 8085;
 app.listen(port, () => {
     console.log('Server started on port ' + port);

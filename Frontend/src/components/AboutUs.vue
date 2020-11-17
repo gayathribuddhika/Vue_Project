@@ -9,13 +9,20 @@
             <b-col>
                 <p>The Faculty of Applied Sciences, initiated as the BAUC on 21st June 1993, offers ten degree programmes, 
                     conducted by the following five departments of study.</p>
-                <ul>
-                    <p>Department of Computing and Information Systems</p>
-                    <p>Department of Food Science and Technology</p>
+                <div v-for="department in departments" 
+                    v-bind:item="departments"
+                    v-bind:key="department._id">
+                    <ul>
+                        <li>{{department.name}}</li>
+                        
+                    </ul>
+                    
+                    
+                    <!-- <p>Department of Food Science and Technology</p>
                     <p>Department of Natural Resources</p>
                     <p>Department of Physical Sciences and Technology</p>
-                    <p>Department of Sport Sciences and Physical Education</p>
-                </ul>
+                    <p>Department of Sport Sciences and Physical Education</p> -->
+                </div>
                 <p>It aims at searching for and disseminating knowledge in the areas of learning that will make a useful contribution 
                     to the development of critical manpower requirements of the nation, contributing to education, 
                     science and technology and socio-economic uplift of the communities of the nation.</p>
@@ -29,15 +36,31 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-    
+    name: 'AbaoutUs',
+    data() {
+        return {
+        departments: []
+        }
+    },
+    mounted () {
+    axios.get('http://localhost:8085/aboutus')
+    .then((response) => {
+      console.log(response.data);
+      this.departments = response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  }
 }
 </script>
 
 <style scoped>
 #aboutus {
     padding-top: 30px;
-    padding-bottom: 300px;
     margin-left: 40px;
     margin-right: 40px;
 }
