@@ -1,12 +1,13 @@
 <template >
-  <div id="back">
-    <b-button variant="primary" v-on:click="login()">Login</b-button>
-
-    <div id="reset">
+  <div id="form">
+    <div id="back-btn">
+      <b-button variant="success" v-on:click="login()">Back to Login</b-button>
+    </div>
+    <div id="reset-form">
       <br />
       <b-jumbotron container-fluid border-variant="dark" bg-variant="light">
         <b-form>
-          <p>To reset your password, send your organization email address below. Your password reset instructions will be sent to your email address. Please check your emails.</p>
+          <p>To reset password, enter your organization email below. Your password reset instructions will be sent to your email. Please check your email once send.</p>
           <br />
           <b-form-group
             id="fieldset-horizontal"
@@ -23,7 +24,7 @@
             ></b-form-input>
           </b-form-group>
         </b-form>
-        <b-button variant="primary">SEND</b-button>
+        <b-button variant="success">SEND</b-button>
       </b-jumbotron>
     </div>
   </div>
@@ -46,9 +47,13 @@ export default {
 </script>
 
 <style scoped>
-#back {
+#reset-form {
   margin-left: 250px;
   margin-right: 250px;
+  padding-top: 25px;
+}
+#back-btn {
+  margin-left: 25px;
   padding-top: 25px;
 }
 </style>
