@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "5fb40072b881c12eec42d0f7"
+  },
+  "name": "Department of Computing and Information Systems"
+},{
+  "_id": {
+    "$oid": "5fb40072b881c12eec42d0f8"
+  },
+  "name": "Department of Food Science and Technology"
+},{
+  "_id": {
+    "$oid": "5fb40072b881c12eec42d0f9"
+  },
+  "name": "Department of Natural Resources"
+},{
+  "_id": {
+    "$oid": "5fb40072b881c12eec42d0fa"
+  },
+  "name": "Department of Physical Sciences and Technology"
+},{
+  "_id": {
+    "$oid": "5fb40072b881c12eec42d0fb"
+  },
+  "name": "Department of Sport Sciences and Physical Education"
+}]
