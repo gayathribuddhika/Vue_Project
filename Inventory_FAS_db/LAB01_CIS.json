@@ -1,0 +1,560 @@
+[{
+  "_id": {
+    "$oid": "5f70227c5395e839c085faa6"
+  },
+  "Main_Category": "Other Equipments",
+  "Asset_Description": "Fans",
+  "Serial_Num": "cislab1_000001",
+  "Asset_Code": "13500_1/2",
+  "Qty": "02",
+  "Make": "",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f70228f5395e839c085faa7"
+  },
+  "Main_Category": "Other Equipments",
+  "Asset_Description": "ACs",
+  "Serial_Num": "cislab1_000002",
+  "Asset_Code": "13600_1/2",
+  "Qty": "02",
+  "Make": "",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7022b05395e839c085faa8"
+  },
+  "Main_Category": "Other Equipments",
+  "Asset_Description": "Whiteboard",
+  "Serial_Num": "cislab1_000003",
+  "Asset_Code": "13700_1",
+  "Qty": "01",
+  "Make": "",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7022c55395e839c085faa9"
+  },
+  "Main_Category": "Other Equipments",
+  "Asset_Description": "Projector Screen",
+  "Serial_Num": "cislab1_000004",
+  "Asset_Code": "13800_1",
+  "Qty": "01",
+  "Make": "",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7022d65395e839c085faaa"
+  },
+  "Main_Category": "Other Equipments",
+  "Asset_Description": "Projector",
+  "Serial_Num": "cislab1_000005",
+  "Asset_Code": "13300_1",
+  "Qty": "01",
+  "Make": "",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7022e65395e839c085faab"
+  },
+  "Main_Category": "Other Equipments",
+  "Asset_Description": "Sound System",
+  "Serial_Num": "cislab1_000006",
+  "Asset_Code": "13400_1",
+  "Qty": "01",
+  "Make": "",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7023975395e839c085faac"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Printer",
+  "Serial_Num": "MY6951Z05",
+  "Asset_Code": "0067001",
+  "Qty": "",
+  "Make": "",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7023da5395e839c085faad"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P3P7",
+  "Asset_Code": "0064001",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7023fd5395e839c085faae"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P1L0",
+  "Asset_Code": "0064002",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f70244b5395e839c085faaf"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P309",
+  "Asset_Code": "0064003",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7024755395e839c085fab0"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P3P3",
+  "Asset_Code": "0064004",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7024a75395e839c085fab1"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345Q905",
+  "Asset_Code": "0064005",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7024bd5395e839c085fab2"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345Q206",
+  "Asset_Code": "0064006",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7025215395e839c085fab3"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC34449DY",
+  "Asset_Code": "0064007",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f70255e5395e839c085fab4"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC344Q9DQ",
+  "Asset_Code": "0064008",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7025925395e839c085fab5"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P3PB",
+  "Asset_Code": "0064009",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7025e75395e839c085fab6"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P3NH",
+  "Asset_Code": "0064010",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7025fa5395e839c085fab7"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P1LD",
+  "Asset_Code": "0064011",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f70261d5395e839c085fab8"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC344P2QN",
+  "Asset_Code": "0064012",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f70263d5395e839c085fab9"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC344Q9DW",
+  "Asset_Code": "0064013",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f70265f5395e839c085faba"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P1LM",
+  "Asset_Code": "0064014",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f70269a5395e839c085fabb"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC344Q954",
+  "Asset_Code": "0064015",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7027e15395e839c085fabc"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC344QB6J",
+  "Asset_Code": "064016",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7027fd5395e839c085fabd"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P2ZH",
+  "Asset_Code": "064017",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f70281b5395e839c085fabe"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P20F",
+  "Asset_Code": "064018",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7028315395e839c085fabf"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P1MT",
+  "Asset_Code": "064019",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7028415395e839c085fac0"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P2YR",
+  "Asset_Code": "064020",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f7028865395e839c085fac1"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC344P2QH",
+  "Asset_Code": "064021",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f702a9a5395e839c085fac2"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P1MY",
+  "Asset_Code": "064023",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f702ad45395e839c085fac3"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC344QB67",
+  "Asset_Code": "064024",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f702afd5395e839c085fac4"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC344P2N9",
+  "Asset_Code": "064025",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f702bb45395e839c085fac5"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC344QB69",
+  "Asset_Code": "064026",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f702bc95395e839c085fac6"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC344Q9RY",
+  "Asset_Code": "064027",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f702bfd5395e839c085fac7"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC341PNCX",
+  "Asset_Code": "064028",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f702c1c5395e839c085fac8"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P2NB",
+  "Asset_Code": "064029",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f702c335395e839c085fac9"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC345P2CL",
+  "Asset_Code": "064030",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f702c625395e839c085faca"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CNC344QBJ0",
+  "Asset_Code": "064031",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f702cd15395e839c085facb"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CN-OMO55F-74261-935-OLFM",
+  "Asset_Code": "064032",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f702cf05395e839c085facc"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "Y2-NN879",
+  "Asset_Code": "064033",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f709efc5395e839c085facd"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CN-OMO55F-74261-92R-5VCS",
+  "Asset_Code": "064034",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f709f5b5395e839c085face"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CN-OMO55F-74261-932-10JS",
+  "Asset_Code": "064035",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f709fc05395e839c085facf"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CN-OMO55F-74261-92R-TPDS",
+  "Asset_Code": "064036",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f709fd95395e839c085fad0"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Monitor",
+  "Serial_Num": "CN-OMO55F-74261-92M-6FPS",
+  "Asset_Code": "064037",
+  "Qty": "",
+  "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+}]
