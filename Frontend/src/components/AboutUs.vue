@@ -1,6 +1,6 @@
 <template>
     <div id="aboutus">
-        <h1><center>About Us</center></h1>
+        <h1 id="title"><center><span>Faculty of Applied Sciences</span></center></h1>
         <b-card class="mb-5" style="max-width: 800rem;">
         <b-row>
             <b-col>
@@ -17,11 +17,6 @@
                         
                     </ul>
                     
-                    
-                    <!-- <p>Department of Food Science and Technology</p>
-                    <p>Department of Natural Resources</p>
-                    <p>Department of Physical Sciences and Technology</p>
-                    <p>Department of Sport Sciences and Physical Education</p> -->
                 </div>
                 <p>It aims at searching for and disseminating knowledge in the areas of learning that will make a useful contribution 
                     to the development of critical manpower requirements of the nation, contributing to education, 
@@ -65,4 +60,7 @@ export default {
     margin-right: 40px;
 }
 
+#title {
+    color:green;
+}
 </style>

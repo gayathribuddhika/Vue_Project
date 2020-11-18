@@ -23,6 +23,12 @@
             
           </form>
         </nav>
+        <!-- <div class="overflow-auto">
+          <b-pagination v-model="currentPage"
+              :total-rows="rowtable1"
+              :per-page="perPage"
+              aria-controls="my-table"></b-pagination> -->
+        
         <b-tab title="CIS/LAB/01">
           <b-card-text>
             <center>
@@ -72,6 +78,7 @@
             </div>
           </b-card-text>
         </b-tab>
+        <!-- </div> -->
         <b-tab title="CIS/LAB/02">
           <b-card-text>
             <center>
@@ -271,7 +278,7 @@
 
 <script>
 import axios from "axios";
-import $ from 'jquery'
+import $ from 'jquery';
 
 export default {
   name: "Current_Status",
@@ -285,8 +292,8 @@ export default {
       itemsLab5: {},
 
       serial_num: "",
-      // perPage : 20
-      // currentPage = 1
+      // perPage : 5,
+      // currentPage :1
     };
   },
   created() {
@@ -297,8 +304,8 @@ export default {
     this.fetchRecord5();
   },
   // computed: {
-  //   rows() {
-  //     return this.itemsLab1.length
+  //   rowtable1() {
+  //     return this.itemsLab1.length;
   //   }
   // },
   methods: {
