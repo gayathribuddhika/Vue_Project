@@ -39,7 +39,7 @@
               <table :per-page="perPage">
                 <thead>
                   <tr>
-                    <!--<th>Item ID</th>-->
+                    <th>Item ID</th>
                     <th>Main Category</th>
                     <th>Asset Description</th>
                     <th>Qty</th>
@@ -52,7 +52,8 @@
                   </tr>
                 </thead>
                 <tbody id="itemTable">
-                  <tr v-for="item in itemsLab1" v-bind:key="item._id">
+                  <tr v-for="(item, item_id) in itemsLab1" v-bind:key="item_id">
+                    <td>{{item_id +1}}</td>
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
                     <td>{{item.Qty}}</td>
@@ -89,6 +90,7 @@
               <table>
                 <thead>
                   <tr>
+                    <th>Item ID</th>
                     <th>Main Category</th>
                     <th>Asset Description</th>
                     <th>Qty</th>
@@ -101,7 +103,8 @@
                   </tr>
                 </thead>
                 <tbody id="itemTable">
-                  <tr v-for="item in itemsLab2" v-bind:key="item._id">
+                  <tr v-for="(item, item_id) in itemsLab2" v-bind:key="item_id">
+                    <td>{{item_id +1}}</td>
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
                     <td>{{item.Qty}}</td>
@@ -137,6 +140,7 @@
               <table>
                 <thead>
                   <tr>
+                    <th>Item ID</th>
                     <th>Main Category</th>
                     <th>Asset Description</th>
                     <th>Qty</th>
@@ -149,7 +153,8 @@
                   </tr>
                 </thead>
                 <tbody id="itemTable">
-                  <tr v-for="item in itemsLab3" v-bind:key="item._id">
+                  <tr v-for="(item, item_id) in itemsLab3" v-bind:key="item_id">
+                    <td>{{item_id +1}}</td>
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
                     <td>{{item.Qty}}</td>
@@ -185,6 +190,7 @@
               <table>
                 <thead>
                   <tr>
+                    <th>Item ID</th>
                     <th>Main Category</th>
                     <th>Asset Description</th>
                     <th>Qty</th>
@@ -197,7 +203,8 @@
                   </tr>
                 </thead>
                 <tbody id="itemTable">
-                  <tr v-for="item in itemsLab4" v-bind:key="item._id">
+                  <tr v-for="(item, item_id) in itemsLab4" v-bind:key="item_id">
+                    <td>{{item_id +1}}</td>
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
                     <td>{{item.Qty}}</td>
@@ -233,6 +240,7 @@
               <table>
                 <thead>
                   <tr>
+                    <th>Item ID</th>
                     <th>Main Category</th>
                     <th>Asset Description</th>
                     <th>Qty</th>
@@ -245,7 +253,8 @@
                   </tr>
                 </thead>
                 <tbody id="itemTable">
-                  <tr v-for="item in itemsLab5" v-bind:key="item._id">
+                  <tr v-for="(item, item_id) in itemsLab5" v-bind:key="item_id">
+                    <td>{{item_id +1}}</td>
                     <td>{{item.Main_Category}}</td>
                     <td>{{item.Asset_Description}}</td>
                     <td>{{item.Qty}}</td>
