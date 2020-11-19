@@ -86,7 +86,7 @@
             <center>
               <h3>CIS/LAB/02</h3>
             </center>
-            <br />
+            <p>Number of rows : {{this.itemsLab2.length}}</p>
             <div class="table-responsive-lg">
               <table>
                 <thead>
@@ -136,7 +136,7 @@
             <center>
               <h3>CIS/LAB/03</h3>
             </center>
-            <br />
+            <p>Number of rows : {{this.itemsLab3.length}}</p>
             <div class="table-responsive-lg">
               <table>
                 <thead>
@@ -186,7 +186,7 @@
             <center>
               <h3>CIS/LAB/04</h3>
             </center>
-            <br />
+            <p>Number of rows : {{this.itemsLab4.length}}</p>
             <div class="table-responsive-lg">
               <table>
                 <thead>
@@ -236,7 +236,7 @@
             <center>
               <h3>CIS/LAB/05</h3>
             </center>
-            <br />
+            <p>Number of rows : {{this.itemsLab5.length}}</p>
             <div class="table-responsive-lg">
               <table>
                 <thead>
@@ -329,7 +329,7 @@ export default {
           console.log(response.data);
           this.itemsLab1 = response.data;
           // return itemsLab1.length;
-          console.log(this.itemsLab1.length);
+          // console.log(this.itemsLab1.length);
         })
         .catch(error => {
           console.log(error);
