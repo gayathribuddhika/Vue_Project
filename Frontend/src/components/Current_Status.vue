@@ -34,7 +34,8 @@
             <center>
               <h3>CIS/LAB/01</h3>
             </center>
-            <br />
+            <!-- <br /> -->
+            <p>Number of rows : {{this.itemsLab1.length}}</p>
             <div class="table-responsive-lg">
               <table :per-page="perPage">
                 <thead>
@@ -301,7 +302,7 @@ export default {
       itemsLab5: {},
 
       serial_num: "",
-      // perPage : 5,
+      perPage : 5,
       // currentPage :1
     };
   },
@@ -327,6 +328,8 @@ export default {
         .then(response => {
           console.log(response.data);
           this.itemsLab1 = response.data;
+          // return itemsLab1.length;
+          console.log(this.itemsLab1.length);
         })
         .catch(error => {
           console.log(error);

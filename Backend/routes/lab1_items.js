@@ -91,6 +91,7 @@ router.get("/lab1/count", function (req, res) {
     Item.count({}, function (err, result) {
         if (err) {
             res.send(err);
+            console.log(res);
         }
         else {
             res.json(result);
