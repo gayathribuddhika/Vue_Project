@@ -39,17 +39,17 @@ router.post('/lab1', function (req, res) {
     });
     item.save()
         .then(() => {
-            res.status(200).send('Record is saved Successfully');
+            res.status(200).send('Successfully Added');
         })
         .catch(() => {
-            res.status(400).send("Unable to save to database");
+            res.status(400).send("Unable to save to Database");
         });
 });
 
 router.delete('/lab1/delete/:id', function (req, res) {               //can also use findByIdAndRemove
     Item.findOneAndDelete({ _id: req.params.id }, function (err) {
         if (err) res.json(err);
-        else res.json('Successfully removed');
+        else res.json('Successfully Deleted');
     });
 });
 
@@ -78,7 +78,7 @@ router.post('/lab1/update/:id', function (req, res) {
             item.Condition = req.body.Condition;
             item.Comments = req.body.Comments;
             item.save().then(() => {
-                res.json('Update is Completed');
+                res.json('Successfully Updated');
             })
                 .catch(() => {
                     res.status(400).send("Unable to update the DB");
