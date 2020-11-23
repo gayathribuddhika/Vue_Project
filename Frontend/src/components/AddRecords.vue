@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="btn">
-      <b-button squared variant="dark" to="/adminpanel">Back</b-button>
-      <b-button squared variant="dark" to="/adminpanel/currentstatus">Current Details</b-button>
+      <b-button squared variant="dark" to="/admindashboard">Back</b-button>
+      <b-button squared variant="dark" to="/admindashboard/currentstatus">Current Details</b-button>
     </div>
     
     <center>

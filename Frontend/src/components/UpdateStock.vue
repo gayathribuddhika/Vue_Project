@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="btn">
-      <b-button squared variant="dark" to="/adminpanel/stockdetails">Back</b-button>
+      <b-button squared variant="dark" to="/admindashboard/stockdetails">Back</b-button>
     </div>
     <div class="row justify-content-center">
       <div class="col-sm-6">

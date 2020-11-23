@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="btn">
-      <b-button squared variant="dark" to="/adminpanel">Back</b-button>
-      <b-button squared variant="dark" to="/adminpanel/addrecords">Add Records</b-button>
-      <b-button squared variant="dark" to="/adminpanel/summarydetails" align="right">Details Summary Report</b-button>
+      <b-button squared variant="dark" to="/admindashboard">Back</b-button>
+      <b-button squared variant="dark" to="/admindashboard/addrecords">Add Records</b-button>
+      <b-button squared variant="dark" to="/admindashboard/summarydetails" align="right">Details Summary Report</b-button>
     </div>
     <b-card no-body>
       <br />

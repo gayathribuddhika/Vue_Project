@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="btn">
-      <b-button squared variant="dark" to="/adminpanel">Back</b-button>
-      <b-button squared variant="dark" to="/adminpanel/stockdetails">Show Stock Details</b-button>
+      <b-button squared variant="dark" to="/admindashboard">Back</b-button>
+      <b-button squared variant="dark" to="/admindashboard/stockdetails">Show Stock Details</b-button>
     </div>
     <div class="row justify-content-center">
       <div class="col-sm-6">

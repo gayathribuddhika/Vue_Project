@@ -2,7 +2,7 @@
   <div>
     
     <div class="btn">
-      <b-button squared variant="dark" to="/adminpanel">Back</b-button>
+      <b-button squared variant="dark" to="/admindashboard">Back</b-button>
     </div>
     <b-card no-body>
       <b-tabs pills card vertical>

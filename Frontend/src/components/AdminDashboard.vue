@@ -20,14 +20,14 @@
         <b-list-group variant="dark">
           <div>
             <b-list-group-item variant="dark" active>Dashboard</b-list-group-item>
-            <b-list-group-item variant="dark" to="adminpanel/currentstatus">Current Details - Items</b-list-group-item>
-            <b-list-group-item variant="dark" to="adminpanel/summarydetails">Current Details - Summary </b-list-group-item>
-            <b-list-group-item variant="dark" to="adminpanel/addrecords" >Add a new Record</b-list-group-item>
-            <b-list-group-item variant="dark" to="adminpanel/currentstatus">Delete a Record</b-list-group-item>
-            <b-list-group-item variant="dark" to="adminpanel/currentstatus">Update/Edit a Record</b-list-group-item>
-            <b-list-group-item variant="dark" to="adminpanel/stockdetails">Stock Details</b-list-group-item>
-            <b-list-group-item variant="dark" to="adminpanel/reports">Create a Report</b-list-group-item>
-            <b-list-group-item variant="dark" to="adminpanel/profile">Edit Profile</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/currentstatus">Current Details - Items</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/summarydetails">Current Details - Summary </b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/addrecords" >Add a new Record</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/currentstatus">Delete a Record</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/currentstatus">Update/Edit a Record</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/stockdetails">Stock Details</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/reports">Create a Report</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/profile">Edit Profile</b-list-group-item>
             <b-list-group-item variant="dark" to="login">Logout</b-list-group-item>
           </div>
         </b-list-group>
@@ -78,7 +78,7 @@
 
 
 <script>
-import currentstatus from './Current_Status';
+
 </script>
 
 <style scoped>

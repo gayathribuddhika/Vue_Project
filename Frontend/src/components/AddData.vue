@@ -83,7 +83,7 @@ export default {
       axios
         .post(apiURL, this.form)
         .then(() => {
-          this.$router.push("/adminpanel/currentstatus");
+          this.$router.push("/admindashboard/currentstatus");
           this.form = {
             Select_LAB: this.form.select_lab,
         Main_Category: this.form.category,

@@ -5,7 +5,7 @@ import Contacts from '@/components/Contacts'
 import AboutUs from '@/components/AboutUs'
 import Login from '@/components/Login'
 import Home from '@/components/Home'
-import AdminPanel from '@/components/AdminPanel'
+import AdminDashboard from '@/components/AdminDashboard'
 import StaffPanel from '@/components/StaffPanel'
 import current_status from '@/components/Current_Status'
 import AddRecords from '@/components/AddRecords'
@@ -20,6 +20,7 @@ import UpdateStock from '@/components/UpdateStock'
 import AddStockDetails from '@/components/AddStockDetails'
 import SummaryDetails from '@/components/SummaryDetails'
 import Reports from '@/components/Reports'
+// import Header from '@/components/Header'
 
 import Login1 from '@/components/Login1';
 
@@ -49,9 +50,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/adminpanel',
-      name: "AdminPanel",
-      component: AdminPanel
+      path: '/admindashboard',
+      name: "AdminDashboard",
+      component: AdminDashboard
     },
     {
       path: '/staffpanel',
@@ -59,17 +60,17 @@ export default new Router({
       component: StaffPanel
     },
     {
-      path: '/adminpanel/currentstatus',
+      path: '/admindashboard/currentstatus',
       name: "Current_Status",
       component: current_status
     },
     {
-      path: '/adminpanel/addrecords',
+      path: '/admindashboard/addrecords',
       name: "AddRecords",
       component: AddRecords
     },
     {
-      path: '/adminpanel/profile',
+      path: '/admindashboard/profile',
       name: "AdminProfile",
       component: AdminProfile
     },
@@ -99,27 +100,27 @@ export default new Router({
       component: AddData
     },
     {
-      path: '/adminpanel/stockdetails',
+      path: '/admindashboard/stockdetails',
       name: "StockDetails",
       component: StockDetails
     },
     {
-      path: '/adminpanel/stockdetails/edit-stock/:id',
+      path: '/admindashboard/stockdetails/edit-stock/:id',
       name: "edit",
       component: UpdateStock
     },
     {
-      path: '/adminpanel/stockdetails/add-details',
+      path: '/admindashboard/stockdetails/add-details',
       name: "AddStockDetails",
       component: AddStockDetails
     },
     {
-      path: '/adminpanel/summarydetails',
+      path: '/admindashboard/summarydetails',
       name: "SummaryDetails",
       component: SummaryDetails
     },
     {
-      path: '/adminpanel/reports',
+      path: '/admindashboard/reports',
       name: "Reports",
       component: Reports
     },

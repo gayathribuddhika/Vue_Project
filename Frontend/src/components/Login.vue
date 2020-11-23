@@ -129,7 +129,7 @@ export default {
       
       axios.post('http://localhost:8085/adminlogin', newLogin).then((resposne) => {
         console.log(resposne);
-        this.$router.push({name: "AdminPanel"});
+        this.$router.push({name: "AdminDashboard"});
       })
     //   .catch((error) =>{
     //     console.log(error);
