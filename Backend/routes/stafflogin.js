@@ -24,7 +24,7 @@ router.post('/stafflogin', function (req, res) {
             return res.status(500).send();
         }
         if(!staff){
-            return res.status(404).send("User not Found");
+            return res.status(400).send("Invalid username or password");
         }
         return res.status(200).send("Login Successfull");
     })

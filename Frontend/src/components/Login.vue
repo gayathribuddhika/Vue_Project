@@ -18,25 +18,25 @@
           <b-col md="6">
             <div>
               <b-card bg-variant text-variant="dark" border-variant="dark">
-                <b-form @submit.prevent="login1">
-                  <center><p id="msg" v-if="submit_adminlogin === 'error'">Invalid Username or Password</p></center>
-                  <b-form-group label="Username:" label-for="username1">
+                <b-form @submit.prevent="adminlogin">
+                  <center><p id="msg" v-if="submit_adminlogin === 'error'">{{err_msg}}</p></center>
+                  <b-form-group label="Username:" label-for="admin_username">
                     <b-form-input
-                      id="username1"
+                      id="admin_username"
                       placeholder="Enter your username"
                       required
-                      v-model="form1.username1"
+                      v-model="admin_form.admin_username"
                       
                     />
                   </b-form-group>
 
-                  <b-form-group label="Password:" label-for="password1">
+                  <b-form-group label="Password:" label-for="admin_password">
                     <b-form-input
-                      id="password1"
+                      id="admin_password"
                       type="password"
                       placeholder="Enter your password"
                       required
-                      v-model="form1.password1"
+                      v-model="admin_form.admin_password"
                       
                     />
                     <br />
@@ -51,24 +51,24 @@
           <b-col md="6">
             <div>
               <b-card bg-variant text-variant="dark" border-variant="dark">
-                <b-form @submit.prevent="login2">
-                  <center><p id="msg" v-if="submit_stafflogin === 'error'">Invalid Username or Password</p></center>
-                  <b-form-group label="Username:" label-for="username2">
+                <b-form @submit.prevent="stafflogin">
+                  <center><p id="msg" v-if="submit_stafflogin === 'error'">{{err_msg}}</p></center>
+                  <b-form-group label="Username:" label-for="staff_username">
                     <b-form-input
-                      id="username2"
+                      id="staff_username"
                       placeholder="Enter your username"
                       required
-                      v-model="form2.username2"
+                      v-model="staff_form.staff_username"
                     />
                   </b-form-group>
 
-                  <b-form-group label="Password:" label-for="password2">
+                  <b-form-group label="Password:" label-for="staff_password">
                     <b-form-input
-                      id="password2"
+                      id="staff_password"
                       type="password"
                       placeholder="Enter your password"
                       required
-                      v-model="form2.password2"
+                      v-model="staff_form.staff_password"
                     />
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
@@ -92,27 +92,27 @@ export default {
   name: "Login",
   data() {
     return {
-      form1: {
-        username1: "",
-        password1: "",
+      admin_form: {
+        admin_username: "",
+        admin_password: "",
         
       },
-
-      form2: {
-        username2: "",
-        password2: ""
+      staff_form: {
+        staff_username: "",
+        staff_password: ""
       },
-
       submit_adminlogin: null,
-      submit_stafflogin: null
+      submit_stafflogin: null,
+
+      err_msg: "Invalid Username or Password"
     };
   },
 
   methods: {
-    login1() {
+    adminlogin() {
       let newLogin = {
-        username:this.form1.username1,
-        password:this.form1.password1       
+        username:this.admin_form.admin_username,
+        password:this.admin_form.admin_password       
       };
       console.log(newLogin);
       
@@ -123,30 +123,27 @@ export default {
       })
       .catch((error) =>{
         console.log(error);
-        console.log("Invalid Username or Password");
+        console.log(this.err_msg);
         this.submit_adminlogin = "error";
       })
     },
-    login2() {
+    stafflogin() {
       let newLogin = {
-        username:this.form2.username2,
-        password:this.form2.password2      
+        username:this.staff_form.staff_username,
+        password:this.staff_form.staff_password      
       };
       console.log(newLogin);
       
       axios.post('http://localhost:8085/stafflogin', newLogin).then((resposne) => {
         console.log(resposne);
+        this.submit_stafflogin = "ok";
         this.$router.push({name: "StaffPanel"});
       })
-    //   .catch((error) =>{
-    //     console.log(error);
-    //     //alert("Username or Password is incorrect");
-    //     this.submitted2 = "pending";
-    //       setTimeout(() => {
-    //         this.submitted2 = "error";
-    //       }, 500);
-        
-    //   })
+      .catch((error) =>{
+        console.log(error);
+        console.log(this.err_msg);
+        this.submit_stafflogin = "error";
+      })
     }
   }
 }
