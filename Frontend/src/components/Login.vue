@@ -2,7 +2,7 @@
   <div id="form">
     <!-- <b-jumbotron bg-variant="light" text-variant="dark" border-variant="dark"> -->
       <b-row>
-        <b-col md="6">
+        <b-col  md="6">
           <h2>
             <center>Admin Login</center>
           </h2>
@@ -19,7 +19,7 @@
             <div>
               <b-card bg-variant text-variant="dark" border-variant="dark">
                 <b-form @submit.prevent="login1">
-                  <center><p id="msg" v-if="submitted1 === 'error'">You entered Username or Password is Incorrect</p></center>
+                  <center><p id="msg" v-if="submit_adminlogin === 'error'">Invalid Username or Password</p></center>
                   <b-form-group label="Username:" label-for="username1">
                     <b-form-input
                       id="username1"
@@ -42,7 +42,7 @@
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
                   </b-form-group>
-                  <b-button type="submit" variant="success" :disabled="submitted1 === 'pending'">Login</b-button>
+                  <b-button type="submit" variant="success" :disabled="submit_adminlogin === 'ok'">Login</b-button>
                 </b-form>
               </b-card>
             </div>
@@ -52,7 +52,7 @@
             <div>
               <b-card bg-variant text-variant="dark" border-variant="dark">
                 <b-form @submit.prevent="login2">
-                  <center><p id="msg" v-if="submitted2 === 'error'">You entered Username or Password is Incorrect</p></center>
+                  <center><p id="msg" v-if="submit_stafflogin === 'error'">Invalid Username or Password</p></center>
                   <b-form-group label="Username:" label-for="username2">
                     <b-form-input
                       id="username2"
@@ -73,7 +73,7 @@
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
                   </b-form-group>
-                  <b-button type="submit" variant="success" :disabled="submitted2 === 'pending'">Login</b-button>
+                  <b-button type="submit" variant="success" :disabled="submit_stafflogin === 'ok'">Login</b-button>
                 </b-form>
               </b-card>
             </div>
@@ -103,21 +103,10 @@ export default {
         password2: ""
       },
 
-      submitted1: null,
-      submitted2: null
+      submit_adminlogin: null,
+      submit_stafflogin: null
     };
   },
-
-//   validations: {
-//     form1: {
-//       username1: { required },
-//       password1: { required }
-//     },
-//     form2: {
-//       username2: { required },
-//       password2: { required }
-//     }
-//   },
 
   methods: {
     login1() {
@@ -129,17 +118,14 @@ export default {
       
       axios.post('http://localhost:8085/adminlogin', newLogin).then((resposne) => {
         console.log(resposne);
+        this.submit_adminlogin = "ok";
         this.$router.push({name: "AdminDashboard"});
       })
-    //   .catch((error) =>{
-    //     console.log(error);
-    //     //alert("Username or Password is incorrect");
-    //     this.submitted1 = "pending";
-    //       setTimeout(() => {
-    //         this.submitted1 = "error";
-    //       }, 500);
-        
-    //   })
+      .catch((error) =>{
+        console.log(error);
+        console.log("Invalid Username or Password");
+        this.submit_adminlogin = "error";
+      })
     },
     login2() {
       let newLogin = {

@@ -5,11 +5,11 @@ const adminSchema = new Schema({
     
     username: {
         type: String,
-        //required:[true,"Username is required"]
+        required:[true,"Username is required"]
     },
     password: {
         type: String,
-        //required:[true,"Username is required"]
+        required:[true,"Password is required"]
     },
     email: {
         type: String
