@@ -150,7 +150,7 @@ export default {
       
       axios.post('http://localhost:8085/stafflogin', newLogin).then((resposne) => {
         console.log(resposne);
-        this.$router.push({name: "StaffPanel"});
+        this.$router.push({name: "StaffDashboard"});
       })
       .catch((error) =>{
         console.log(error);

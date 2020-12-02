@@ -6,7 +6,7 @@ import AboutUs from '@/components/AboutUs'
 import Login from '@/components/Login'
 import Home from '@/components/Home'
 import AdminDashboard from '@/components/AdminDashboard'
-import StaffPanel from '@/components/StaffPanel'
+import StaffDashboard from '@/components/StaffDashboard'
 import current_status from '@/components/Current_Status'
 import AddRecords from '@/components/AddRecords'
 import AdminProfile from '@/components/AdminProfile'
@@ -55,9 +55,9 @@ export default new Router({
       component: AdminDashboard
     },
     {
-      path: '/staffpanel',
-      name: "StaffPanel",
-      component: StaffPanel
+      path: '/staffdashboard',
+      name: "StaffDashboard",
+      component: StaffDashboard
     },
     {
       path: '/admindashboard/currentstatus',
@@ -75,7 +75,7 @@ export default new Router({
       component: AdminProfile
     },
     {
-      path: '/staffpanel/profile',
+      path: '/staffdashboard/profile',
       name: "StaffProfile",
       component: StaffProfile
     },

@@ -20,7 +20,7 @@
         <b-list-group variant="dark">
           <div>
             <b-list-group-item variant="dark">Dashboard</b-list-group-item>
-            <b-list-group-item variant="dark" to="staffpanel/currentstatus">
+            <b-list-group-item variant="dark" to="StaffDashboard/currentstatus">
               Current Status
             </b-list-group-item>
             <b-list-group-item variant="dark">
