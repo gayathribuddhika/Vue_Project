@@ -18,31 +18,31 @@
           <b-col md="6">
             <div>
               <b-card bg-variant text-variant="dark" border-variant="dark">
-                <b-form @submit.prevent="adminlogin">
-                  <center><p id="msg" v-if="submit_adminlogin === 'error'">{{err_msg}}</p></center>
-                  <b-form-group label="Username:" label-for="admin_username">
+                <b-form @submit.prevent="login">
+                  <center><p id="msg" v-if="submit_login === 'error'">{{err_msg}}</p></center>
+                  <b-form-group label="Username:" label-for="username">
                     <b-form-input
-                      id="admin_username"
+                      id="username"
                       placeholder="Enter your username"
                       required
-                      v-model="admin_form.admin_username"
+                      v-model="login_form.username"
                       
                     />
                   </b-form-group>
 
-                  <b-form-group label="Password:" label-for="admin_password">
+                  <b-form-group label="Password:" label-for="password">
                     <b-form-input
-                      id="admin_password"
+                      id="password"
                       type="password"
                       placeholder="Enter your password"
                       required
-                      v-model="admin_form.admin_password"
+                      v-model="login_form.password"
                       
                     />
                     <br />
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
                   </b-form-group>
-                  <b-button type="submit" variant="success" :disabled="submit_adminlogin === 'ok'">Login</b-button>
+                  <b-button type="submit" variant="success" :disabled="submit_login === 'ok'">Login</b-button>
                   <!-- <center><p>Not Admin <router-link to="#">Login here</router-link></p></center> -->
                 </b-form>
               </b-card>
@@ -95,20 +95,25 @@ export default {
     return {
       login_form: {
         username: "",
-        password: ""
+        password: "",
+        user_type: ""
       },
-      user_type: [],
+      // user: [],
+
+      submit_login: null,
       
-      mounted () {
-        axios.get('http://localhost:8085/login')
-        .then((response) => {
-          console.log(response.data);
-          this.user_type = response.data;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-      },
+      // mounted () {
+      //   axios.get('http://localhost:8085/login')
+      //   .then((response) => {
+      //     console.log(response.data);
+      //     this.user_type = response.data;
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
+      // },
+
+
       // admin_form: {
       //   admin_username: "",
       //   admin_password: "",
@@ -124,10 +129,47 @@ export default {
       err_msg: "Invalid Username or Password"
     };
   },
+  
+  created() {
+    this.read_user_type();
+  },
 
   methods: {
-    login() {
+    read_user_type() {
+      let uri = `http://localhost:8085/login`;
+      axios.get(uri).then(response => {
+          this.login_form.user_type = response.data;
+          console.log(this.login_form.user_type);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
 
+    login() {
+      let newLogin = {
+        username:this.login_form.username,
+        password:this.login_form.password,
+        user_type: this.read_user_type()
+      };
+      console.log(newLogin);
+      
+      axios.post('http://localhost:8085/login', newLogin).then((resposne) => {
+        console.log(resposne);
+        this.submit_login = "ok";
+        
+        if(this.user_type == 'admin') {
+          this.$router.push({name: "AdminDashboard"});
+        } 
+        if (this.user_type == 'staff') {
+          this.$router.push({name: "StaffDashboard"});
+        }
+      })
+      .catch((error) =>{
+        console.log(error);
+        console.log(this.err_msg);
+        this.submit_login = "error";
+      })
     }
     // adminlogin() {
     //   let newLogin = {

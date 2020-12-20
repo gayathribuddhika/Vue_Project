@@ -14,6 +14,16 @@ router.get('/login', (req, res) => {
     });
 });
 
+// router.get('/login/:id', function (req, res) {
+//     let id = req.params.id;
+//     Login.findById(id, function (err, login) {
+//         if (err) {
+//             res.json(err);
+//         }
+//         res.json(login);
+//     });
+// });
+
 router.post('/login', function (req, res) {
     var username = req.body.username;
     var password = req.body.username;
