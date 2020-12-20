@@ -7,11 +7,11 @@
             <center>Admin Login</center>
           </h2>
         </b-col>
-        <b-col md="6">
+        <!-- <b-col md="6">
           <h2>
             <center>Staff Login</center>
           </h2>
-        </b-col>
+        </b-col> -->
       </b-row>
       <b-container fluid>
         <b-row>
@@ -43,12 +43,13 @@
                     <router-link to="/login/resetpassword">Forgot your password?</router-link>
                   </b-form-group>
                   <b-button type="submit" variant="success" :disabled="submit_adminlogin === 'ok'">Login</b-button>
+                  <!-- <center><p>Not Admin <router-link to="#">Login here</router-link></p></center> -->
                 </b-form>
               </b-card>
             </div>
           </b-col>
 
-          <b-col md="6">
+          <!-- <b-col md="6">
             <div>
               <b-card bg-variant text-variant="dark" border-variant="dark">
                 <b-form @submit.prevent="stafflogin">
@@ -77,7 +78,7 @@
                 </b-form>
               </b-card>
             </div>
-          </b-col>
+          </b-col> -->
         </b-row>
       </b-container>
     <!-- </b-jumbotron> -->
@@ -92,59 +93,78 @@ export default {
   name: "Login",
   data() {
     return {
-      admin_form: {
-        admin_username: "",
-        admin_password: "",
+      login_form: {
+        username: "",
+        password: ""
+      },
+      user_type: [],
+      
+      mounted () {
+        axios.get('http://localhost:8085/login')
+        .then((response) => {
+          console.log(response.data);
+          this.user_type = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      },
+      // admin_form: {
+      //   admin_username: "",
+      //   admin_password: "",
         
-      },
-      staff_form: {
-        staff_username: "",
-        staff_password: ""
-      },
-      submit_adminlogin: null,
-      submit_stafflogin: null,
+      // },
+      // staff_form: {
+      //   staff_username: "",
+      //   staff_password: ""
+      // },
+      // submit_adminlogin: null,
+      // submit_stafflogin: null,
 
       err_msg: "Invalid Username or Password"
     };
   },
 
   methods: {
-    adminlogin() {
-      let newLogin = {
-        username:this.admin_form.admin_username,
-        password:this.admin_form.admin_password       
-      };
-      console.log(newLogin);
-      
-      axios.post('http://localhost:8085/adminlogin', newLogin).then((resposne) => {
-        console.log(resposne);
-        this.submit_adminlogin = "ok";
-        this.$router.push({name: "AdminDashboard"});
-      })
-      .catch((error) =>{
-        console.log(error);
-        console.log(this.err_msg);
-        this.submit_adminlogin = "error";
-      })
-    },
-    stafflogin() {
-      let newLogin = {
-        username:this.staff_form.staff_username,
-        password:this.staff_form.staff_password      
-      };
-      console.log(newLogin);
-      
-      axios.post('http://localhost:8085/stafflogin', newLogin).then((resposne) => {
-        console.log(resposne);
-        this.submit_stafflogin = "ok";
-        this.$router.push({name: ""});
-      })
-      .catch((error) =>{
-        console.log(error);
-        console.log(this.err_msg);
-        this.submit_stafflogin = "error";
-      })
+    login() {
+
     }
+    // adminlogin() {
+    //   let newLogin = {
+    //     username:this.admin_form.admin_username,
+    //     password:this.admin_form.admin_password       
+    //   };
+    //   console.log(newLogin);
+      
+    //   axios.post('http://localhost:8085/adminlogin', newLogin).then((resposne) => {
+    //     console.log(resposne);
+    //     this.submit_adminlogin = "ok";
+    //     this.$router.push({name: "AdminDashboard"});
+    //   })
+    //   .catch((error) =>{
+    //     console.log(error);
+    //     console.log(this.err_msg);
+    //     this.submit_adminlogin = "error";
+    //   })
+    // },
+    // stafflogin() {
+    //   let newLogin = {
+    //     username:this.staff_form.staff_username,
+    //     password:this.staff_form.staff_password      
+    //   };
+    //   console.log(newLogin);
+      
+    //   axios.post('http://localhost:8085/stafflogin', newLogin).then((resposne) => {
+    //     console.log(resposne);
+    //     this.submit_stafflogin = "ok";
+    //     this.$router.push({name: "StaffDashboard"});
+    //   })
+    //   .catch((error) =>{
+    //     console.log(error);
+    //     console.log(this.err_msg);
+    //     this.submit_stafflogin = "error";
+    //   })
+    // }
   }
 }
 </script>

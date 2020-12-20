@@ -16,6 +16,9 @@ require('./config/db');
 const contactRouter = require('./routes/contact');
 app.use('/', contactRouter);
 
+const loginRouter = require('./routes/login');
+app.use('/', loginRouter);
+
 const staffloginRouter = require('./routes/stafflogin');
 app.use('/', staffloginRouter);
 
