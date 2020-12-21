@@ -130,27 +130,28 @@ export default {
     };
   },
   
-  created() {
-    this.read_user_type();
-  },
-
-  methods: {
-    read_user_type() {
+  // created() {
+  //   this.read_user_type();
+  // },
+  mounted() {
+    
       let uri = `http://localhost:8085/login`;
       axios.get(uri).then(response => {
-          this.login_form.user_type = response.data;
-          console.log(this.login_form.user_type);
+          this.login_form= response.data;
+          console.log(this.login_form); //ok
         })
         .catch(err => {
           console.log(err);
         });
-    },
+    
+  },
 
+  methods: {
     login() {
       let newLogin = {
         username:this.login_form.username,
         password:this.login_form.password,
-        user_type: this.read_user_type()
+        // user_type: this.login_form.user_type //undefined
       };
       console.log(newLogin);
       
@@ -158,10 +159,10 @@ export default {
         console.log(resposne);
         this.submit_login = "ok";
         
-        if(this.user_type == 'admin') {
+        if(this.login_form.user_type == 'admin') {
           this.$router.push({name: "AdminDashboard"});
         } 
-        if (this.user_type == 'staff') {
+        if (this.login_form.user_type == 'staff') {
           this.$router.push({name: "StaffDashboard"});
         }
       })

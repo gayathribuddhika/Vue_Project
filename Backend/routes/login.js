@@ -27,9 +27,9 @@ router.get('/login', (req, res) => {
 router.post('/login', function (req, res) {
     var username = req.body.username;
     var password = req.body.username;
-    var user_type = req.body.user_type;
+    // var user_type = req.body.user_type;
 
-    Login.findOne({username:username, password:password, user_type:user_type}, function(err, login) {
+    Login.findOne({username:username, password:password}, function(err, login) {
         if (err) {
             console.log(err);
             return res.status(500).send();
