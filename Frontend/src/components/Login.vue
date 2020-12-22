@@ -151,7 +151,7 @@ export default {
       let newLogin = {
         username:this.login_form.username,
         password:this.login_form.password,
-        // user_type: this.login_form.user_type //undefined
+        user_type: this.login_form.user_type //undefined
       };
       console.log(newLogin);
       
