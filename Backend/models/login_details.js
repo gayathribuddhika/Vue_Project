@@ -13,7 +13,11 @@ const loginSchema = new Schema({
     },
     user_type: {
         type: String
-    }
+    },
+    // email: {
+    //     type: String,
+    //     reruired: [true, "Email is required"]
+    // }
 }, 
     {collection: "Login"}
 );
