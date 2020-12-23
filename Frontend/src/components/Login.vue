@@ -96,7 +96,7 @@ export default {
       login_form: {
         username: "",
         password: "",
-        user_type: ""
+        user_type: null
       },
       // user: [],
 
@@ -135,9 +135,9 @@ export default {
   // },
   mounted() {
     
-      let uri = `http://localhost:8085/login`;
-      axios.get(uri).then(response => {
-          this.login_form= response.data;
+      // let uri = `http://localhost:8085/login`;
+      axios.get("http://localhost:8085/login").then(response => {
+          this.login_form = response.data;
           console.log(this.login_form); //ok
         })
         .catch(err => {
@@ -151,16 +151,17 @@ export default {
       let newLogin = {
         username:this.login_form.username,
         password:this.login_form.password,
-        user_type: this.login_form.user_type //undefined
+        // user_type: this.login_form.user_type //undefined
       };
       console.log(newLogin);
       
       axios.post('http://localhost:8085/login', newLogin).then((resposne) => {
         console.log(resposne);
+        console.log(this.login_form.user_type);
         this.submit_login = "ok";
         
         if(this.login_form.user_type == 'admin') {
-          this.$router.push({name: "AdminDashboard"});
+         this.$router.push({name: "AdminDashboard"});
         } 
         if (this.login_form.user_type == 'staff') {
           this.$router.push({name: "StaffDashboard"});

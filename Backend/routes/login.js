@@ -6,39 +6,31 @@ const Login = require("../models/login_details")
 router.use(cors())
 
 router.get('/login', (req, res) => {
-    Login.find(function (err, login) {
+    Login.find(function (err, user_type) {
         if (err) {
             res.json(err);
         }
-        res.json(login);
+        res.json(user_type);
     });
 });
 
-// router.get('/login/:id', function (req, res) {
-//     let id = req.params.id;
-//     Login.findById(id, function (err, login) {
-//         if (err) {
-//             res.json(err);
-//         }
-//         res.json(login);
-//     });
-// });
-
 router.post('/login', function (req, res) {
     var username = req.body.username;
-    var password = req.body.username;
-    var user_type = req.body.user_type;
+    var password = req.body.password;
+    // var user_type = req.body.user_type;
     console.log(req.body); //ok
 
-    Login.findOne({username:username, password:password, user_type:user_type}, function(err, login) {
+    Login.findOne({username:username, password:password}, function(err, login) {
+        console.log(login);
         if (err) {
             console.log(err);
             return res.status(500).send();
         }
         if(!login){
-            return res.status(400).send("Invalid username or password");
+            return res.status(400).send("Invalid Login Details");
         }
         return res.status(200).send("Login Successfull");
+        
     })
 })
 

@@ -7,6 +7,7 @@ router.use(cors())
 
 router.get('/lab1', (req, res) => {
     Item.find(function (err, items) {
+        console.log(items);
         if (err) {
             res.json(err);
         }
