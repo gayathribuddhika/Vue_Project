@@ -6,11 +6,11 @@ const Login = require("../models/login_details")
 router.use(cors())
 
 router.get('/login', (req, res) => {
-    Login.find(function (err, user_type) {
+    Login.find(function (err, login) {
         if (err) {
             res.json(err);
         }
-        res.json(user_type);
+        res.json(login);
     });
 });
 
