@@ -96,75 +96,44 @@ export default {
       login_form: {
         username: "",
         password: "",
-        user_type: null
+        user_type: ""
       },
-      // user: [],
+      users: [],
 
       submit_login: null,
-      
-      // mounted () {
-      //   axios.get('http://localhost:8085/login')
-      //   .then((response) => {
-      //     console.log(response.data);
-      //     this.user_type = response.data;
-      //   })
-      //   .catch((error) => {
-      //     console.log(error);
-      //   });
-      // },
-
-
-      // admin_form: {
-      //   admin_username: "",
-      //   admin_password: "",
-        
-      // },
-      // staff_form: {
-      //   staff_username: "",
-      //   staff_password: ""
-      // },
-      // submit_adminlogin: null,
-      // submit_stafflogin: null,
-
       err_msg: "Invalid Username or Password"
     };
   },
   
-  // created() {
-  //   this.read_user_type();
+  // mounted() {
+  //   axios.get("http://localhost:8085/login").then(response => {
+  //     this.users = response.data;
+  //       console.log(this.users); //ok
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
   // },
-  mounted() {
-    
-      // let uri = `http://localhost:8085/login`;
-      axios.get("http://localhost:8085/login").then(response => {
-          this.login_form = response.data;
-          console.log(this.login_form); //ok
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    
-  },
 
   methods: {
     login() {
       let newLogin = {
         username:this.login_form.username,
         password:this.login_form.password,
-        // user_type: this.login_form.user_type //undefined
       };
       console.log(newLogin);
       
       axios.post('http://localhost:8085/login', newLogin).then((resposne) => {
         console.log(resposne);
-        console.log(this.login_form.user_type);
-        this.submit_login = "ok";
-        
-        if(this.login_form.user_type == 'admin') {
-         this.$router.push({name: "AdminDashboard"});
-        } 
-        if (this.login_form.user_type == 'staff') {
-          this.$router.push({name: "StaffDashboard"});
+
+        if(this.submit_login = "ok"){
+          this.login_form.user_type = "admin";
+          if(this.login_form.user_type == 'admin') {
+            this.$router.push({name: "AdminDashboard"});
+          } 
+          if (this.login_form.user_type == 'staff') {
+            this.$router.push({name: "StaffDashboard"});
+          }
         }
       })
       .catch((error) =>{
