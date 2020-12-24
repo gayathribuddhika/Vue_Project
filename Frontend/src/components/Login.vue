@@ -1,17 +1,17 @@
 <template>
   <div id="form">
     <h2>
-      <center>Admin Login</center>
+      <center>Login</center>
     </h2>
 
     <b-container fluid>
-      <div>
+      <div class="login_form">
         <center>
           <b-card
             bg-variant
             text-variant="dark"
             border-variant="dark"
-            style="max-width: 40rem;"
+            style="max-width: 30rem;"
             align="left"
           >
             <b-form @submit.prevent="login">
@@ -40,12 +40,14 @@
                   >Forgot your password?</router-link
                 >
               </b-form-group>
+              <center>
               <b-button
                 type="submit"
-                variant="success"
+                block variant="success"
                 :disabled="submit_login === 'ok'"
                 >Login</b-button
               >
+              </center>
             </b-form>
           </b-card>
         </center>
@@ -134,4 +136,5 @@ export default {
   font-size: 15px;
   color: red;
 }
+
 </style>
