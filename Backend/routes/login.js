@@ -30,7 +30,7 @@ router.post('/login', function (req, res) {
             return res.status(400).send("Invalid Login Details");
         }
         return res.status(200).send("Login Successfull");
-        
+        // return res.send(login.user_type);
     })
 })
 

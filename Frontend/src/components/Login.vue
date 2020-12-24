@@ -105,15 +105,15 @@ export default {
     };
   },
   
-  // mounted() {
-  //   axios.get("http://localhost:8085/login").then(response => {
-  //     this.users = response.data;
-  //       console.log(this.users); //ok
-  //   })
-  //   .catch(err => {
-  //     console.log(err);
-  //   });
-  // },
+  mounted() {
+    axios.get("http://localhost:8085/login").then(response => {
+      this.users = response.data;
+        console.log(this.users); //ok
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  },
 
   methods: {
     login() {
@@ -128,7 +128,8 @@ export default {
 
         if(this.submit_login = "ok"){
           this.login_form.user_type = "admin";
-          if(this.login_form.user_type == 'admin') {
+          
+          if(this.users.username == newLogin.username && this.users.password == newLogin.password && this.login_form.user_type == 'admin') {
             this.$router.push({name: "AdminDashboard"});
           } 
           if (this.login_form.user_type == 'staff') {
