@@ -6,8 +6,8 @@
   "Asset_Description": "Fans",
   "Serial_Num": "cislab1_000001",
   "Asset_Code": "13500_1/2",
-  "Qty": "02",
-  "Make": "",
+  "Qty": "01",
+  "Make": "damro",
   "Condition": "",
   "Comments": "",
   "__v": 0
@@ -494,51 +494,12 @@
   "__v": 0
 },{
   "_id": {
-    "$oid": "5f702cf05395e839c085facc"
-  },
-  "Main_Category": "Accessories",
-  "Asset_Description": "Monitor",
-  "Serial_Num": "Y2-NN879",
-  "Asset_Code": "064033",
-  "Qty": "",
-  "Make": "hp",
-  "Condition": "",
-  "Comments": "",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "5f709efc5395e839c085facd"
-  },
-  "Main_Category": "Accessories",
-  "Asset_Description": "Monitor",
-  "Serial_Num": "CN-OMO55F-74261-92R-5VCS",
-  "Asset_Code": "064034",
-  "Qty": "",
-  "Make": "hp",
-  "Condition": "",
-  "Comments": "",
-  "__v": 0
-},{
-  "_id": {
     "$oid": "5f709f5b5395e839c085face"
   },
   "Main_Category": "Accessories",
   "Asset_Description": "Monitor",
   "Serial_Num": "CN-OMO55F-74261-932-10JS",
   "Asset_Code": "064035",
-  "Qty": "",
-  "Make": "hp",
-  "Condition": "",
-  "Comments": "",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "5f709fc05395e839c085facf"
-  },
-  "Main_Category": "Accessories",
-  "Asset_Description": "Monitor",
-  "Serial_Num": "CN-OMO55F-74261-92R-TPDS",
-  "Asset_Code": "064036",
   "Qty": "",
   "Make": "hp",
   "Condition": "",
@@ -554,6 +515,19 @@
   "Asset_Code": "064037",
   "Qty": "",
   "Make": "hp",
+  "Condition": "",
+  "Comments": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe0e042748ccb2f40a96d37"
+  },
+  "Main_Category": "Accessories",
+  "Asset_Description": "Laminationg Machine",
+  "Serial_Num": "46484",
+  "Asset_Code": "4844",
+  "Qty": "1",
+  "Make": "",
   "Condition": "",
   "Comments": "",
   "__v": 0

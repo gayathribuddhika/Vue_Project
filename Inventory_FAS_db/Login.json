@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "5f114746be10ac1bb410a1c4"
+  },
+  "username": "Admin",
+  "password": "Adminlms123",
+  "user_type": "admin"
+},{
+  "_id": {
+    "$oid": "5f114787be10ac1bb410a1c5"
+  },
+  "username": "staff1",
+  "password": "staff1lms",
+  "user_type": "staff"
+},{
+  "_id": {
+    "$oid": "5f114787be10ac1bb410a1c6"
+  },
+  "username": "staff2",
+  "password": "staff2lms",
+  "user_type": "staff"
+}]
