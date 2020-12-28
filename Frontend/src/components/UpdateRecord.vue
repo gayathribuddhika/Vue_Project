@@ -14,7 +14,7 @@
         class="mb-2"
         style="max-width: 65rem;"
       >
-        <b-form @submit.prevent="updateRecord">
+        <b-form @submit.prevent="updateRecord" v-if="show">
           <!-- v-if="show" -->
           <b-form-group
             label-cols-lg="3"
@@ -170,105 +170,122 @@ export default {
   name: "UpdateRecords",
   data() {
     return {
-      form: {},
+      form: {
+        select_lab: null,
+        Main_Category: null,
+        Asset_Description: null,
+        serial_num: "",
+        // code: "",
+        // qty: "",
+        // make: "",
+        // condition: "",
+        // comment: "",
+        Qty: "",
+        Asset_Code: "",
+        Serial_Num: "",
+        Condition: "",
+        Make: "",
+        Comments: "",
+      },
 
       // formdata: {
-      //   select_labs: [
-      //     { text: "Select One", value: null },
-      //     "CIS/LAB/01",
-      //     "CIS/LAB/02",
-      //     "CIS/LAB/03",
-      //     "CIS/LAB/04",
-      //     "CIS/LAB/05"
-      //   ],
-      //   // show: true,
+        select_labs: [
+          { text: "Select One", value: null },
+          "CIS/LAB/01",
+          "CIS/LAB/02",
+          "CIS/LAB/03",
+          "CIS/LAB/04",
+          "CIS/LAB/05"
+        ],
+        show: true,
 
-      //   categories: [
-      //     { text: "Select One", value: null },
-      //     "Accessories",
-      //     "Communication Equipments",
-      //     "Computer",
-      //     "Furniture",
-      //     "Office Equipments",
-      //     "Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)"
-      //   ],
-      //   show: true,
+        categories: [
+          { text: "Select One", value: null },
+          "Accessories",
+          "Communication Equipments",
+          "Computer",
+          "Furniture",
+          "Office Equipments",
+          "Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)"
+        ],
+        show: true,
 
-      //   descriptions: [
-      //     { text: "Select One", value: null },
-      //     "Fans",
-      //     "ACs",
-      //     "Whiteboard",
-      //     "Projector",
-      //     "Projector Screen",
-      //     "Sound System",
-      //     "Printer",
-      //     "Monitor",
-      //     "System Unit",
-      //     "UPS",
-      //     "Mouse",
-      //     "Keyboard",
-      //     "Computer Table",
-      //     "Computer Chair",
-      //     "Normal Chair",
-      //     "Computrt Table",
-      //     "Telephone",
-      //     "Laminationg Machine",
-      //     "Photocopy Machine"
-      //   ],
-      //   show: true,
+        descriptions: [
+          { text: "Select One", value: null },
+          "Fans",
+          "ACs",
+          "Whiteboard",
+          "Projector",
+          "Projector Screen",
+          "Sound System",
+          "Printer",
+          "Monitor",
+          "System Unit",
+          "UPS",
+          "Mouse",
+          "Keyboard",
+          "Computer Table",
+          "Computer Chair",
+          "Normal Chair",
+          "Computrt Table",
+          "Telephone",
+          "Laminationg Machine",
+          "Photocopy Machine"
+        ],
+        show: true,
 
-      //   Qty: "",
-      //   Asset_Code: "",
-      //   Serial_Num: "",
-      //   Condition: "",
-      //   Make: "",
-      //   Comments: ""
+        // Qty: "",
+        // Asset_Code: "",
+        // Serial_Num: "",
+        // Condition: "",
+        // Make: "",
+        // Comments: "",
       // },
-      select_labs: [
-        { text: "Select One", value: null },
-        "CIS/LAB/01",
-        "CIS/LAB/02",
-        "CIS/LAB/03",
-        "CIS/LAB/04",
-        "CIS/LAB/05"
-      ],
-      show: true,
+      
+      // select_labs: [
+      //   { text: "Select One", value: null },
+      //   "CIS/LAB/01",
+      //   "CIS/LAB/02",
+      //   "CIS/LAB/03",
+      //   "CIS/LAB/04",
+      //   "CIS/LAB/05"
+      // ],
+      // show: true,
 
-      categories: [
-        { text: "Select One", value: null },
-        "Accessories",
-        "Communication Equipments",
-        "Computer",
-        "Furniture",
-        "Office Equipments",
-        "Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)"
-      ],
-      show: true,
+      // categories: [
+      //   { text: "Select One", value: null },
+      //   "Accessories",
+      //   "Communication Equipments",
+      //   "Computer",
+      //   "Furniture",
+      //   "Office Equipments",
+      //   "Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)"
+      // ],
+      // show: true,
 
-      descriptions: [
-        { text: "Select One", value: null },
-        "Fans",
-        "ACs",
-        "Whiteboard",
-        "Projector",
-        "Projector Screen",
-        "Sound System",
-        "Printer",
-        "Monitor",
-        "System Unit",
-        "UPS",
-        "Mouse",
-        "Keyboard",
-        "Computer Table",
-        "Computer Chair",
-        "Normal Chair",
-        "Computrt Table",
-        "Telephone",
-        "Laminationg Machine",
-        "Photocopy Machine"
-      ],
-      show: true,
+      // descriptions: [
+      //   { text: "Select One", value: null },
+      //   "Fans",
+      //   "ACs",
+      //   "Whiteboard",
+      //   "Projector",
+      //   "Projector Screen",
+      //   "Sound System",
+      //   "Printer",
+      //   "Monitor",
+      //   "System Unit",
+      //   "UPS",
+      //   "Mouse",
+      //   "Keyboard",
+      //   "Computer Table",
+      //   "Computer Chair",
+      //   "Normal Chair",
+      //   "Computrt Table",
+      //   "Telephone",
+      //   "Laminationg Machine",
+      //   "Photocopy Machine"
+      // ],
+      // show: true,
 
       submitted: null
     };
@@ -305,7 +322,7 @@ export default {
         .get(uri)
         .then(response => {
           this.form = response.data;
-          console.log(this.form);
+          console.log(this.form); //ok
         })
         .catch(error => {
           console.log(error);
@@ -361,26 +378,12 @@ export default {
     },
     updateRecord() {
       if (this.form.Select_LAB == "CIS/LAB/01") {
-        // let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
-        // axios
-        //   .put(uri, this.formdata)
-        //   .then(response => {
-        //     console.log(response);
-        //     this.formdata = "";
-        //     this.submitted = "pending";
-        //     setTimeout(() => {
-        //       this.submitted = "ok";
-        //     }, 500);
-        //   })
-        //   .catch(error => {
-        //     console.log(error);
-        //   });
-
         let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
         axios
-          .post(uri, this.form)
+          .put(uri, this.form)
           .then(response => {
             console.log(response);
+            this.form = "";
             this.submitted = "pending";
             setTimeout(() => {
               this.submitted = "ok";
@@ -389,6 +392,20 @@ export default {
           .catch(error => {
             console.log(error);
           });
+
+        // let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
+        // axios
+        //   .post(uri, this.form)
+        //   .then(response => {
+        //     console.log(response);
+        //     this.submitted = "pending";
+        //     setTimeout(() => {
+        //       this.submitted = "ok";
+        //     }, 500);
+        //   })
+        //   .catch(error => {
+        //     console.log(error);
+        //   });
       } else if (this.form.Select_LAB == "CIS/LAB/02") {
         let uri = `http://localhost:8085/lab/lab2/update/${this.$route.params.id}`;
         axios
