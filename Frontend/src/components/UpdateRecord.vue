@@ -31,10 +31,10 @@
             >
               <b-form-input
                 id="select_lab"
-                v-model="form.select_lab"
+                v-model="form.Select_Lab"
                 required
                 type="text"
-                :class="{ hasError: $v.form.select_lab.$error }"
+                
               ></b-form-input>
             </b-form-group>
             <b-form-group
@@ -48,7 +48,7 @@
                 v-model="form.Main_Category"
                 required
                 :options="categories"
-                :class="{ hasError: $v.form.category.$error }"
+                
               ></b-form-select>
             </b-form-group>
             <b-form-group
@@ -62,7 +62,7 @@
                 v-model="form.Asset_Description"
                 required
                 :options="descriptions"
-                :class="{ hasError: $v.form.description.$error }"
+                
               ></b-form-select>
             </b-form-group>
             <b-form-group
@@ -76,7 +76,7 @@
                 v-model="form.Serial_Num"
                 type="text"
                 required
-                :class="{ hasError: $v.form.serial_num.$error }"
+                
               ></b-form-input>
             </b-form-group>
             <b-form-group
@@ -90,7 +90,7 @@
                 v-model="form.Asset_Code"
                 type="text"
                 required
-                :class="{ hasError: $v.form.code.$error }"
+                
               ></b-form-input>
             </b-form-group>
             <b-form-group
@@ -171,21 +171,16 @@ export default {
   data() {
     return {
       form: {
-        select_lab: null,
-        Main_Category: null,
-        Asset_Description: null,
-        serial_num: "",
-        // code: "",
-        // qty: "",
-        // make: "",
-        // condition: "",
-        // comment: "",
-        Qty: "",
-        Asset_Code: "",
-        Serial_Num: "",
-        Condition: "",
-        Make: "",
-        Comments: "",
+        // Select_Lab: "",
+        // Main_Category: "",
+        // Asset_Description: "",
+        // serial_num: "",
+        // Qty: "",
+        // Asset_Code: "",
+        // Serial_Num: "",
+        // Condition: "",
+        // Make: "",
+        // Comments: "",
       },
 
       // formdata: {
@@ -317,7 +312,7 @@ export default {
     },
 
     fetchRecord1() {
-      let uri = `http://localhost:8085/lab/lab1/edit/${this.$route.params.id}`;
+      let uri = `http://localhost:8085/lab/lab1/${this.$route.params.id}`;
       axios
         .get(uri)
         .then(response => {
@@ -328,54 +323,54 @@ export default {
           console.log(error);
         });
     },
-    fetchRecord2() {
-      let uri = `http://localhost:8085/lab/lab2/edit/${this.$route.params.id}`;
-      axios
-        .get(uri)
-        .then(response => {
-          this.form = response.data;
-          console.log(this.form);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    },
-    fetchRecord3() {
-      let uri = `http://localhost:8085/lab/lab3/edit/${this.$route.params.id}`;
-      axios
-        .get(uri)
-        .then(response => {
-          this.form = response.data;
-          console.log(this.form);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    },
-    fetchRecord4() {
-      let uri = `http://localhost:8085/lab/lab4/edit/${this.$route.params.id}`;
-      axios
-        .get(uri)
-        .then(response => {
-          this.form = response.data;
-          console.log(this.form);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    },
-    fetchRecord5() {
-      let uri = `http://localhost:8085/lab/lab5/edit/${this.$route.params.id}`;
-      axios
-        .get(uri)
-        .then(response => {
-          this.form = response.data;
-          console.log(this.form);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    },
+    // fetchRecord2() {
+    //   let uri = `http://localhost:8085/lab/lab2/edit/${this.$route.params.id}`;
+    //   axios
+    //     .get(uri)
+    //     .then(response => {
+    //       this.form = response.data;
+    //       console.log(this.form);
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //     });
+    // },
+    // fetchRecord3() {
+    //   let uri = `http://localhost:8085/lab/lab3/edit/${this.$route.params.id}`;
+    //   axios
+    //     .get(uri)
+    //     .then(response => {
+    //       this.form = response.data;
+    //       console.log(this.form);
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //     });
+    // },
+    // fetchRecord4() {
+    //   let uri = `http://localhost:8085/lab/lab4/edit/${this.$route.params.id}`;
+    //   axios
+    //     .get(uri)
+    //     .then(response => {
+    //       this.form = response.data;
+    //       console.log(this.form);
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //     });
+    // },
+    // fetchRecord5() {
+    //   let uri = `http://localhost:8085/lab/lab5/edit/${this.$route.params.id}`;
+    //   axios
+    //     .get(uri)
+    //     .then(response => {
+    //       this.form = response.data;
+    //       console.log(this.form);
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //     });
+    // },
     updateRecord() {
       if (this.form.Select_LAB == "CIS/LAB/01") {
         let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;

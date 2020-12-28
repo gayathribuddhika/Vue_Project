@@ -27,7 +27,7 @@ router.get('/lab1/:id', function (req, res) {
 
 router.post('/lab1', function (req, res) {
     let item = new Item({
-        // Select_LAB: req.body.Select_LAB,
+        Select_LAB: req.body.Select_LAB,
         // Item_id: req.body.Item_id,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
@@ -54,15 +54,15 @@ router.delete('/lab1/delete/:id', function (req, res) {               //can also
     });
 });
 
-router.get('/lab1/edit/:id', function (req, res) {
-    let id = req.params.id;
-    Item.findById(id, function (err, item) {
-        if (err) {
-            res.json(err);
-        }
-        res.json(item);
-    });
-});
+// router.get('/lab1/edit/:id', function (req, res) {
+//     let id = req.params.id;
+//     Item.findById(id, function (err, item) {
+//         if (err) {
+//             res.json(err);
+//         }
+//         res.json(item);
+//     });
+// });
 
 // router.post('/lab1/update/:id', function (req, res) {
 //     Item.findById(req.params.id, function (err, item) {
@@ -102,14 +102,15 @@ router.get('/lab1/edit/:id', function (req, res) {
 
 router.put('/lab1/update/:id', function (req, res) {
     Item.update({_id: req.params.id}, {
-        Main_Category: req.body.Main_Category,
-        Asset_Description: req.body.Asset_Description,
-        Serial_Num: req.body.Serial_Num,
-        Asset_Code: req.body.Asset_Code,
-        Qty: req.body.Qty,
-        Make: req.body.Make,
-        Condition: req.body.Condition,
-        Comments: req.body.Comments
+        $set: req.body
+        // Main_Category: req.body.Main_Category,
+        // Asset_Description: req.body.Asset_Description,
+        // Serial_Num: req.body.Serial_Num,
+        // Asset_Code: req.body.Asset_Code,
+        // Qty: req.body.Qty,
+        // Make: req.body.Make,
+        // Condition: req.body.Condition,
+        // Comments: req.body.Comments
     }, function (err, item) {
         if(err) {
             res.json(err);
@@ -117,5 +118,6 @@ router.put('/lab1/update/:id', function (req, res) {
         res.json(item);
     })
 })
+
 
 module.exports = router;
