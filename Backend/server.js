@@ -19,12 +19,6 @@ app.use('/', contactRouter);
 const loginRouter = require('./routes/login');
 app.use('/', loginRouter);
 
-const staffloginRouter = require('./routes/stafflogin');
-app.use('/', staffloginRouter);
-
-const adminloginRouter = require('./routes/adminlogin');
-app.use('/', adminloginRouter);
-
 const labItem1 = require('./routes/lab1_items');
 app.use('/lab', labItem1);
 
