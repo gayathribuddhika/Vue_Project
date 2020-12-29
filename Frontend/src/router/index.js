@@ -9,8 +9,7 @@ import AdminDashboard from '@/components/AdminDashboard'
 import StaffDashboard from '@/components/StaffDashboard'
 import current_status from '@/components/Current_Status'
 import AddRecords from '@/components/AddRecords'
-import AdminProfile from '@/components/AdminProfile'
-import StaffProfile from '@/components/StaffProfile'
+import Profile from '@/components/Profile'
 import ResetPassword from '@/components/ResetPassword'
 import UpdateRecord from '@/components/UpdateRecord'
 import Sample from '@/components/Sample'
@@ -70,12 +69,12 @@ export default new Router({
     {
       path: '/admindashboard/profile',
       name: "AdminProfile",
-      component: AdminProfile
+      component: Profile
     },
     {
       path: '/staffdashboard/profile',
       name: "StaffProfile",
-      component: StaffProfile
+      component: Profile
     },
     {
       path: '/edit/:id',

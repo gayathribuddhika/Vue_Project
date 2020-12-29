@@ -11,12 +11,14 @@
         <center>
           <b-img :src="require('../assets/proimage.png')"></b-img>
         </center>
+        <center>
         <b-card-body>
           <b-card-title>
-            <center>Admin Name</center>
+            Admin Name
           </b-card-title>
+          <p><router-link to= "admindashboard/profile">view profile</router-link></p>
         </b-card-body>
-
+        </center>
         <b-list-group variant="dark">
           <div>
             <b-list-group-item variant="dark" active>Dashboard</b-list-group-item>
@@ -27,7 +29,6 @@
             <b-list-group-item variant="dark" to="admindashboard/currentstatus">Update/Edit a Record</b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/stockdetails">Stock Details</b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/reports">Create a Report</b-list-group-item>
-            <b-list-group-item variant="dark" to="admindashboard/profile">Edit Profile</b-list-group-item>
             <b-list-group-item variant="dark" to="login">Logout</b-list-group-item>
           </div>
         </b-list-group>

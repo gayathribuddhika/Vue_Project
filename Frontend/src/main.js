@@ -43,9 +43,6 @@ Vue.use(VueSidebarMenu)*/
 export const bus = new Vue();
 
 new Vue({
-  //el: '#app',
   router,
   render:h => h(App),
-  /*components: { App },
-  template: '<App/>'*/
 }).$mount('#app')
