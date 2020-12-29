@@ -5,6 +5,8 @@ const cors = require("cors")
 const User = require("../models/user_details")
 router.use(cors())
 
+const upload = require("../middleware/upload")
+
 router.get('/user', (req, res) => {
     User.find(function (err, user) {
         if (err) {
@@ -14,17 +16,19 @@ router.get('/user', (req, res) => {
     });
 });
 
-router.post('/user', function (req, res) {
+router.post('/user',upload.single("profile_image"), function (req, res) {
     let user = new User({
         name: req.body.name,
         designation: req.body.designation,
         email: req.body.email,
         phone: req.body.phone,
-        profile_image: req.body.profile_image
-    });
+    })
+    if(req.file) {
+        user.profile_image = req.file.path
+    }
     user.save()
         .then(() => {
-            res.status(200).send('Successfully Added');
+            res.status(200).send('User Added Successfully');
         })
         .catch(() => {
             res.status(400).send("Unable to save to Database");
