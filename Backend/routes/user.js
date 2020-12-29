@@ -16,6 +16,16 @@ router.get('/user', (req, res) => {
     });
 });
 
+router.get('/user/:id', function (req, res) {
+    let id = req.params.id;
+    User.findById(id, function (err, user) {
+        if (err) {
+            res.json(err);
+        }
+        res.json(user);
+    });
+});
+
 router.post('/user',upload.single("profile_image"), function (req, res) {
     let user = new User({
         name: req.body.name,
