@@ -5,12 +5,12 @@ const userSchema = new Schema({
     
     profile_image: {
         type: String,
-        required:[true,"Profile_image is required"]
+        // required:[true,"Profile_image is required"]
     },
 
     name: {
         type: String,
-        required:[true,"Name is required"]
+        // required:[true,"Name is required"]
     },
 
     designation: {
@@ -25,7 +25,7 @@ const userSchema = new Schema({
     
     email: {
         type: String,
-        reruired: [true, "Email is required"]
+        // reruired: [true, "Email is required"]
     }
 }, 
     {collection: "User"}
