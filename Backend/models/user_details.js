@@ -12,6 +12,16 @@ const userSchema = new Schema({
         type: String,
         required:[true,"Name is required"]
     },
+
+    designation: {
+        type: String,
+        // required:[true,"Name is required"]
+    },
+
+    phone: {
+        type: Number,
+        // required:[true,"Name is required"]
+    },
     
     email: {
         type: String,

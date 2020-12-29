@@ -19,19 +19,22 @@ app.use('/', contactRouter);
 const loginRouter = require('./routes/login');
 app.use('/', loginRouter);
 
-const labItem1 = require('./routes/lab1_items');
+const userRouter = require('./routes/user');
+app.use('/', userRouter);
+
+const labItem1 = require('./routes/lab1_item');
 app.use('/lab', labItem1);
 
-const labItem2 = require('./routes/lab2_items');
+const labItem2 = require('./routes/lab2_item');
 app.use('/lab', labItem2);
 
-const labItem3 = require('./routes/lab3_items');
+const labItem3 = require('./routes/lab3_item');
 app.use('/lab', labItem3);
 
-const labItem4 = require('./routes/lab4_items');
+const labItem4 = require('./routes/lab4_item');
 app.use('/lab', labItem4);
 
-const labItem5 = require('./routes/lab5_items');
+const labItem5 = require('./routes/lab5_item');
 app.use('/lab', labItem5);
 
 const store = require('./routes/stock');
