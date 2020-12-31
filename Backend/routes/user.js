@@ -8,7 +8,7 @@ router.use(cors())
 const upload = require("../middleware/upload")
 
 router.get('/user', (req, res) => {
-    User.find(function (err, user) {
+    User.findOne({position: "admin"}, function (err, user) {
         if (err) {
             res.json(err);
         }

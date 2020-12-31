@@ -2,7 +2,7 @@
   <div class>
     <center>
       <b-card style="max-width: 50rem;" align="left">
-        <b-form>
+        <b-form >
           <!-- v-for="(user, user_id) in userData" v-bind:key="user_id" -->
           <!-- @submit="onSubmit" @reset="onReset" v-if="show" -->
           <b-form-group id="user_name" label="Name:" label-for="user_name">
@@ -66,6 +66,7 @@ export default {
   data() {
     return {
       user: {}
+      
     };
   },
 
@@ -75,8 +76,9 @@ export default {
 
   methods: {
     readUser() {
+      // this.id = this.$route.params.id;
       axios
-        .get("http://localhost:8085/user/${this.$route.params.id}")
+        .get("http://localhost:8085/user/5fea10bc3cae4a2538c6da33")
         .then(response => {
           console.log(response.data);
           this.user = response.data;

@@ -66,13 +66,18 @@ export default new Router({
       name: "AddRecords",
       component: AddRecords
     },
+    // {
+    //   path: '/admindashboard/profile',
+    //   name: "Profile",
+    //   component: Profile
+    // },
     {
-      path: '/admindashboard/profile',
-      name: "AdminProfile",
+      path: '/admindashboard/:id',
+      name: "Profile",
       component: Profile
     },
     {
-      path: '/staffdashboard/profile',
+      path: '/staffdashboard/:id',
       name: "StaffProfile",
       component: Profile
     },
@@ -121,9 +126,8 @@ export default new Router({
       name: "Reports",
       component: Reports
     }
-    
-
   ]
 })
+
 
 

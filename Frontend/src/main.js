@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// import axios from 'axios' 
 import BootstrapVue from 'bootstrap-vue'
 import LayoutPlugin from 'bootstrap-vue'
 import NavbarPlugin from 'bootstrap-vue'
@@ -34,13 +35,15 @@ Vue.use(NavbarPlugin)
 Vue.use(Vuelidate)
 Vue.use(BootstrapVueIcons)
 Vue.use(VueSimpleAlert)
-
+// Vue.use(axios)
 
 /*import VueSidebarMenu from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 Vue.use(VueSidebarMenu)*/
 
 export const bus = new Vue();
+
+// axios.default.defaultURL = 'http://localhost:8085/';
 
 new Vue({
   router,

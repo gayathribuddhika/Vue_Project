@@ -16,7 +16,7 @@
           <b-card-title>
             Admin Name
           </b-card-title>
-          <p><router-link to= "admindashboard/profile">view profile</router-link></p>
+          <p><router-link :to = "`/admindashboard/${this.user.id}`">view profile</router-link></p>
         </b-card-body>
         </center>
         <b-list-group variant="dark">
@@ -79,7 +79,47 @@
 
 
 <script>
+import axios from "axios";
 
+export default {
+  name: "Profile",
+  data() {
+    return {
+      user: {}
+    };
+  },
+
+  created() {
+      this.readUser();
+  },
+
+  methods: {
+    readUser() {
+      axios
+        .get("http://localhost:8085/user")
+        .then(response => {
+          console.log(response.data._id);
+          this.user.id = response.data._id;
+          // return itemsLab1.length;
+          // console.log(this.itemsLab1.length);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      // axios
+      //   .get("http://localhost:8085/user/5fea10bc3cae4a2538c6da33")
+      //   .then(response => {
+      //     console.log(response.data._id);
+      //     this.user.id = response.data._id;
+      //     // return itemsLab1.length;
+      //     // console.log(this.itemsLab1.length);
+      //   })
+      //   .catch(error => {
+      //     console.log(error);
+      //   });
+    }
+  }
+};
 </script>
 
 <style scoped>
