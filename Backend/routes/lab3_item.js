@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 const cors = require("cors")
 
-const Item = require("../models/lab3_item")
+const Item = require("../models/lab3_itemdetails")
 router.use(cors())
 
 router.get('/lab3', (req, res) => {

@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 const cors = require("cors")
 
-const Item = require("../models/lab1_item")
+const Item = require("../models/lab1_itemdetails")
 router.use(cors())
 
 router.get('/lab1', (req, res) => {
@@ -26,8 +26,8 @@ router.get('/lab1/:id', function (req, res) {
 
 router.post('/lab1', function (req, res) {
     let item = new Item({
-        Select_LAB: req.body.Select_LAB,
-        // Item_id: req.body.Item_id,
+        Select_LAB:req.body.Select_LAB,
+        Item_id:req.body.Item_id,
         Main_Category: req.body.Main_Category,
         Asset_Description: req.body.Asset_Description,
         Serial_Num: req.body.Serial_Num,
@@ -53,39 +53,7 @@ router.delete('/lab1/delete/:id', function (req, res) {               //can also
     });
 });
 
-// router.get('/lab1/edit/:id', function (req, res) {
-//     let id = req.params.id;
-//     Item.findById(id, function (err, item) {
-//         if (err) {
-//             res.json(err);
-//         }
-//         res.json(item);
-//     });
-// });
 
-// router.post('/lab1/update/:id', function (req, res) {
-//     Item.findById(req.params.id, function (err, item) {
-//         if (!item)
-//             res.status(404).send("Record is not found");
-//         else {
-//             item.Select_LAB = req.body.Select_LAB;
-//             item.Main_Category = req.body.Main_Category;
-//             item.Asset_Description = req.body.Asset_Description;
-//             item.Serial_Num = req.body.Serial_Num;
-//             item.Asset_Code = req.body.Asset_Code;
-//             item.Qty = req.body.Qty;
-//             item.Make = req.body.Make;
-//             item.Condition = req.body.Condition;
-//             item.Comments = req.body.Comments;
-//             item.save().then(() => {
-//                 res.json('Successfully Updated');
-//             })
-//                 .catch(() => {
-//                     res.status(400).send("Unable to update the DB");
-//                 });
-//         }
-//     });
-// });
 
 // router.get("/lab1/count", function (req, res) {
 //     Item.count({}, function (err, result) {
@@ -102,14 +70,6 @@ router.delete('/lab1/delete/:id', function (req, res) {               //can also
 router.put('/lab1/update/:id', function (req, res) {
     Item.update({_id: req.params.id}, {
         $set: req.body
-        // Main_Category: req.body.Main_Category,
-        // Asset_Description: req.body.Asset_Description,
-        // Serial_Num: req.body.Serial_Num,
-        // Asset_Code: req.body.Asset_Code,
-        // Qty: req.body.Qty,
-        // Make: req.body.Make,
-        // Condition: req.body.Condition,
-        // Comments: req.body.Comments
     }, function (err, item) {
         if(err) {
             res.json(err);

@@ -3,31 +3,26 @@ const Schema = mongoose.Schema;
 
 const Item = new Schema({
 
-    // Select_LAB: {
-    //     type: String,
-    //     required: true
-    // },
-    // Item_id: {
-    //     type: String
-    // },
+    Select_LAB: {
+        type: String
+    },
+    Item_id: {
+        type: String
+    },
     Main_Category: {
-        type: String,
-        required: true
+        type: String
     },
     Asset_Description: {
-        type: String,
-        required: true
+        type: String
     },
     Serial_Num: {
-        type: String,
-        required: true
+        type: String
     },
     Asset_Code: {
-        type: String,
-        required: true
+        type: String
     },
     Qty: {
-        type: String,
+        type: String
     },
     Make: {
         type: String

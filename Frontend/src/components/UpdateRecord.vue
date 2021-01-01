@@ -31,9 +31,10 @@
             >
               <b-form-input
                 id="select_lab"
-                v-model="form.Select_Lab"
+                v-model="form.Select_LAB"
                 required
                 type="text"
+                
                 
               ></b-form-input>
             </b-form-group>
@@ -170,18 +171,7 @@ export default {
   name: "UpdateRecords",
   data() {
     return {
-      form: {
-        // Select_Lab: "",
-        // Main_Category: "",
-        // Asset_Description: "",
-        // serial_num: "",
-        // Qty: "",
-        // Asset_Code: "",
-        // Serial_Num: "",
-        // Condition: "",
-        // Make: "",
-        // Comments: "",
-      },
+      form: {},
 
       // formdata: {
         select_labs: [
@@ -229,58 +219,7 @@ export default {
         ],
         show: true,
 
-        // Qty: "",
-        // Asset_Code: "",
-        // Serial_Num: "",
-        // Condition: "",
-        // Make: "",
-        // Comments: "",
-      // },
-      
-      // select_labs: [
-      //   { text: "Select One", value: null },
-      //   "CIS/LAB/01",
-      //   "CIS/LAB/02",
-      //   "CIS/LAB/03",
-      //   "CIS/LAB/04",
-      //   "CIS/LAB/05"
-      // ],
-      // show: true,
-
-      // categories: [
-      //   { text: "Select One", value: null },
-      //   "Accessories",
-      //   "Communication Equipments",
-      //   "Computer",
-      //   "Furniture",
-      //   "Office Equipments",
-      //   "Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)"
-      // ],
-      // show: true,
-
-      // descriptions: [
-      //   { text: "Select One", value: null },
-      //   "Fans",
-      //   "ACs",
-      //   "Whiteboard",
-      //   "Projector",
-      //   "Projector Screen",
-      //   "Sound System",
-      //   "Printer",
-      //   "Monitor",
-      //   "System Unit",
-      //   "UPS",
-      //   "Mouse",
-      //   "Keyboard",
-      //   "Computer Table",
-      //   "Computer Chair",
-      //   "Normal Chair",
-      //   "Computrt Table",
-      //   "Telephone",
-      //   "Laminationg Machine",
-      //   "Photocopy Machine"
-      // ],
-      // show: true,
+       
 
       submitted: null
     };
@@ -323,18 +262,18 @@ export default {
           console.log(error);
         });
     },
-    // fetchRecord2() {
-    //   let uri = `http://localhost:8085/lab/lab2/edit/${this.$route.params.id}`;
-    //   axios
-    //     .get(uri)
-    //     .then(response => {
-    //       this.form = response.data;
-    //       console.log(this.form);
-    //     })
-    //     .catch(error => {
-    //       console.log(error);
-    //     });
-    // },
+    fetchRecord2() {
+      let uri = `http://localhost:8085/lab/lab2/${this.$route.params.id}`;
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form); 
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
     // fetchRecord3() {
     //   let uri = `http://localhost:8085/lab/lab3/edit/${this.$route.params.id}`;
     //   axios
@@ -404,9 +343,10 @@ export default {
       } else if (this.form.Select_LAB == "CIS/LAB/02") {
         let uri = `http://localhost:8085/lab/lab2/update/${this.$route.params.id}`;
         axios
-          .post(uri, this.form)
+          .put(uri, this.form)
           .then(response => {
             console.log(response);
+            this.form = "";
             this.submitted = "pending";
             setTimeout(() => {
               this.submitted = "ok";
