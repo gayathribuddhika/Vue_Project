@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="btn">
-      <b-button squared variant="dark" to="/admindashboard">Back</b-button>
-      <b-button squared variant="dark" to="/admindashboard/currentstatus"
+      <b-button squared variant="dark" to="/admindashboard/currentstatus">Back</b-button>
+      <!-- <b-button squared variant="dark" to="/admindashboard/currentstatus"
         >View All</b-button
-      >
+      > -->
     </div>
     <center>
       <br />
@@ -34,8 +34,6 @@
                 v-model="form.Select_LAB"
                 required
                 type="text"
-                
-                
               ></b-form-input>
             </b-form-group>
             <b-form-group
@@ -49,7 +47,6 @@
                 v-model="form.Main_Category"
                 required
                 :options="categories"
-                
               ></b-form-select>
             </b-form-group>
             <b-form-group
@@ -63,7 +60,6 @@
                 v-model="form.Asset_Description"
                 required
                 :options="descriptions"
-                
               ></b-form-select>
             </b-form-group>
             <b-form-group
@@ -77,7 +73,6 @@
                 v-model="form.Serial_Num"
                 type="text"
                 required
-                
               ></b-form-input>
             </b-form-group>
             <b-form-group
@@ -91,7 +86,6 @@
                 v-model="form.Asset_Code"
                 type="text"
                 required
-                
               ></b-form-input>
             </b-form-group>
             <b-form-group
@@ -165,91 +159,88 @@
 
 <script>
 import axios from "axios";
-import { required } from "vuelidate/lib/validators";
+// import { required } from "vuelidate/lib/validators";
 
 export default {
   name: "UpdateRecords",
   data() {
     return {
       form: {},
+      // lab1: {},
+      // lab2: {},
+      // lab3: {},
+      // lab4: {},
+      // lab5: {},
 
-      // formdata: {
-        select_labs: [
-          { text: "Select One", value: null },
-          "CIS/LAB/01",
-          "CIS/LAB/02",
-          "CIS/LAB/03",
-          "CIS/LAB/04",
-          "CIS/LAB/05"
-        ],
-        show: true,
+      select_labs: [
+        { text: "Select One", value: null },
+        "CIS/LAB/01",
+        "CIS/LAB/02",
+        "CIS/LAB/03",
+        "CIS/LAB/04",
+        "CIS/LAB/05"
+      ],
+      show: true,
 
-        categories: [
-          { text: "Select One", value: null },
-          "Accessories",
-          "Communication Equipments",
-          "Computer",
-          "Furniture",
-          "Office Equipments",
-          "Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)"
-        ],
-        show: true,
+      categories: [
+        { text: "Select One", value: null },
+        "Accessories",
+        "Communication Equipments",
+        "Computer",
+        "Furniture",
+        "Office Equipments",
+        "Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)"
+      ],
+      show: true,
 
-        descriptions: [
-          { text: "Select One", value: null },
-          "Fans",
-          "ACs",
-          "Whiteboard",
-          "Projector",
-          "Projector Screen",
-          "Sound System",
-          "Printer",
-          "Monitor",
-          "System Unit",
-          "UPS",
-          "Mouse",
-          "Keyboard",
-          "Computer Table",
-          "Computer Chair",
-          "Normal Chair",
-          "Computrt Table",
-          "Telephone",
-          "Laminationg Machine",
-          "Photocopy Machine"
-        ],
-        show: true,
-
-       
-
+      descriptions: [
+        { text: "Select One", value: null },
+        "Fans",
+        "ACs",
+        "Whiteboard",
+        "Projector",
+        "Projector Screen",
+        "Sound System",
+        "Printer",
+        "Monitor",
+        "System Unit",
+        "UPS",
+        "Mouse",
+        "Keyboard",
+        "Computer Table",
+        "Computer Chair",
+        "Normal Chair",
+        "Computrt Table",
+        "Telephone",
+        "Laminationg Machine",
+        "Photocopy Machine"
+      ],
+      show: true,
       submitted: null
     };
   },
 
-  validations: {
-    form: {
-      select_lab: { required },
-      //id: { required },
-      category: { required },
-      description: { required },
-      serial_num: { required },
-      code: { required }
-      //qty: { required }
-    }
-  },
+  // validations: {
+  //   form: {
+  //     select_lab: { required },
+  //      category: { required },
+  //     description: { required },
+  //     serial_num: { required },
+  //     code: { required }
+  //     //qty: { required }
+  //   }
+  // },
 
   created() {
-    this.getAll();
+    this.fetchRecord1();
+    this.fetchRecord2();
+    this.fetchRecord3();
+    this.fetchRecord4();
+    this.fetchRecord5();
   },
 
   methods: {
-    getAll() {
-      this.fetchRecord1();
-      // this.fetchRecord2();
-      // this.fetchRecord3();
-      // this.fetchRecord4();
-      // this.fetchRecord5();
-    },
-
+    
     fetchRecord1() {
       let uri = `http://localhost:8085/lab/lab1/${this.$route.params.id}`;
       axios
@@ -268,48 +259,48 @@ export default {
         .get(uri)
         .then(response => {
           this.form = response.data;
-          console.log(this.form); 
+          console.log(this.form);
         })
         .catch(error => {
           console.log(error);
         });
     },
-    // fetchRecord3() {
-    //   let uri = `http://localhost:8085/lab/lab3/edit/${this.$route.params.id}`;
-    //   axios
-    //     .get(uri)
-    //     .then(response => {
-    //       this.form = response.data;
-    //       console.log(this.form);
-    //     })
-    //     .catch(error => {
-    //       console.log(error);
-    //     });
-    // },
-    // fetchRecord4() {
-    //   let uri = `http://localhost:8085/lab/lab4/edit/${this.$route.params.id}`;
-    //   axios
-    //     .get(uri)
-    //     .then(response => {
-    //       this.form = response.data;
-    //       console.log(this.form);
-    //     })
-    //     .catch(error => {
-    //       console.log(error);
-    //     });
-    // },
-    // fetchRecord5() {
-    //   let uri = `http://localhost:8085/lab/lab5/edit/${this.$route.params.id}`;
-    //   axios
-    //     .get(uri)
-    //     .then(response => {
-    //       this.form = response.data;
-    //       console.log(this.form);
-    //     })
-    //     .catch(error => {
-    //       console.log(error);
-    //     });
-    // },
+    fetchRecord3() {
+      let uri = `http://localhost:8085/lab/lab3/${this.$route.params.id}`;
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    fetchRecord4() {
+      let uri = `http://localhost:8085/lab/lab4/${this.$route.params.id}`;
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    fetchRecord5() {
+      let uri = `http://localhost:8085/lab/lab5/${this.$route.params.id}`;
+      axios
+        .get(uri)
+        .then(response => {
+          this.form = response.data;
+          console.log(this.form);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
     updateRecord() {
       if (this.form.Select_LAB == "CIS/LAB/01") {
         let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
@@ -326,20 +317,6 @@ export default {
           .catch(error => {
             console.log(error);
           });
-
-        // let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
-        // axios
-        //   .post(uri, this.form)
-        //   .then(response => {
-        //     console.log(response);
-        //     this.submitted = "pending";
-        //     setTimeout(() => {
-        //       this.submitted = "ok";
-        //     }, 500);
-        //   })
-        //   .catch(error => {
-        //     console.log(error);
-        //   });
       } else if (this.form.Select_LAB == "CIS/LAB/02") {
         let uri = `http://localhost:8085/lab/lab2/update/${this.$route.params.id}`;
         axios
