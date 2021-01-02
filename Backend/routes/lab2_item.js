@@ -46,13 +46,6 @@ router.post('/lab2', function (req, res) {
         });
 });
 
-router.delete('/lab2/delete/:id', function (req, res) {               //can also use findByIdAndRemove
-    Item.findOneAndDelete({ _id: req.params.id }, function (err) {
-        if (err) res.json(err);
-        else res.json('Successfully removed');
-    });
-});
-
 router.put('/lab2/update/:id', function (req, res) {
     Item.update({_id: req.params.id}, {
         $set: req.body
@@ -63,5 +56,12 @@ router.put('/lab2/update/:id', function (req, res) {
         res.json(item);
     })
 })
+
+router.delete('/lab2/delete/:id', function (req, res) {               //can also use findByIdAndRemove
+    Item.findOneAndDelete({ _id: req.params.id }, function (err) {
+        if (err) res.json(err);
+        else res.json('Successfully removed');
+    });
+});
 
 module.exports = router;

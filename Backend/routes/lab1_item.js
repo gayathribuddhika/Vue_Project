@@ -53,7 +53,16 @@ router.delete('/lab1/delete/:id', function (req, res) {               //can also
     });
 });
 
-
+router.put('/lab1/update/:id', function (req, res) {
+    Item.update({_id: req.params.id}, {
+        $set: req.body
+    }, function (err, item) {
+        if(err) {
+            res.json(err);
+        }
+        res.json(item);
+    })
+})
 
 // router.get("/lab1/count", function (req, res) {
 //     Item.count({}, function (err, result) {
@@ -66,17 +75,5 @@ router.delete('/lab1/delete/:id', function (req, res) {               //can also
 //         }
 //     })
 // })
-
-router.put('/lab1/update/:id', function (req, res) {
-    Item.update({_id: req.params.id}, {
-        $set: req.body
-    }, function (err, item) {
-        if(err) {
-            res.json(err);
-        }
-        res.json(item);
-    })
-})
-
 
 module.exports = router;
