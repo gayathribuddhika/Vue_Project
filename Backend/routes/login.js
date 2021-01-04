@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 const cors = require("cors")
 
-const Login = require("../models/login_details")
+const Login = require("../models/login.model")
 router.use(cors())
 
 router.get('/login', (req, res) => {

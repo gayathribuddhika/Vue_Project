@@ -220,17 +220,6 @@ export default {
     };
   },
 
-  // validations: {
-  //   form: {
-  //     select_lab: { required },
-  //      category: { required },
-  //     description: { required },
-  //     serial_num: { required },
-  //     code: { required }
-  //     //qty: { required }
-  //   }
-  // },
-
   created() {
     this.fetchRecord1();
     this.fetchRecord2();
@@ -240,7 +229,6 @@ export default {
   },
 
   methods: {
-    
     fetchRecord1() {
       let uri = `http://localhost:8085/lab/lab1/${this.$route.params.id}`;
       axios

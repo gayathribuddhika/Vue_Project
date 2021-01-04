@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cors = require("cors")
 
-const Store = require("../models/stock_details");
+const Store = require("../models/stock.model");
 router.use(cors())
 
 router.get('/stock', (req, res) =>{

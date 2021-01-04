@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 const cors = require("cors")
 
-const User = require("../models/user_details")
+const User = require("../models/user.model")
 router.use(cors())
 
 const upload = require("../middleware/upload")
