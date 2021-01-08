@@ -14,9 +14,9 @@
         <center>
         <b-card-body>
           <b-card-title>
-            Admin Name
+            {{user.name}}
           </b-card-title>
-          <p><router-link :to = "`/admindashboard/${this.user.id}`">view profile</router-link></p>
+          <p><router-link :to = "`/admindashboard/profile`">view profile</router-link></p>
         </b-card-body>
         </center>
         <b-list-group variant="dark">
@@ -85,7 +85,9 @@ export default {
   name: "Profile",
   data() {
     return {
-      user: {}
+      user: {
+        name: ""
+      }
     };
   },
 
@@ -98,10 +100,8 @@ export default {
       axios
         .get("http://localhost:8085/user")
         .then(response => {
-          console.log(response.data._id);
-          this.user.id = response.data._id;
-          // return itemsLab1.length;
-          // console.log(this.itemsLab1.length);
+          console.log(response.data.name);
+          this.user.name= response.data.name;
         })
         .catch(error => {
           console.log(error);

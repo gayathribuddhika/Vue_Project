@@ -226,6 +226,7 @@ export default {
     this.fetchRecord3();
     this.fetchRecord4();
     this.fetchRecord5();
+    
   },
 
   methods: {
