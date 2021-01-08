@@ -9,7 +9,8 @@
         body-text-variant="white"
       >
         <center>
-          <b-img :src="require('../assets/proimage.png')"></b-img>
+          <!-- <b-img :src="require('../assets/proimage.png')"></b-img> -->
+          <b-img>{{user.profile_image}}</b-img>
         </center>
         <center>
         <b-card-body>
@@ -86,7 +87,8 @@ export default {
   data() {
     return {
       user: {
-        name: ""
+        name: "",
+        profile_image: ""
       }
     };
   },
@@ -101,7 +103,9 @@ export default {
         .get("http://localhost:8085/user")
         .then(response => {
           console.log(response.data.name);
+          console.log(response.data.profile_image);
           this.user.name= response.data.name;
+          this.user.profile_image= response.data.profile_image;
         })
         .catch(error => {
           console.log(error);
