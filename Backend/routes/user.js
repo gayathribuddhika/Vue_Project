@@ -8,7 +8,25 @@ router.use(cors())
 const upload = require("../middleware/upload")
 
 router.get('/user', (req, res) => {
+    User.find({}, function (err, user) {
+        if (err) {
+            res.json(err);
+        }
+        res.json(user);
+    });
+});
+
+router.get('/user/admin', (req, res) => {
     User.findOne({position: "admin"}, function (err, user) {
+        if (err) {
+            res.json(err);
+        }
+        res.json(user);
+    });
+});
+
+router.get('/user/staff', (req, res) => {
+    User.findOne({position: "staff"}, function (err, user) {
         if (err) {
             res.json(err);
         }
@@ -23,6 +41,11 @@ router.get('/user/:id', function (req, res) {
             res.json(err);
         }
         res.json(user);
+        // let user1 = new User ({
+        //     name: user.name,
+        //     email: user.email
+        // })
+        // res.json(user1);
     });
 });
 
