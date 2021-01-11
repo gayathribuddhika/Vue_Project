@@ -12,7 +12,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 require('./config/db');
-// require('./images')
 
 const contactRouter = require('./routes/contact');
 app.use('/', contactRouter);

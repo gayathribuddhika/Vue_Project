@@ -25,6 +25,8 @@ router.get('/user/admin', (req, res) => {
     });
 });
 
+
+
 router.get('/user/staff', (req, res) => {
     User.findOne({position: "staff"}, function (err, user) {
         if (err) {
@@ -55,6 +57,7 @@ router.post('/user',upload.single("profile_image"), function (req, res) {
         designation: req.body.designation,
         email: req.body.email,
         phone: req.body.phone,
+        // position: req.body.position
     })
     if(req.file) {
         user.profile_image = req.file.path

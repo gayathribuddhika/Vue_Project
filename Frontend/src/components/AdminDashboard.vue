@@ -103,9 +103,9 @@ export default {
         .get("http://localhost:8085/user/admin")
         .then(response => {
           console.log(response.data.name);
-          // console.log(response.data.profile_image);
+          console.log(response.data.profile_image);
           this.user.name= response.data.name;
-          // this.user.profile_image= response.data.profile_image;
+          this.user.profile_image= response.data.profile_image;
         })
         .catch(error => {
           console.log(error);

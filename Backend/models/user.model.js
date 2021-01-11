@@ -5,6 +5,7 @@ const userSchema = new Schema({
     
     profile_image: {
         type: String,
+        // data: Buffer
         // required:[true,"Profile_image is required"]
     },
 
