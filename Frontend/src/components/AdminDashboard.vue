@@ -25,11 +25,11 @@
             <b-list-group-item variant="dark" active>Dashboard</b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/currentstatus">Current Details - Items</b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/summarydetails">Current Details - Summary </b-list-group-item>
-            <b-list-group-item variant="dark" to="admindashboard/addrecords" >Add a new Record</b-list-group-item>
-            <b-list-group-item variant="dark" to="admindashboard/currentstatus">Delete a Record</b-list-group-item>
-            <b-list-group-item variant="dark" to="admindashboard/currentstatus">Update/Edit a Record</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/additem" >Add new Item</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/currentstatus">Delete Item</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/currentstatus">Update/Edit Item</b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/stockdetails">Stock Details</b-list-group-item>
-            <b-list-group-item variant="dark" to="admindashboard/reports">Create a Report</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/report">Create a Report</b-list-group-item>
             <b-list-group-item variant="dark" to="login">Logout</b-list-group-item>
           </div>
         </b-list-group>
@@ -83,7 +83,7 @@
 import axios from "axios";
 
 export default {
-  name: "Profile",
+  name: "AdminDashboard",
   data() {
     return {
       user: {

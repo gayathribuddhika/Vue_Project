@@ -7,7 +7,7 @@
       <br />
       <b-jumbotron container-fluid border-variant="dark" bg-variant="light">
         <b-form>
-          <p>To reset password, enter your organization email below. Your password reset instructions will be sent to your email. Please check your email once send.</p>
+          <p>To reset password, enter your email below. Your password reset instructions will be sent to your email. Please check your email once send.</p>
           <br />
           <b-form-group
             id="fieldset-horizontal"

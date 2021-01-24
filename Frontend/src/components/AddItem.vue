@@ -11,7 +11,7 @@
         <b-form @submit.prevent="add_Records" @reset="onReset" v-if="show">
           <b-form-group
             label-cols-lg="3"
-            label="Add a New Record"
+            label="Add New Item"
             label-size="lg"
             label-class="font-weight-bold pt-1"
             class="mb-2"
@@ -158,7 +158,7 @@ import axios from "axios";
 import { required } from "vuelidate/lib/validators";
 
 export default {
-  name: "AddRecords",
+  name: "AddItem",
   data() {
     return {
       form: {

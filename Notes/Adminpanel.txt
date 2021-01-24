@@ -27,7 +27,7 @@ ADMIN PANEL
               <router-link to="adminpanel/currentstatus">Current Details</router-link>
             </b-list-group-item>
             <b-list-group-item variant="dark">
-              <router-link to="adminpanel/addrecords">Add a new Record</router-link>
+              <router-link to="adminpanel/additem">Add a new Record</router-link>
             </b-list-group-item>
             <b-list-group-item variant="dark">
               <router-link to="adminpanel/currentstatus">Delete a Record</router-link>
