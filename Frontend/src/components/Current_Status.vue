@@ -65,7 +65,7 @@
                     <td>{{item.Comments}}</td>
                     <td>
                       <b-button
-                        :to="{name: 'UpdateRecord', params: {id:item._id }}"
+                        :to="{name: 'UpdateItem', params: {id:item._id }}"
                         variant="success"
                       >Edit</b-button>
                       <b-button
@@ -116,7 +116,7 @@
                     <td>{{item.Comments}}</td>
                     <td>
                       <b-button
-                        :to="{name: 'UpdateRecord', params: {id:item._id }}"
+                        :to="{name: 'UpdateItem', params: {id:item._id }}"
                         variant="success"
                       >Edit</b-button>
                       <b-button
@@ -166,7 +166,7 @@
                     <td>{{item.Comments}}</td>
                     <td>
                       <b-button
-                        :to="{name: 'UpdateRecord', params: {id:item._id }}"
+                        :to="{name: 'UpdateItem', params: {id:item._id }}"
                         variant="success"
                       >Edit</b-button>
                       <b-button
@@ -216,7 +216,7 @@
                     <td>{{item.Comments}}</td>
                     <td>
                       <b-button
-                        :to="{name: 'UpdateRecord', params: {id:item._id }}"
+                        :to="{name: 'UpdateItem', params: {id:item._id }}"
                         variant="success"
                       >Edit</b-button>
                       <b-button
@@ -266,7 +266,7 @@
                     <td>{{item.Comments}}</td>
                     <td>
                       <b-button
-                        :to="{name: 'UpdateRecord', params: {id:item._id }}"
+                        :to="{name: 'UpdateItem', params: {id:item._id }}"
                         variant="success"
                       >Edit</b-button>
                       <b-button

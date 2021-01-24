@@ -14,7 +14,7 @@
         class="mb-2"
         style="max-width: 65rem;"
       >
-        <b-form @submit.prevent="updateRecord" v-if="show">
+        <b-form @submit.prevent="updateItem" v-if="show">
           <!-- v-if="show" -->
           <b-form-group
             label-cols-lg="3"
@@ -162,7 +162,7 @@ import axios from "axios";
 // import { required } from "vuelidate/lib/validators";
 
 export default {
-  name: "UpdateRecords",
+  name: "UpdateItem",
   data() {
     return {
       form: {},
@@ -290,7 +290,7 @@ export default {
           console.log(error);
         });
     },
-    updateRecord() {
+    updateItem() {
       if (this.form.Select_LAB == "CIS/LAB/01") {
         let uri = `http://localhost:8085/lab/lab1/update/${this.$route.params.id}`;
         axios

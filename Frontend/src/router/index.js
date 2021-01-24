@@ -11,7 +11,7 @@ import current_status from '@/components/Current_Status'
 import AddItem from '@/components/AddItem'
 import Profile from '@/components/Profile'
 import ResetPassword from '@/components/ResetPassword'
-import UpdateRecord from '@/components/UpdateRecord'
+import UpdateItem from '@/components/UpdateItem'
 import Sample from '@/components/Sample'
 import AddData from '@/components/AddData'
 import StockDetails from '@/components/StockDetails'
@@ -83,8 +83,8 @@ export default new Router({
     },
     {
       path: '/edit/:id',
-      name: "UpdateRecord",
-      component: UpdateRecord
+      name: "UpdateItem",
+      component: UpdateItem
     },
     {
       path: '/login/resetpassword',
