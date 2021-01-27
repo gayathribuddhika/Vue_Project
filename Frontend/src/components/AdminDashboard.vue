@@ -35,44 +35,52 @@
         </b-list-group>
       </b-card>
       <b-card title="Dashboard">
-        
+        <br>
         <div>
           <b-card-group deck>
             <b-card header="Total Items" class="text-center">
               <b-card-text>
-                <p>LAB 01: 50 </p>
-                <p>LAB 02: 25</p>
-                <p>LAB 03: 42</p>
-                <p>LAB 04: 25</p>
-                <p>LAB 05: 59</p>
-                <p>Total: 201</p>
+                <b-row>
+                  <b-col>LAB 01: 50</b-col>
+                  <b-col>LAB 02: 50</b-col>
+                  <b-col>LAB 03: 50</b-col>
+                </b-row>
+                <b-row>
+                  <b-col>LAB 04: 50</b-col>
+                  <b-col>LAB 05: 50</b-col>
+                  <b-col></b-col>
+                </b-row>
+                <br>
+                <b-row>
+                  <b-col>Total: 250</b-col>
+                </b-row>
               </b-card-text>
             </b-card>
             <b-card
-              header="Total Categories"
+              header="Categories"
               class="text-center"
             >
-              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+              <b-card-text>10</b-card-text>
             </b-card>
 
-            <b-card header="Total Stock" class="text-center">
-              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            <b-card header="Stocks" class="text-center">
+              <b-card-text>50</b-card-text>
             </b-card>
           </b-card-group>
         </div>
 
         <div class="mt-3">
           <b-card-group deck>
-            <b-card class="text-center">
-              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            <b-card header="Suppliers" class="text-center">
+              <b-card-text>5</b-card-text>
             </b-card>
 
-            <b-card header="Dark" class="text-center">
-              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            <b-card header="Damaged Items" class="text-center">
+              <b-card-text>12</b-card-text>
             </b-card>
 
-            <b-card header="info" class="text-center">
-              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            <b-card header="Ordered Items" class="text-center">
+              <b-card-text>30</b-card-text>
             </b-card>
           </b-card-group>
         </div>
