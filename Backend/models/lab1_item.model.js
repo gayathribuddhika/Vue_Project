@@ -33,6 +33,9 @@ const Item = new Schema({
     Comments: {
         type: String
     },
+    row_count: {
+        type: Number
+    },
 },
     { collection: 'LAB01_CIS' }
 );

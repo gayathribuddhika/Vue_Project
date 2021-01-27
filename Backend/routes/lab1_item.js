@@ -65,13 +65,13 @@ router.put('/lab1/update/:id', function (req, res) {
 })
 
 // router.get("/lab1/count", function (req, res) {
-//     Item.count({}, function (err, result) {
+//     Item.count({}, function (err, count) {
 //         if (err) {
 //             res.send(err);
 //             console.log(res);
 //         }
 //         else {
-//             res.json(result);
+//             res.json(count);
 //         }
 //     })
 // })

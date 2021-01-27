@@ -38,21 +38,24 @@
         
         <div>
           <b-card-group deck>
-            <b-card bg-variant="primary" text-variant="white" header="Total Items" class="text-center">
+            <b-card header="Total Items" class="text-center">
               <b-card-text>
-                <p>LAB 01: </p>
+                <p>LAB 01: 50 </p>
+                <p>LAB 02: 25</p>
+                <p>LAB 03: 42</p>
+                <p>LAB 04: 25</p>
+                <p>LAB 05: 59</p>
+                <p>Total: 201</p>
               </b-card-text>
             </b-card>
             <b-card
-              bg-variant="secondary"
-              text-variant="white"
               header="Total Categories"
               class="text-center"
             >
               <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
             </b-card>
 
-            <b-card bg-variant="success" text-variant="white" header="Total Stock" class="text-center">
+            <b-card header="Total Stock" class="text-center">
               <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
             </b-card>
           </b-card-group>
@@ -60,15 +63,15 @@
 
         <div class="mt-3">
           <b-card-group deck>
-            <b-card bg-variant="warning" header="Light" class="text-center">
+            <b-card class="text-center">
               <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
             </b-card>
 
-            <b-card bg-variant="danger" header="Dark" text-variant="white" class="text-center">
+            <b-card header="Dark" class="text-center">
               <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
             </b-card>
 
-            <b-card header="info" class="text-center" bg-variant="info">
+            <b-card header="info" class="text-center">
               <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
             </b-card>
           </b-card-group>
