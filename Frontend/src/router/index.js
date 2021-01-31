@@ -56,7 +56,7 @@ export default new Router({
       component: StaffDashboard
     },
     {
-      path: '/admindashboard/currentstatus',
+      path: '/admindashboard/items',
       name: "Items",
       component: Items
     },
