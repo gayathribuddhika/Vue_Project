@@ -9,8 +9,8 @@
         body-text-variant="white"
       >
         <center>
-          <!-- <b-img :src="require('../assets/proimage.png')"></b-img> -->
-          <b-img>{{user.profile_image}}</b-img>
+          <b-img :src="require('../assets/gayathri.png')" full-width></b-img>
+          <!-- <b-img>{{user.profile_image}}</b-img> -->
         </center>
         <center>
         <b-card-body>
