@@ -7,13 +7,12 @@ import Login from '@/components/Login'
 import Home from '@/components/Home'
 import AdminDashboard from '@/components/AdminDashboard'
 import StaffDashboard from '@/components/StaffDashboard'
-import current_status from '@/components/Current_Status'
+import Items from '@/components/Items'
 import AddItem from '@/components/AddItem'
 import Profile from '@/components/Profile'
 import ResetPassword from '@/components/ResetPassword'
 import UpdateItem from '@/components/UpdateItem'
 import Sample from '@/components/Sample'
-import AddData from '@/components/AddData'
 import StockDetails from '@/components/StockDetails'
 import UpdateStock from '@/components/UpdateStock'
 import AddStockDetails from '@/components/AddStockDetails'
@@ -58,8 +57,8 @@ export default new Router({
     },
     {
       path: '/admindashboard/currentstatus',
-      name: "Current_Status",
-      component: current_status
+      name: "Items",
+      component: Items
     },
     {
       path: '/admindashboard/additem',
@@ -95,11 +94,6 @@ export default new Router({
       path: '/sample',
       name: "Sample",
       component: Sample
-    },
-    {
-      path: '/adddata',
-      name: "AddData",
-      component: AddData
     },
     {
       path: '/admindashboard/stockdetails',

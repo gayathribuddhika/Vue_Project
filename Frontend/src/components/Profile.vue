@@ -3,6 +3,7 @@
     <center>
       <b-card style="max-width: 50rem;" align="left">
         <b-form >
+          <b-img :src="require('../assets/gayathri.png')" rounded="circle" alt="Circle image"></b-img><br><br>
           <!-- v-for="(user, user_id) in userData" v-bind:key="user_id" -->
           <!-- @submit="onSubmit" @reset="onReset" v-if="show" -->
           <b-form-group id="user_name" label="Name:" label-for="user_name">

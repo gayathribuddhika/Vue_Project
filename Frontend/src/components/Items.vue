@@ -291,7 +291,7 @@ import axios from "axios";
 import $ from 'jquery';
 
 export default {
-  name: "Current_Status",
+  name: "Items",
 
   data() {
     return {
