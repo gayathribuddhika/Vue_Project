@@ -26,8 +26,8 @@
             <b-list-group-item variant="dark" to="admindashboard/items">Items</b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/summarydetails">Items - Summary </b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/additem" >Add new Item</b-list-group-item>
-            <b-list-group-item variant="dark" to="admindashboard/currentstatus">Delete Item</b-list-group-item>
-            <b-list-group-item variant="dark" to="admindashboard/currentstatus">Update/Edit Item</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/items">Delete Item</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/items">Update/Edit Item</b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/stockdetails">Items - Stock</b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/report">Create a Report</b-list-group-item>
             <b-list-group-item variant="dark" to="login">Logout</b-list-group-item>
@@ -38,7 +38,7 @@
         <br>
         <div>
           <b-card-group deck>
-            <b-card header="Total Items" class="text-center">
+            <b-card header="Total Items" class="text-center" bg-variant="warning">
               <b-card-text>
                 <b-row>
                   <b-col>LAB 01: 50</b-col>
@@ -56,14 +56,11 @@
                 </b-row>
               </b-card-text>
             </b-card>
-            <b-card
-              header="Categories"
-              class="text-center"
-            >
+            <b-card header="Categories" class="text-center" bg-variant="primary">
               <b-card-text>10</b-card-text>
             </b-card>
 
-            <b-card header="Stocks" class="text-center">
+            <b-card header="Stocks" class="text-center" bg-variant="secondary">
               <b-card-text>50</b-card-text>
             </b-card>
           </b-card-group>
@@ -71,15 +68,15 @@
 
         <div class="mt-3">
           <b-card-group deck>
-            <b-card header="Suppliers" class="text-center">
+            <b-card header="Suppliers" class="text-center" bg-variant="success">
               <b-card-text>5</b-card-text>
             </b-card>
 
-            <b-card header="Damaged Items" class="text-center">
+            <b-card header="Damaged Items" class="text-center" bg-variant="danger">
               <b-card-text>12</b-card-text>
             </b-card>
 
-            <b-card header="Ordered Items" class="text-center">
+            <b-card header="Ordered Items" class="text-center" bg-variant="info">
               <b-card-text>30</b-card-text>
             </b-card>
           </b-card-group>

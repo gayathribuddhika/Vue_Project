@@ -14,14 +14,16 @@ var storage = multer.diskStorage({
 
 var upload = multer ({
     storage: storage,
-    fileFilter: function(req, file, callback) {
-        if(file.mimetype == "image/jpeg" || file.mimetype == "image/jpg" || file.mimetype == "image/png") {
-            callback(null, true)
-        } else {
-            console.log("Only jpg or jpeg or png files are supported!")
-            callback(null, false)
-        }
-    },
+    folder : "images",
+    allowedformats : ["jpeg", "jpg", "png"],
+    // fileFilter: function(req, file, callback) {
+    //     if(file.mimetype == "image/jpeg" || file.mimetype == "image/jpg" || file.mimetype == "image/png") {
+    //         callback(null, true)
+    //     } else {
+    //         console.log("Only jpg or jpeg or png files are supported!")
+    //         callback(null, false)
+    //     }
+    // },
     limits: {
         fileSize: 1024 * 1024 * 2 
     }
