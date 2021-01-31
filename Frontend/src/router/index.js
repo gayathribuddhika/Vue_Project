@@ -81,7 +81,7 @@ export default new Router({
       component: Profile
     },
     {
-      path: '/edit/:id',
+      path: '/admindashboard/items/edit/:id',
       name: "UpdateItem",
       component: UpdateItem
     },
