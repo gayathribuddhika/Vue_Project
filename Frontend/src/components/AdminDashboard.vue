@@ -24,12 +24,12 @@
           <div>
             <b-list-group-item variant="dark" active>Dashboard</b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/items">Items</b-list-group-item>
-            <b-list-group-item variant="dark" to="admindashboard/summarydetails">Items - Summary </b-list-group-item>
+            <b-list-group-item variant="dark" to="#">Items - Summary </b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/additem" >Add new Item</b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/items">Delete Item</b-list-group-item>
             <b-list-group-item variant="dark" to="admindashboard/items">Update/Edit Item</b-list-group-item>
-            <b-list-group-item variant="dark" to="admindashboard/stockdetails">Items - Stock</b-list-group-item>
-            <b-list-group-item variant="dark" to="admindashboard/report">Create a Report</b-list-group-item>
+            <b-list-group-item variant="dark" to="#">Items - Stock</b-list-group-item>
+            <b-list-group-item variant="dark" to="#">Create a Report</b-list-group-item>
             <b-list-group-item variant="dark" to="login">Logout</b-list-group-item>
           </div>
         </b-list-group>

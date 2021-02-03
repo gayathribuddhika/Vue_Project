@@ -61,6 +61,11 @@ export default new Router({
       component: Items
     },
     {
+      path: '/staffdashboard/items',
+      name: "Items",
+      component: Items
+    },
+    {
       path: '/admindashboard/additem',
       name: "AddItem",
       component: AddItem

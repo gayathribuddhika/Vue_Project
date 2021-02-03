@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="btn">
-      <b-button squared variant="dark" to="/admindashboard/currentstatus">Back</b-button>
+      <b-button squared variant="dark" to="/admindashboard/items">Back</b-button>
       <!-- <b-button squared variant="dark" to="/admindashboard/currentstatus"
         >View All</b-button
       > -->
@@ -222,10 +222,10 @@ export default {
 
   created() {
     this.fetchRecord1();
-    this.fetchRecord2();
-    this.fetchRecord3();
-    this.fetchRecord4();
-    this.fetchRecord5();
+    // this.fetchRecord2();
+    // this.fetchRecord3();
+    // this.fetchRecord4();
+    // this.fetchRecord5();
     
   },
 

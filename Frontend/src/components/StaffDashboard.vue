@@ -2,70 +2,79 @@
   <div>
     <b-card-group>
       <b-card
-        style="max-width: 15rem;"
+        style="max-width: 18rem;"
         img-alt="Image"
         img-top
-        body-bg-variant="dark"
+        body-bg-variant="success"
         body-text-variant="white"
       >
         <center>
-          <b-img :src="require('../assets/proimage.png')"></b-img>
+          <!-- <b-img :src="require('../assets/gayathri.png')" rounded="circle" alt="Circle image"></b-img> -->
+          <!-- <b-img>{{user.profile_image}}</b-img> -->
         </center>
+        <center>
         <b-card-body>
           <b-card-title>
-            <center>Staff Name</center>
+            {{user.name}}
           </b-card-title>
+          <p><router-link :to = "`/staffdashoard/profile`">view profile</router-link></p>
         </b-card-body>
-
+        </center>
         <b-list-group variant="dark">
           <div>
-            <b-list-group-item variant="dark">Dashboard</b-list-group-item>
-            <b-list-group-item variant="dark" to="StaffDashboard/currentstatus">
-              Current Status
-            </b-list-group-item>
-            <b-list-group-item variant="dark">
-              Current Details-Summary Report
-            </b-list-group-item>
-            
-            <b-list-group-item variant="dark">Create a Report</b-list-group-item>
-            <b-list-group-item variant="dark">Edit Profile</b-list-group-item>
+            <b-list-group-item variant="dark" active>Dashboard</b-list-group-item>
+            <b-list-group-item variant="dark" to="staffdashboard/items">Items</b-list-group-item>
+            <b-list-group-item variant="dark" to="#">Items - Summary </b-list-group-item>
+            <b-list-group-item variant="dark" to="#">Items - Stock</b-list-group-item>
+            <b-list-group-item variant="dark" to="#">Create a Report</b-list-group-item>
             <b-list-group-item variant="dark" to="login">Logout</b-list-group-item>
           </div>
         </b-list-group>
       </b-card>
       <b-card title="Dashboard">
-       <div>
+        <br>
+        <div>
           <b-card-group deck>
-            <b-card bg-variant="primary" text-variant="white" header="Total Items" class="text-center">
-              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            <b-card header="Total Items" class="text-center" bg-variant="warning">
+              <b-card-text>
+                <b-row>
+                  <b-col>LAB 01: 50</b-col>
+                  <b-col>LAB 02: 50</b-col>
+                  <b-col>LAB 03: 50</b-col>
+                </b-row>
+                <b-row>
+                  <b-col>LAB 04: 50</b-col>
+                  <b-col>LAB 05: 50</b-col>
+                  <b-col></b-col>
+                </b-row>
+                <br>
+                <b-row>
+                  <b-col>Total: 250</b-col>
+                </b-row>
+              </b-card-text>
             </b-card>
-            <b-card
-              bg-variant="secondary"
-              text-variant="white"
-              header="Total Categories"
-              class="text-center"
-            >
-              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            <b-card header="Categories" class="text-center" bg-variant="primary">
+              <b-card-text>10</b-card-text>
             </b-card>
 
-            <b-card bg-variant="success" text-variant="white" header="Total Stock" class="text-center">
-              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            <b-card header="Stocks" class="text-center" bg-variant="secondary">
+              <b-card-text>50</b-card-text>
             </b-card>
           </b-card-group>
         </div>
 
         <div class="mt-3">
           <b-card-group deck>
-            <b-card bg-variant="warning" header="Light" class="text-center">
-              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            <b-card header="Suppliers" class="text-center" bg-variant="success">
+              <b-card-text>5</b-card-text>
             </b-card>
 
-            <b-card bg-variant="danger" header="Dark" text-variant="white" class="text-center">
-              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            <b-card header="Damaged Items" class="text-center" bg-variant="danger">
+              <b-card-text>12</b-card-text>
             </b-card>
 
-            <b-card header="info" class="text-center" bg-variant="info">
-              <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+            <b-card header="Ordered Items" class="text-center" bg-variant="info">
+              <b-card-text>30</b-card-text>
             </b-card>
           </b-card-group>
         </div>
@@ -73,3 +82,44 @@
     </b-card-group>
   </div>
 </template>
+
+
+<script>
+import axios from "axios";
+
+export default {
+  name: "StaffDashboard",
+  data() {
+    return {
+      user: {
+        name: "",
+        profile_image: ""
+      }
+    };
+  },
+
+  created() {
+      this.readUser();
+  },
+
+  methods: {
+    readUser() {
+      axios
+        .get("http://localhost:8085/user/staff")
+        .then(response => {
+          console.log(response.data.name);
+          console.log(response.data.profile_image);
+          this.user.name= response.data.name;
+          this.user.profile_image= response.data.profile_image;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }
+};
+</script>
+
+<style scoped>
+
+</style>
