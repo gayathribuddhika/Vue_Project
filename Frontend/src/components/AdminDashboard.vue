@@ -30,6 +30,7 @@
             <b-list-group-item variant="dark" to="admindashboard/items">Update/Edit Item</b-list-group-item>
             <b-list-group-item variant="dark" to="#">Items - Stock</b-list-group-item>
             <b-list-group-item variant="dark" to="#">Create a Report</b-list-group-item>
+            <b-list-group-item variant="dark" to="admindashboard/adduser">Add Users</b-list-group-item>
             <b-list-group-item variant="dark" to="login">Logout</b-list-group-item>
           </div>
         </b-list-group>

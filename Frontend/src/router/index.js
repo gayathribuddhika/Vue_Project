@@ -12,19 +12,22 @@ import AddItem from '@/components/AddItem'
 import Profile from '@/components/Profile'
 import ResetPassword from '@/components/ResetPassword'
 import UpdateItem from '@/components/UpdateItem'
-import Sample from '@/components/Sample'
 import StockDetails from '@/components/StockDetails'
 import UpdateStock from '@/components/UpdateStock'
 import AddStockDetails from '@/components/AddStockDetails'
 import SummaryDetails from '@/components/SummaryDetails'
 import Report from '@/components/Report'
-// import Header from '@/components/Header'
+import AddUser from '@/components/AddUser'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-
+    {
+      path: '/',
+      name: "Home",
+      component: Home
+    },
     {
       path: '/contacts',
       name: 'contacts',
@@ -39,11 +42,6 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
-    },
-    {
-      path: '/',
-      name: "Home",
-      component: Home
     },
     {
       path: '/admindashboard',
@@ -70,11 +68,6 @@ export default new Router({
       name: "AddItem",
       component: AddItem
     },
-    // {
-    //   path: '/admindashboard/profile',
-    //   name: "Profile",
-    //   component: Profile
-    // },
     {
       path: '/admindashboard/:id',
       name: "Profile",
@@ -94,11 +87,6 @@ export default new Router({
       path: '/login/resetpassword',
       name: "ResetPassword",
       component: ResetPassword
-    },
-    {
-      path: '/sample',
-      name: "Sample",
-      component: Sample
     },
     {
       path: '/admindashboard/stockdetails',
@@ -124,6 +112,11 @@ export default new Router({
       path: '/admindashboard/report',
       name: "Report",
       component: Report
+    },
+    {
+      path: '/admindashboard/adduser',
+      name: "AddUser",
+      component: AddUser
     }
   ]
 })
