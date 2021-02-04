@@ -9,7 +9,7 @@
         body-text-variant="white"
       >
         <center>
-          <!-- <b-img :src="require('../assets/gayathri.png')" rounded="circle" alt="Circle image"></b-img> -->
+          <b-img :src="require('../assets/tharushi.png')" rounded="circle" alt="Circle image"></b-img>
           <!-- <b-img>{{user.profile_image}}</b-img> -->
         </center>
         <center>

@@ -17,7 +17,7 @@ router.get('/user', (req, res) => {
 });
 
 router.get('/user/admin', (req, res) => {
-    User.findOne({position: "admin"}, function (err, user) {
+    User.findOne({username: "Admin"}, function (err, user) {
         if (err) {
             res.json(err);
         }
@@ -25,10 +25,8 @@ router.get('/user/admin', (req, res) => {
     });
 });
 
-
-
 router.get('/user/staff', (req, res) => {
-    User.findOne({position: "staff"}, function (err, user) {
+    User.findOne({username: "staff"}, function (err, user) {
         if (err) {
             res.json(err);
         }

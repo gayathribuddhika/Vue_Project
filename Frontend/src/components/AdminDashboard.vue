@@ -89,6 +89,7 @@
 
 <script>
 import axios from "axios";
+import Login from '@/components/Login';
 
 export default {
   name: "AdminDashboard",
@@ -118,17 +119,6 @@ export default {
         .catch(error => {
           console.log(error);
         });
-      // axios
-      //   .get("http://localhost:8085/user/5fea10bc3cae4a2538c6da33")
-      //   .then(response => {
-      //     console.log(response.data._id);
-      //     this.user.id = response.data._id;
-      //     // return itemsLab1.length;
-      //     // console.log(this.itemsLab1.length);
-      //   })
-      //   .catch(error => {
-      //     console.log(error);
-      //   });
     }
   }
 };
