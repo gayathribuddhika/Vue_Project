@@ -73,11 +73,11 @@ export default new Router({
       name: "Profile",
       component: Profile
     },
-    {
-      path: '/staffdashboard/:id',
-      name: "StaffProfile",
-      component: Profile
-    },
+    // {
+    //   path: '/staffdashboard/:id',
+    //   name: "StaffProfile",
+    //   component: Profile
+    // },
     {
       path: '/admindashboard/items/edit/:id',
       name: "UpdateItem",

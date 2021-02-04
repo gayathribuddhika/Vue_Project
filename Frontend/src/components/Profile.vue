@@ -1,5 +1,6 @@
 <template>
   <div class>
+    <br>
     <center>
       <b-card style="max-width: 50rem;" align="left">
         <b-form >
@@ -48,11 +49,12 @@
             ></b-form-input>
           </b-form-group>
 
-          <!-- <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button> -->
+          <b-button type="submit" variant="success">Update</b-button>
+      <!-- <b-button type="reset" variant="danger">Reset</b-button> -->
         </b-form>
       </b-card>
     </center>
+    <br>
     <!-- <b-card class="mt-3" header="User Profile">
       <pre class="m-0">{{ user }}</pre>
     </b-card> -->
