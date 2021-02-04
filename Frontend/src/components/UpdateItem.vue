@@ -171,7 +171,7 @@ export default {
       // lab3: {},
       // lab4: {},
       // lab5: {},
-
+      
       select_labs: [
         { text: "Select One", value: null },
         "CIS/LAB/01",
@@ -189,7 +189,7 @@ export default {
         "Computer",
         "Furniture",
         "Office Equipments",
-        "Other Equipments (ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)"
+        "Other Equipments"  //(ACs, Projector, Projector Screen, WihiteBoard, Sound System, Fans)
       ],
       show: true,
 
@@ -221,22 +221,39 @@ export default {
   },
 
   created() {
+    // this.getitem();
     this.fetchRecord1();
-    // this.fetchRecord2();
-    // this.fetchRecord3();
-    // this.fetchRecord4();
-    // this.fetchRecord5();
+    this.fetchRecord2();
+    this.fetchRecord3();
+    this.fetchRecord4();
+    this.fetchRecord5();
     
   },
 
   methods: {
+    // getitem() {
+    //   if (this.form.Select_LAB == "CIS/LAB/01") {
+    //     this.fetchRecord1();
+    //   } else if (this.form.Select_LAB == "CIS/LAB/02") {
+    //     this.fetchRecord2();
+    //   } else if (this.form.Select_LAB == "CIS/LAB/03") {
+    //     this.fetchRecord3();
+    //   } else if (this.form.Select_LAB == "CIS/LAB/04") {
+    //     this.fetchRecord4();
+    //   } else if (this.form.Select_LAB == "CIS/LAB/05") {
+    //     this.fetchRecord5();
+    //   }
+    // },
+
     fetchRecord1() {
       let uri = `http://localhost:8085/lab/lab1/${this.$route.params.id}`;
       axios
         .get(uri)
         .then(response => {
           this.form = response.data;
-          console.log(this.form); //ok
+          this.form.Select_LAB = response.data.Select_LAB;
+          console.log(this.form);
+          console.log(this.form.Select_LAB) //ok
         })
         .catch(error => {
           console.log(error);
