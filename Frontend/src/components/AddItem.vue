@@ -18,7 +18,7 @@
           >
             <b-form-group
               label-cols-sm="3"
-              label="Select LAB"
+              label="Computer LAB"
               label-for="select_lab"
               label-align-sm="right"
             >

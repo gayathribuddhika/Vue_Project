@@ -18,14 +18,14 @@
           <!-- v-if="show" -->
           <b-form-group
             label-cols-lg="3"
-            label="Update a Record"
+            label="Update An Item"
             label-size="lg"
             label-class="font-weight-bold pt-1"
             class="mb-2"
           >
             <b-form-group
               label-cols-sm="3"
-              label="Selected LAB"
+              label="Computer LAB"
               label-for="select_lab"
               label-align-sm="right"
             >
