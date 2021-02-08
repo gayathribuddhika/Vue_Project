@@ -222,11 +222,11 @@ export default {
 
   created() {
     // this.getitem();
-    this.fetchRecord1();
+    // this.fetchRecord1();
     this.fetchRecord2();
-    this.fetchRecord3();
-    this.fetchRecord4();
-    this.fetchRecord5();
+    // this.fetchRecord3();
+    // this.fetchRecord4();
+    // this.fetchRecord5();
     
   },
 

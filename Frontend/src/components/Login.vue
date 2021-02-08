@@ -90,6 +90,7 @@ export default {
 
   methods: {
     login() {
+      
       let newLogin = {
         username: this.login_form.username,
         password: this.login_form.password
@@ -100,6 +101,7 @@ export default {
         .post("http://localhost:8085/login", newLogin)
         .then(resposne => {
           console.log(resposne);
+          
           if ((this.submit_login = "ok")) {
             if (
               this.users[0].username == newLogin.username &&
