@@ -25,18 +25,26 @@ router.get('/login', (req, res) => {
 // });
 
 router.post('/login', function (req, res) {
-    var username = req.body.username;
-    var password = req.body.password;
-    // var user_type = req.body.user_type;
+    let newLogin = new Login();
+    newLogin.username = req.body.username;
+    newLogin.password = req.body.password;
     
-    Login.findOne({username:username, password:password}, function(err, login) {
+    Login.find(newLogin, function(err, login) {
         if (err) {
             return res.status(500).send();
         }
         if(!login){
             return res.status(400).send("Invalid Login Details");
         }
-        return res.status(200).send("Login Successfull");
+        let loginDetail = {
+            isLoggedIn: true, 
+            isAdmin: true,
+            username: newLogin.username, 
+            password:newLogin.password,
+            // status: "Login Successfull"
+        };
+        // console.log(loginDetail);
+        return res.status(200).send(loginDetail);
     })
 })
 

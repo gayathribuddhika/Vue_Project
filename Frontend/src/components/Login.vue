@@ -95,27 +95,18 @@ export default {
         username: this.login_form.username,
         password: this.login_form.password
       };
-      console.log(newLogin);
+      console.log(newLogin); // ok
 
       axios
         .post("http://localhost:8085/login", newLogin)
-        .then(resposne => {
-          console.log(resposne);
-          
-          if ((this.submit_login = "ok")) {
-            if (
-              this.users[0].username == newLogin.username &&
-              this.users[0].password == newLogin.password
-            ) {
+        .then(response => {
+          console.log(response);
+
+          if (response) {
+            if(response.data.isLoggedIn == true && response.data.isAdmin == true) {
               this.$router.push({ name: "AdminDashboard" });
-            }
-            if (
-              (this.users[1].username == newLogin.username &&
-                this.users[1].password == newLogin.password) ||
-              (this.users[2].username == newLogin.username &&
-                this.users[2].password == newLogin.password)
-            ) {
-              this.$router.push({ name: "StaffDashboard" });
+            // } else if (response.data.isLoggedIn == true && response.data.isAdmin == false) {
+            //   this.$router.push({ name: "StaffDashboard" });
             }
           }
         })
