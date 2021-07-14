@@ -67,7 +67,6 @@ export default {
       login_form: {
         username: "",
         password: "",
-        user_type: ""
       },
       users: [],
 

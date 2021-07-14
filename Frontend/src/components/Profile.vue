@@ -1,10 +1,20 @@
 <template>
   <div class>
-    <br>
+    <br />
+    <div class="btn">
+      <b-button squared variant="dark" to="/admindashboard">Back</b-button>
+    </div>
     <center>
       <b-card style="max-width: 50rem;" align="left">
-        <b-form >
-          <center><b-img :src="require('../assets/gayathri.png')" rounded="circle" alt="Circle image"></b-img></center><br><br>
+        <b-form>
+          <center>
+            <b-img
+              :src="require('../assets/gayathri.png')"
+              rounded="circle"
+              alt="Circle image"
+            ></b-img>
+          </center>
+          <br /><br />
           <!-- v-for="(user, user_id) in userData" v-bind:key="user_id" -->
           <!-- @submit="onSubmit" @reset="onReset" v-if="show" -->
           <b-form-group id="user_name" label="Name:" label-for="user_name">
@@ -50,11 +60,11 @@
           </b-form-group>
 
           <b-button type="submit" variant="success">Update</b-button>
-      <!-- <b-button type="reset" variant="danger">Reset</b-button> -->
+          <!-- <b-button type="reset" variant="danger">Reset</b-button> -->
         </b-form>
       </b-card>
     </center>
-    <br>
+    <br />
     <!-- <b-card class="mt-3" header="User Profile">
       <pre class="m-0">{{ user }}</pre>
     </b-card> -->
@@ -69,12 +79,11 @@ export default {
   data() {
     return {
       user: {}
-      
     };
   },
 
   created() {
-      this.readUser();
+    this.readUser();
   },
 
   methods: {

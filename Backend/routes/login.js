@@ -46,6 +46,6 @@ router.post('/login', function (req, res) {
         // console.log(loginDetail);
         return res.status(200).send(loginDetail);
     })
-})
+}) 
 
 module.exports = router;
