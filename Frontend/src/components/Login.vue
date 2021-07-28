@@ -75,17 +75,17 @@ export default {
     };
   },
 
-  mounted() {
-    axios
-      .get("http://localhost:8085/login")
-      .then(response => {
-        this.users = response.data;
-        console.log(this.users); //ok
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  },
+  // mounted() {
+  //   axios
+  //     .get("http://localhost:8085/login")
+  //     .then(response => {
+  //       this.users = response.data;
+  //       console.log(this.users); //ok
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // },
 
   methods: {
     login() {
