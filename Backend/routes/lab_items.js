@@ -1,12 +1,13 @@
-const express = require("express")
-const router = express.Router()
-const cors = require("cors")
+const express = require("express");
+// const Joi = require("joi");
+const router = express.Router();
+const cors = require("cors");
 
-const Item = require("../models/lab_item.model");
+const {Lab1, Lab2, Lab3, Lab4, Lab5} = require("../models/lab_item.model");
 router.use(cors());
 
 router.get('/lab1', (req, res) => {
-    Item.find(function (err, items) {
+    Lab1.find(function (err, items) {
         if (err) {
             res.json(err);
         }

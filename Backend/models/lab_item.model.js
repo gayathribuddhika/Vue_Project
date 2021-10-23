@@ -5,7 +5,7 @@ const Item = new Schema({
 
     Select_LAB: {
         type: String,
-        enum: ["LAB01_CIS", "LAB02_CIS", "LAB03_CIS", "LAB04_CIS", "LAB05_CIS"],
+        enum: ["CIS/LAB/01", "CIS/LAB/02", "CIS/LAB/03", "CIS/LAB/04", "CIS/LAB/05"],
         required: true
     },
     Item_id: {
@@ -14,10 +14,31 @@ const Item = new Schema({
     },
     Main_Category: {
         type: String,
+        enum: ["Accessories", "Communication Equipments", "Computer", "Furniture", "Office Equipments", "Other Equipments"],
         required: true
     },
     Asset_Description: {
         type: String,
+        enum: [
+            "Fans",
+            "ACs",
+            "Whiteboard",
+            "Projector",
+            "Projector Screen",
+            "Sound System",
+            "Printer",
+            "Monitor",
+            "System Unit",
+            "UPS",
+            "Mouse",
+            "Keyboard",
+            "Computer Table",
+            "Computer Chair",
+            "Normal Chair",
+            "Telephone",
+            "Laminationg Machine",
+            "Photocopy Machine"
+        ],
         required: true
     },
     Serial_Num: {
@@ -37,8 +58,16 @@ const Item = new Schema({
     Comments: {
         type: String,
         date: Date
-    }
+    },
     
 });
 
-module.exports = mongoose.model("LabItem", Item);
+const Lab1 = mongoose.model("ItemLab1", Item);
+const Lab2 = mongoose.model("ItemLab2", Item);
+const Lab3 = mongoose.model("ItemLab3", Item);
+const Lab4 = mongoose.model("ItemLab4", Item);
+const Lab5 = mongoose.model("ItemLab5", Item);
+
+module.exports = {
+    Lab1, Lab2, Lab3, Lab4, Lab5
+}
