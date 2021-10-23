@@ -89,7 +89,7 @@ export default {
 
   methods: {
     login() {
-      
+      // debugger
       let newLogin = {
         username: this.login_form.username,
         password: this.login_form.password
