@@ -5,6 +5,7 @@ const Item = new Schema({
 
     Select_LAB: {
         type: String,
+        enum: ["LAB01_CIS", "LAB02_CIS", "LAB03_CIS", "LAB04_CIS", "LAB05_CIS"],
         required: true
     },
     Item_id: {
