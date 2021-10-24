@@ -7,7 +7,7 @@ const {Lab1, Lab2, Lab3, Lab4, Lab5} = require("../models/lab_item.model");
 router.use(cors());
 
 router.get('/lab1', (req, res) => {
-    Lab2.find(function (err, items) {
+    Lab1.find(function (err, items) {
         if (err) {
             res.json(err);
         }
@@ -17,10 +17,11 @@ router.get('/lab1', (req, res) => {
 
 router.get('/lab1/:id', function (req, res) {
     let id = req.params.id;
-    Item.findById(id, function (err, item) {
+    Lab1.findById(id, function (err, item) {
         if (err) {
             res.json(err);
         }
+        console.log(item);
         res.json(item);
     });
 });

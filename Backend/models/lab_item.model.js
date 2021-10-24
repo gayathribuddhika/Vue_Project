@@ -60,7 +60,14 @@ const Item = new Schema({
         date: Date
     },
     
-});
+},  
+
+    {collection: "LAB01_CIS"},
+    // {collection: "LAB02_CIS"},
+    // {collection: "LAB03_CIS"},
+    // {collection: "LAB04_CIS"},
+    // {collection: "LAB05_CIS"}, 
+);
 
 const Lab1 = mongoose.model("ItemLab1", Item);
 const Lab2 = mongoose.model("ItemLab2", Item);
