@@ -15,6 +15,15 @@ router.get('/lab1', (req, res) => {
     });
 });
 
+router.get('/lab2', (req, res) => {
+    Lab2.find(function (err, items) {
+        if (err) {
+            res.json(err);
+        }
+        res.json(items);
+    });
+});
+
 router.get('/lab1/:id', function (req, res) {
     let id = req.params.id;
     Lab1.findById(id, function (err, item) {

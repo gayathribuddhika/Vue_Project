@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Item = new Schema({
+const ItemSchema = new Schema({
 
     Select_LAB: {
         type: String,
@@ -60,20 +60,20 @@ const Item = new Schema({
         date: Date
     },
     
-},  
+}
 
-    {collection: "LAB01_CIS"},
+    // {collection: "LAB01_CIS"},
     // {collection: "LAB02_CIS"},
     // {collection: "LAB03_CIS"},
     // {collection: "LAB04_CIS"},
     // {collection: "LAB05_CIS"}, 
 );
 
-const Lab1 = mongoose.model("ItemLab1", Item);
-const Lab2 = mongoose.model("ItemLab2", Item);
-const Lab3 = mongoose.model("ItemLab3", Item);
-const Lab4 = mongoose.model("ItemLab4", Item);
-const Lab5 = mongoose.model("ItemLab5", Item);
+const Lab1 = mongoose.model("LAB01_CIS", ItemSchema);
+const Lab2 = mongoose.model("LAB02_CIS", ItemSchema);
+const Lab3 = mongoose.model("LAB03_CIS", ItemSchema);
+const Lab4 = mongoose.model("LAB04_CIS", ItemSchema);
+const Lab5 = mongoose.model("LAB05_CIS", ItemSchema);
 
 module.exports = {
     Lab1, Lab2, Lab3, Lab4, Lab5
