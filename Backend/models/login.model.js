@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Joi = require("joi");
 
-const login = mongoose.model("Login", new mongoose.Schema({
+const Login = mongoose.model("Login", new mongoose.Schema({
     
     username: {
         type: String,
@@ -28,7 +28,7 @@ function validateLogin(login){
         username: Joi.String().required(),
         password: Joi.String().min(5).max(12).required()
     };
-    return Joi.validate(login, user);
+    return Joi.validate(login, schema);
 }
 
 exports.Login = Login;
