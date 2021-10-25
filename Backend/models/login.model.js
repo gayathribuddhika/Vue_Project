@@ -1,28 +1,35 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const Joi = require("joi");
 
-const loginSchema = new Schema({
+const login = mongoose.model("Login", new mongoose.Schema({
     
     username: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
 
     password: {
         type: String,
         required: true,
         minlength: 5,
-        maxlength: 8
-        
+        maxlength: 12,
     },          
 
-    user_type: {
-        type: String,
-        required: true
-    }
+    // user_type: {
+    //     type: String,
+    //     required: true
+    // }
 
-}, 
-    {collection: "Login"}
-);
+}));
 
-module.exports = mongoose.model("Login", loginSchema);
+function validateLogin(login){
+    const schema = {
+        username: Joi.String().required(),
+        password: Joi.String().min(5).max(12).required()
+    };
+    return Joi.validate(login, user);
+}
+
+exports.Login = Login;
+exports.validate = validateLogin;

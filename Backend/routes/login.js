@@ -2,7 +2,9 @@ const express = require("express")
 const router = express.Router()
 const cors = require("cors")
 
-const Login = require("../models/login.model")
+const {Login, validate} = require("../models/login.model");
+const mongoose = require("mongoose");
+// const Login = require("../models/login.model")
 router.use(cors())
 
 router.get('/login', (req, res) => {
@@ -14,15 +16,6 @@ router.get('/login', (req, res) => {
     });
 });
 
-// router.get('/login/:id', function (req, res) {
-//     let id = req.params.id;
-//     Login.findById(id, function (err, login) {
-//         if (err) {
-//             res.json(err);
-//         }
-//         res.json(login);
-//     });
-// });
 
 router.post('/login', function (req, res) {
     let newLogin = new Login();
