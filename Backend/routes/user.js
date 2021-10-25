@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const router = express.Router()
 const cors = require("cors")
 
-const User = require("../models/user.model")
+const {User, validate} = require("../models/user.model")
 router.use(cors())
 
 const upload = require("../middleware/upload")
@@ -50,24 +50,47 @@ router.get('/user/:id', function (req, res) {
     });
 });
 
-router.post('/user',upload.single("profile_image"), function (req, res) {
-    let user = new User({
+router.post('/user', function (req, res){
+    const { error } = validate(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
+
+    let user = User.findOne({email: req.body.email});
+    if (user) {
+        return res.status(400).send("User already registered");
+    }
+    user = new User({
         name: req.body.name,
         designation: req.body.designation,
         email: req.body.email,
         phone: req.body.phone,
-        // position: req.body.position
     })
-    if(req.file) {
-        user.profile_image = req.file.path
-    }
+    // if(req.file) {
+    //     user.profile_image = req.file.path
+    // }
     user.save()
         .then(() => {
             res.status(200).send('User Added Successfully');
         })
-        .catch(() => {
-            res.status(400).send("Unable to save to Database");
-        });
-});
+})
+
+// router.post('/user',upload.single("profile_image"), function (req, res) {
+//     let user = new User({
+//         name: req.body.name,
+//         designation: req.body.designation,
+//         email: req.body.email,
+//         phone: req.body.phone,
+//         // position: req.body.position
+//     })
+//     if(req.file) {
+//         user.profile_image = req.file.path
+//     }
+//     user.save()
+//         .then(() => {
+//             res.status(200).send('User Added Successfully');
+//         })
+//         .catch(() => {
+//             res.status(400).send("Unable to save to Database");
+//         });
+// });
 
 module.exports = router;

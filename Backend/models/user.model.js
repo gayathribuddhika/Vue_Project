@@ -1,41 +1,49 @@
-const mongoose = require('mongoose');
-const Joi = require("joi");
+const mongoose = require('mongoose')
+const Joi = require("joi")
+// const { json } = require('body-parser');
 // const Schema = mongoose.Schema;
 
 const User = mongoose.model("User", new mongoose.Schema({
     
-    profile_image: {
-        type: String,
-        // data: Buffer.from(encImg, 'base64')
-        required:[true,"Profile_image is required"]
-    },
+    // profile_image: {
+    //     type: String,
+    //     // data: Buffer.from(encImg, 'base64')
+    //     required: true
+    // },
 
     name: {
         type: String,
-        required:[true,"Name is required"]
+        required: true
     },
 
     designation: {
         type: String,
-        required:[true,"Name is required"]
+        required: true
     },
 
     phone: {
         type: Number,
-        required:[true,"Name is required"]
+        required: true,
+        minlength: 10
     },
     
     email: {
         type: String,
-        reruired: [true, "Email is required"]
+        reruired: true,
+        unique: true,
+        minlength: 5,
+        maxlength: 255
     }
 }));
 
 function validateUser(user){
-    const schema = {
-        username: Joi.String().required(),
-        password: Joi.String().min(5).max(12).required()
-    };
+    const schema = Joi.object({
+        // profile_image: Joi.String().required(),
+        name: Joi.String() .required(),
+        designation: Joi.String() .required(),
+        phone: Joi.Number().min(10) .required(),
+        email: Joi.String().min(5).max(255) .required()
+    });
     return Joi.validate(user, schema);
 }
 
