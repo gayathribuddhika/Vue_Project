@@ -22,17 +22,21 @@ app.use('/', loginRouter);
 const userRouter = require('./routes/user');
 app.use('/', userRouter);
 
-const labItem1 = require('./routes/lab_items');
+// const labItem1 = require('./routes/lab_items');
 // const labItem2 = require('./routes/lab_items');
 // const labItem3 = require('./routes/lab_items');
 // const labItem4 = require('./routes/lab_items');
 // const labItem5 = require('./routes/lab_items');
 
-app.use('/lab', labItem1);
+// app.use('/lab', labItem1);
 // app.use('/lab', labItem2);
 // app.use('/lab', labItem3);
 // app.use('/lab', labItem4);
 // app.use('/lab', labItem5);
+
+const labItem1 = require('./routes/lab1_item');
+app.use('/lab', labItem1);
+
 
 const store = require('./routes/stock');
 app.use('/', store);
