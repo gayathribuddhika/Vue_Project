@@ -17,23 +17,23 @@ router.get('/user', (req, res) => {
     });
 });
 
-router.get('/user/admin', (req, res) => {
-    User.findOne({username: "Admin"}, function (err, user) {
-        if (err) {
-            res.json(err);
-        }
-        res.json(user);
-    });
-});
+// router.get('/user/admin', (req, res) => {
+//     User.findOne({username: "Admin"}, function (err, user) {
+//         if (err) {
+//             res.json(err);
+//         }
+//         res.json(user);
+//     });
+// });
 
-router.get('/user/staff', (req, res) => {
-    User.findOne({username: "staff"}, function (err, user) {
-        if (err) {
-            res.json(err);
-        }
-        res.json(user);
-    });
-});
+// router.get('/user/staff', (req, res) => {
+//     User.findOne({username: "staff"}, function (err, user) {
+//         if (err) {
+//             res.json(err);
+//         }
+//         res.json(user);
+//     });
+// });
 
 router.get('/user/:id', function (req, res) {
     let id = req.params.id;
@@ -50,11 +50,11 @@ router.get('/user/:id', function (req, res) {
     });
 });
 
-router.post('/user', function (req, res){
+router.post('/user', async(req, res) => {
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
-    let user = User.findOne({email: req.body.email});
+    let user = await User.findOne({email: req.body.email});
     if (user) {
         return res.status(400).send("User already registered");
     }
@@ -67,30 +67,10 @@ router.post('/user', function (req, res){
     // if(req.file) {
     //     user.profile_image = req.file.path
     // }
-    user.save()
+    await user.save()
         .then(() => {
             res.status(200).send('User Added Successfully');
         })
 })
-
-// router.post('/user',upload.single("profile_image"), function (req, res) {
-//     let user = new User({
-//         name: req.body.name,
-//         designation: req.body.designation,
-//         email: req.body.email,
-//         phone: req.body.phone,
-//         // position: req.body.position
-//     })
-//     if(req.file) {
-//         user.profile_image = req.file.path
-//     }
-//     user.save()
-//         .then(() => {
-//             res.status(200).send('User Added Successfully');
-//         })
-//         .catch(() => {
-//             res.status(400).send("Unable to save to Database");
-//         });
-// });
 
 module.exports = router;

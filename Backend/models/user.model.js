@@ -34,8 +34,7 @@ const User = mongoose.model("User", new mongoose.Schema({
         minlength: 5,
         maxlength: 255
     }
-}, {collection: "User"}
-));
+}));
 
 function validateUser(user){
     const schema = Joi.object({
