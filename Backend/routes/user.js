@@ -69,7 +69,8 @@ router.post('/user', async(req, res) => {
     // }
     await user.save()
         .then(() => {
-            res.status(200).send('User Added Successfully');
+            res.status(200).send({msg:'User Added Successfully', user});
+            
         })
 })
 

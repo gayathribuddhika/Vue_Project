@@ -24,11 +24,11 @@ const Login = mongoose.model("Login", new mongoose.Schema({
 }));
 
 function validateLogin(login){
-    const schema = {
-        username: Joi.String().required(),
-        password: Joi.String().min(5).max(12).required()
-    };
-    return Joi.validate(login, schema);
+    const schema = Joi.object({
+        username: Joi.string().required(),
+        password: Joi.string().min(5).max(12).required()
+    });
+    return schema.validate(login);
 }
 
 exports.Login = Login;
