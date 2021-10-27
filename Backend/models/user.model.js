@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Joi = require("joi")
+const mongoose = require('mongoose');
+const Joi = require("joi");
 // const { json } = require('body-parser');
 // const Schema = mongoose.Schema;
 
@@ -34,17 +34,18 @@ const User = mongoose.model("User", new mongoose.Schema({
         minlength: 5,
         maxlength: 255
     }
-}));
+}, {collection: "User"}
+));
 
 function validateUser(user){
     const schema = Joi.object({
         // profile_image: Joi.String().required(),
-        name: Joi.String() .required(),
-        designation: Joi.String() .required(),
-        phone: Joi.Number().min(10) .required(),
-        email: Joi.String().min(5).max(255) .required()
+        name: Joi.string() .required(),
+        designation: Joi.string() .required(),
+        phone: Joi.number().min(10) .required(),
+        email: Joi.string().min(5).max(255) .required()
     });
-    return Joi.validate(user, schema);
+    return schema.validate(user);
 }
 
 exports.User = User;
