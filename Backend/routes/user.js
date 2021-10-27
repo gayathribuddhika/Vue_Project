@@ -2,6 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose");
 const router = express.Router()
 const cors = require("cors")
+const bcrypt = require("bcrypt");
 
 const {User, validate} = require("../models/user.model")
 router.use(cors())
@@ -63,13 +64,18 @@ router.post('/user', async(req, res) => {
         designation: req.body.designation,
         email: req.body.email,
         phone: req.body.phone,
+        username: req.body.username,
+        password: req.body.password
     })
+
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(user.password, salt);
     // if(req.file) {
     //     user.profile_image = req.file.path
     // }
     await user.save()
         .then(() => {
-            res.status(200).send({msg:'User Added Successfully', user});
+            res.status(200).send('User Added Successfully');
             
         })
 })

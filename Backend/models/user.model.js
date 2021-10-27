@@ -33,6 +33,18 @@ const User = mongoose.model("User", new mongoose.Schema({
         unique: true,
         minlength: 5,
         maxlength: 255
+    },
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+
+    password: {
+        type: String,
+        required: true,
+        minlength: 5,
+        maxlength: 255,
     }
 }));
 
@@ -42,7 +54,9 @@ function validateUser(user){
         name: Joi.string() .required(),
         designation: Joi.string() .required(),
         phone: Joi.number().min(10) .required(),
-        email: Joi.string().min(5).max(255) .required()
+        email: Joi.string().min(5).max(255) .required(),
+        username: Joi.string().required(),
+        password: Joi.string().min(5).max(12).required()
     });
     return schema.validate(user);
 }

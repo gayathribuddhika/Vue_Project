@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// const passwordComplexity = require("joi-password-complexity");
 const Joi = require("joi");
 
 const Login = mongoose.model("Login", new mongoose.Schema({
@@ -15,12 +16,6 @@ const Login = mongoose.model("Login", new mongoose.Schema({
         minlength: 5,
         maxlength: 12,
     },          
-
-    // user_type: {
-    //     type: String,
-    //     required: true
-    // }
-
 }));
 
 function validateLogin(login){
