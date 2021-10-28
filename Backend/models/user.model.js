@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Joi = require("joi");
-// const { json } = require('body-parser');
-// const Schema = mongoose.Schema;
+const jwt = require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
     
@@ -49,7 +48,13 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         required: true
     }
-})
+});
+
+userSchema.methods.generateAuthToken = function () {
+    // const token = jwt.sign({_id: this._id}, config.get("jwtPrivateKey"));
+    const token = jwt.sign({_id: this._id}, "jwtPrivateKey");
+    return token;
+}
 
 const User = mongoose.model("User", userSchema);
 

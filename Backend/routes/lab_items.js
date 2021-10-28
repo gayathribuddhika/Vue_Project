@@ -16,15 +16,6 @@ router.get('/lab1', (req, res) => {
     });
 });
 
-router.get('/lab2', (req, res) => {
-    Lab2.find(function (err, items) {
-        if (err) {
-            res.json(err);
-        }
-        res.json(items);
-    });
-});
-
 router.get('/lab1/:id', admin, function (req, res) {
     let id = req.params.id;
     Lab1.findById(id, function (err, item) {
@@ -36,8 +27,15 @@ router.get('/lab1/:id', admin, function (req, res) {
     });
 });
 
-router.post('/lab1', function (req, res) {
-    let item = new Item({
+router.post('/lab1', async (req, res) => {
+    const { error } = validate(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
+
+    let item = await Lab1.findOne({Serial_Num: req.body.Serial_Num});
+    if (item) {
+        return res.status(400).send("The Item has already added..");
+    }
+    let item = new Lab1({
         Select_LAB:req.body.Select_LAB,
         Item_id:req.body.Item_id,
         Main_Category: req.body.Main_Category,

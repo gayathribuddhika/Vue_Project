@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const config = require("config");
 
 
 app.use(express.json());
@@ -24,6 +25,11 @@ app.use('/', user);
 app.use('/', aboutus);
 app.use('/', store);
 app.use('/lab', labItem1);
+
+// if(!config.get("jwtPrivateKey")) {
+//     console.error("FATAL ERROR: jwtPrivateKey is not defined..");
+//     process.exit(1);
+// }
 
 // const labItem1 = require('./routes/lab_items');
 // const labItem2 = require('./routes/lab_items');

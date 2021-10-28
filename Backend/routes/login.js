@@ -3,9 +3,9 @@ const router = express.Router();
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
-const jwt = require("jsonwebtoken");
 
 const {User} = require("../models/user.model");
+const config = require("config");
 
 router.use(cors())
 
@@ -29,9 +29,8 @@ router.post('/login', async (req, res) => {
     const validPassword = await bcrypt.compare(req.body.password, user.password);
     if(!validPassword) return res.status(400).send("Invalid username or Password");
 
-    const token = jwt.sign({_id: user._id}, "jwtPrivateKey");
-
-    res.status(200).json({msg:'User Login Successfully', status: "OK", IsAdmin: true, token});
+    const token = user.generateAuthToken();
+    res.header("auth-token", token).json({msg:'User Login Successfully', status: "OK", IsAdmin: true});
     
 });
 

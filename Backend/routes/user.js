@@ -1,5 +1,4 @@
 const express = require("express")
-const mongoose = require("mongoose");
 const router = express.Router()
 const cors = require("cors")
 const bcrypt = require("bcrypt");
@@ -76,8 +75,8 @@ router.post('/user', async(req, res) => {
     // }
     await user.save()
         .then(() => {
-            res.status(200).send('User Added Successfully');
-            
+            const token = user.generateAuthToken();
+            res.header("auth-token", token).send('User Added Successfully');
         })
 })
 
