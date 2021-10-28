@@ -29,7 +29,7 @@ router.post('/login', async (req, res) => {
     const validPassword = await bcrypt.compare(req.body.password, login.password);
     if(!validPassword) return res.status(400).send("Invalid username or Password");
 
-    res.status(200).json({msg:'User Login Successfully', status: "OK", IsAdmin: "true"});
+    res.status(200).json({msg:'User Login Successfully', status: "OK", IsAdmin: true});
     
 });
 

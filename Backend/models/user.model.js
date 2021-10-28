@@ -3,7 +3,7 @@ const Joi = require("joi");
 // const { json } = require('body-parser');
 // const Schema = mongoose.Schema;
 
-const User = mongoose.model("User", new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     
     // profile_image: {
     //     type: String,
@@ -39,14 +39,19 @@ const User = mongoose.model("User", new mongoose.Schema({
         required: true,
         unique: true
     },
-
     password: {
         type: String,
         required: true,
         minlength: 5,
         maxlength: 255,
+    },
+    isAdmin: {
+        type: Boolean,
+        required: true
     }
-}));
+})
+
+const User = mongoose.model("User", userSchema);
 
 function validateUser(user){
     const schema = Joi.object({
@@ -56,7 +61,8 @@ function validateUser(user){
         phone: Joi.number().min(10) .required(),
         email: Joi.string().min(5).max(255) .required(),
         username: Joi.string().required(),
-        password: Joi.string().min(5).max(12).required()
+        password: Joi.string().min(5).max(12).required(),
+        isAdmin: Joi.boolean().required()
     });
     return schema.validate(user);
 }

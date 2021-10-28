@@ -2,6 +2,7 @@ const express = require("express");
 // const Joi = require("joi");
 const router = express.Router();
 const cors = require("cors");
+// const admin = require("../middleware/admin")
 
 const {Lab1, Lab2, Lab3, Lab4, Lab5} = require("../models/lab_item.model");
 router.use(cors());

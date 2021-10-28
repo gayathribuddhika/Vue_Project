@@ -65,7 +65,8 @@ router.post('/user', async(req, res) => {
         email: req.body.email,
         phone: req.body.phone,
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        isAdmin: req.body.isAdmin
     })
 
     const salt = await bcrypt.genSalt(10);
