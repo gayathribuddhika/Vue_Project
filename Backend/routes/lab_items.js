@@ -2,7 +2,7 @@ const express = require("express");
 // const Joi = require("joi");
 const router = express.Router();
 const cors = require("cors");
-// const admin = require("../middleware/admin")
+const admin = require("../middleware/admin")
 
 const {Lab1, Lab2, Lab3, Lab4, Lab5} = require("../models/lab_item.model");
 router.use(cors());
@@ -25,7 +25,7 @@ router.get('/lab2', (req, res) => {
     });
 });
 
-router.get('/lab1/:id', function (req, res) {
+router.get('/lab1/:id', admin, function (req, res) {
     let id = req.params.id;
     Lab1.findById(id, function (err, item) {
         if (err) {
