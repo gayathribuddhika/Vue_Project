@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const bcrypt = require("bcrypt");
-const {Login, validate} = require("../models/login.model");
+const Joi = require("joi");
+// const jwt = require("jsonwebtoken");
+
+const {User} = require("../models/user.model");
 
 router.use(cors())
 
@@ -19,24 +22,23 @@ router.post('/login', async (req, res) => {
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
-    let login = await Login.findOne({username: req.body.username});
-    if (login) {
-        return res.status(400).send("User already registered");
-    }
-    login = new Login({
-        username: req.body.username,
-        password: req.body.password
-        
-    })
-
-    const salt = await bcrypt.genSalt(10);
-    const password = await bcrypt.hash(login.password, salt);
+    let login = await User.findOne({username: req.body.username});
+    if (!login) return res.status(400).send("Invalid username or Password");
     
-    // await user.save()
-    //     .then(() => {
-    //         res.status(200).send({msg:'User Added Successfully', user});
-            
-    //     })
-})
+    
+    const validPassword = await bcrypt.compare(req.body.password, login.password);
+    if(!validPassword) return res.status(400).send("Invalid username or Password");
+
+    res.status(200).json({msg:'User Login Successfully', status: "OK", IsAdmin: "true"});
+    
+});
+
+function validate(req){
+    const schema = Joi.object({
+        username: Joi.string().required(),
+        password: Joi.string().min(5).max(12).required()
+    });
+    return schema.validate(req);
+}
 
 module.exports = router;
