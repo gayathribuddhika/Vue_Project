@@ -17,7 +17,7 @@ const login = require('./routes/login');
 const user = require('./routes/user');
 const aboutus = require('./routes/department_list');
 const store = require('./routes/stock');
-const labItem1 = require('./routes/lab1_item');
+const labItem1 = require('./routes/lab_items');
 
 app.use('/', contact);
 app.use('/', login);
@@ -37,7 +37,7 @@ app.use('/lab', labItem1);
 // const labItem4 = require('./routes/lab_items');
 // const labItem5 = require('./routes/lab_items');
 
-// app.use('/lab', labItem1);
+
 // app.use('/lab', labItem2);
 // app.use('/lab', labItem3);
 // app.use('/lab', labItem4);
