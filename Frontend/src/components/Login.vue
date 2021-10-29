@@ -99,15 +99,14 @@ export default {
       axios
         .post("http://localhost:8085/login", newLogin)
         .then(response => {
-          console.log(response);
+          console.log(response.data);
 
-          if (response) {
-            if(response.data.isLoggedIn == true && response.data.isAdmin == true) {
-              this.$router.push({ name: "AdminDashboard" });
-            // } else if (response.data.isLoggedIn == true && response.data.isAdmin == false) {
-            //   this.$router.push({ name: "StaffDashboard" });
+          if(response.data.isAdmin === true) {
+            this.$router.push({ name: "AdminDashboard" });
+          } else if (response.data.isAdmin == false) {
+              this.$router.push({ name: "StaffDashboard" });
             }
-          }
+          
         })
         .catch(error => {
           console.log(error);

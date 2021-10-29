@@ -30,7 +30,7 @@ router.post('/login', async (req, res) => {
     if(!validPassword) return res.status(400).send("Invalid username or Password");
 
     const token = user.generateAuthToken();
-    res.header("auth-token", token).json({msg:'User Login Successfully', status: "OK", IsAdmin: true});
+    res.header("auth-token", token).json({msg:'User Login Successfully', status: "OK", isAdmin: user.isAdmin});
     
 });
 

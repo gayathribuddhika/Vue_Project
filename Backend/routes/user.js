@@ -19,14 +19,6 @@ router.get('/me', auth, async (req, res, next) => {
     
 });
 
-// router.get('/user/admin', (req, res) => {
-//     User.findOne({username: "Admin"}, function (err, user) {
-//         if (err) {
-//             res.json(err);
-//         }
-//         res.json(user);
-//     });
-// });
 
 router.post('/user', async(req, res) => {
     const { error } = validate(req.body);
