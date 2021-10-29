@@ -1,33 +1,33 @@
 const express = require("express");
-// const Joi = require("joi");
 const router = express.Router();
 const cors = require("cors");
-const admin = require("../middleware/admin")
+const auth = require("../middleware/auth");
+const admin = require("../middleware/admin");
 
 const {Item, validate} = require("../models/lab_item.model");
 router.use(cors());
 
-router.get('/lab1', (req, res) => {
-    Item.find(function (err, items) {
-        if (err) {
-            res.json(err);
-        }
-        res.json(items);
-    });
+router.get('/lab1', async (req, res) => {
+    try {
+        const item = await Item.find();
+        res.send(item);
+    } catch (ex) {
+        res.status(500).send("Something went Wrong.");
+    }
+    
 });
 
-// router.get('/lab1/:id', function (req, res) {
-//     let id = req.params.id;
-//     Lab1.findById(id, function (err, item) {
-//         if (err) {
-//             res.json(err);
-//         }
-//         console.log(item);
-//         res.json(item);
-//     });
-// });
+router.get('/lab1/:id', async (req, res) => {
+    try {
+        const item = await Item.findById(req.params.id);
+        res.send(item);
+    } catch (ex) {
+        res.status(500).send("Something went Wrong.");
+    }
+    
+});
 
-router.post('/lab1', admin, async (req, res) => {
+router.post('/lab1', async (req, res) => {
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -52,17 +52,17 @@ router.post('/lab1', admin, async (req, res) => {
         })
 });
 
-router.delete('/lab1/delete/:id', function (req, res) {               //can also use findByIdAndRemove
-    Item.findOneAndDelete({ _id: req.params.id }, function (err) {
-        if (err) res.json(err);
-        else res.json('Successfully Deleted');
-    });
+router.delete('/lab1/delete/:id', [auth, admin], async (req, res) => {       //can also use findByIdAndRemove
+    try {
+        await Item.findOneAndDelete({ _id: req.params.id });
+        res.status(200).send("Item Deleted Successfully..");
+    } catch (ex) {
+        res.status(500).send(ex.message);
+    }
 });
 
-router.put('/lab1/update/:id', function (req, res) {
-    Item.updateOne({_id: req.params.id}, {
-        $set: req.body
-    }, function (err, item) {
+router.put('/lab1/update/:id',[auth, admin], async (req, res) => {
+    await Item.updateOne({_id: req.params.id}, { $set: req.body }, function (err, item) {
         if(err) {
             res.json(err);
         }

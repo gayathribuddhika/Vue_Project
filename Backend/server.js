@@ -2,15 +2,17 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const config = require("config");
-
+// const config = require("config");
+const error = require("./middleware/error");
 
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(error);
 
 require('./config/db');
+
 
 const contact = require('./routes/contact');
 const login = require('./routes/login');
