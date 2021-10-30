@@ -9,7 +9,7 @@ import AdminDashboard from '@/components/AdminDashboard'
 import StaffDashboard from '@/components/StaffDashboard'
 import Items from '@/components/Items'
 import AddItem from '@/components/AddItem'
-import Profile from '@/components/Profile'
+// import Profile from '@/components/Profile'
 import ResetPassword from '@/components/ResetPassword'
 import UpdateItem from '@/components/UpdateItem'
 import StockDetails from '@/components/StockDetails'
@@ -68,11 +68,11 @@ export default new Router({
       name: "AddItem",
       component: AddItem
     },
-    {
-      path: '/admindashboard/:id',
-      name: "Profile",
-      component: Profile
-    },
+    // {
+    //   path: '/admindashboard/:id',
+    //   name: "Profile",
+    //   component: Profile
+    // },
     // {
     //   path: '/staffdashboard/:id',
     //   name: "StaffProfile",

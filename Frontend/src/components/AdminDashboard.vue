@@ -17,7 +17,7 @@
           <b-card-title>
             {{user.name}}
           </b-card-title>
-          <p><router-link :to = "`/admindashboard/profile`">view profile</router-link></p>
+          <p><router-link :to = "`#`">view profile</router-link></p>
         </b-card-body>
         </center>
         <b-list-group variant="dark">
