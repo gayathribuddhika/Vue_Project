@@ -14,10 +14,7 @@
             style="max-width: 30rem;"
             align="left"
           >
-            <b-form @submit.prevent="login">
-              <center>
-                <p id="msg" v-if="submit_login === 'error'">{{ err_msg }}</p>
-              </center>
+            <b-form @submit="add_user">
               <b-form-group label="Full Name">
                 <b-form-input
                   id="name"
@@ -80,8 +77,7 @@
               <b-button
                 type="submit"
                 block variant="success"
-                :disabled="submit_login === 'ok'"
-                >Login</b-button
+                >Submit</b-button
               >
               </center>
             </b-form>
@@ -136,6 +132,7 @@ export default {
           console.log(response.data);
         })
       }
+
     }
 }
 </script>
