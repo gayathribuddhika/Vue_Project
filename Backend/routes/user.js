@@ -3,6 +3,7 @@ const router = express.Router()
 const cors = require("cors")
 const bcrypt = require("bcrypt");
 const auth = require("../middleware/auth");
+const admin = require("../middleware/admin");
 
 const {User, validate} = require("../models/user.model")
 router.use(cors())
@@ -20,7 +21,7 @@ router.get('/me', auth, async (req, res, next) => {
 });
 
 
-router.post('/user', async(req, res) => {
+router.post('/user', [auth, admin], async(req, res) => {
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 

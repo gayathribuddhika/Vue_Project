@@ -2,41 +2,58 @@
   "_id": {
     "$oid": "5f198b399878bf2bacaf40ea"
   },
-  "Address": "Faculty of Applied Sciences, Sabaragamuwa University of Sri Lanka, P.O. Box 02, Belihuloya, 70140, Sri Lanka"
+  "Address": "Faculty of Applied Sciences, Sabaragamuwa University of Sri Lanka, P.O. Box 02, Belihuloya, 70140, Sri Lanka."
 },{
   "_id": {
     "$oid": "5f198ba69878bf2bacaf40eb"
-  }
+  },
+  "name": "General",
+  "number": "045-2280014"
 },{
   "_id": {
     "$oid": "5fb3e7b1b881c12eec42d0ef"
-  }
+  },
+  "name": "Dean/Faculty of Applied Sciences",
+  "number": "045-3454512"
 },{
   "_id": {
     "$oid": "5fb3e7b1b881c12eec42d0f0"
-  }
+  },
+  "name": "Head/Department of Computing and Information Systems",
+  "number": "045-3454519"
 },{
   "_id": {
     "$oid": "5fb3e7b1b881c12eec42d0f1"
-  }
+  },
+  "name": "Head/Department of Food Science and Technology",
+  "number": "045-3454514"
 },{
   "_id": {
     "$oid": "5fb3e7b1b881c12eec42d0f2"
-  }
+  },
+  "name": "Head/Department of Natural Resources",
+  "number": "045-3454528"
 },{
   "_id": {
     "$oid": "5fb3e7b1b881c12eec42d0f3"
-  }
+  },
+  "name": "Head//Department of Physical Sciences and Technology",
+  "number": "045-3454527"
 },{
   "_id": {
     "$oid": "5fb3e7b1b881c12eec42d0f4"
-  }
+  },
+  "name": "Department of Sport Science and Physical Education",
+  "number": "045-3609846"
 },{
   "_id": {
     "$oid": "5fb3e7b1b881c12eec42d0f5"
-  }
+  },
+  "name": "Assistant Registrar/Faculty of Applied Sciences",
+  "number": "045-3454513"
 },{
   "_id": {
-    "$oid": "5fb3e7b1b881c12eec42d0f6"
-  }
+    "$oid": "617ccf59eeeb4e4b05a09a84"
+  },
+  "location": "The University is situated about 18 kilometers from the Balangoda town along the Badulla- Colombo road. It is located on the Samanalawewa Road, around 500 metres from the Pambahinna junction, situated 162 km from Colombo and 76 km from Badulla. (Other distances: 60 km to Ratnapura, 50 km to Bandarawela)."
 }]

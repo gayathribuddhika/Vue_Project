@@ -25,7 +25,7 @@
             v-for="contact in contacts" 
             v-bind:key="contact._id"
             >
-              <p class="text">{{ contact.Location }}</p>
+              <p class="text">{{ contact.location }}</p>
             </div>
             
         </div>
@@ -39,10 +39,10 @@
             >
             <b-row>
               <b-col>
-              <p class="text">{{ contact.Name }} </p>
+              <p class="text">{{ contact.name }} </p>
               </b-col>
               <b-col>
-                <p class="text"> {{ contact.Number}} </p>
+                <p class="text"> {{ contact.number}} </p>
               </b-col>
             </b-row>
             </div>
@@ -68,7 +68,7 @@ export default {
     }
   },
   mounted () {
-    axios.get('http://localhost:8085/contacts')
+    axios.get('http://localhost:8085/contact')
     .then((response) => {
       console.log(response.data);
       this.contacts = response.data;
