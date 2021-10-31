@@ -64,11 +64,15 @@
                 />
               </b-form-group>
               <b-form-group label="IsAdmin">
+                <!-- <select v-model="selected">
+                    <option :value="null">Pick a value</option>
+                    <option v-for="val in [true, false]" :value="val">{{val}}!!!</option>
+                </select> -->
                 <b-form-select
                   id="isAdmin"
                   required
                   v-model="selected"
-                  :options = "options"
+                  :options="options"
                 >
                 </b-form-select>
               </b-form-group>
@@ -79,6 +83,9 @@
                 block variant="success"
                 >Submit</b-button
               >
+              <p v-if="submitted === 'ok'">Record Submitted Successfully!!!</p>
+              <p v-if="submitted === 'pending'">Sending...</p>
+              <p v-if="submitted === 'error'">Please fill all the required fields</p>
               </center>
             </b-form>
           </b-card>
@@ -102,15 +109,17 @@ export default {
           phone: "",
           username: "",
           password: "",
-          isAdmin: ""
+          isAdmin: true
         },
         selected: null,
         options: [
           { value: null, text: 'select an option', disabled: true},
-          { value: null, text: 'True'},
-          { value: null, text: 'False'}, 
-        ]
-        
+          { value: true, text: 'True',},
+          { value: false, text: 'False'}, 
+        ],
+
+        submitted: null,
+                
       }
     },
 
@@ -130,7 +139,12 @@ export default {
         axios.post("http://localhost:8085/user", newUser)
         .then(response => {
           console.log(response.data);
+          this.submitted = "pending";
+          setTimeout(() => {
+            this.submitted = "ok";
+          }, 500);
         })
+
       }
 
     }

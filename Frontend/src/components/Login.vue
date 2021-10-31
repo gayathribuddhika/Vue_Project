@@ -44,7 +44,6 @@
               <b-button
                 type="submit"
                 block variant="success"
-                :disabled="submit_login === 'ok'"
                 >Login</b-button
               >
               </center>
@@ -57,7 +56,6 @@
 </template>
 
 <script>
-import { required } from "vuelidate/lib/validators";
 import axios from "axios";
 
 export default {
@@ -74,18 +72,6 @@ export default {
       err_msg: "Invalid Username or Password"
     };
   },
-
-  // mounted() {
-  //   axios
-  //     .get("http://localhost:8085/login")
-  //     .then(response => {
-  //       this.users = response.data;
-  //       console.log(this.users); //ok
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // },
 
   methods: {
     login() {

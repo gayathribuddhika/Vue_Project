@@ -21,7 +21,7 @@ router.get('/me', auth, async (req, res, next) => {
 });
 
 
-router.post('/user', [auth, admin], async(req, res) => {
+router.post('/user', async(req, res) => {
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 

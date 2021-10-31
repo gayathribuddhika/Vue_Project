@@ -29,22 +29,6 @@
                 :options="select_labs"
               ></b-form-select>
             </b-form-group>
-            <!--<b-form-group
-                    label-cols-sm="3"
-                    label="ID"
-                    label-for="record_id"
-                    label-align-sm="right"
-                >
-                    <b-form-input
-                        id="record_id"
-                        v-model="form.id"
-                        type="number"
-                        required
-                        :class="{ 'hasError': $v.form.id.$error } "
-                    >
-                    </b-form-input>
-            </b-form-group>-->
-
             <b-form-group
               label-cols-sm="3"
               label="Main Category"
