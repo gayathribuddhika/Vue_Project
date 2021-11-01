@@ -144,6 +144,9 @@ export default {
           //   this.submitted = "ok";
           // }, 500);
         })
+        .catch(error => {
+          console.log(error.message);
+        });
 
       }
 

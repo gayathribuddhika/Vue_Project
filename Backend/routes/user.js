@@ -53,7 +53,7 @@ router.post('/user', async(req, res) => {
     await user.save()
         .then(() => {
             const token = user.generateAuthToken();
-            res.header("auth-token", token).send('User Added Successfully');
+            res.header("auth-token", token).json({msg:'User Added Successfully', status: "OK"});
         })
 })
 
