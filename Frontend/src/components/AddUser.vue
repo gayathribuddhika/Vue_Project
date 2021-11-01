@@ -139,10 +139,10 @@ export default {
         axios.post("http://localhost:8085/user", newUser)
         .then(response => {
           console.log(response.data);
-          this.submitted = "pending";
-          setTimeout(() => {
-            this.submitted = "ok";
-          }, 500);
+          // this.submitted = "pending";
+          // setTimeout(() => {
+          //   this.submitted = "ok";
+          // }, 500);
         })
 
       }
