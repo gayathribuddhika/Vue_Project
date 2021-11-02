@@ -24,8 +24,7 @@ router.post('/login', async (req, res) => {
 
     let user = await User.findOne({username: req.body.username});
     if (!user) return res.status(400).send("Invalid username or Password");
-    
-    
+        
     const validPassword = await bcrypt.compare(req.body.password, user.password);
     if(!validPassword) return res.status(400).send("Invalid username or Password");
 

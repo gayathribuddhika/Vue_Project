@@ -1,5 +1,6 @@
 <template>
     <div id="form">
+    <br>
     <h2>
       <center>Add New User</center>
     </h2>
@@ -73,6 +74,7 @@
                   required
                   v-model="selected"
                   :options="options"
+                  
                 >
                 </b-form-select>
               </b-form-group>
@@ -92,7 +94,9 @@
         </center>
       </div>
     </b-container>
+    <br>
   </div>
+  
 </template>
 
 <script>
@@ -139,17 +143,18 @@ export default {
         axios.post("http://localhost:8085/user", newUser)
         .then(response => {
           console.log(response.data);
+          alert(response.data.msg);
           // this.submitted = "pending";
           // setTimeout(() => {
           //   this.submitted = "ok";
           // }, 500);
         })
         .catch(error => {
-          console.log(error.message);
+          // console.log(error.message);
         });
 
       }
-
+      
     }
 }
 </script>
