@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Axios from 'axios'
+import './axios'
 import BootstrapVue from 'bootstrap-vue'
 import LayoutPlugin from 'bootstrap-vue'
 import NavbarPlugin from 'bootstrap-vue'
@@ -40,7 +40,6 @@ export const bus = new Vue();
 
 new Vue({
   // mode:"history",
-  Axios,
   router,
   render:h => h(App),
 }).$mount('#app')
