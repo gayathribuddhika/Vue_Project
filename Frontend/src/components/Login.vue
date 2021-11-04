@@ -83,7 +83,7 @@ export default {
       console.log(newLogin); // ok
 
       axios
-        .post("http://localhost:8085/login", newLogin)
+        .post("login", newLogin)
         .then(response => {
           console.log(response.data);
 

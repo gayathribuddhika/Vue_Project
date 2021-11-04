@@ -68,16 +68,6 @@ export default new Router({
       name: "AddItem",
       component: AddItem
     },
-    // {
-    //   path: '/admindashboard/:id',
-    //   name: "Profile",
-    //   component: Profile
-    // },
-    // {
-    //   path: '/staffdashboard/:id',
-    //   name: "StaffProfile",
-    //   component: Profile
-    // },
     {
       path: '/admindashboard/items/edit/:id',
       name: "UpdateItem",

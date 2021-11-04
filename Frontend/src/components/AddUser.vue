@@ -15,7 +15,7 @@
             style="max-width: 30rem;"
             align="left"
           >
-            <b-form @submit="add_user">
+            <b-form @submit.prevent="add_user">
               <b-form-group label="Full Name">
                 <b-form-input
                   id="name"
@@ -65,10 +65,6 @@
                 />
               </b-form-group>
               <b-form-group label="IsAdmin">
-                <!-- <select v-model="selected">
-                    <option :value="null">Pick a value</option>
-                    <option v-for="val in [true, false]" :value="val">{{val}}!!!</option>
-                </select> -->
                 <b-form-select
                   id="isAdmin"
                   required
@@ -140,17 +136,17 @@ export default {
         };
         console.log(newUser);
 
-        axios.post("http://localhost:8085/user", newUser)
+        axios.post("user", newUser)
         .then(response => {
           console.log(response.data);
-          alert(response.data.msg);
+          // alert(response.data.msg);
           // this.submitted = "pending";
           // setTimeout(() => {
           //   this.submitted = "ok";
           // }, 500);
         })
         .catch(error => {
-          // console.log(error.message);
+          console.log(error);
         });
 
       }
