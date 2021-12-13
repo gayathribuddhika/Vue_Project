@@ -24,6 +24,7 @@
                   v-model="user_form.name"
                 />
               </b-form-group>
+              
               <b-form-group label="Designation">
                 <b-form-input
                   id="designation"

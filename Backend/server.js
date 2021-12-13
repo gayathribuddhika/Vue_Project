@@ -2,8 +2,11 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const mongoose = require("mongoose");
 // const config = require("config");
 const error = require("./middleware/error");
+
+const msg = require("./constants/message");
 
 app.use(express.json());
 app.use(cors());
@@ -11,9 +14,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(error);
 
-require('./config/db');
+require("dotenv").config();
+const port = process.env.PORT || 8085;
 
+// database connection
+mongoose
+  .connect(process.env.DB_URI, {  
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(() => console.log(msg.STATUS_MESSAGE.DB_CONN))
+  .catch((err) => console.log(err));
 
+// router prefix
 const contact = require('./routes/contact');
 const login = require('./routes/login');
 const user = require('./routes/user');
@@ -45,7 +59,6 @@ app.use('/lab', labItem1);
 // app.use('/lab', labItem4);
 // app.use('/lab', labItem5);
 
-const port = 8085;
 app.listen(port, () => {
     console.log('Server started on http://localhost:' + port);
 });
