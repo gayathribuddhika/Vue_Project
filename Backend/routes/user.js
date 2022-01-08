@@ -2,8 +2,12 @@ const express = require("express")
 const router = express.Router()
 const cors = require("cors")
 const bcrypt = require("bcrypt");
+
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
+
+const msg = require("../constants/message");
+const code = require("../constants/common"); 
 
 const {User, validate} = require("../models/user.model")
 router.use(cors())
@@ -23,16 +27,16 @@ router.get('/me', auth, async (req, res, next) => {
 
 router.post('/user', async(req, res) => {
     const { error } = validate(req.body);
-    if (error) return res.status(400).json(error.details[0].message);
+    if (error) return res.status(code.STATUS_CODE.BadRequest).json(error.details[0].message);
 
     let user = await User.findOne({email: req.body.email});
     if (user) {
-        return res.status(400).send("User already registered");
+        return res.status(code.STATUS_CODE.BadRequest).send("User already registered");
     }
     
     user = await User.findOne({username: req.body.username});
     if (user) {
-        return res.status(400).send("Username already exists");
+        return res.status(code.STATUS_CODE.BadRequest).send(msg.STATUS_MESSAGE.ExistUsername);
     }
 
     user = new User({

@@ -8,6 +8,9 @@ exports.STATUS_MESSAGE = {
     
     unknownError: 'An unknown error occurred!',
     ServerError: 'Something went wrong, please try again later.',
+
+    ExistItem: 'Could not create an Item. Item is already exist',
+    ExistUser: 'Could not create user. User already exist',
     
     ExistUsername: 'Could not create user. username is already exist',
     ExistEmail:'Could not create user. email is already exist',
@@ -21,7 +24,11 @@ exports.STATUS_MESSAGE = {
     UpdateFaild: 'Something went wrong, could not update user.',
     UserNotFound: 'Could not find user for this id.',
     
-    Succ_add: 'User added Successfully.',
+    Succ_add: 'Added Successfully.',
     Succ_delete: 'User Deleted Successfully.',
-    Scc_update:  'Update user Successffully'
+    Scc_update:  'Update user Successffully',
+    Succ_Login: 'User Login Successfully',
+
+    InvalidLogin: 'Invalid Username or Password',
+    
 };
