@@ -23,7 +23,7 @@ router.post('/login', async (req, res) => {
     if(!validPassword) return res.status(code.STATUS_CODE.BadRequest).send(msg.STATUS_MESSAGE.InvalidLogin);
 
     const token = user.generateAuthToken();
-    res.header("auth-token", token).json({msg: msg.STATUS_MESSAGE.Succ_Login, user});
+    res.header("auth-token", token).json({msg: msg.STATUS_MESSAGE.Succ_Login, isAdmin: user.isAdmin});
     
 });
 

@@ -75,13 +75,11 @@ export default {
 
   methods: {
     login() {
-      // debugger
       let newLogin = {
         username: this.login_form.username,
         password: this.login_form.password
       };
-      console.log(newLogin); // ok
-
+      
       axios
         .post("login", newLogin)
         .then(response => {
@@ -105,6 +103,7 @@ export default {
 </script>
 
 <style scoped>
+
 #form {
   margin-top: 20px;
   padding-bottom: 25px;
